@@ -65,12 +65,12 @@ import img4 from '../assets/img/original_4.png';
 			// 4: Revelado de arriba hacia abajo (juntas)
 			tl.fromTo(".grid-img-1", 
 				{ clipPath: "inset(100% 0 0 0)" },
-				{ clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "expo.inOut" },
+				{ clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "none.inOut", },
 				"start"
 			)
 			.fromTo(".grid-img-4", 
 				{ clipPath: "inset(0 0 100% 0)" },
-				{ clipPath: "inset(0 0 0% 0)", duration: 1.6, ease: "expo.inOut" },
+				{ clipPath: "inset(0 0 0% 0)", duration: 1.6, ease: "none.inOut", },
 				"start"
 			)
 			
@@ -79,12 +79,12 @@ import img4 from '../assets/img/original_4.png';
 			// Ajustamos el inicio relativo a "start" para mayor control.
 			.fromTo(".grid-img-2", 
 				{ clipPath: "inset(0 0 100% 0)" },
-				{ clipPath: "inset(0 0 0% 0)", duration: 1.6, ease: "expo.inOut" },
+				{ clipPath: "inset(0 0 0% 0)", duration: 1.6, ease: "none.inOut", },
 				"start+=0.3"
 			) 
 			.fromTo(".grid-img-3", 
 				{ clipPath: "inset(100% 0 0 0)" },
-				{ clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "expo.inOut" },
+				{ clipPath: "inset(0% 0 0 0)", duration: 1.6, ease: "none.inOut", },
 				"<"
 			); 
 		});		mm.add("(max-width: 767px)", () => {
