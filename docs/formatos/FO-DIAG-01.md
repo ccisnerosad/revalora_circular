@@ -1,52 +1,70 @@
-# Canvas Funcional #01: Caracterización de Residuos
+# Canvas Funcional #01: Registro de Tipo de Residuo por Zona
 
 ## Identidad del Formato
 
 - **Código:** FO-DIAG-01
 - **Nombre:** Registro de Tipo de Residuo por Zona
-- **Naturaleza:** Formato hijo de `FO-DIAG-00`
-- **Estado:** Fase 0 - Gobernanza
+- **Naturaleza:** Formulario de Campo / Checklist Detallado
+- **Estado:** Fase 0 - Planeación y Control
 
 ## 1. Propósito y Contexto
 
-Este módulo es el ojo clínico del sistema. Su función es cualitativa: no mide peso (lo hace `FO-DIAG-02`), sino que describe. Transforma “basura” en datos accionables (ej. “Esto no es basura, es tomate fresco rescatable”) y alimenta el algoritmo de potencial de aprovechamiento.
+Este formato tiene como objetivo documentar la caracterización física de los residuos encontrados en una zona específica durante un recorrido. Permite identificar qué tipo de residuos se generan, su estado de descomposición y su nivel de contaminación, así como evaluar preliminarmente su potencial de aprovechamiento.
 
-## 2. Actores (ISO 27001 RBAC)
+## 2. Estructura de Datos
 
-- **Primary User (Escritura):** Brigadista / Clasificador
-  - Permiso requerido: `waste_char.create`
-- **Supervisor (Validación):** Supervisor Revalora
-  - Permiso requerido: `waste_char.approve` (cierra el registro cuando detecta anomalías)
+El formato se divide en las siguientes secciones lógicas:
 
-## 3. Estructura Visual (UI - App Móvil)
+### A. Datos Generales
+Metadatos del levantamiento para trazabilidad.
+- Fecha y Hora
+- Zona / Pasillo / Área específica
+- Responsable (Evaluador / Brigada)
+- Condiciones climáticas
 
-### A. Encabezado (heredado, solo lectura)
+### B. Identificación del Residuo (Tabla Principal)
+Registro fila por fila de los hallazgos.
+- **Tipo de residuo:** Descripción libre (ej. "Cajas de tomate").
+- **Clasificación:** Fruta, Verdura, Mixto, Otro.
+- **Estado Físico:** Fresco, Descompuesto, Mixto.
+- **Nivel de Contaminación:** Bajo, Medio, Alto.
+- **Observaciones:** Notas cualitativas.
 
-- **Contexto:** `Recorrido #SRV-101 / Nave C / Lluvioso`
-- **Hora:** Timestamp automático del dispositivo
+### C. Potencial de Aprovechamiento (Criterio Técnico)
+Evaluación experta sobre el destino posible del residuo.
+- **Potencial Alimento Humano:** Alto/Medio/Bajo/Nulo.
+- **Potencial Alimento Animal:** Alto/Medio/Bajo/Nulo.
+- **Potencial Biofertilizante:** Alto/Medio/Bajo/Nulo.
+- **Potencial Composta:** Alto/Medio/Bajo/Nulo.
 
-### B. Cuerpo: Lista de Hallazgos (dinámico)
+### D. Condiciones en Sitio
+Checklist de condiciones ambientales y operativas asociadas al residuo.
+- Presencia de lixiviados (Sí/No)
+- Olor ofensivo (Alto/Medio/Bajo)
+- Presencia de fauna (Sí/No)
+- Mezcla con inorgánicos (Sí/No)
+- Obstaculización del paso (Sí/No)
 
-- Se representa como tarjetas de residuo.
-- **Tarjeta de residuo #1** (botón “+ Agregar otro residuo”):
-  - **Nombre/Tipo:** Input con autocompletado (`Jitomate`, `Cebolla`, `Cartón`)
-  - **Clasificación:** Chips (`🍎 Fruta`, `🥦 Verdura`, `🥡 Mixto`, `🧱 Otro`)
-  - **Estado físico:** Select (`Fresco`, `Descompuesto`, `Mixto`)
-  - **Contaminación:** Slider (`Bajo — Medio — Alto`)
-  - **Potencial (matriz visual):**
-    - Humano: `[⭐️ ⭐️ ⭐️ ⭐️]` (0 a 4)
-    - Animal: `[⭐️ ⭐️ ⭐️ ⭐️]`
-    - Biofertilizante: `[⭐️ ⭐️ ⭐️ ⭐️]`
-    - Composta: `[⭐️ ⭐️ ⭐️ ⭐️]`
+### E. Evidencia Documental
+Confirmación de respaldo multimedia.
+- Fotografías, Video, Croquis.
 
-### C. Condiciones del sitio (generales de la zona)
+## 3. Estructura Visual (UI)
 
-- **Factores ambientales (switches):**
-  - [ ] ¿Lixiviados presentes?
-  - [ ] ¿Fauna nociva visible?
-  - [ ] ¿Mezcla con inorgánicos?
-  - [ ] ¿Obstruye el paso?
-- **Nivel de olor:** Iconos (`👃 Suave`, `🤢 Medio`, `☠️ Ofensivo`)
+### A. Encabezado
+- Título claro y estado del registro.
+
+### B. Formulario de Captura
+- **Móvil:** Tarjetas individuales para cada residuo identificado, con selectores grandes para clasificación y estado.
+- **Escritorio:** Tabla editable (grid) para captura rápida de múltiples ítems.
+
+### C. Secciones de Evaluación
+- Bloques colapsables o tarjetas separadas para "Potencial" y "Condiciones", vinculadas al residuo o a la zona en general según la lógica de negocio (en este caso, parece ser por zona/evento).
+
+## 4. Reglas de Negocio
+- No se puede cerrar el registro sin al menos un ítem de residuo identificado.
+- Si "Nivel de Contaminación" es Alto, se debe forzar un comentario en Observaciones.
+- Si "Olor ofensivo" es Alto, se sugiere vincular con FO-DIAG-14.
 
 ### D. Evidencia
 

@@ -1,4 +1,4 @@
-# Canvas #20: Arquitectura Maestra de Operación "Revalora Circular"
+# Arquitectura Maestra de Operación "Revalora Circular"
 
 ## Identidad del Formato
 

@@ -1,85 +1,52 @@
-# Canvas Funcional #00: Matriz de Levantamiento (Orquestador)
+# Canvas Funcional #00: Matriz de Levantamiento en Campo
 
 ## Identidad del Formato
 
 - **Código:** FO-DIAG-00
 - **Nombre:** Matriz de Levantamiento en Campo
-- **Naturaleza:** Tablero de Control / Checklist Maestro / Parent Record
-- **Estado:** Fase 0 - Gobernanza
+- **Naturaleza:** Matriz Metodológica / Plan Maestro
+- **Estado:** Fase 0 - Planeación y Control
 
 ## 1. Propósito y Contexto
 
-Este formato actúa como el contenedor padre de una sesión de diagnóstico. No almacena datos de residuos, sino los metadatos de la visita (quién, cuándo, dónde y bajo qué condiciones). Su ID único (`survey_id`) es la llave que agrupa todos los hallazgos de los formatos hijos (01-18).
+Este formato establece el **Plan Maestro de Diagnóstico**. No es solo un registro, es la hoja de ruta que dicta *qué*, *cómo*, *cuándo* y *quién* debe medir cada aspecto del sistema de residuos. Garantiza la coherencia entre la caracterización, operación, infraestructura y actores.
 
-## 2. Actores (ISO 27001 RBAC)
+**Nota Metodológica:** Esta matriz responde a un enfoque integrado. La información se recopila de manera simultánea durante los recorridos. Cada recorrido activa varios registros de forma paralela.
 
-- **Primary User (Escritura):** Coordinador de Brigada / Supervisor Revalora
-  - Permisos requeridos: `surveys.create`, `surveys.update`
-- **Secondary User (Lectura):** Auditor
-  - Permiso requerido: `surveys.read`
+## 2. Estructura de Datos (Columnas de la Matriz)
 
-## 3. Estructura Visual (UI - App Móvil/Tablet)
+La matriz se compone de las siguientes columnas de control:
 
-### A. Encabezado (Contexto de Misión)
+1.  **Nº Ref:** Identificador de la línea estratégica (ej. 6.1, 6.2).
+2.  **Línea de Análisis:** Categoría macro del estudio (ej. Caracterización, Dinámica Operativa).
+3.  **Aspecto a Evaluar:** El objeto específico de estudio.
+4.  **Variable / Indicador:** Qué se mide exactamente (ej. Toneladas/día, Horas pico).
+5.  **Método de Levantamiento:** Técnica a utilizar (ej. Pesaje, Observación, Entrevista).
+6.  **Frecuencia / Momento:** Cuándo debe ejecutarse (ej. 3 recorridos por día).
+7.  **Responsable:** Quién ejecuta la acción.
+8.  **Evidencia / Registro:** El formato hijo donde se vacían los datos (FO-DIAG-01 a 18).
 
-- **ID Recorrido:** `[Auto: #SRV-2023-001]`
-- **Zona Operativa:** `[Select: Nave C / Pasillo 3 / Compactadora]` (Fuente: tabla `zones`)
-- **Turno:** `[Select: Matutino / Vespertino / Nocturno]`
-- **Clima:** `[Select: Soleado / Lluvia / Nublado]` (Dato crítico para lixiviados)
+## 3. Estructura Visual (UI)
 
-### B. Cuerpo (Checklist de Activación)
+### A. Encabezado
+- Título: "FO-DIAG-00 MATRIZ DE LEVANTAMIENTO EN CAMPO"
+- Nota Metodológica visible.
 
-- Visualización tipo acordeón por bloques.
-- **Bloque Residuos (FO-01 a 03):**
-  - Estado: `[🟢 Completado / 🔴 Pendiente]`
-  - Acción: `+ Agregar Caracterización` → abre Canvas 01.
-- **Bloque Operativo (FO-04 a 06):**
-  - Estado: `[🔴 Pendiente]`
-  - Acción: `+ Cronometrar Tiempos` → abre Canvas 04.
-- **Bloque Riesgos (FO-13 a 16):**
-  - Toggle: `¿Riesgo inminente detectado?` `[Sí/No]`
-  - Al seleccionar `Sí`, se habilitan opciones para FO-16.
+### B. Cuerpo (Tabla Maestra)
+- Visualización tabular en escritorio.
+- Visualización de tarjetas agrupadas por "Línea de Análisis" en móviles.
+- Indicadores visuales para el estado de cada línea (Pendiente / En Progreso / Completado - *Simulado para prototipo*).
 
-### C. Footer
+### C. Interacción
+- Cada fila que apunta a un formato (ej. FO-DIAG-01) debe ser un enlace navegable hacia dicho formato digital.
 
-- **Evidencia General:** Botón para capturar foto panorámica del inicio del recorrido.
-- **Cierre:** Botón `Firmar y Finalizar Recorrido` (bloquea la edición).
+## 4. Datos de la Matriz (Fuente)
 
-## 4. Estructura de Base de Datos (Schema Proposal)
+Los datos provienen de la definición metodológica (script python):
 
-Para soportar este formato, se proponen las siguientes tablas en PostgreSQL.
-
-### Tabla principal: `surveys` (Recorridos)
-
-Esta tabla concentra la captura de campo.
-
-| Campo      | Tipo        | Restricción       | Descripción                                      |
-|------------|-------------|-------------------|--------------------------------------------------|
-| id         | UUID        | PK                | Identificador único del recorrido.               |
-| code       | VARCHAR(20) | UNIQUE            | Folio legible (ej. `SRV-101`).                   |
-| user_id    | UUID        | FK → `users`      | Responsable del levantamiento.                   |
-| zone_id    | INT         | FK → `zones`      | Zona auditada.                                   |
-| shift      | ENUM        | NOT NULL          | Valores: `MORNING`, `AFTERNOON`, `NIGHT`.        |
-| weather    | VARCHAR     | NULLABLE          | Condiciones climáticas.                          |
-| status     | ENUM        | DEFAULT `DRAFT`   | Valores: `DRAFT`, `COMPLETED`, `SYNCED`.         |
-| started_at | TIMESTAMP   | NOT NULL          | Hora real de inicio en campo.                    |
-| ended_at   | TIMESTAMP   | NULLABLE          | Hora de cierre.                                  |
-| geo_lat    | FLOAT       | NULLABLE          | GPS latitud (auditoría de presencia).            |
-| geo_lng    | FLOAT       | NULLABLE          | GPS longitud.                                    |
-
-### Tablas de catálogo requeridas
-
-- `zones` (`id`, `name`, `type`, `description`).
-
-### Relaciones (Entity Relationship)
-
-- `surveys` 1 : N `waste_characterizations` (FO-01)
-- `surveys` 1 : N `volume_logs` (FO-02)
-- `surveys` 1 : N `risk_incidents` (FO-16)
-
-> Nota de ingeniería: Todos los formatos del 01 al 18 deben incluir una columna `survey_id` (FK) obligatoria para vincularse a este registro padre.
-
-## 5. Lógica de Negocio Crítica
-
-- **Bloqueo de zona:** No se permite iniciar un nuevo survey en una zona si existe uno previo en estatus `DRAFT` para el mismo usuario (evita duplicados accidentales).
-- **Validación de integridad:** Al intentar cambiar el `status` a `COMPLETED`, el backend valida que las alertas de riesgo marcadas en la UI cuenten con registros hijos en `risk_incidents` (FO-16). Si falta evidencia, devuelve un error.
+- **6.1 Caracterización:** FO-01, FO-02, FO-03
+- **6.2 Dinámica Operativa:** FO-04, FO-05, FO-06
+- **6.3 Actores y Relaciones:** FO-07, FO-08, FO-09
+- **6.4 Infraestructura:** FO-10, FO-11, FO-12
+- **6.5 Condiciones Sanitarias:** FO-13, FO-14, FO-15, FO-16
+- **7 y 8 Resultados:** FO-17, FO-18
