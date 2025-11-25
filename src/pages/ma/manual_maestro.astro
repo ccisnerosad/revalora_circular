@@ -1,0 +1,835 @@
+---
+import LayoutFo from '../../layouts/LayoutFo.astro';
+import '../../styles/global.css';
+---
+
+<LayoutFo title="Manual Maestro - CEDA Circular">
+    <main class="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden">
+            <!-- Header -->
+            <header class="bg-brand-600 text-white p-8 sm:p-12 text-center relative overflow-hidden">
+                <div class="relative z-10">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-4 uppercase tracking-wide">Manual Maestro del Proyecto CEDA Circular®</h1>
+                    <h2 class="text-lg sm:text-xl font-light text-brand-100 max-w-3xl mx-auto">Diseño y Desarrollo de la Consultoría para la Implementación del Proyecto de Aprovechamiento Integral de Residuos CEDA – Modelo de Valor</h2>
+                </div>
+                <!-- Decorative circle -->
+                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div class="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-white mix-blend-overlay"></div>
+                    <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-white mix-blend-overlay"></div>
+                </div>
+            </header>
+
+            <div class="p-8 sm:p-12 space-y-8 text-gray-800 leading-relaxed">
+                
+                <!-- TOC -->
+                <nav class="bg-gray-50 p-6 rounded-lg border border-gray-200 mb-12">
+                    <h3 class="text-xl font-bold text-brand-700 mb-4 border-b border-gray-200 pb-2">Contenido</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li><a href="#introduccion" class="hover:text-brand-600 hover:underline transition-colors">Introducción</a></li>
+                        <li><a href="#naturaleza" class="hover:text-brand-600 hover:underline transition-colors">Naturaleza de la Prueba Piloto</a></li>
+                        <li><a href="#diagnostico-residuos" class="hover:text-brand-600 hover:underline transition-colors">A. Plan de Diagnóstico Técnico-Operativo de Residuos</a></li>
+                        <li><a href="#diagnostico-terrenos" class="hover:text-brand-600 hover:underline transition-colors">B. Diagnóstico de Viabilidad de Terrenos</a></li>
+                        <li><a href="#diagnostico-infraestructura" class="hover:text-brand-600 hover:underline transition-colors">C. Diagnóstico de Viabilidad de Infraestructura</a></li>
+                    </ul>
+                </nav>
+
+                <p>El presente documento se concibe como la guía estratégica y operativa para el diseño, desarrollo, implementación y seguimiento del Proyecto CEDA Circular®, y no como un texto cerrado o definitivo. Su estructura está diseñada para evolucionar progresivamente conforme se generan nuevos datos, aprendizajes y resultados durante la ejecución del proyecto, permitiendo su actualización controlada, su fortalecimiento técnico y su escalamiento informativo, sin perder coherencia, trazabilidad ni alineación normativa.</p>
+                <p>Este enfoque garantiza que cada etapa del proyecto se sustente en evidencia real, mejora continua y toma de decisiones informada, consolidando un modelo robusto, escalable y sostenible en el tiempo.</p>
+
+                <section id="introduccion" class="scroll-mt-20 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-700 border-l-4 border-accent-500 pl-4">INTRODUCCIÓN</h3>
+
+                    <p>La Central de Abasto de la Ciudad de México representa uno de los sistemas de distribución alimentaria más importantes del país y de América Latina. Su escala, dinámica operativa y volumen de residuos generan, al mismo tiempo, un desafío histórico y una oportunidad estratégica sin precedentes.</p>
+
+                    <p>El Proyecto de Aprovechamiento Integral de Residuos CEDA – Modelo de Valor no se limita a una propuesta ambiental, sino que representa una transformación estructural del modelo de gestión de residuos hacia un sistema productivo, medible y autosustentable, con impacto nacional e internacional. Este modelo posiciona a la CEDA como referente en economía circular, seguridad alimentaria y energía limpia, alineándose con los principios establecidos en la ISO 59004: Economía Circular – Marco y principios, así como con el enfoque de gestión basada en procesos, control y mejora continua definido en la ISO 9001: Sistemas de Gestión de la Calidad, e integrando adicionalmente los lineamientos de la ISO 56002: Sistema de Gestión de la Innovación, que fortalece la capacidad del proyecto para estructurar, dirigir y sostener procesos de innovación orientados a la generación de valor, sostenibilidad y competitividad a largo plazo.</p>
+
+                    <p>Asimismo, el proyecto se integra de manera directa con la Agenda 2030 y los Objetivos de Desarrollo Sostenible (ODS), particularmente los ODS 2 Hambre cero, 7 Energía asequible y no contaminante, 12 Producción y consumo responsables y 13 Acción por el clima, al promover el rescate de alimentos, la producción responsable, la reducción de emisiones y el aprovechamiento energético de los residuos. En el ámbito nacional, se articula con el Plan México, la Estrategia Nacional de Economía Circular y el marco normativo vigente, especialmente la Ley General para la Prevención y Gestión Integral de los Residuos (LGPGIR), la Ley de Residuos Sólidos de la Ciudad de México y las disposiciones aplicables en materia ambiental, sanitaria y de protección civil, garantizando un desarrollo técnicamente sólido, jurídicamente sustentado y alineado con las políticas públicas de sostenibilidad.</p>
+
+                    <p>Este proceso de diseño, desarrollo, implementación y mejora del sistema de gestión permitirá convertir este modelo en una realidad operativa, garantizando que cada acción esté sustentada técnica, normativa y financieramente. En este contexto, el proceso se concibe como una ruta ordenada, progresiva y participativa, orientada a:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Reducir la incertidumbre técnica y operativa.</li>
+                        <li>Generar confianza institucional.</li>
+                        <li>Minimizar riesgos.</li>
+                        <li>Construir resultados visibles desde las primeras etapas.</li>
+                        <li>Asegurar la viabilidad y escalabilidad del proyecto.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">Resistencia al cambio</h4>
+                    <p>Como parte inherente del proceso de implementación, se reconoce la existencia de resistencia al cambio derivada de experiencias previas y de modelos de intervención que no han generado resultados sostenibles. Por ello, este proyecto se estructurará bajo un enfoque gradual, basado en evidencia, medición real y transparencia, permitiendo que cada actor comprenda claramente su papel, los beneficios esperados y la lógica del sistema.</p>
+
+                    <div class="bg-brand-50 p-6 rounded-lg border-l-4 border-brand-500 my-6">
+                        <p class="font-medium text-brand-900">Este modelo se desarrollará bajo una premisa clave:</p>
+                        <p class="italic text-brand-800 mt-2">No imponer una transformación, sino construirla con evidencia, resultados visibles y participación gradual.</p>
+                    </div>
+
+                    <p>De esta manera, este proceso no representa un experimento, sino la construcción de un sistema serio, ordenado y sustentable que permitirá que la Central de Abasto se convierta en referente nacional e internacional en gestión circular de residuos.</p>
+                    
+                    <p>La resistencia al cambio se atenderá mediante:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Diagnósticos transparentes.</li>
+                        <li>Resultados medibles desde el piloto.</li>
+                        <li>Beneficios sociales, ambientales y operativos visibles.</li>
+                        <li>Comunicación clara y permanente.</li>
+                        <li>Participación de los actores involucrados.</li>
+                    </ul>
+
+                    <p>El enfoque metodológico es claro y progresivo:</p>
+                    <ol class="list-decimal list-inside pl-4 space-y-1 font-medium text-brand-800">
+                        <li>Medir primero</li>
+                        <li>Diseñar con datos</li>
+                        <li>Implementar con control</li>
+                        <li>Mejorar con evidencia</li>
+                    </ol>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">Flexibilidad del proyecto</h4>
+                    <p>El proyecto, en sus etapas de diseño, desarrollo e implementación, se concibe como un sistema técnico adaptable, cuyo desarrollo podrá incorporar ajustes operativos y metodológicos derivados del análisis de resultados, condiciones reales de operación y mejora continua, siempre que dichos ajustes no comprometan la eficiencia, eficacia, desempeño ni los resultados establecidos, ni generen afectaciones a la viabilidad financiera, inversión proyectada o control de costos.</p>
+                    <p>Esta flexibilidad se ejercerá de manera controlada y subordinada al enfoque metodológico previamente definido, garantizando en todo momento la conformidad con los principios de gestión por procesos, enfoque basado en riesgos y mejora continua establecidos en la ISO 9001, los principios de circularidad, valorización de recursos y regeneración sistémica definidos en la ISO 59004, así como el cumplimiento del marco jurídico nacional aplicable en materia de gestión integral de residuos, protección ambiental, sanidad y protección civil.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">Estructura operativa del proceso de consultoría</h4>
+                    <p>Para lograrlo, el trabajo se organizará en tres bloques estratégicos, que permitirán avanzar con claridad, control y credibilidad:</p>
+                    <ul class="list-none pl-0 space-y-2 mt-2">
+                        <li class="flex items-center"><span class="text-accent-600 font-bold mr-2">A.</span> Plan de Diagnóstico Técnico-Operativo de Residuos</li>
+                        <li class="flex items-center"><span class="text-accent-600 font-bold mr-2">B.</span> Diagnóstico de Viabilidad de Terrenos</li>
+                        <li class="flex items-center"><span class="text-accent-600 font-bold mr-2">C.</span> Ruta de Implementación del Proyecto CEDA Circular®</li>
+                    </ul>
+                </section>
+
+                <hr class="border-gray-200 my-12">
+
+                <section id="naturaleza" class="scroll-mt-20 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-700 border-l-4 border-accent-500 pl-4">NATURALEZA DE LA PRUEBA PILOTO COMO FASE OPERATIVA DEL SISTEMA DEFINITIVO</h3>
+
+                    <p>En el marco del Proyecto CEDA Circular®, la Prueba Piloto no debe interpretarse como un ejercicio experimental, teórico o provisional, sino como la primera fase operativa real del sistema definitivo de aprovechamiento integral de residuos. Su finalidad no es “probar si el modelo funciona”, sino iniciar su operación de manera controlada, medible y técnicamente sustentada, bajo condiciones reales de la Central de Abasto.</p>
+
+                    <p>La Prueba Piloto representa el inicio formal de la implementación del sistema, conservando la misma lógica estructural, técnica y normativa que regirá a la planta ideal en su etapa de consolidación. La diferencia entre la fase piloto y la fase industrial no radica en el concepto ni en el objetivo, sino únicamente en su escala, capacidad, cobertura y nivel de automatización.</p>
+
+                    <p>Este enfoque se fundamenta en los principios de mejora continua y gestión progresiva establecidos en la ISO 9001 (Sistema de Gestión de Calidad), así como en el modelo evolutivo de transición hacia la circularidad definido en la ISO 59004 (Economía circular. Marco, principios y guía para su implementación), los cuales conciben la implementación como un proceso dinámico que se fortalece mediante la operación real, la medición y el análisis sistemático del desempeño.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">Carácter operativo de la Prueba Piloto</h4>
+                    <p>La Prueba Piloto se diseña y ejecuta como una instalación funcional que:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Opera de forma continua.</li>
+                        <li>Genera productos reales (alimento humano, alimento animal, biofertilizante, composta y biogás).</li>
+                        <li>Produce información medible y verificable.</li>
+                        <li>Permite evaluar desempeño técnico, operativo, sanitario y económico.</li>
+                        <li>Sirve como base para la optimización progresiva del sistema.</li>
+                    </ul>
+                    <p>Lo que se implementa en esta etapa constituye la base del modelo que se desarrollará de manera permanente, incorporando ajustes, mejoras y correcciones durante la vida útil del proyecto, sin alterar su estructura fundamental.</p>
+
+                    <div class="bg-gray-100 p-4 rounded border-l-4 border-gray-500">
+                        <p class="font-semibold">La Prueba Piloto no es una simulación ni una maqueta operativa.</p>
+                        <p>Es el punto de partida real del sistema definitivo, diseñado para evolucionar.</p>
+                    </div>
+
+                    <p>La transición hacia la planta ideal se logra mediante un proceso continuo de:</p>
+                    <ol class="list-decimal list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Operación controlada.</li>
+                        <li>Medición de resultados.</li>
+                        <li>Identificación de brechas.</li>
+                        <li>Implementación de mejoras.</li>
+                        <li>Escalamiento progresivo.</li>
+                    </ol>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">Diferenciación entre fase piloto y fase industrial</h4>
+                    <div class="overflow-x-auto my-6">
+                        <table class="w-full text-sm text-left text-gray-600 border border-gray-200 rounded-lg overflow-hidden">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">Elemento</th>
+                                    <th scope="col" class="px-6 py-3 text-brand-700">Prueba Piloto</th>
+                                    <th scope="col" class="px-6 py-3 text-accent-700">Planta Ideal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Concepto del sistema</td>
+                                    <td class="px-6 py-4">Definitivo</td>
+                                    <td class="px-6 py-4">Definitivo</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Lógica operativa</td>
+                                    <td class="px-6 py-4">Completa</td>
+                                    <td class="px-6 py-4">Completa</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Cumplimiento normativo</td>
+                                    <td class="px-6 py-4">Total</td>
+                                    <td class="px-6 py-4">Total</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Capacidad instalada</td>
+                                    <td class="px-6 py-4">Limitada y controlada</td>
+                                    <td class="px-6 py-4">Ampliada</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Cobertura</td>
+                                    <td class="px-6 py-4">Focalizada</td>
+                                    <td class="px-6 py-4">Integral</td>
+                                </tr>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Automatización</td>
+                                    <td class="px-6 py-4">Básica / Intermedia</td>
+                                    <td class="px-6 py-4">Avanzada</td>
+                                </tr>
+                                <tr class="bg-white hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-medium text-gray-900">Producción</td>
+                                    <td class="px-6 py-4">Real</td>
+                                    <td class="px-6 py-4">Real a escala industrial</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <ul class="list-none space-y-2 pl-4">
+                        <li>a. La Prueba Piloto no se construye para experimentar, sino para consolidar.</li>
+                        <li>a. No se implementa para observar, sino para producir.</li>
+                        <li>b. No se instala para intentar, sino para evolucionar.</li>
+                    </ul>
+                    <p>Cada proceso activado en esta fase responde al diseño definitivo del sistema y se ajusta únicamente para optimizar su eficiencia, eficacia y sostenibilidad, garantizando una transición ordenada hacia la planta de mayor escala.</p>
+                    <p>La Prueba Piloto constituye la primera expresión tangible del Proyecto CEDA Circular®, y su correcta comprensión es clave para asegurar la confianza institucional, la coherencia técnica y la viabilidad del modelo a largo plazo. Su implementación representa el inicio real de una transformación estructural, no una etapa transitoria sin impacto.</p>
+                </section>
+
+                <hr class="border-gray-200 my-12">
+
+                <section id="diagnostico-residuos" class="scroll-mt-20 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-700 border-l-4 border-accent-500 pl-4">A. DIAGNÓSTICO TÉCNICO-OPERATIVO DE RESIDUOS</h3>
+
+                    <p>Este plan tiene como objetivo establecer una comprensión profunda, real y documentada de cómo se generan, manejan y disponen actualmente los residuos en la Central de Abasto, para que el diseño del sistema de gestión circular se fundamente en datos objetivos y no en supuestos.</p>
+                    <p>El diagnóstico busca reducir la incertidumbre, anticipar riesgos y sentar las bases para una implementación ordenada, gradual y viable, respetando la complejidad operativa y social del entorno.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">2. Objetivo general</h4>
+                    <p>Desarrollar un diagnóstico técnico-operativo integral que permita identificar escenarios reales de intervención, definir estrategias de implementación progresiva y establecer los lineamientos técnicos para el diseño del modelo piloto de aprovechamiento de residuos.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">3. Objetivos específicos</h4>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Identificar el tipo y comportamiento de los residuos generados por zonas.</li>
+                        <li>Determinar volúmenes reales y patrones de generación.</li>
+                        <li>Analizar la logística actual de recolección y disposición.</li>
+                        <li>Identificar actores involucrados formal e informalmente.</li>
+                        <li>Detectar puntos críticos, zonas de conflicto y saturación.</li>
+                        <li>Evaluar condiciones sanitarias y ambientales existentes.</li>
+                        <li>Establecer escenarios técnicos de implementación gradual.</li>
+                        <li>Generar información base para el diseño del sistema de gestión.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">4. Alcance del diagnóstico</h4>
+                    <p>El diagnóstico abarcará exclusivamente la fase de análisis y levantamiento de información, sin intervención física sobre los procesos actuales, considerando:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Áreas de frutas, verduras y productos perecederos.</li>
+                        <li>Zonas de alta generación de residuos.</li>
+                        <li>Rutas actuales de recolección.</li>
+                        <li>Horarios pico de generación.</li>
+                        <li>Infraestructura existente relacionada con limpieza y manejo.</li>
+                    </ul>
+                    <p>Este bloque no modifica operaciones, su propósito es comprenderlas.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">5. Metodología de trabajo</h4>
+                    <p>El diagnóstico se desarrollará bajo un enfoque técnico-participativo, integrando:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Observación directa en campo.</li>
+                        <li>Recorridos técnicos programados.</li>
+                        <li>Registro horario de flujos de residuos.</li>
+                        <li>Mapeo de puntos de acumulación.</li>
+                        <li>Identificación de actores y roles.</li>
+                        <li>Entrevistas dirigidas a personal operativo.</li>
+                        <li>Registro fotográfico y documental.</li>
+                    </ul>
+                    <p>La información recabada se sistematizará para su análisis y toma de decisiones.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">6. Estructura del diagnóstico</h4>
+                    <p>El Diagnóstico se desarrollará en las siguientes líneas de análisis:</p>
+                    <div class="space-y-4 pl-4">
+                        <div>
+                            <strong class="text-brand-800">6.1 Caracterización de residuos</strong>
+                            <ul class="list-disc list-inside pl-4 text-gray-700">
+                                <li>Tipología predominante.</li>
+                                <li>Grado de aprovechamiento potencial.</li>
+                                <li>Condiciones físicas del residuo.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-brand-800">6.2 Dinámica operativa actual</strong>
+                            <ul class="list-disc list-inside pl-4 text-gray-700">
+                                <li>Forma de recolección.</li>
+                                <li>Frecuencia y rutas.</li>
+                                <li>Tiempos de retiro.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-brand-800">6.3 Actores y relaciones</strong>
+                            <ul class="list-disc list-inside pl-4 text-gray-700">
+                                <li>Intervención formal e informal.</li>
+                                <li>Intereses económicos ligados al residuo.</li>
+                                <li>Riesgos de conflicto.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-brand-800">6.4 Infraestructura existente</strong>
+                            <ul class="list-disc list-inside pl-4 text-gray-700">
+                                <li>Contenedores y equipos actuales.</li>
+                                <li>Espacios de acopio.</li>
+                                <li>Condiciones físicas.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong class="text-brand-800">6.5 Condiciones sanitarias y ambientales</strong>
+                            <ul class="list-disc list-inside pl-4 text-gray-700">
+                                <li>Presencia de lixiviados.</li>
+                                <li>Olores.</li>
+                                <li>Fauna nociva.</li>
+                                <li>Riesgos sanitarios.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">7. Productos entregables</h4>
+                    <p>Al finalizar este plan se obtendrán:</p>
+                    <ol class="list-decimal list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Diagnóstico técnico documentado del sistema actual.</li>
+                        <li>Mapa de generación y flujo de residuos.</li>
+                        <li>Identificación de zonas críticas.</li>
+                        <li>Matriz de actores e intereses.</li>
+                        <li>Evaluación de riesgos operativos.</li>
+                        <li>Escenarios de intervención.</li>
+                        <li>Base para el diseño del modelo piloto.</li>
+                    </ol>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">8. Resultados esperados</h4>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Información real y confiable para toma de decisiones.</li>
+                        <li>Reducción de incertidumbre técnica.</li>
+                        <li>Visión clara del estado actual.</li>
+                        <li>Prevención de inversiones improvisadas.</li>
+                        <li>Base sólida para el diseño de la planta piloto.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">9. Mensaje estratégico para el personal de la CEDA</h4>
+                    <p>Este diagnóstico no busca evidenciar fallas, sino comprender la complejidad real del sistema para transformarlo de manera ordenada y viable. La información obtenida permitirá diseñar un modelo que responda a la realidad operativa y no a suposiciones externas.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">10. Cierre del plan de diagnóstico técnico-operativo de residuos</h4>
+                    <p>El Diagnóstico Técnico-Operativo representa el punto de partida del modelo de gestión circular. Sin un conocimiento profundo del sistema actual, cualquier intervención sería incompleta, riesgosa o prematura.</p>
+                    <p>Este plan garantiza que las siguientes etapas del proyecto se fundamenten en datos reales, participación institucional y criterios técnicos sólidos.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">11. Diagnóstico vs Matriz de Levantamiento en Campo</h4>
+                    <p>El Diagnóstico Técnico-Operativo de Residuos se encuentra directamente alineado y soportado por la Matriz de Levantamiento en Campo FO-DIAG-00, la cual constituye el instrumento operativo que traduce la metodología del diagnóstico en acciones concretas y medibles.</p>
+                    <p>Dicha matriz establece, para cada línea de análisis del A. Diagnóstico Técnico-Operativo de Residuos los aspectos a evaluar, las variables a registrar, los métodos de levantamiento, la frecuencia de aplicación, los responsables y los formatos de evidencia correspondientes, permitiendo asegurar que cada numeral del diagnóstico se ejecute bajo criterios técnicos, sistemáticos y trazables.</p>
+                    <p>La Matriz de Levantamiento en Campo garantiza que la recolección de información no dependa de interpretaciones subjetivas, sino de procedimientos estructurados, generando evidencia documental verificable que respalda la toma de decisiones, la priorización de zonas y la definición de escenarios de intervención piloto.</p>
+                    <p>Este enfoque cumple con los principios de:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>ISO 9001: toma de decisiones basada en evidencia y control de procesos.</li>
+                        <li>ISO 59004: planificación estructurada para la circularidad y valorización de recursos.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">Función estratégica de esta relación</h4>
+                    <p>Al integrar esta mención, el documento demuestra que:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>El diagnóstico no es improvisado, sino planificado.</li>
+                        <li>Cada dato tiene un soporte documental (FO-DIAG-01 al FO-DIAG-18).</li>
+                        <li>Existe coherencia entre metodología, diagnóstico y ejecución en campo.</li>
+                        <li>Se asegura trazabilidad técnica del proceso.</li>
+                    </ul>
+                </section>
+
+                <hr class="border-gray-200 my-12">
+
+                <section id="diagnostico-terrenos" class="scroll-mt-20 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-700 border-l-4 border-accent-500 pl-4">B. DIAGNÓSTICO DE VIABILIDAD DE TERRENOS</h3>
+                    <p class="text-sm text-gray-500 font-medium uppercase tracking-wide">Proyecto CEDA Circular® – Planta Piloto (Fase Año 1)<br>Documento técnico para toma de decisión estratégica</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">1. Propósito del Diagnóstico</h4>
+                    <p>El presente diagnóstico tiene como finalidad evaluar técnica y normativamente la viabilidad de dos terrenos propuestos por la CEDA para la instalación de la planta piloto del Proyecto CEDA Circular®, considerando criterios de seguridad, riesgo, normatividad aplicable y factibilidad operativa real.</p>
+                    <p>Este análisis busca prevenir decisiones precipitadas que pongan en riesgo la integridad física, jurídica e institucional del proyecto, y establecer una elección fundamentada, defendible y sostenible.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">2. Terrenos evaluados</h4>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Terreno A: Área con presencia de infraestructura eléctrica asociada a CFE.</li>
+                        <li>Terreno B: Área con presencia de ducto de transporte de hidrocarburos (PEMEX).</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">3. Criterios generales de evaluación</h4>
+                    <p>Los terrenos fueron analizados bajo los siguientes criterios:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Seguridad física y operativa</li>
+                        <li>Servidumbre de paso y zonas de restricción</li>
+                        <li>Compatibilidad con planta de residuos orgánicos</li>
+                        <li>Riesgo de explosión/incendio</li>
+                        <li>Normatividad aplicable</li>
+                        <li>Viabilidad legal y asegurabilidad</li>
+                        <li>Impacto reputacional</li>
+                        <li>Potencial de escalamiento futuro</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">4. Matriz comparativa técnica y normativa</h4>
+                    <div class="overflow-x-auto my-6">
+                        <table class="w-full text-sm text-left text-gray-600 border border-gray-200 rounded-lg">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-3">Criterio</th>
+                                    <th class="px-4 py-3">Marco normativo / referencia</th>
+                                    <th class="px-4 py-3 text-brand-700">Terreno A – Infraestructura CFE</th>
+                                    <th class="px-4 py-3 text-red-700">Terreno B – Ducto PEMEX</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Seguridad básica</td>
+                                    <td class="px-4 py-3 text-xs">Ley General de Protección Civil, Reglamento de Construcciones CDMX</td>
+                                    <td class="px-4 py-3">Riesgo medio controlable si se respetan distancias y servidumbres</td>
+                                    <td class="px-4 py-3 text-red-600 font-bold">Riesgo crítico por alta peligrosidad inherente</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Servidumbre legal</td>
+                                    <td class="px-4 py-3 text-xs">Ley de la Industria Eléctrica / Ley de Hidrocarburos</td>
+                                    <td class="px-4 py-3">Construcción posible fuera de franja CFE</td>
+                                    <td class="px-4 py-3">Construcción no recomendable sobre ducto</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Compatibilidad con planta de residuos</td>
+                                    <td class="px-4 py-3 text-xs">NOM-083-SEMARNAT, LGPGIR</td>
+                                    <td class="px-4 py-3">Compatible condicionado</td>
+                                    <td class="px-4 py-3">Altamente incompatible</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Dictámenes requeridos</td>
+                                    <td class="px-4 py-3 text-xs">Protección Civil, CFE, ASEA</td>
+                                    <td class="px-4 py-3">Requiere dictamen técnico de CFE</td>
+                                    <td class="px-4 py-3">Requiere permisos complejos y poco probables</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Riesgo ambiental</td>
+                                    <td class="px-4 py-3 text-xs">ISO 14001, ISO 20675</td>
+                                    <td class="px-4 py-3">Controlable</td>
+                                    <td class="px-4 py-3">Elevado</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Asegurabilidad</td>
+                                    <td class="px-4 py-3 text-xs">Prácticas aseguradoras</td>
+                                    <td class="px-4 py-3">Posible</td>
+                                    <td class="px-4 py-3">Comprometida</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Imagen institucional</td>
+                                    <td class="px-4 py-3 text-xs">Buenas prácticas de gobernanza</td>
+                                    <td class="px-4 py-3">Defendible con estudios</td>
+                                    <td class="px-4 py-3">Cuestionable y riesgosa</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Escalabilidad futura</td>
+                                    <td class="px-4 py-3 text-xs">Planeación territorial</td>
+                                    <td class="px-4 py-3">Posible con restricciones</td>
+                                    <td class="px-4 py-3">No viable</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Viabilidad técnica</td>
+                                    <td class="px-4 py-3 text-xs">Evaluación integral</td>
+                                    <td class="px-4 py-3 text-green-600 font-bold">✅ Viable condicionado</td>
+                                    <td class="px-4 py-3 text-red-600 font-bold">❌ No viable</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">5. Análisis técnico por terreno</h4>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                            <h5 class="font-bold text-brand-700 mb-3">5.1 Terreno A – Infraestructura CFE</h5>
+                            <p class="font-bold text-sm text-gray-900">Pros:</p>
+                            <ul class="list-disc list-inside pl-2 text-sm text-gray-700 mb-2">
+                                <li>Posible utilización respetando franjas de seguridad.</li>
+                                <li>Riesgo manejable con estudios técnicos previos.</li>
+                                <li>Viable para fase piloto con control.</li>
+                            </ul>
+                            <p class="font-bold text-sm text-gray-900">Contras:</p>
+                            <ul class="list-disc list-inside pl-2 text-sm text-gray-700 mb-2">
+                                <li>Requiere dictámenes técnicos previos.</li>
+                                <li>Restricciones en diseño y altura.</li>
+                                <li>Mayor planificación.</li>
+                            </ul>
+                            <p class="font-bold text-sm text-gray-900">Condición necesaria:</p>
+                            <p class="text-sm text-gray-700">Obtención de dictamen favorable de CFE y Protección Civil que confirme que la operación de la planta no interfiere con la infraestructura eléctrica.</p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-sm">
+                            <h5 class="font-bold text-red-700 mb-3">5.2 Terreno B – Ducto PEMEX</h5>
+                            <p class="font-bold text-sm text-gray-900">Pros:</p>
+                            <ul class="list-disc list-inside pl-2 text-sm text-gray-700 mb-2">
+                                <li>Disponibilidad de espacio.</li>
+                            </ul>
+                            <p class="font-bold text-sm text-gray-900">Contras:</p>
+                            <ul class="list-disc list-inside pl-2 text-sm text-gray-700 mb-2">
+                                <li>Riesgo elevado de explosión.</li>
+                                <li>Probable rechazo institucional.</li>
+                                <li>No asegurable.</li>
+                                <li>Restringido normativamente.</li>
+                                <li>Alto impacto reputacional negativo.</li>
+                            </ul>
+                            <p class="font-bold text-sm text-gray-900">Condición real:</p>
+                            <p class="text-sm text-gray-700">No cumple con criterios mínimos de seguridad ni viabilidad técnica.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">6. Conclusión de viabilidad</h4>
+                    <div class="overflow-x-auto my-4">
+                        <table class="w-full text-sm text-left text-gray-600 border border-gray-200 rounded-lg">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-3">Terreno</th>
+                                    <th class="px-4 py-3">Resultado técnico</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Terreno A – CFE</td>
+                                    <td class="px-4 py-3 text-green-600 font-bold">✅ VIABLE CONDICIONADO</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Terreno B – PEMEX</td>
+                                    <td class="px-4 py-3 text-red-600 font-bold">❌ NO VIABLE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">7. Recomendación técnica</h4>
+                    <p>Se recomienda avanzar exclusivamente con el Terreno A bajo las siguientes condiciones:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Respeto a servidumbre de infraestructura eléctrica</li>
+                        <li>Obtención de dictamen técnico formal por parte de CFE</li>
+                        <li>Visto bueno de Protección Civil</li>
+                        <li>Delimitación física clara de la planta piloto</li>
+                        <li>Incorporación de medidas de seguridad complementarias</li>
+                    </ul>
+                    <p>El Terreno B deberá descartarse por razones de seguridad, normatividad y riesgo institucional.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">8. Recomendación de evaluación técnica, normativa y de viabilidad de terrenos</h4>
+                    <p>La instalación de la planta piloto del Proyecto CEDA Circular® debe realizarse en un terreno técnicamente seguro, normativamente defendible y libre de riesgos críticos. Bajo este análisis, el terreno con infraestructura CFE es viable de forma condicionada, mientras que el terreno con ducto PEMEX no cumple con los criterios mínimos de seguridad y debe descartarse.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">MATRIZ DE EVALUACIÓN TÉCNICA, NORMATIVA Y DE VIABILIDAD DE TERRENOS</h4>
+                    <p class="text-sm text-gray-500 mb-4">Planta Piloto Proyecto CEDA Circular® (1,000 m² – Año 1)</p>
+                    
+                    <div class="overflow-x-auto my-6">
+                        <table class="w-full text-xs text-left text-gray-600 border border-gray-200 rounded-lg">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th class="px-2 py-2 border">CRITERIO</th>
+                                    <th class="px-2 py-2 border">REQUISITO / ENFOQUE TÉCNICO</th>
+                                    <th class="px-2 py-2 border">REQUERIMIENTO NORMATIVO APLICABLE</th>
+                                    <th class="px-2 py-2 border text-brand-700">TERRENO A – CON INFRAESTRUCTURA CFE</th>
+                                    <th class="px-2 py-2 border text-red-700">TERRENO B – CON DUCTO PEMEX</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">1. Seguridad básica de instalación</td>
+                                    <td class="px-2 py-2 border">No construir sobre infraestructura crítica ni zonas de alto riesgo.</td>
+                                    <td class="px-2 py-2 border">Ley General de Protección Civil, Reglamento de Construcciones CDMX, NOM-002-STPS-2010, NOM-001-SEDEMA</td>
+                                    <td class="px-2 py-2 border">Riesgo medio controlable si se respetan distancias.</td>
+                                    <td class="px-2 py-2 border text-red-600">Riesgo alto crítico por potencial explosivo del ducto.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">2. Servidumbres y franjas de seguridad</td>
+                                    <td class="px-2 py-2 border">Respeto a zonas de servidumbre y derecho de vía.</td>
+                                    <td class="px-2 py-2 border">Ley de la Industria Eléctrica (Art. 120–121), Ley de Hidrocarburos (Art. 70–75), Lineamientos técnicos CFE / PEMEX</td>
+                                    <td class="px-2 py-2 border">Posible si no se invade franja de servidumbre y se respeta distancia reglamentaria.</td>
+                                    <td class="px-2 py-2 border">No permitido construir dentro de la franja del ducto.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">3. Compatibilidad con planta de residuos</td>
+                                    <td class="px-2 py-2 border">La actividad no debe incrementar el riesgo existente.</td>
+                                    <td class="px-2 py-2 border">NOM-083-SEMARNAT-2003, LGPGIR, ISO 20675, ISO 14001</td>
+                                    <td class="px-2 py-2 border">Compatible condicionado a control técnico.</td>
+                                    <td class="px-2 py-2 border">Incompatible por naturaleza del riesgo combinado (gas + residuo).</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">4. Autorizaciones técnicas requeridas</td>
+                                    <td class="px-2 py-2 border">Dictámenes de las entidades responsables.</td>
+                                    <td class="px-2 py-2 border">Dictamen técnico CFE, Visto bueno Protección Civil CDMX, Programa Interno PC</td>
+                                    <td class="px-2 py-2 border">Requiere dictamen previo y autorización condicionada.</td>
+                                    <td class="px-2 py-2 border">Requiere anuencia PEMEX + ASEA, altamente improbable.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">5. Impacto en aseguramiento</td>
+                                    <td class="px-2 py-2 border">El sitio debe ser asegurable.</td>
+                                    <td class="px-2 py-2 border">Normas de riesgo de aseguradoras, Ley sobre Contrato de Seguro</td>
+                                    <td class="px-2 py-2 border">Asegurable bajo condiciones estrictas.</td>
+                                    <td class="px-2 py-2 border">Alto riesgo de no asegurabilidad.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">6. Viabilidad técnica para fase piloto</td>
+                                    <td class="px-2 py-2 border">Debe garantizar operación segura por 12 meses.</td>
+                                    <td class="px-2 py-2 border">ISO 59004, ISO 9001</td>
+                                    <td class="px-2 py-2 border">Viable condicionado.</td>
+                                    <td class="px-2 py-2 border">No viable.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">7. Escalabilidad futura</td>
+                                    <td class="px-2 py-2 border">Posibilidad de crecimiento sin reubicación forzosa.</td>
+                                    <td class="px-2 py-2 border">Reglamento Urbano CDMX, Planeación territorial</td>
+                                    <td class="px-2 py-2 border">Viable con restricciones.</td>
+                                    <td class="px-2 py-2 border">No viable para escalamiento.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">8. Impacto reputacional e institucional</td>
+                                    <td class="px-2 py-2 border">La ubicación no debe generar cuestionamientos públicos graves.</td>
+                                    <td class="px-2 py-2 border">Principios de Buen Gobierno, Transparencia pública</td>
+                                    <td class="px-2 py-2 border">Defendible con estudios.</td>
+                                    <td class="px-2 py-2 border">Altamente cuestionable.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">9. Pros principales</td>
+                                    <td class="px-2 py-2 border">—</td>
+                                    <td class="px-2 py-2 border">—</td>
+                                    <td class="px-2 py-2 border">Terreno útil con control técnico. Posible para piloto. Riesgo mitigable.</td>
+                                    <td class="px-2 py-2 border">Disponibilidad inmediata, pero no compensa el riesgo.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">10. Contras principales</td>
+                                    <td class="px-2 py-2 border">—</td>
+                                    <td class="px-2 py-2 border">—</td>
+                                    <td class="px-2 py-2 border">Requiere mayor análisis previo. Restricciones de diseño.</td>
+                                    <td class="px-2 py-2 border">Riesgo técnico extremo. Barreras legales y de seguro.</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">11. Conclusión de viabilidad</td>
+                                    <td class="px-2 py-2 border">Evaluación integral técnica-normativa</td>
+                                    <td class="px-2 py-2 border">Basado en todo el marco anterior</td>
+                                    <td class="px-2 py-2 border font-bold text-green-600">✅ VIABLE CONDICIONADO</td>
+                                    <td class="px-2 py-2 border font-bold text-red-600">❌ NO VIABLE</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">9. Conclusión técnico-normativa</h4>
+                    <div class="overflow-x-auto my-4">
+                        <table class="w-full text-sm text-left text-gray-600 border border-gray-200 rounded-lg">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-3">Terreno</th>
+                                    <th class="px-4 py-3">Resultado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Terreno con CFE</td>
+                                    <td class="px-4 py-3">✅ VIABLE CONDICIONADO: siempre que se respeten franjas de seguridad, se obtenga dictamen técnico de CFE, visto bueno de Protección Civil y se asegure que la planta no interfiera con la infraestructura eléctrica.</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="px-4 py-3 font-medium">Terreno con ducto PEMEX</td>
+                                    <td class="px-4 py-3">❌ NO VIABLE: por riesgo técnico, normativo, legal y reputacional. La instalación de una planta piloto con manejo de residuos y digestión sobre un ducto de hidrocarburos no es responsable ni defendible técnicamente.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Desde una perspectiva técnica y normativa, el terreno asociado a CFE puede considerarse viable de forma condicionada para la fase piloto, siempre que se respeten las franjas de seguridad y se cuente con dictámenes favorables. En cambio, el terreno con ducto PEMEX no cumple con criterios mínimos de seguridad ni normatividad aplicable, por lo que se considera no viable para la instalación de la planta piloto.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">10. Matriz preliminar de acondicionamiento técnico-normativo del terreno viable (CFE)</h4>
+                    <p>Con base en la conclusión de viabilidad del Terreno A (infraestructura CFE), se establece como primera recomendación la elaboración de una Matriz de Acondicionamiento del Terreno, cuyo propósito es definir las condiciones mínimas que deberá cumplir el sitio para la correcta instalación de la planta piloto durante el Año 1, garantizando seguridad, cumplimiento normativo y operación controlada.</p>
+                    <p>Esta matriz permitirá orientar las decisiones de adecuación física del terreno en relación con cada uno de los componentes del sistema productivo:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Área de alimento humano</li>
+                        <li>Área de alimento animal</li>
+                        <li>Área de biodigestión (biogás)</li>
+                        <li>Área de biofertilizante</li>
+                        <li>Área de compostaje</li>
+                        <li>Área de circulación, seguridad y servicios</li>
+                    </ul>
+
+                    <h5 class="text-lg font-bold text-brand-600 mt-6">Matriz preliminar de acondicionamiento (Planta Piloto – Primera recomendación técnica)</h5>
+                    <div class="overflow-x-auto my-6">
+                        <table class="w-full text-xs text-left text-gray-600 border border-gray-200 rounded-lg">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th class="px-2 py-2 border">Componente de la planta</th>
+                                    <th class="px-2 py-2 border">Requerimiento de acondicionamiento</th>
+                                    <th class="px-2 py-2 border">Enfoque técnico</th>
+                                    <th class="px-2 py-2 border">Referencia normativa aplicable</th>
+                                    <th class="px-2 py-2 border">Recomendación inicial</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Alimentos para consumo humano</td>
+                                    <td class="px-2 py-2 border">Área delimitada, techada, con piso sanitario, drenaje y control de acceso</td>
+                                    <td class="px-2 py-2 border">Higiene y bioseguridad</td>
+                                    <td class="px-2 py-2 border">NOM-251-SSA1-2009</td>
+                                    <td class="px-2 py-2 border">Zona separada físicamente del resto</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Alimento animal</td>
+                                    <td class="px-2 py-2 border">Espacio ventilado, piso lavable, protección perimetral</td>
+                                    <td class="px-2 py-2 border">Prevención de contaminación cruzada</td>
+                                    <td class="px-2 py-2 border">LGPGIR / Buenas prácticas sanitarias</td>
+                                    <td class="px-2 py-2 border">Área contigua pero independiente</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Biodigestión (biogás)</td>
+                                    <td class="px-2 py-2 border">Ubicación en zona periférica, con ventilación natural y sin riesgo eléctrico directo</td>
+                                    <td class="px-2 py-2 border">Seguridad operativa</td>
+                                    <td class="px-2 py-2 border">ISO 20675 / Protección Civil</td>
+                                    <td class="px-2 py-2 border">Distancia mínima de infraestructura CFE</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Biofertilizante</td>
+                                    <td class="px-2 py-2 border">Área con contención de escurrimientos y control de lixiviados</td>
+                                    <td class="px-2 py-2 border">Control ambiental</td>
+                                    <td class="px-2 py-2 border">ISO 14001 / LGPGIR</td>
+                                    <td class="px-2 py-2 border">Piso con pendiente y canal de drenaje</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Compostaje</td>
+                                    <td class="px-2 py-2 border">Zona con drenaje natural, separación física y cobertura parcial</td>
+                                    <td class="px-2 py-2 border">Control sanitario</td>
+                                    <td class="px-2 py-2 border">NOM-083-SEMARNAT-2003</td>
+                                    <td class="px-2 py-2 border">Área aireada y accesible</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Circulación y seguridad</td>
+                                    <td class="px-2 py-2 border">Rutas señalizadas, accesos libres y franjas de seguridad</td>
+                                    <td class="px-2 py-2 border">Prevención de riesgo</td>
+                                    <td class="px-2 py-2 border">Reglamento Protección Civil CDMX</td>
+                                    <td class="px-2 py-2 border">Definir pasillos y puntos de emergencia</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="px-2 py-2 border font-bold">Infraestructura general</td>
+                                    <td class="px-2 py-2 border">Delimitación perimetral, señalética, control de acceso</td>
+                                    <td class="px-2 py-2 border">Seguridad institucional</td>
+                                    <td class="px-2 py-2 border">Ley General de Protección Civil</td>
+                                    <td class="px-2 py-2 border">Cercado y puntos de control</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>Este apartado permite dejar claro que:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>El terreno viable no se utiliza de manera improvisada.</li>
+                        <li>La adecuación responde a criterios técnicos y normativos.</li>
+                        <li>Se protege a la CEDA jurídica y operativamente.</li>
+                        <li>Se establece una hoja de ruta clara para la siguiente etapa.</li>
+                    </ul>
+                    <p>Además, crea un puente directo hacia la Ruta de Implementación, fortaleciendo la coherencia metodológica del documento.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">11. Matriz de Registros para el Diagnóstico de Viabilidad de Terrenos</h4>
+                    <p>Durante el desarrollo del presente Manual Maestro, el Diagnóstico de Viabilidad de Terrenos será sustentado mediante la generación de una Matriz de Registros Específica FO-TERR-00 los registros FO-TERR, la cual alineará los criterios técnicos, normativos y de seguridad con los formatos de levantamiento que documentarán las condiciones reales de cada terreno evaluado.</p>
+                    <p>Esta matriz permitirá estructurar el análisis de viabilidad bajo un enfoque sistemático, asegurando que cada aspecto del diagnóstico —infraestructura, riesgos, cumplimiento normativo, accesibilidad, servicios, condiciones ambientales y seguridad— se evalúe con base en evidencia registrada en campo y no únicamente en apreciaciones técnicas.</p>
+                    <p>Los registros derivados de esta matriz generarán la evidencia necesaria para:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Sustentar la selección del terreno viable.</li>
+                        <li>Definir las condiciones mínimas de acondicionamiento.</li>
+                        <li>Establecer criterios de adecuación técnica para la planta piloto.</li>
+                        <li>Mitigar riesgos legales, operativos y normativos.</li>
+                    </ul>
+                    <p>Este enfoque asegura coherencia metodológica con lo ya establecido en el Bloque A, fortaleciendo el carácter técnico, progresivo y escalable del Manual Maestro del Proyecto CEDA Circular®.</p>
+                </section>
+
+                <hr class="border-gray-200 my-12">
+
+                <section id="diagnostico-infraestructura" class="scroll-mt-20 space-y-6">
+                    <h3 class="text-2xl font-bold text-brand-700 border-l-4 border-accent-500 pl-4">C. DIAGNÓSTICO DE VIABILIDAD DE INFRAESTRUCTURA Y EDIFICACIONES PARA PROCESOS PRODUCTIVOS</h3>
+
+                    <p>Este Diagnóstico de Viabilidad de Infraestructura y Edificaciones tiene como propósito evaluar, de manera técnica y ordenada, si las condiciones físicas, espaciales y constructivas del terreno viable permiten el desarrollo adecuado de las instalaciones requeridas para los procesos productivos del Proyecto CEDA Circular®: alimento humano, alimento animal, biofertilizantes, biogás y composta.</p>
+                    <p>Este análisis no busca diseñar la infraestructura definitiva, sino establecer las bases mínimas necesarias para garantizar que la prueba piloto se ejecute de forma segura, funcional y escalable, alineando las edificaciones con los requerimientos operativos, sanitarios, ambientales y normativos que exige un sistema real de economía circular.</p>
+                    <p>La información obtenida permitirá definir con certeza las adecuaciones necesarias, optimizar la inversión inicial y asegurar que la infraestructura evolucione de manera coherente con el crecimiento progresivo del proyecto.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">1. Objetivo general</h4>
+                    <p>Establecer, mediante un diagnóstico técnico-normativo estructurado, la viabilidad de la infraestructura y edificaciones requeridas para la Planta Piloto del Proyecto CEDA Circular®, garantizando que las instalaciones destinadas a los procesos de alimento humano, alimento animal, biofertilizantes, biogás y compostaje cuenten con las condiciones físicas, sanitarias, operativas y normativas necesarias para su funcionamiento seguro, eficiente y escalable.</p>
+                    <p>Este diagnóstico permitirá asegurar que el diseño de infraestructura responda al modelo operativo real del proyecto y siente las bases sólidas para su evolución hacia la planta definitiva.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">3. Objetivos específicos</h4>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Identificar las condiciones físicas actuales del predio seleccionado para su adecuación a procesos productivos.</li>
+                        <li>Evaluar la factibilidad técnica de las edificaciones requeridas para cada línea de aprovechamiento.</li>
+                        <li>Determinar los requerimientos mínimos de obra civil, servicios y acondicionamiento.</li>
+                        <li>Analizar la compatibilidad entre infraestructura y flujo de procesos.</li>
+                        <li>Verificar el cumplimiento normativo aplicable en materia sanitaria, ambiental y de protección civil.</li>
+                        <li>Establecer el nivel de viabilidad técnica de las instalaciones para la fase piloto.</li>
+                        <li>Definir las adecuaciones necesarias para garantizar seguridad, eficiencia y trazabilidad operativa.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">4. Alcance del diagnóstico</h4>
+                    <p>Este diagnóstico comprende la evaluación técnica preliminar del diseño y viabilidad de la infraestructura física requerida para la Planta Piloto del Proyecto CEDA Circular®, incluyendo:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Áreas operativas productivas.</li>
+                        <li>Zonas de separación, clasificación y procesamiento.</li>
+                        <li>Infraestructura mínima requerida para operación segura.</li>
+                        <li>Condiciones de edificación para manejo sanitario adecuado.</li>
+                        <li>Requerimientos de acondicionamiento y adecuación del predio.</li>
+                    </ul>
+                    <p>Quedan excluidos de este diagnóstico los cálculos estructurales definitivos y proyectos ejecutivos de obra, los cuales corresponderán a etapas posteriores del proceso de implementación.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">5. Metodología de trabajo</h4>
+                    <p>La evaluación se desarrollará mediante un enfoque técnico progresivo que incluirá:</p>
+                    <ol class="list-decimal list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Inspección visual técnica del predio.</li>
+                        <li>Levantamiento físico de zonas destinadas a procesos.</li>
+                        <li>Análisis funcional de requerimientos por tipo de proceso.</li>
+                        <li>Evaluación comparativa entre infraestructura actual y requerida.</li>
+                        <li>Identificación de riesgos sanitarios y operativos.</li>
+                        <li>Validación normativa preliminar.</li>
+                        <li>Dictaminación técnica de viabilidad.</li>
+                    </ol>
+                    <p>El proceso se realizará bajo criterios de objetividad, evidencia documental y enfoque preventivo, alineado con los principios de gestión de riesgos y mejora continua.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">6. Estructura del diagnóstico</h4>
+                    <p>El diagnóstico se estructura en los siguientes bloques:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>C.1 Condiciones físicas para edificabilidad</li>
+                        <li>C.2 Infraestructura base y servicios requeridos</li>
+                        <li>C.3 Zonificación funcional por proceso</li>
+                        <li>C.4 Riesgos técnicos y sanitarios</li>
+                        <li>C.5 Cumplimiento normativo de edificaciones</li>
+                        <li>C.6 Acondicionamiento requerido</li>
+                        <li>C.7 Compatibilidad con planta piloto</li>
+                        <li>C.8 Evaluación integral de viabilidad</li>
+                    </ul>
+                    <p>Cada bloque se respaldará mediante registros específicos de levantamiento y análisis técnico.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">7. Productos entregables</h4>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Informe técnico de viabilidad de infraestructura.</li>
+                        <li>Matriz de requerimientos de infraestructura por proceso.</li>
+                        <li>Plano conceptual de zonificación operativa.</li>
+                        <li>Listado de adecuaciones mínimas requeridas.</li>
+                        <li>Registro fotográfico técnico.</li>
+                        <li>Conclusión de viabilidad estructural operativa.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">8. Resultados esperados</h4>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Infraestructura alineada al modelo operativo definido.</li>
+                        <li>Identificación clara de necesidades de obra mínima.</li>
+                        <li>Condiciones seguras para operación piloto.</li>
+                        <li>Base técnica para el diseño de la planta definitiva.</li>
+                        <li>Reducción de riesgos operativos futuros.</li>
+                        <li>Certeza institucional sobre la viabilidad del proyecto.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">9. Mensaje estratégico para el personal de la CEDA</h4>
+                    <p>Este diagnóstico no busca imponer una infraestructura rígida, sino construir de manera técnica y gradual un entorno operativo funcional que permita garantizar la seguridad, orden y viabilidad del proyecto.</p>
+                    <p>La infraestructura será diseñada con enfoque flexible, evolutivo y escalable, priorizando siempre la eficiencia, la seguridad operativa y el cumplimiento normativo.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">10. Cierre</h4>
+                    <p>La correcta planeación de la infraestructura constituye un pilar fundamental para la sostenibilidad del Proyecto CEDA Circular®. Este diagnóstico permitirá anticipar riesgos, optimizar recursos y construir una base sólida para el crecimiento progresivo del sistema, asegurando continuidad entre la fase piloto y la operación definitiva.</p>
+
+                    <h4 class="text-xl font-bold text-brand-600 mt-8">11. Diagnóstico vs Matriz de Viabilidad de Infraestructura</h4>
+                    <p>Este Bloque C se encuentra alineado con la Matriz de Viabilidad de Infraestructura FO-INFRA-00, la cual actúa como instrumento técnico de levantamiento y evidencia documental. Cada numeral del diagnóstico se soporta mediante registros específicos que documentan objetivamente las condiciones evaluadas.</p>
+                    <p>La matriz permite:</p>
+                    <ul class="list-disc list-inside pl-4 space-y-1 text-gray-700">
+                        <li>Garantizar trazabilidad técnica.</li>
+                        <li>Sustentar decisiones estratégicas.</li>
+                        <li>Integrar evidencia verificable.</li>
+                        <li>Facilitar auditorías futuras.</li>
+                    </ul>
+                    <p>La relación entre diagnóstico y registros asegura coherencia metodológica y rigor técnico en la toma de decisiones.</p>
+                </section>
+
+            </div>
+            
+            <footer class="bg-gray-100 p-8 text-center text-gray-500 text-sm border-t border-gray-200">
+                <p>© 2025 Proyecto CEDA Circular®. Todos los derechos reservados.</p>
+            </footer>
+        </div>
+    </main>
+</LayoutFo>

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "wr_001",
+    "survey_id": "SRV-2024-001",
+    "type": "Tomate",
+    "classification": "Verdura",
+    "state": "Fresco",
+    "contamination": "Bajo",
+    "observations": "Lote en buen estado general, algunas piezas golpeadas.",
+    "potential": {
+      "human": "Alto",
+      "animal": "Alto",
+      "biofertilizer": "Medio",
+      "compost": "Bajo"
+    }
+  },
+  {
+    "id": "wr_002",
+    "survey_id": "SRV-2024-001",
+    "type": "Lechuga",
+    "classification": "Verdura",
+    "state": "Descompuesto",
+    "contamination": "Alto",
+    "observations": "Hojas marchitas y con moho visible.",
+    "potential": {
+      "human": "Bajo",
+      "animal": "Medio",
+      "biofertilizer": "Alto",
+      "compost": "Alto"
+    }
+  },
+  {
+    "id": "wr_003",
+    "survey_id": "SRV-2024-001",
+    "type": "Manzana",
+    "classification": "Fruta",
+    "state": "Fresco",
+    "contamination": "Nulo",
+    "observations": "Excedente de inventario, calidad premium.",
+    "potential": {
+      "human": "Alto",
+      "animal": "Alto",
+      "biofertilizer": "Bajo",
+      "compost": "Bajo"
+    }
+  }
+]

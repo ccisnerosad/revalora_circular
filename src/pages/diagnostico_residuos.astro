@@ -1,0 +1,56 @@
+---
+import Layout from '@layouts/LayoutDiag.astro';
+import formatMetadata from '@data/diag/format_diag.json';
+
+const formats = formatMetadata.map(f => ({
+  id: f.format_id,
+  name: f.format_name,
+  path: f.path,
+  icon: f.icon,
+  status: ['FO-DIAG-00', 'FO-DIAG-01'].includes(f.format_id) ? 'active' : 'pending',
+  desc: f.aspect
+}));
+---
+
+<Layout title="Diagnóstico de Residuos: Formatos" heroDescription="Sistema integral de diagnóstico y gestión de residuos. Selecciona un formato para comenzar el levantamiento.">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    
+    <!-- Grid Section -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {formats.map((format) => (
+          <a href={format.path} class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col">
+            <div class="absolute top-0 left-0 w-1 h-full bg-brand-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
+            
+            <div class="p-6 flex-1">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl bg-brand-50 dark:bg-brand-900/30 p-3 rounded-lg">{format.icon}</span>
+                <span class={`text-xs font-semibold px-2.5 py-0.5 rounded-full ${
+                  format.status === 'active' 
+                    ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' 
+                    : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
+                }`}>
+                  {format.id}
+                </span>
+              </div>
+              
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-1 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                {format.name}
+              </h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                {format.desc}
+              </p>
+            </div>
+            
+            <div class="bg-gray-50 dark:bg-gray-700/50 px-6 py-3 border-t border-gray-100 dark:border-gray-700 flex justify-between items-center">
+              <span class="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Acceder al formato</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400 group-hover:text-brand-500 transform group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+  </div>
+</Layout>

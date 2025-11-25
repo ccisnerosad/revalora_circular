@@ -1,2 +1,54 @@
 @import "tailwindcss";
 
+@theme {
+  /* Brand Colors - Logo 1 #21A726 */
+  --color-brand-50: #eff9f0;
+  --color-brand-100: #dbeedd;
+  --color-brand-200: #bce0c0;
+  --color-brand-300: #90cc97;
+  --color-brand-400: #60b369;
+  --color-brand-500: #3c9645;
+  --color-brand-600: #21a726;
+  --color-brand-700: #1b8520;
+  --color-brand-800: #18691d;
+  --color-brand-900: #15561a;
+  --color-brand-950: #08300b;
+
+  /* Secondary/Accent - Logo 2 #198B9F */
+  --color-accent-50: #f0f9fb;
+  --color-accent-100: #dbeff4;
+  --color-accent-200: #bce0e9;
+  --color-accent-300: #8ec8d8;
+  --color-accent-400: #59a9c1;
+  --color-accent-500: #368ca6;
+  --color-accent-600: #198b9f;
+  --color-accent-700: #177081;
+  --color-accent-800: #185c6a;
+  --color-accent-900: #184d59;
+  --color-accent-950: #0d323b;
+
+  /* Custom Gray Scale - Background #EEEBE3, Text #404040 */
+  --color-gray-50: #EEEBE3;
+  --color-gray-100: #e4e1d8;
+  --color-gray-200: #d3cfc2;
+  --color-gray-300: #c0bba9;
+  --color-gray-400: #a8a390;
+  --color-gray-500: #8f8a78;
+  --color-gray-600: #757060;
+  --color-gray-700: #5c584b;
+  --color-gray-800: #4e4a40;
+  --color-gray-900: #404040;
+  --color-gray-950: #262626;
+}
+
+/* Custom Utilities if needed */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.input, .textarea, .select {
+  @apply border-gray-300 focus:border-accent-500 focus:ring-accent-500 pl-1 ml-1;
+}
+

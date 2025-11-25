@@ -1,0 +1,327 @@
+---
+import Layout from '@layouts/LayoutFo.astro';
+import surveys from '@data/diag/surveys.json';
+import wasteRecords from '@data/diag/waste_records.json';
+
+const id = Astro.url.searchParams.get('id');
+const currentSurvey = surveys.find(s => s.id === id);
+
+if (!currentSurvey) {
+  return Astro.redirect('/fo/fo-diag-01');
+}
+
+const fo_diag_01 = wasteRecords.filter(r => r.survey_id === currentSurvey.id);
+---
+
+<Layout title="FO-DIAG-01: Registro de Tipo de Residuo">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pb-12">
+    <!-- Header with Breadcrumb -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <a href="/diagnostico_residuos" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Formatos</a>
+          <span>/</span>
+          <a href="/fo-diag/fo-diag-01" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">FO-DIAG-01</a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white font-medium">Registro</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Registro de Tipo de Residuo por Zona</h1> 
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Caracterización física y potencial de aprovechamiento</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">ID: {currentSurvey.id}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Zona: {currentSurvey.zone}</p>
+          </div>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+            En Captura
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- Context Data -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 mb-8 p-6">
+        <h2 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4 border-b border-gray-200 dark:border-gray-700 pb-2">1. Datos Generales</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div>
+            <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Fecha y Hora</label>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">{new Date(currentSurvey.start_at).toLocaleString()}</div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Zona / Pasillo</label>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.zone}</div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Área Específica</label>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.specific_area}</div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Evaluador</label>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.evaluator_name}</div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Brigada</label>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.team_name}</div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">Clima</label>
+            <div class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.weather}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Waste Identification List -->
+      <div class="space-y-6">
+        <div class="flex justify-between items-center">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white">2. Identificación del Residuo Observado</h2>
+          <button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-brand-600 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            Agregar Residuo
+          </button>
+        </div>
+
+        {fo_diag_01.length === 0 ? (
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-dashed border-gray-300 dark:border-gray-700 p-12 text-center">
+            <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+            <h3 class="mt-2 text-sm font-medium text-gray-900 dark:text-white">No hay residuos registrados</h3>
+            <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">No se han encontrado registros de residuos para esta zona.</p>
+            <div class="mt-6">
+              <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-brand-600 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500">
+                <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+                Agregar Residuo
+              </button>
+            </div>
+          </div>
+        ) : fo_diag_01.map((item, index) => (
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <!-- Header of the Item -->
+            <div class="bg-gray-50 dark:bg-gray-700/50 px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+              <div class="flex items-center space-x-3">
+                <span class="shrink-0 h-8 w-8 rounded-full bg-brand-100 dark:bg-brand-900 flex items-center justify-center text-brand-600 dark:text-brand-300 font-bold text-sm">
+                  {index + 1}
+                </span>
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">{item.type}</h3>
+              </div>
+              <div class="flex space-x-2">
+                <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                  item.classification === 'Fruta' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300' :
+                  item.classification === 'Verdura' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
+                  'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300'
+                }`}>
+                  {item.classification}
+                </span>
+                <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                  item.state === 'Fresco' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
+                  'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
+                }`}>
+                  {item.state}
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <!-- Left Column: Details -->
+              <div class="space-y-6">
+                <div>
+                  <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Detalles</h4>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg">
+                      <span class="block text-xs text-gray-500 dark:text-gray-400">Contaminación</span>
+                      <span class={`font-medium ${
+                        item.contamination === 'Alto' ? 'text-red-600 dark:text-red-400' : 'text-gray-900 dark:text-white'
+                      }`}>{item.contamination}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Observaciones</h4>
+                  <p class="text-sm text-gray-700 dark:text-gray-300 bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border border-yellow-100 dark:border-yellow-900/50">
+                    {item.observations}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Right Column: Potential -->
+              <div class="space-y-6">
+                <div>
+                  <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">3. Potencial de Aprovechamiento</h4>
+                  <div class="bg-gray-50 dark:bg-gray-900/50 rounded-lg p-4">
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-8">
+                      <div>
+                        <div class="flex justify-between items-end mb-1">
+                          <span class="text-xs text-gray-500 dark:text-gray-400">Humano</span>
+                          <span class="text-xs font-bold text-gray-900 dark:text-white">{item.potential.human}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                          <div class={`h-1.5 rounded-full ${
+                            item.potential.human === 'Alto' ? 'bg-green-500' : 
+                            item.potential.human === 'Medio' ? 'bg-yellow-500' : 'bg-gray-400'
+                          }`} style={`width: ${
+                            item.potential.human === 'Alto' ? '100%' : 
+                            item.potential.human === 'Medio' ? '60%' : 
+                            item.potential.human === 'Bajo' ? '30%' : '0%'
+                          }`}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="flex justify-between items-end mb-1">
+                          <span class="text-xs text-gray-500 dark:text-gray-400">Animal</span>
+                          <span class="text-xs font-bold text-gray-900 dark:text-white">{item.potential.animal}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                          <div class={`h-1.5 rounded-full ${
+                            item.potential.animal === 'Alto' ? 'bg-green-500' : 
+                            item.potential.animal === 'Medio' ? 'bg-yellow-500' : 'bg-gray-400'
+                          }`} style={`width: ${
+                            item.potential.animal === 'Alto' ? '100%' : 
+                            item.potential.animal === 'Medio' ? '60%' : 
+                            item.potential.animal === 'Bajo' ? '30%' : '0%'
+                          }`}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="flex justify-between items-end mb-1">
+                          <span class="text-xs text-gray-500 dark:text-gray-400">Biofertilizante</span>
+                          <span class="text-xs font-bold text-gray-900 dark:text-white">{item.potential.biofertilizer}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                          <div class={`h-1.5 rounded-full ${
+                            item.potential.biofertilizer === 'Alto' ? 'bg-green-500' : 
+                            item.potential.biofertilizer === 'Medio' ? 'bg-yellow-500' : 'bg-gray-400'
+                          }`} style={`width: ${
+                            item.potential.biofertilizer === 'Alto' ? '100%' : 
+                            item.potential.biofertilizer === 'Medio' ? '60%' : 
+                            item.potential.biofertilizer === 'Bajo' ? '30%' : '0%'
+                          }`}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="flex justify-between items-end mb-1">
+                          <span class="text-xs text-gray-500 dark:text-gray-400">Composta</span>
+                          <span class="text-xs font-bold text-gray-900 dark:text-white">{item.potential.compost}</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                          <div class={`h-1.5 rounded-full ${
+                            item.potential.compost === 'Alto' ? 'bg-green-500' : 
+                            item.potential.compost === 'Medio' ? 'bg-yellow-500' : 'bg-gray-400'
+                          }`} style={`width: ${
+                            item.potential.compost === 'Alto' ? '100%' : 
+                            item.potential.compost === 'Medio' ? '60%' : 
+                            item.potential.compost === 'Bajo' ? '30%' : '0%'
+                          }`}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- 4. Condiciones del Residuo en Sitio -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mt-8">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">4. Condiciones del Residuo en Sitio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Presencia de lixiviados</span>
+              <span class={`text-sm font-bold ${currentSurvey.site_conditions.leachates ? 'text-red-600' : 'text-green-600'}`}>
+                {currentSurvey.site_conditions.leachates ? 'Sí' : 'No'}
+              </span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Olor ofensivo</span>
+              <span class="text-sm font-bold text-gray-900 dark:text-white">{currentSurvey.site_conditions.odor}</span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Presencia de fauna</span>
+              <span class={`text-sm font-bold ${currentSurvey.site_conditions.fauna ? 'text-red-600' : 'text-green-600'}`}>
+                {currentSurvey.site_conditions.fauna ? 'Sí' : 'No'}
+              </span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Mezcla con residuos no orgánicos</span>
+              <span class={`text-sm font-bold ${currentSurvey.site_conditions.inorganic_mix ? 'text-orange-600' : 'text-green-600'}`}>
+                {currentSurvey.site_conditions.inorganic_mix ? 'Sí' : 'No'}
+              </span>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+              <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Obstaculización del paso</span>
+              <span class={`text-sm font-bold ${currentSurvey.site_conditions.obstruction ? 'text-orange-600' : 'text-green-600'}`}>
+                {currentSurvey.site_conditions.obstruction ? 'Sí' : 'No'}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Evidencia Documental -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mt-8">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">5. Evidencia Documental</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="flex items-center space-x-3">
+            <div class={`w-5 h-5 rounded flex items-center justify-center ${currentSurvey.evidence.photos ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'}`}>
+              {currentSurvey.evidence.photos && <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>}
+            </div>
+            <span class="text-sm text-gray-700 dark:text-gray-300">Fotografías</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class={`w-5 h-5 rounded flex items-center justify-center ${currentSurvey.evidence.video ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'}`}>
+              {currentSurvey.evidence.video && <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>}
+            </div>
+            <span class="text-sm text-gray-700 dark:text-gray-300">Video</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <div class={`w-5 h-5 rounded flex items-center justify-center ${currentSurvey.evidence.sketch ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400'}`}>
+              {currentSurvey.evidence.sketch && <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>}
+            </div>
+            <span class="text-sm text-gray-700 dark:text-gray-300">Croquis de ubicación</span>
+          </div>
+        </div>
+        {currentSurvey.evidence.additional_observations && (
+          <div class="bg-gray-50 dark:bg-gray-700/50 p-4 rounded-lg">
+            <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Observaciones Adicionales</h4>
+            <p class="text-sm text-gray-700 dark:text-gray-300">{currentSurvey.evidence.additional_observations}</p>
+          </div>
+        )}
+      </div>
+
+      <!-- 6. Observaciones Generales -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mt-8">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">6. Observaciones Generales</h2>
+        <p class="text-sm text-gray-700 dark:text-gray-300 italic">
+          {currentSurvey.general_observations || "Sin observaciones generales."}
+        </p>
+      </div>
+
+      <!-- 7. Validación -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mt-8">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">7. Validación del Registro</h2>
+        <div class="flex justify-between items-center border-t border-gray-200 dark:border-gray-700 pt-4">
+          <div>
+            <p class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.validation.evaluator_signature}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Nombre del Evaluador / Firma</p>
+          </div>
+          <div class="text-right">
+            <p class="text-sm font-medium text-gray-900 dark:text-white">{currentSurvey.validation.date}</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">Fecha de Validación</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
