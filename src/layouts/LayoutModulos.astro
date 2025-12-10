@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
-import logoBlanco from '../assets/img/logo_blanco.png';
-import '../styles/global.css';
+import logoBlanco from '@assets/img/logo_blanco.png';
+import '@styles/global.css';
 
 interface Props {
 	title: string;
@@ -42,11 +42,11 @@ const { title, heroDescription } = Astro.props;
             <div class="max-w-7xl mx-auto relative z-10">
                 <div class="flex flex-col items-start gap-8">
                     <!-- Back Button Pill -->
-                    <a href="/formatos" class="group inline-flex items-center px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-sm font-medium text-white hover:bg-white/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                    <a href="/modulos" class="group inline-flex items-center px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-sm font-medium text-white hover:bg-white/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2.5 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                         </svg>
-                        Formatos
+                        Módulos
                     </a>
 
                     <div class="space-y-6 max-w-4xl">
