@@ -1,0 +1,26 @@
+[
+  {
+    "id": "Adecuada",
+    "label": "Adecuada",
+    "definition": "El punto presenta orden, limpieza y no genera riesgo sanitario u operativo.",
+    "criteria": ["No hay lixiviados", "Sin obstrucción al paso", "Residuos contenidos", "Olor bajo o nulo", "Sin fauna visible"],
+    "examples": "Contenedor limpio; residuos dentro del contenedor; pasillo libre; condición sanitaria estable.",
+    "color": "green"
+  },
+  {
+    "id": "Regular",
+    "label": "Regular",
+    "definition": "Presenta desviaciones moderadas que pueden corregirse sin intervención inmediata.",
+    "criteria": ["Pequeños derrames", "Lixiviado mínimo", "Olor perceptible no ofensivo", "Obstrucción parcial", "Mezcla ligera de residuos"],
+    "examples": "Residuos sobresaliendo del contenedor; bolsas rotas; humedad en el área; tránsito parcialmente afectado.",
+    "color": "yellow"
+  },
+  {
+    "id": "Crítica",
+    "label": "Crítica",
+    "definition": "Condición con riesgo sanitario u operativo alto; requiere atención inmediata.",
+    "criteria": ["Lixiviado abundante", "Olor fuerte u ofensivo", "Presencia de fauna", "Obstrucción total", "Mezcla con residuos no orgánicos en cantidad", "Acumulación prolongada"],
+    "examples": "Pila de residuos en pasillo; fauna activa; escurrimiento oscuro; riesgo de caídas; residuos podridos; contenedor rebasado.",
+    "color": "red"
+  }
+]

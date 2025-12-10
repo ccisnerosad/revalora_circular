@@ -1,0 +1,22 @@
+{
+  "documentos": [
+    {
+      "titulo": "Manual Maestro",
+      "descripcion": "Documento que contiene las directrices y procedimientos principales del proyecto.",
+      "icono": "📘",
+      "autor": "Equipo de Gestión",
+      "version": "1.0",
+      "fecha_creacion": "2023-01-15",
+      "path": "/documentos/manual_maestro"
+    },
+    {
+      "titulo": "Benchmarking CEDA",
+      "descripcion": "Análisis comparativo de mejores prácticas en el sector energético.",
+      "icono": "📊",
+      "autor": "Equipo de Análisis",
+      "version": "1.0",
+      "fecha_creacion": "2023-02-10",
+      "path": "/documentos/benchmarking_ceda"
+    }
+  ]
+}

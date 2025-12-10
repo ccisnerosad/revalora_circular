@@ -1,0 +1,41 @@
+[
+  {
+    "id": "CAR-001",
+    "record_id": "REC-001",
+    "type": "Orgánico",
+    "subType": "Fruta (Papaya)",
+    "state": "Fresco",
+    "volume": 0.5,
+    "weight": 150,
+    "potential": { "humano": "Bajo", "animal": "Alto", "composta": "Alto", "bioenergia": "Medio" },
+    "conditions": { "contamination": "Baja", "leachates": true, "odors": "Normal", "vectors": ["Moscas"] },
+    "evidence": { "photo": "img_001.jpg", "observations": "Fruta golpeada, no apta para venta pero sí para consumo animal." },
+    "notes": "Fruta golpeada, no apta para venta pero sí para consumo animal."
+  },
+  {
+    "id": "CAR-002",
+    "record_id": "REC-001",
+    "type": "Inorgánico",
+    "subType": "Plástico Film",
+    "state": "Sucio",
+    "volume": 0.1,
+    "weight": 5,
+    "potential": { "humano": "Nulo", "animal": "Nulo", "composta": "Nulo", "bioenergia": "Alto" },
+    "conditions": { "contamination": "Alta", "leachates": false, "odors": "Normal", "vectors": [] },
+    "evidence": { "photo": "img_002.jpg", "observations": "Mezclado con restos orgánicos." },
+    "notes": "Mezclado con restos orgánicos."
+  },
+  {
+    "id": "CAR-003",
+    "record_id": "REC-002",
+    "type": "Inorgánico",
+    "subType": "Cartón",
+    "state": "Seco",
+    "volume": 0.5,
+    "weight": 12,
+    "potential": { "humano": "Nulo", "animal": "Nulo", "composta": "Medio", "bioenergia": "Alto" },
+    "conditions": { "contamination": "Baja", "leachates": false, "odors": "Normal", "vectors": [] },
+    "evidence": { "photo": "img_003.jpg", "observations": "Cajas de cartón limpias." },
+    "notes": "Cajas de cartón limpias."
+  }
+]

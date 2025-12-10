@@ -1,0 +1,26 @@
+[
+  {
+    "id": "Temporal",
+    "label": "Temporal",
+    "definition": "Espacio destinado al acopio solo en ciertos horarios o días; cambia o se vacía frecuentemente.",
+    "indicators": ["Contenedores móviles", "Acumulación intermitente", "No existen señales fijas", "El área se limpia o despeja varias veces al día"],
+    "examples": "Áreas de pasillo donde se coloca residuo mientras llega la recolección; puntos asignados por supervisión solo en horas pico.",
+    "color": "blue"
+  },
+  {
+    "id": "Permanente",
+    "label": "Permanente",
+    "definition": "Punto formal, fijo y autorizado para el acopio dentro de la zona.",
+    "indicators": ["Contenedores fijos o semifijos", "Señalización establecida", "Delimitación visible", "Uso continuo y reconocido"],
+    "examples": "Sitios establecidos para recolección centralizada; cámaras de residuos; espacio fijo detrás de bodegas.",
+    "color": "green"
+  },
+  {
+    "id": "Espontáneo",
+    "label": "Espontáneo",
+    "definition": "Punto NO autorizado ni planificado donde los locatarios dejan residuos por hábito o saturación.",
+    "indicators": ["Residuos sobre el piso sin contenedor", "No existe delimitación", "Aparición constante aunque no está autorizado", "Origen disperso"],
+    "examples": "Acopio improvisado en esquinas, cerca de puestos o zonas de carga; acumulación en áreas de tránsito.",
+    "color": "red"
+  }
+]

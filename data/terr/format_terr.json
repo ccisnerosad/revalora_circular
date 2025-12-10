@@ -9,7 +9,7 @@
     "responsible": "Coordinación Técnica / Protección Civil",
     "format_id": "FO-TERR-01",
     "format_name": "Evaluación de Seguridad Básica",
-    "path": "/fo-terr/fo-terr-01",
+    "path": "/formatos/fo-terr/fo-terr-01",
     "icon": "🛡️"
   },
   {
@@ -22,7 +22,7 @@
     "responsible": "Legal / Técnica",
     "format_id": "FO-TERR-02",
     "format_name": "Análisis de Servidumbre Legal",
-    "path": "/fo-terr/fo-terr-02",
+    "path": "/formatos/fo-terr/fo-terr-02",
     "icon": "⚖️"
   },
   {
@@ -35,7 +35,7 @@
     "responsible": "Ambiental / Técnica",
     "format_id": "FO-TERR-03",
     "format_name": "Compatibilidad Normativa",
-    "path": "/fo-terr/fo-terr-03",
+    "path": "/formatos/fo-terr/fo-terr-03",
     "icon": "🏭"
   },
   {
@@ -48,7 +48,7 @@
     "responsible": "Gestoría / Legal",
     "format_id": "FO-TERR-04",
     "format_name": "Control de Dictámenes",
-    "path": "/fo-terr/fo-terr-04",
+    "path": "/formatos/fo-terr/fo-terr-04",
     "icon": "📋"
   },
   {
@@ -61,7 +61,7 @@
     "responsible": "Ambiental",
     "format_id": "FO-TERR-05",
     "format_name": "Evaluación de Riesgo Ambiental",
-    "path": "/fo-terr/fo-terr-05",
+    "path": "/formatos/fo-terr/fo-terr-05",
     "icon": "🌱"
   },
   {
@@ -74,7 +74,7 @@
     "responsible": "Administrativa / Financiera",
     "format_id": "FO-TERR-06",
     "format_name": "Análisis de Asegurabilidad",
-    "path": "/fo-terr/fo-terr-06",
+    "path": "/formatos/fo-terr/fo-terr-06",
     "icon": "🔒"
   },
   {
@@ -87,7 +87,7 @@
     "responsible": "Dirección / Comunicación",
     "format_id": "FO-TERR-07",
     "format_name": "Evaluación de Imagen Institucional",
-    "path": "/fo-terr/fo-terr-07",
+    "path": "/formatos/fo-terr/fo-terr-07",
     "icon": "🏛️"
   },
   {
@@ -100,7 +100,7 @@
     "responsible": "Planeación Estratégica",
     "format_id": "FO-TERR-08",
     "format_name": "Proyección de Escalabilidad",
-    "path": "/fo-terr/fo-terr-08",
+    "path": "/formatos/fo-terr/fo-terr-08",
     "icon": "📈"
   },
   {
@@ -113,7 +113,7 @@
     "responsible": "Dirección Técnica",
     "format_id": "FO-TERR-09",
     "format_name": "Dictamen Final de Viabilidad",
-    "path": "/fo-terr/fo-terr-09",
+    "path": "/formatos/fo-terr/fo-terr-09",
     "icon": "✅"
   }
 ]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "Z-01",
+    "name": "Mercado de Abastos - Nave A",
+    "description": "Área principal de frutas y verduras"
+  },
+  {
+    "id": "Z-02",
+    "name": "Zona de Comida",
+    "description": "Área de restaurantes y comedores"
+  },
+  {
+    "id": "Z-03",
+    "name": "Zona de Ropa y Textiles",
+    "description": "Área dedicada a la venta de ropa y textiles"
+  }
+]

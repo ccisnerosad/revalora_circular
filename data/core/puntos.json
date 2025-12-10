@@ -1,0 +1,6 @@
+[
+  { "id": "P-01", "zona_id": "Z-01", "name": "Contenedor Norte", "type": "Temporal", "capacity": "1100L" },
+  { "id": "P-02", "zona_id": "Z-01", "name": "Pasillo Central", "type": "Permanente", "capacity": "200L" },
+  { "id": "P-03", "zona_id": "Z-02", "name": "Isla de Separación", "type": "Permanente", "capacity": "3x120L" },
+  { "id": "P-04", "zona_id": "Z-03", "name": "Contenedor Sur", "type": "Permanente", "capacity": "800L" }
+]

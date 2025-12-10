@@ -1,0 +1,47 @@
+[
+  {
+    "id": "REC-005",
+    "punto_id": "P-01",
+    "date": "2023-10-29",
+    "time": "09:00",
+    "condition": "Adecuada",
+    "notes": "Todo en orden. Limpieza realizada previamente.",
+    "evaluator": "Ana García"
+  },
+  {
+    "id": "REC-004",
+    "punto_id": "P-01",
+    "date": "2023-10-28",
+    "time": "14:30",
+    "condition": "Regular",
+    "notes": "Pequeño derrame de líquidos cerca del contenedor.",
+    "evaluator": "Juan Pérez"
+  },
+  {
+    "id": "REC-003",
+    "punto_id": "P-01",
+    "date": "2023-10-27",
+    "time": "18:00",
+    "condition": "Crítica",
+    "notes": "Contenedor desbordado, presencia de moscas y mal olor.",
+    "evaluator": "Carlos Ruiz"
+  },
+  {
+    "id": "REC-002",
+    "punto_id": "P-01",
+    "date": "2023-10-26",
+    "time": "08:15",
+    "condition": "Adecuada",
+    "notes": "Sin novedades.",
+    "evaluator": "Ana García"
+  },
+  {
+    "id": "REC-001",
+    "punto_id": "P-01",
+    "date": "2023-10-25",
+    "time": "08:30",
+    "condition": "Adecuada",
+    "notes": "Inicio de semana, todo limpio.",
+    "evaluator": "Juan Pérez"
+  }
+]

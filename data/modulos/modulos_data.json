@@ -1,0 +1,30 @@
+{
+  "modulos": [
+    {
+      "nombre": "Administración",
+      "descripcion": "Módulo para la gestión administrativa del sistema.",
+      "icono": "📋",
+      "path": "/admin",
+      "submodulos": [
+        {
+          "nombre": "Zonas",
+          "descripcion": "Gestión de zonas geográficas.",
+          "icono": "🌍",
+          "path": "/admin/zonas"
+        }
+      ]
+    },
+    {
+      "nombre": "Documentación",
+      "descripcion": "Módulo para la gestión de la documentación del proyecto.",
+      "icono": "📄",
+      "path": "/documentos"
+    },
+    {
+      "nombre": "Diagnósticos y Herramientas",
+      "descripcion": "Módulo para la gestión y manejo de diagnósticos y herramientas.",
+      "icono": "📝",
+      "path": "/formatos"
+    }
+  ]
+}

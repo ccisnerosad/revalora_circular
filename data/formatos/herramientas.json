@@ -1,0 +1,18 @@
+[
+  {
+    "id": "diag",
+    "title": "Diagnóstico de Residuos",
+    "description": "Sistema integral para el levantamiento y análisis de datos sobre la generación y gestión de residuos. Incluye formatos de caracterización y cuantificación.",
+    "icon": "♻️",
+    "path": "/formatos/fo-diag",
+    "color": "green"
+  },
+  {
+    "id": "terr",
+    "title": "Diagnóstico de Terrenos",
+    "description": "Evaluación técnica y normativa para la selección y validación de predios. Incluye matrices de viabilidad y criterios de ubicación.",
+    "icon": "🗺️",
+    "path": "/formatos/fo-terr",
+    "color": "blue"
+  }
+]

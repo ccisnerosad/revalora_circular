@@ -1,0 +1,6 @@
+[
+  { "format_id": "FO-DIAG-00", "status": "active", "progress": 100 },
+  { "format_id": "FO-DIAG-01", "status": "active", "progress": 80 },
+  { "format_id": "FO-DIAG-02", "status": "pending", "progress": 0 },
+  { "format_id": "FO-TERR-01", "status": "active", "progress": 30 }
+]

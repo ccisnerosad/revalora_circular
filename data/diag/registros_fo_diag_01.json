@@ -1,0 +1,356 @@
+[
+  {
+    "id": "REC-001",
+    "date": "2025-12-10",
+    "time": "08:30",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "leachates": "Ninguno",
+      "odors": "Nulo",
+      "obstruction": "Ninguna",
+      "fauna": false,
+      "wasteState": "Contenido",
+      "status": "Adecuada",
+      "notes": "Condición adecuada"
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": "Contenedor al 85% de su capacidad. Obstrucción parcial en el acceso."
+    },
+    "volume": 1.2,
+    "weight": 45,
+    "wasteTypes": ["Orgánico", "Plástico"]
+  },
+  {
+    "id": "REC-002",
+    "date": "2025-12-10",
+    "time": "09:15",
+    "point_id": "P-02",
+    "evaluator": "Maria Lopez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Regular",
+      "accessibility": "Obstruido",
+      "containers": "Insuficientes",
+      "signage": "Confusa",
+      "notes": "Residuos dispersos"
+    },
+    "generation": {
+      "level": "Medio",
+      "notes": "Residuos dispersos alrededor del contenedor."
+    },
+    "volume": 0.5,
+    "weight": 12,
+    "wasteTypes": ["Cartón"]
+  },
+  {
+    "id": "REC-003",
+    "date": "2025-12-10",
+    "time": "10:00",
+    "point_id": "P-03",
+    "evaluator": "Carlos Ruiz",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": "Separación correcta de residuos."
+    },
+    "volume": 1.5,
+    "weight": 60,
+    "wasteTypes": ["Orgánico", "PET"]
+  },
+  {
+    "id": "REC-004",
+    "date": "2025-12-10",
+    "time": "12:30",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Tarde",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Bajo",
+      "notes": "Poca generación en este turno."
+    },
+    "volume": 0.3,
+    "weight": 8,
+    "wasteTypes": ["Plástico"]
+  },
+  {
+    "id": "REC-005",
+    "date": "2025-12-10",
+    "time": "14:00",
+    "point_id": "P-02",
+    "evaluator": "Maria Lopez",
+    "shift": "Tarde",
+    "siteCondition": {
+      "cleanliness": "Sucio",
+      "accessibility": "Obstruido",
+      "containers": "Dañados",
+      "signage": "Inexistente",
+      "notes": "Crítica"
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": "Contenedor desbordado."
+    },
+    "volume": 1.1,
+    "weight": 40,
+    "wasteTypes": ["Orgánico"]
+  },
+  {
+    "id": "REC-006",
+    "date": "2025-12-09",
+    "time": "08:00",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Medio",
+      "notes": ""
+    },
+    "volume": 0.8,
+    "weight": 25,
+    "wasteTypes": ["Cartón", "Plástico"]
+  },
+  {
+    "id": "REC-007",
+    "date": "2025-12-09",
+    "time": "10:30",
+    "point_id": "P-03",
+    "evaluator": "Carlos Ruiz",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": ""
+    },
+    "volume": 1.4,
+    "weight": 55,
+    "wasteTypes": ["Orgánico"]
+  },
+  {
+    "id": "REC-008",
+    "date": "2025-12-09",
+    "time": "16:00",
+    "point_id": "P-02",
+    "evaluator": "Maria Lopez",
+    "shift": "Tarde",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Bajo",
+      "notes": ""
+    },
+    "volume": 0.2,
+    "weight": 5,
+    "wasteTypes": ["Papel"]
+  },
+  {
+    "id": "REC-009",
+    "date": "2025-12-08",
+    "time": "09:00",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Regular",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": ""
+    },
+    "volume": 1.3,
+    "weight": 50,
+    "wasteTypes": ["Orgánico", "Vidrio"]
+  },
+  {
+    "id": "REC-010",
+    "date": "2025-12-08",
+    "time": "13:00",
+    "point_id": "P-02",
+    "evaluator": "Maria Lopez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Medio",
+      "notes": ""
+    },
+    "volume": 0.6,
+    "weight": 15,
+    "wasteTypes": ["Plástico"]
+  },
+  {
+    "id": "REC-011",
+    "date": "2025-12-03",
+    "time": "08:30",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": ""
+    },
+    "volume": 1.1,
+    "weight": 42,
+    "wasteTypes": ["Orgánico"]
+  },
+  {
+    "id": "REC-012",
+    "date": "2025-12-03",
+    "time": "11:00",
+    "point_id": "P-03",
+    "evaluator": "Carlos Ruiz",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Medio",
+      "notes": ""
+    },
+    "volume": 0.7,
+    "weight": 20,
+    "wasteTypes": ["Cartón"]
+  },
+  {
+    "id": "REC-013",
+    "date": "2025-11-10",
+    "time": "09:00",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": ""
+    },
+    "volume": 1.5,
+    "weight": 65,
+    "wasteTypes": ["Orgánico", "Metal"]
+  },
+  {
+    "id": "REC-014",
+    "date": "2025-11-10",
+    "time": "15:00",
+    "point_id": "P-02",
+    "evaluator": "Maria Lopez",
+    "shift": "Tarde",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Bajo",
+      "notes": ""
+    },
+    "volume": 0.3,
+    "weight": 10,
+    "wasteTypes": ["Papel"]
+  },
+  {
+    "id": "REC-015",
+    "date": "2025-10-15",
+    "time": "10:00",
+    "point_id": "P-01",
+    "evaluator": "Juan Pérez",
+    "shift": "Mañana",
+    "siteCondition": {
+      "cleanliness": "Limpio",
+      "accessibility": "Despejado",
+      "containers": "Suficientes",
+      "signage": "Visible",
+      "notes": ""
+    },
+    "generation": {
+      "level": "Medio",
+      "notes": ""
+    },
+    "volume": 0.6,
+    "weight": 18,
+    "wasteTypes": ["Plástico"]
+  },
+  {
+    "id": "REC-016",
+    "date": "2025-10-15",
+    "time": "14:30",
+    "point_id": "P-03",
+    "evaluator": "Carlos Ruiz",
+    "shift": "Tarde",
+    "siteCondition": {
+      "cleanliness": "Sucio",
+      "accessibility": "Obstruido",
+      "containers": "Insuficientes",
+      "signage": "Confusa",
+      "notes": "Alto"
+    },
+    "generation": {
+      "level": "Alto",
+      "notes": ""
+    },
+    "volume": 9.4,
+    "weight": 58,
+    "wasteTypes": ["Orgánico", "Vidrio"]
+  }
+]
