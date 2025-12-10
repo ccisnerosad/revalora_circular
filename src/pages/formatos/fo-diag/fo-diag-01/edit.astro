@@ -1,0 +1,560 @@
+---
+import Layout from '@layouts/LayoutFo.astro';
+import recordsData from '@data/diag/registros_fo_diag_01.json';
+import characterizationData from '@data/diag/caracterizaciones_fo_diag_01.json';
+import infoFormato from '@data/diag/format_diag.json';
+import zonesData from '@data/core/zonas.json';
+import pointsData from '@data/core/puntos.json';
+import siteConditionsData from '@data/core/condiciones_sitio.json';
+import type { SiteCondition } from 'src/types/formats';
+import { calculateSiteCondition } from 'src/utils/site-conditions';
+
+const id = Astro.url.searchParams.get('id');
+const isEditing = !!id;
+
+//Nombre del formato
+const formatoInfo = infoFormato.find(f => f.format_id === 'FO-DIAG-01');
+const formatoName = formatoInfo ? formatoInfo.format_name : 'Formato Desconocido';
+
+// Data for Dropdowns
+const zones = zonesData;
+const points = pointsData.map(p => ({
+  id: p.id,
+  zoneId: p.zona_id,
+  name: p.name
+}));
+
+const siteConditions = siteConditionsData;
+
+// Initial State
+const today = new Date().toISOString().split('T')[0];
+const now = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+let initialData = {
+  context: {
+    date: today,
+    time: now,
+    zone: '',
+    point: '',
+    evaluator: '',
+    shift: 'Mañana'
+  },
+  siteCondition: {
+    status: 'Adecuada',
+    leachates: 'Ninguno',
+    odors: 'Nulo',
+    obstruction: 'Ninguna',
+    fauna: false,
+    wasteState: 'Contenido',
+    notes: ''
+  },
+  generation: {
+    level: 'Medio', // Bajo, Medio, Alto, Crítico
+    notes: ''
+  },
+  characterization: [
+    {
+      id: 1,
+      type: 'Orgánico',
+      subType: 'Fruta',
+      state: 'Fresco',
+      volume: '',
+      weight: '',
+      potential: {
+        humano: 'Nulo',
+        animal: 'Alto',
+        composta: 'Alto',
+        bioenergia: 'Medio'
+      },
+      conditions: {
+        contamination: 'Bajo',
+        leachates: false,
+        odors: 'Normal',
+        vectors: []
+      },
+      evidence: {
+        photo: '',
+        observations: ''
+      }
+    }
+  ]
+};
+
+if (isEditing && id) {
+  const record = recordsData.find(r => r.id === id);
+  if (record) {
+    const point = pointsData.find(p => p.id === record.point_id);
+    const recordCharacterizations = characterizationData.filter(c => c.record_id === id);
+    initialData = {
+      context: {
+        date: record.date,
+        time: record.time,
+        zone: point?.zona_id || '',
+        point: record.point_id,
+        evaluator: record.evaluator,
+        shift: record.shift
+      },
+      siteCondition: record.siteCondition as unknown as SiteCondition,
+      generation: record.generation,
+      characterization: (recordCharacterizations.length > 0 ? recordCharacterizations : initialData.characterization) as any
+    };
+  }
+}
+---
+
+<Layout title={`FO-DIAG-01: ${isEditing ? 'Editar' : 'Nuevo'} Registro de Punto`}>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pb-24">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <a href="/formatos" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Formatos</a>
+          <span>/</span>
+          <a href="/formatos/fo-diag" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Diagnóstico de Residuos</a>
+          <span>/</span>
+          <a href="/formatos/fo-diag/fo-diag-01" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">FO-DIAG-01</a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white font-medium">{isEditing ? 'Editar' : 'Nuevo'} Registro</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{isEditing ? 'Editar' : 'Nuevo'} Registro de Punto de Acopio</h1>
+            <small class="text-gray-500 dark:text-gray-400"><b>{formatoName}</b></small>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Captura de generación y caracterización puntual.</p>
+          </div>
+          <div class="flex gap-3">
+            <button class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-sm font-medium rounded-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              Cancelar
+            </button>
+            <button class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors">
+              Guardar Registro
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Formulario -->
+        <div class="lg:col-span-2 space-y-8">
+      
+      <!-- 1. Contexto del Registro -->
+      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50 flex justify-between items-center">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white">1. Contexto del Levantamiento</h2>
+          <span class="text-xs font-medium px-2.5 py-0.5 rounded bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300">
+            {initialData.context.date}
+          </span>
+        </div>
+        <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Zona / Área</label>
+            <select class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+              <option value="">Seleccionar Zona...</option>
+              {zones.map(z => <option value={z.id} selected={z.id === initialData.context.zone}>{z.name}</option>)}
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Punto de Acopio</label>
+            <select class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+              <option value="">Seleccionar Punto...</option>
+              {points.map(p => <option value={p.id} selected={p.id === initialData.context.point}>{p.name}</option>)}
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Evaluador</label>
+            <input type="text" value={initialData.context.evaluator} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Nombre del evaluador" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Hora de Registro</label>
+            <input type="time" value={initialData.context.time} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Turno</label>
+            <select class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+              <option selected={initialData.context.shift === 'Mañana'}>Mañana</option>
+              <option selected={initialData.context.shift === 'Tarde'}>Tarde</option>
+              <option selected={initialData.context.shift === 'Noche'}>Noche</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Nivel de Generación (Peak Hours) -->
+      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white">2. Nivel de Generación Actual</h2>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Información para análisis de horarios pico.</p>
+        </div>
+        <div class="p-6">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nivel de Llenado / Generación</label>
+            <div class="grid grid-cols-4 gap-4">
+              {['Bajo', 'Medio', 'Alto', 'Crítico'].map(level => (
+                <label class={`
+                  relative flex flex-col items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors
+                  ${initialData.generation.level === level ? 'border-brand-500 ring-2 ring-brand-500 bg-brand-50 dark:bg-brand-900/20' : 'border-gray-200 dark:border-gray-700'}
+                `}>
+                  <input type="radio" name="generation_level" value={level} class="sr-only" checked={initialData.generation.level === level} />
+                  <span class={`text-sm font-bold ${
+                    level === 'Crítico' ? 'text-red-600' : 
+                    level === 'Alto' ? 'text-orange-500' : 
+                    level === 'Medio' ? 'text-yellow-500' : 'text-green-500'
+                  }`}>{level}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Observaciones Operativas</label>
+            <textarea rows="2" class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Ej. Contenedor desbordado, obstrucción de paso...">{initialData.generation.notes}</textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Condición del Sitio -->
+      <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50 flex justify-between items-center">
+          <div>
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white">3. Condición del Sitio</h2>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Evaluación basada en evidencias observables.</p>
+          </div>
+          <div class="flex items-center gap-2">
+             <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Estado Calculado:</span>
+             <span id="calculatedStatusBadge" class="px-3 py-1 rounded-full text-sm font-bold bg-gray-100 text-gray-800">
+               {initialData.siteCondition.status}
+             </span>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-6">
+          <!-- Criterios de Evaluación -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Lixiviados -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Presencia de Lixiviados</label>
+              <div class="flex gap-4">
+                {['Ninguno', 'Mínimo', 'Abundante'].map(opt => (
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="sc_leachates" value={opt} checked={initialData.siteCondition.leachates === opt} class="text-brand-600 focus:ring-brand-500" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">{opt}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <!-- Olores -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Olores</label>
+              <div class="flex gap-4">
+                {['Nulo', 'Perceptible', 'Fuerte'].map(opt => (
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="sc_odors" value={opt} checked={initialData.siteCondition.odors === opt} class="text-brand-600 focus:ring-brand-500" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">{opt}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <!-- Obstrucción -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Obstrucción de Paso</label>
+              <div class="flex gap-4">
+                {['Ninguna', 'Parcial', 'Total'].map(opt => (
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="sc_obstruction" value={opt} checked={initialData.siteCondition.obstruction === opt} class="text-brand-600 focus:ring-brand-500" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">{opt}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <!-- Fauna -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Fauna Nociva</label>
+              <div class="flex gap-4">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="sc_fauna" value="false" checked={!initialData.siteCondition.fauna} class="text-brand-600 focus:ring-brand-500" />
+                  <span class="text-sm text-gray-700 dark:text-gray-300">No</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                  <input type="radio" name="sc_fauna" value="true" checked={initialData.siteCondition.fauna} class="text-brand-600 focus:ring-brand-500" />
+                  <span class="text-sm text-gray-700 dark:text-gray-300">Sí</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Estado de Residuos -->
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Contención de Residuos</label>
+              <div class="flex flex-wrap gap-4">
+                {['Contenido', 'Derrames/Mezcla Ligera', 'Acumulación/Mezcla Grave'].map(opt => (
+                  <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="sc_wasteState" value={opt} checked={initialData.siteCondition.wasteState === opt} class="text-brand-600 focus:ring-brand-500" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">{opt}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Observaciones del Sitio</label>
+              <textarea rows="2" class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Detalles adicionales...">{initialData.siteCondition.notes}</textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Caracterización Detallada -->
+      <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white">4. Caracterización de Residuos</h2>
+          <button class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-brand-600 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+            Agregar Residuo
+          </button>
+        </div>
+
+        {initialData.characterization.map((item, index) => (
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50 flex justify-between items-center">
+              <h3 class="text-md font-bold text-gray-900 dark:text-white">Residuo #{index + 1}</h3>
+              <button class="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 text-sm font-medium">Eliminar</button>
+            </div>
+            
+            <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <!-- Columna Izquierda: Datos Básicos -->
+              <div class="space-y-6">
+                <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider border-b border-gray-100 dark:border-gray-700 pb-2">Datos Físicos</h4>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="col-span-2">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tipo de Residuo</label>
+                    <select class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+                      <option selected={item.type === 'Orgánico - Fruta'}>Orgánico - Fruta</option>
+                      <option selected={item.type === 'Orgánico - Verdura'}>Orgánico - Verdura</option>
+                      <option selected={item.type === 'Orgánico - Comida Prep.'}>Orgánico - Comida Prep.</option>
+                      <option selected={item.type === 'Inorgánico - Plástico'}>Inorgánico - Plástico</option>
+                      <option selected={item.type === 'Inorgánico - Cartón'}>Inorgánico - Cartón</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Volumen (m³)</label>
+                    <input type="number" step="0.01" value={item.volume} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Peso (kg)</label>
+                    <input type="number" step="0.1" value={item.weight} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Estado</label>
+                    <select class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+                      <option selected={item.state === 'Fresco'}>Fresco</option>
+                      <option selected={item.state === 'Descompuesto'}>Descompuesto</option>
+                      <option selected={item.state === 'Seco'}>Seco</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Contaminación</label>
+                    <select class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+                      <option selected={item.conditions.contamination === 'Baja'}>Baja</option>
+                      <option selected={item.conditions.contamination === 'Media'}>Media</option>
+                      <option selected={item.conditions.contamination === 'Alta'}>Alta</option>
+                    </select>
+                  </div>
+                </div>
+
+                <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider border-b border-gray-100 dark:border-gray-700 pb-2 pt-4">Condiciones Ambientales</h4>
+                <div class="space-y-3">
+                  <label class="flex items-center space-x-3">
+                    <input type="checkbox" checked={item.conditions.leachates} class="h-4 w-4 text-brand-600 focus:ring-brand-500 border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">Presencia de Lixiviados</span>
+                  </label>
+                  <label class="flex items-center space-x-3">
+                    <input type="checkbox" checked={item.conditions.vectors && item.conditions.vectors.length > 0} class="h-4 w-4 text-brand-600 focus:ring-brand-500 border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">Presencia de Vectores (Moscas, etc.)</span>
+                  </label>
+                  <label class="flex items-center space-x-3">
+                    <input type="checkbox" checked={item.conditions.odors !== 'Normal'} class="h-4 w-4 text-brand-600 focus:ring-brand-500 border-gray-300 rounded" />
+                    <span class="text-sm text-gray-700 dark:text-gray-300">Malos Olores</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Columna Derecha: Fotos y Notas -->
+              <div class="space-y-6">
+                <h4 class="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider border-b border-gray-100 dark:border-gray-700 pb-2">Evidencia Fotográfica</h4>
+                
+                <div class="grid grid-cols-2 gap-4">
+                  {item.evidence.photo && (
+                    <div class="relative group aspect-square bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-600">
+                      <img src={item.evidence.photo} alt="Evidencia" class="w-full h-full object-cover" />
+                      <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <button class="text-white bg-red-600 p-1.5 rounded-full hover:bg-red-700">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
+                  <label class="flex flex-col items-center justify-center aspect-square border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg class="w-8 h-8 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                      <p class="text-xs text-gray-500 dark:text-gray-400">Añadir Foto</p>
+                    </div>
+                    <input type="file" class="hidden" />
+                  </label>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notas Adicionales</label>
+                  <textarea rows="3" class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Detalles específicos sobre este residuo...">{item.evidence.observations}</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+        </div> <!-- End of lg:col-span-2 -->
+
+        <!-- Panel de Referencia (Ayuda Visual) -->
+        <div class="lg:col-span-1">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden sticky top-24">
+            <details class="group">
+              <summary class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50 cursor-pointer list-none flex items-center justify-between">
+                <h4 class="text-sm font-bold text-gray-700 dark:text-gray-300 flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Guía de Condición del Sitio
+                </h4>
+                <span class="transition group-open:rotate-180">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              
+              <div class="p-4 space-y-3 max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar">
+              {siteConditions.map(cond => (
+                <div id={`info-${cond.id}`} class={`condition-info-card p-3 rounded-md border transition-all duration-200 hover:shadow-md
+                  ${false ? 'ring-2 ring-brand-500 bg-brand-50 dark:bg-brand-900/20 border-brand-200 dark:border-brand-800' : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800'}
+                `}>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class={`text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide
+                      ${cond.color === 'green' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                        cond.color === 'yellow' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' : 
+                        'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'}`}>
+                      {cond.label}
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-600 dark:text-gray-300 mb-2 font-medium">{cond.definition}</p>
+                  
+                  <div class="space-y-2">
+                    <div>
+                      <p class="text-[10px] uppercase text-gray-400 font-bold">Criterios Observables:</p>
+                      <ul class="list-disc list-inside text-xs text-gray-500 dark:text-gray-400 pl-1">
+                        {cond.criteria.map(c => <li>{c}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="text-[10px] uppercase text-gray-400 font-bold">Ejemplos Típicos:</p>
+                      <p class="text-xs text-gray-500 dark:text-gray-400 italic">{cond.examples}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Highlight calculated condition info
+    const cards = document.querySelectorAll('.condition-info-card');
+    const badge = document.getElementById('calculatedStatusBadge');
+
+    function updateHighlight() {
+      const status = badge?.textContent;
+      cards.forEach(card => {
+        // Map status to card ID (assuming card IDs match status names or similar)
+        // Actually, the cards are mapped from siteConditions which has IDs like 'Adecuada', 'Regular', 'Crítica'
+        // Let's check siteConditions data structure if possible, but assuming IDs match status is a good guess or we can match by text content
+        
+        // The card id is `info-${cond.id}`. Let's assume cond.id matches the status values.
+        if (status && card.id === `info-${status}`) {
+          card.classList.add('ring-2', 'ring-brand-500', 'bg-brand-50', 'dark:bg-brand-900/20', 'border-brand-200', 'dark:border-brand-800');
+          card.classList.remove('border-gray-200', 'dark:border-gray-600', 'bg-white', 'dark:bg-gray-800');
+          // Only scroll if details is open
+          if (card.closest('details')?.open) {
+             card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          card.classList.remove('ring-2', 'ring-brand-500', 'bg-brand-50', 'dark:bg-brand-900/20', 'border-brand-200', 'dark:border-brand-800');
+          card.classList.add('border-gray-200', 'dark:border-gray-600', 'bg-white', 'dark:bg-gray-800');
+        }
+      });
+    }
+
+    // Observe changes in the badge to update highlight
+    if (badge) {
+      const observer = new MutationObserver(updateHighlight);
+      observer.observe(badge, { childList: true, characterData: true, subtree: true });
+    }
+  </script>
+
+  <script>
+  import { calculateSiteCondition } from '../../../../utils/site-conditions';
+
+  // Client-side logic for Site Condition calculation
+  const inputs = document.querySelectorAll('input[name^="sc_"]');
+  const badge = document.getElementById('calculatedStatusBadge');
+
+  function updateStatus() {
+    const getVal = (name: string) => (document.querySelector(`input[name="${name}"]:checked`) as HTMLInputElement)?.value;
+
+    const data = {
+      leachates: getVal('sc_leachates') || 'Ninguno',
+      odors: getVal('sc_odors') || 'Nulo',
+      obstruction: getVal('sc_obstruction') || 'Ninguna',
+      fauna: getVal('sc_fauna') === 'true',
+      wasteState: getVal('sc_wasteState') || 'Contenido',
+    };
+
+    // Pass arguments individually as expected by the utility function
+    const result = calculateSiteCondition(
+      data.leachates as any,
+      data.odors as any,
+      data.obstruction as any,
+      data.fauna,
+      data.wasteState as any
+    );
+    
+    if (badge) {
+      badge.textContent = result;
+      
+      // Update badge styles
+      badge.className = `px-3 py-1 rounded-full text-sm font-bold transition-colors duration-300 ${
+        result === 'Adecuada' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' :
+        result === 'Regular' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' :
+        'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+      }`;
+    }
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener('change', updateStatus);
+  });
+  
+  // Initial check
+  updateStatus();
+</script>
+</Layout>

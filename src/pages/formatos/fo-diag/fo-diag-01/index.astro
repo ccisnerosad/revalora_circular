@@ -1,0 +1,494 @@
+---
+import Layout from '@layouts/LayoutFo.astro';
+import zonesData from '@data/core/zonas.json';
+import infoFormato from '@data/diag/format_diag.json';
+import pointsData from '@data/core/puntos.json';
+import recordsData from '@data/diag/registros_fo_diag_01.json';
+
+import type { Zone, Point } from 'src/types/core';
+import type { DiagRecord, PeakHour } from 'src/types/formats';
+import { calculateStats, formatTrend, calculatePeakHours, getDateRangeLabel, getLatestDate } from 'src/utils/metrics/waste-metrics';
+
+//Nombre del formato
+const formatoInfo = infoFormato.find(f => f.format_id === 'FO-DIAG-01');
+const formatoName = formatoInfo ? formatoInfo.format_name : 'Formato Desconocido';
+
+// Type Casting
+const zones: Zone[] = zonesData as Zone[];
+const points: Point[] = pointsData as Point[];
+const recordsList: DiagRecord[] = recordsData as DiagRecord[];
+
+// Determine the reference date (latest record)
+const latestDate = getLatestDate(recordsList);
+
+// Cálculos de Estadísticas Consolidadas
+const dailyStats = calculateStats(recordsList, 1, 0, latestDate);
+const prevDailyStats = calculateStats(recordsList, 1, 1, latestDate);
+
+const weeklyStats = calculateStats(recordsList, 7, 0, latestDate);
+const prevWeeklyStats = calculateStats(recordsList, 7, 7, latestDate);
+
+const monthlyStats = calculateStats(recordsList, 30, 0, latestDate);
+const prevMonthlyStats = calculateStats(recordsList, 30, 30, latestDate);
+
+const consolidated = {
+  daily: {
+    volume: `${dailyStats.volume.toFixed(1)} m³`,
+    weight: `${dailyStats.weight.toFixed(0)} kg`,
+    trend: formatTrend(dailyStats.volume, prevDailyStats.volume)
+  },
+  weekly: {
+    volume: `${weeklyStats.volume.toFixed(1)} m³`,
+    weight: `${weeklyStats.weight.toFixed(0)} kg`,
+    trend: formatTrend(weeklyStats.volume, prevWeeklyStats.volume)
+  },
+  monthly: {
+    volume: `${monthlyStats.volume.toFixed(1)} m³`,
+    weight: `${(monthlyStats.weight / 1000).toFixed(2)} ton`, // Convert to tons for monthly
+    trend: formatTrend(monthlyStats.volume, prevMonthlyStats.volume)
+  }
+};
+
+// Calculate Peak Hours for different periods
+const peakHoursDaily = calculatePeakHours(recordsList, 1, latestDate);
+const peakHoursWeekly = calculatePeakHours(recordsList, 7, latestDate);
+const peakHoursMonthly = calculatePeakHours(recordsList, 30, latestDate);
+
+// Date Range Labels for UX Context
+const labels = {
+  daily: getDateRangeLabel(1, latestDate),
+  weekly: getDateRangeLabel(7, latestDate),
+  monthly: getDateRangeLabel(30, latestDate)
+};
+
+// Mock Data: Zones and Collection Points Hierarchy
+const hierarchy = zones.map(zone => ({
+  id: zone.id,
+  name: zone.name,
+  points: points.filter(p => p.zona_id === zone.id).map(p => ({
+    id: p.id,
+    name: p.name,
+    lastRecord: '10:30 AM', // Mock logic
+    status: 'Normal' // Mock logic
+  }))
+}));
+
+const records = recordsList.map(r => {
+    const point = points.find(p => p.id === r.point_id);
+    const zone = zones.find(z => z.id === point?.zona_id);
+    return {
+        ...r,
+        point: point?.name || 'Unknown',
+        zone: zone?.name || 'Unknown'
+    };
+});
+---
+
+<Layout title="FO-DIAG-01: Tablero de Control de Residuos">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pb-12">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-1">
+              <a href="/formatos" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Formatos</a>
+              <span>/</span>
+              <a href="/formatos/fo-diag" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Diagnóstico de Residuos</a>
+              <span>/</span>
+              <span class="text-gray-900 dark:text-white font-medium">FO-DIAG-01</span>
+            </div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Tablero de Control de Residuos</h1>
+            <small class="text-gray-500 dark:text-gray-400"><b>{formatoName}</b></small>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Monitoreo de generación por Zona y Punto de Acopio.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="/fo-diag/fo-diag-01/edit" class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-brand-600 hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+              Nuevo Registro
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      
+      <!-- Consolidated Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Daily -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 relative overflow-hidden">
+          <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 dark:bg-blue-900/20 rounded-full blur-xl"></div>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Consolidado Diario</h3>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white" id="daily-volume">{consolidated.daily.volume}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400" id="daily-weight">/ {consolidated.daily.weight}</span>
+          </div>
+          <div class="mt-2 flex items-center text-sm text-green-600 dark:text-green-400" id="daily-trend-container">
+            <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            <span id="daily-trend">{consolidated.daily.trend}</span> vs ayer
+          </div>
+        </div>
+
+        <!-- Weekly -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 relative overflow-hidden">
+          <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-purple-50 dark:bg-purple-900/20 rounded-full blur-xl"></div>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Consolidado Semanal</h3>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white" id="weekly-volume">{consolidated.weekly.volume}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400" id="weekly-weight">/ {consolidated.weekly.weight}</span>
+          </div>
+          <div class="mt-2 flex items-center text-sm text-green-600 dark:text-green-400" id="weekly-trend-container">
+            <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            <span id="weekly-trend">{consolidated.weekly.trend}</span> vs semana anterior
+          </div>
+        </div>
+
+        <!-- Monthly -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 relative overflow-hidden">
+          <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-orange-50 dark:bg-orange-900/20 rounded-full blur-xl"></div>
+          <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Consolidado Mensual</h3>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white" id="monthly-volume">{consolidated.monthly.volume}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400" id="monthly-weight">/ {consolidated.monthly.weight}</span>
+          </div>
+          <div class="mt-2 flex items-center text-sm text-red-500 dark:text-red-400" id="monthly-trend-container">
+            <svg class="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg>
+            <span id="monthly-trend">{consolidated.monthly.trend}</span> vs mes anterior
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Peak Hours Chart -->
+        <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="mb-6">
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Horarios Pico de Generación</h3>
+            
+            <div class="flex flex-col xl:flex-row gap-4 justify-between">
+                <!-- Time Controls Group -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <!-- Period Selector Pills -->
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-1 flex self-start">
+                        <button class="px-3 py-1.5 text-sm font-medium rounded-md bg-white dark:bg-gray-600 text-gray-900 dark:text-white shadow-sm transition-all" data-period="daily" data-label={labels.daily}>Día</button>
+                        <button class="px-3 py-1.5 text-sm font-medium rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all" data-period="weekly" data-label={labels.weekly}>Semana</button>
+                        <button class="px-3 py-1.5 text-sm font-medium rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all" data-period="monthly" data-label={labels.monthly}>Mes</button>
+                    </div>
+                    
+                    <!-- Date Navigator -->
+                    <div class="flex items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-lg p-1 self-start" id="chartDateLabel">
+                        <button id="prevPeriodBtn" class="p-1.5 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md transition-colors text-gray-500 dark:text-gray-400" aria-label="Anterior">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                            </svg>
+                        </button>
+                        <span class="mx-2 text-sm font-medium text-gray-700 dark:text-gray-200 min-w-32 text-center whitespace-nowrap">{labels.daily}</span>
+                        <button id="nextPeriodBtn" class="p-1.5 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md transition-colors text-gray-500 dark:text-gray-400" aria-label="Siguiente">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters Group -->
+                <div class="flex flex-col sm:flex-row gap-2 w-full xl:w-auto">
+                  <select id="zoneFilter" class="flex-1 xl:w-40 text-sm border-gray-300 rounded-md shadow-sm focus:border-brand-500 focus:ring-brand-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <option value="all">Todas las Zonas</option>
+                    {hierarchy.map(z => <option value={z.id}>{z.name}</option>)}
+                  </select>
+                  <select id="pointFilter" class="flex-1 xl:w-40 text-sm border-gray-300 rounded-md shadow-sm focus:border-brand-500 focus:ring-brand-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    <option value="all">Todos los Puntos</option>
+                    {hierarchy.flatMap(z => z.points).map(p => <option value={p.id}>{p.name}</option>)}
+                  </select>
+                </div>
+            </div>
+          </div>
+          
+          <div class="overflow-x-auto pb-2">
+            <div class="h-64 flex items-end justify-between gap-2 min-w-[600px]" id="peakHoursChart"
+                data-records={JSON.stringify(recordsList)}
+                data-daily={JSON.stringify(peakHoursDaily)}
+                data-weekly={JSON.stringify(peakHoursWeekly)}
+                data-monthly={JSON.stringify(peakHoursMonthly)}>
+                {peakHoursDaily.map((item: PeakHour, index: number) => (
+                <div class="flex flex-col items-center flex-1 group chart-bar-container" data-hour={item.hour}>
+                    <div class="relative w-full flex justify-center">
+                    <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-900 text-white text-xs rounded py-1 px-2 whitespace-nowrap z-10 chart-tooltip">
+                        Nivel: {item.level}%
+                    </div>
+                    <div 
+                        class={`w-full max-w-10 rounded-t-md transition-all duration-500 chart-bar ${
+                        item.level > 80 ? 'bg-red-500 dark:bg-red-600' : 
+                        item.level > 50 ? 'bg-yellow-500 dark:bg-yellow-600' : 
+                        'bg-brand-500 dark:bg-brand-600'
+                        }`} 
+                        style={`height: ${item.level * 2}px`}
+                    ></div>
+                    </div>
+                    <span class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">{item.hour}</span>
+                </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <script>
+          import { calculatePeakHours, getDateRangeLabel, getLatestDate, calculateStats, formatTrend } from '../../../../utils/metrics/waste-metrics';
+
+          // Client-side logic for chart filtering
+          const zoneFilter = document.getElementById('zoneFilter');
+          const pointFilter = document.getElementById('pointFilter');
+          const chartContainer = document.getElementById('peakHoursChart');
+          const periodButtons = document.querySelectorAll('[data-period]');
+          const dateLabelContainer = document.getElementById('chartDateLabel');
+          const prevBtn = document.getElementById('prevPeriodBtn');
+          const nextBtn = document.getElementById('nextPeriodBtn');
+
+          let currentPeriod = 'daily';
+          let records: any[] = [];
+          let currentDate = new Date();
+
+          // Initialize data
+          if (chartContainer && chartContainer.dataset.records) {
+            try {
+              records = JSON.parse(chartContainer.dataset.records);
+              // Initialize date from records
+              currentDate = getLatestDate(records);
+            } catch (e) {
+              console.error('Error parsing records', e);
+            }
+          }
+
+          function getDaysForPeriod(period: string) {
+            switch(period) {
+              case 'daily': return 1;
+              case 'weekly': return 7;
+              case 'monthly': return 30;
+              default: return 1;
+            }
+          }
+
+          function updateStats(period: string, current: any, previous: any) {
+            const volEl = document.getElementById(`${period}-volume`);
+            const weightEl = document.getElementById(`${period}-weight`);
+            const trendEl = document.getElementById(`${period}-trend`);
+            
+            if (volEl) volEl.textContent = `${current.volume.toFixed(1)} m³`;
+            
+            if (weightEl) {
+                if (period === 'monthly') {
+                     weightEl.textContent = `/ ${(current.weight / 1000).toFixed(2)} ton`;
+                } else {
+                     weightEl.textContent = `/ ${current.weight.toFixed(0)} kg`;
+                }
+            }
+            
+            if (trendEl) {
+                trendEl.textContent = formatTrend(current.volume, previous.volume);
+            }
+          }
+
+          function updateView() {
+            if (!chartContainer) return;
+
+            const days = getDaysForPeriod(currentPeriod);
+            
+            // Recalculate data based on current date and period
+            const newData = calculatePeakHours(records, days, currentDate);
+            
+            renderChart(newData);
+            
+            // Update label
+            if (dateLabelContainer) {
+              const span = dateLabelContainer.querySelector('span');
+              if (span) {
+                span.textContent = getDateRangeLabel(days, currentDate);
+              }
+            }
+
+            // Update Consolidated Stats
+            const dailyStats = calculateStats(records, 1, 0, currentDate);
+            const prevDailyStats = calculateStats(records, 1, 1, currentDate);
+            updateStats('daily', dailyStats, prevDailyStats);
+
+            const weeklyStats = calculateStats(records, 7, 0, currentDate);
+            const prevWeeklyStats = calculateStats(records, 7, 7, currentDate);
+            updateStats('weekly', weeklyStats, prevWeeklyStats);
+
+            const monthlyStats = calculateStats(records, 30, 0, currentDate);
+            const prevMonthlyStats = calculateStats(records, 30, 30, currentDate);
+            updateStats('monthly', monthlyStats, prevMonthlyStats);
+          }
+          
+          function renderChart(data: any[]) {
+             if (!chartContainer) return;
+             
+             const html = data.map((item: any) => `
+              <div class="flex flex-col items-center flex-1 group chart-bar-container" data-hour="${item.hour}">
+                <div class="relative w-full flex justify-center">
+                  <div class="absolute bottom-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-gray-900 text-white text-xs rounded py-1 px-2 whitespace-nowrap z-10 chart-tooltip">
+                    Nivel: ${item.level}%
+                  </div>
+                  <div 
+                    class="w-full max-w-10 rounded-t-md transition-all duration-500 chart-bar ${
+                      item.level > 80 ? 'bg-red-500 dark:bg-red-600' : 
+                      item.level > 50 ? 'bg-yellow-500 dark:bg-yellow-600' : 
+                      'bg-brand-500 dark:bg-brand-600'
+                    }" 
+                    style="height: ${item.level * 2}px"
+                  ></div>
+                </div>
+                <span class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-medium">${item.hour}</span>
+              </div>
+             `).join('');
+             
+             chartContainer.innerHTML = html;
+          }
+
+          periodButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const target = (e.target as HTMLElement).closest('button');
+                if (!target) return;
+
+                const period = target.dataset.period;
+                if (!period) return;
+                
+                // Update active state
+                periodButtons.forEach(b => {
+                    b.classList.remove('bg-white', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white', 'shadow-sm');
+                    b.classList.add('text-gray-500', 'dark:text-gray-400');
+                });
+                target.classList.add('bg-white', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white', 'shadow-sm');
+                target.classList.remove('text-gray-500', 'dark:text-gray-400');
+
+                currentPeriod = period;
+                updateView();
+            });
+          });
+
+          if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+              const d = new Date(currentDate);
+              if (currentPeriod === 'daily') d.setDate(d.getDate() - 1);
+              if (currentPeriod === 'weekly') d.setDate(d.getDate() - 7);
+              if (currentPeriod === 'monthly') d.setMonth(d.getMonth() - 1);
+              
+              currentDate = d;
+              updateView();
+            });
+          }
+
+          if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+              const d = new Date(currentDate);
+              if (currentPeriod === 'daily') d.setDate(d.getDate() + 1);
+              if (currentPeriod === 'weekly') d.setDate(d.getDate() + 7);
+              if (currentPeriod === 'monthly') d.setMonth(d.getMonth() + 1);
+              
+              currentDate = d;
+              updateView();
+            });
+          }
+          
+          function updateChartMock() {
+             // In a real app, we would filter 'records' by zone/point and call updateView()
+             updateView();
+          }
+
+          if (zoneFilter) zoneFilter.addEventListener('change', updateChartMock);
+          if (pointFilter) pointFilter.addEventListener('change', updateChartMock);
+        </script>
+
+        <!-- Hierarchy Status -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Estado por Zonas</h3>
+            <a href="/admin/zonas" class="text-sm text-brand-600 dark:text-brand-400 font-medium hover:underline flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Gestionar Zonas
+            </a>
+          </div>
+          <div class="space-y-6">
+            {hierarchy.map(zone => (
+              <div>
+                <h4 class="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 flex items-center">
+                  <svg class="w-4 h-4 mr-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                  {zone.name}
+                </h4>
+                <div class="space-y-2 pl-4 border-l-2 border-gray-100 dark:border-gray-700">
+                  {zone.points.map(point => (
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-gray-600 dark:text-gray-400">{point.name}</span>
+                      <div class="flex items-center gap-2">
+                        <span class="text-xs text-gray-400">{point.lastRecord}</span>
+                        <span class={`w-2 h-2 rounded-full ${point.status === 'Crítico' ? 'bg-red-500' : 'bg-green-500'}`}></span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Records Table -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+        <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700/50">
+          <h2 class="text-lg font-bold text-gray-900 dark:text-white">Últimos Registros</h2>
+          <button class="text-sm text-brand-600 dark:text-brand-400 font-medium hover:underline">Ver todos</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead class="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Hora</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Punto de Acopio</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Zona</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nivel Gen.</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Residuos</th>
+                <th class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+              </tr>
+            </thead>
+            <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+              {records.map((record: any) => (
+                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">{record.time}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{record.point}</td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">{record.zone}</td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                      record.generation.level === 'Alto' ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' : 
+                      record.generation.level === 'Medio' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' : 
+                      'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                    }`}>
+                      {record.generation.level}
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
+                    <div class="flex gap-1">
+                      {record.wasteTypes.map((type: string) => (
+                        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                          {type}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <a href={`/formatos/fo-diag/fo-diag-01/view?id=${record.id}`} class="text-brand-600 hover:text-brand-900 dark:text-brand-400 dark:hover:text-brand-300">Detalles</a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
