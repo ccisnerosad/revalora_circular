@@ -48,6 +48,26 @@ Para mantener la seguridad de tipos sin un paquete compartido (`shared`), usarem
 
 ### Base de Datos (PostgreSQL)
 *   Nombres de tablas en `snake_case` plural (ej. `users`, `role_permissions`).
+
+## 3. Estándares de Código y Documentación
+
+### Idioma
+*   **Español:** Todos los comentarios de código, documentación interna (JSDoc) y documentación del proyecto deben escribirse en **Español**.
+*   **Inglés:** Se permite inglés para nombres de variables, funciones y clases si sigue convenciones estándar (ej. `getUser`, `isAuthorized`), pero la explicación de qué hacen debe ser en español.
+
+### Arquitectura de Carpetas (Escalabilidad)
+Para mantener el orden ante un crecimiento exponencial, seguiremos esta estructura para utilidades y lógica de negocio:
+*   `src/utils/{dominio}/{funcionalidad}.ts`
+    *   Ejemplo: `src/utils/metrics/waste-metrics.ts` (no `src/utils/statistics.ts` genérico).
+    *   Ejemplo: `src/utils/auth/token-validation.ts`.
+*   **Nomenclatura de Funciones:** Usar formato `verboSustantivo` descriptivo.
+    *   Bien: `calculateDailyWaste`, `formatCurrency`.
+    *   Mal: `calc`, `dataProcess`.
+
+### UX y Valor de la Información
+*   **Máxima de Diseño:** Toda gráfica o elemento de interfaz debe responder a la pregunta: *"¿Qué decisión permite tomar este dato?"*.
+*   **Contexto:** Nunca mostrar gráficas temporales (Día/Mes/Año) sin indicar explícitamente el rango de fechas que se está visualizando (ej. "10 Dic - 17 Dic 2025"). El usuario debe saber siempre **qué** está viendo.
+
 *   Nombres de columnas en `snake_case`.
 *   Siempre incluir campos de auditoría (`created_at`, `updated_at`) y, cuando aplique, `deleted_at` (Soft Delete).
 
