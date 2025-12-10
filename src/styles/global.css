@@ -48,7 +48,7 @@
   }
 }
 
-.input, .textarea, .select {
-  @apply border-gray-300 focus:border-accent-500 focus:ring-accent-500 pl-1 ml-1;
+input, textarea, select {
+  @apply border-gray-300 focus:border-accent-500 focus:ring-accent-500 p-2 ml-1;
 }
 
