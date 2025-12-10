@@ -1,0 +1,121 @@
+---
+import Layout from '@layouts/LayoutFo.astro';
+import zonesData from '@data/core/zonas.json';
+import pointsData from '@data/core/puntos.json';
+import type { Zone, Point } from 'src/types/core';
+
+const id = Astro.url.searchParams.get('id');
+
+// Data Fetching
+const zonesList: Zone[] = zonesData as Zone[];
+const pointsList: Point[] = pointsData as Point[];
+
+const foundZone = zonesList.find(z => z.id === id);
+const foundPoints = pointsList.filter(p => p.zona_id === id);
+
+const zoneData = foundZone ? {
+  ...foundZone,
+  points: foundPoints.map(p => ({
+    ...p,
+    description: 'Descripción no disponible', // Default value as it's not in core JSON yet
+    lastAudit: '2023-10-15' // Mock value
+  }))
+} : {
+  id: 'Z-01', // Fallback for demo
+  name: 'Zona no encontrada',
+  description: '',
+  points: []
+};
+---
+
+<Layout title={`Detalle de Zona: ${zoneData.name}`}>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pb-24">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <a href="/modulos" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Módulos</a>
+          <span>/</span>
+          <a href="/admin" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Administración</a>
+          <span>/</span>
+          <a href="/admin/zonas" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Zonas y Puntos de Acopio</a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white font-medium">Detalle</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{zoneData.name}</h1>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300">
+                {zoneData.id}
+              </span>
+              <p class="text-sm text-gray-500 dark:text-gray-400">Detalle de configuración.</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <a href="/admin/zonas" class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-sm font-medium rounded-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              Volver
+            </a>
+            <a href={`/admin/zonas/edit?id=${zoneData.id}`} class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors">
+              Editar Zona
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+      
+      <!-- Info Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Descripción Operativa</h2>
+        <p class="text-gray-600 dark:text-gray-300">{zoneData.description}</p>
+      </div>
+
+      <!-- Points Grid -->
+      <div>
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Puntos de Acopio ({zoneData.points.length})</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {zoneData.points.map(point => (
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow">
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">{point.name}</h3>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">{point.id}</span>
+                  </div>
+                  <span class={`px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide
+                    ${point.type === 'Permanente' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                      point.type === 'Temporal' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' : 
+                      'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'}`}>
+                    {point.type}
+                  </span>
+                </div>
+                
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between border-b border-gray-100 dark:border-gray-700 pb-2">
+                    <span class="text-gray-500 dark:text-gray-400">Capacidad</span>
+                    <span class="font-medium text-gray-900 dark:text-white">{point.capacity}</span>
+                  </div>
+                  <div class="flex justify-between border-b border-gray-100 dark:border-gray-700 pb-2">
+                    <span class="text-gray-500 dark:text-gray-400">Última Auditoría</span>
+                    <span class="font-medium text-gray-900 dark:text-white">{point.lastAudit}</span>
+                  </div>
+                  <div class="pt-2">
+                    <span class="text-gray-500 dark:text-gray-400 block mb-1">Ubicación / Notas</span>
+                    <p class="text-gray-700 dark:text-gray-300 text-sm">{point.description}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-50 dark:bg-gray-700/50 px-6 py-3 border-t border-gray-200 dark:border-gray-700 flex justify-between items-center">
+                <a href={`/admin/zonas/puntos/timeline?zoneId=${zoneData.id}&pointId=${point.id}`} class="text-sm text-blue-600 dark:text-blue-400 font-medium hover:text-blue-800 dark:hover:text-blue-300">Ver Historial</a>
+                <a href={`/admin/zonas/puntos/edit?zoneId=${zoneData.id}&id=${point.id}`} class="text-sm text-brand-600 dark:text-brand-400 font-medium hover:text-brand-800 dark:hover:text-brand-300">Editar</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,225 @@
+---
+import Layout from '@layouts/LayoutFo.astro';
+import historyData from '@data/admin/historial_puntos.json';
+import type { PointHistory } from 'src/types/admin';
+
+const zoneId = Astro.url.searchParams.get('zoneId') || 'Z-01';
+const pointId = Astro.url.searchParams.get('pointId') || 'P-01';
+const pointName = "Contenedor Norte"; // Mock name
+const zoneName = "Mercado de Abastos - Nave A"; // Mock name
+
+// Filter Logic
+const filter = Astro.url.searchParams.get('filter') || 'all'; // all, day, week, month
+
+// Mock History Data
+const allHistory: PointHistory[] = historyData as PointHistory[];
+
+// Filter Implementation (Mocking "Today" as the latest date in data for demo purposes)
+const latestDate = new Date('2023-10-29T00:00:00'); // Ensure consistent time
+const history = allHistory.filter(item => {
+  if (filter === 'all') return true;
+  
+  const itemDate = new Date(`${item.date}T00:00:00`);
+  const diffTime = latestDate.getTime() - itemDate.getTime();
+  const diffDays = diffTime / (1000 * 60 * 60 * 24); 
+
+  if (filter === 'day') return diffDays === 0; 
+  if (filter === 'week') return diffDays >= 0 && diffDays <= 7;
+  if (filter === 'month') return diffDays >= 0 && diffDays <= 30;
+  
+  return true;
+});
+
+// Prepare Chart Data
+const chartLabels = history.map(h => h.date).reverse();
+const chartData = history.map(h => {
+  switch(h.condition) {
+    case 'Adecuada': return 3;
+    case 'Regular': return 2;
+    case 'Crítica': return 1;
+    default: return 0;
+  }
+}).reverse();
+
+const getConditionColor = (condition: string) => {
+  switch (condition) {
+    case 'Adecuada': return 'bg-green-500';
+    case 'Regular': return 'bg-yellow-500';
+    case 'Crítica': return 'bg-red-500';
+    default: return 'bg-gray-300';
+  }
+};
+
+const getConditionBorder = (condition: string) => {
+  switch (condition) {
+    case 'Adecuada': return 'border-green-500 text-green-700 bg-green-50 dark:bg-green-900/20 dark:text-green-300';
+    case 'Regular': return 'border-yellow-500 text-yellow-700 bg-yellow-50 dark:bg-yellow-900/20 dark:text-yellow-300';
+    case 'Crítica': return 'border-red-500 text-red-700 bg-red-50 dark:bg-red-900/20 dark:text-red-300';
+    default: return 'border-gray-300';
+  }
+};
+---
+
+<Layout title={`Historial de Condiciones: ${pointName}`}>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pb-12">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <a href="/modulos" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Módulos</a>
+          <span>/</span>
+          <a href="/admin" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Administración</a>
+          <span>/</span>
+          <a href="/admin/zonas" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Zonas</a>
+          <span>/</span>
+          <a href={`/admin/zonas/edit?id=${zoneId}`} class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">{zoneName}</a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white font-medium">Historial de Punto</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Historial de Condiciones del Sitio</h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Punto de Acopio: {pointName} ({pointId})</p>
+          </div>
+          <div class="flex gap-3">
+            <a href={`/formatos/fo-diag/fo-diag-01/edit?pointId=${pointId}`} class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors">
+              Nuevo Diagnóstico
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- Chart Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 mb-8">
+        <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Tendencia de Condiciones</h2>
+        <div class="h-64 w-full">
+          <canvas id="trendChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="flex justify-center mb-8">
+        <div class="inline-flex rounded-md shadow-sm" role="group">
+          <a href={`?zoneId=${zoneId}&pointId=${pointId}&filter=day`} class={`px-4 py-2 text-sm font-medium border border-gray-200 dark:border-gray-700 rounded-l-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:z-10 focus:ring-2 focus:ring-brand-500 focus:text-brand-600 dark:focus:text-white ${filter === 'day' ? 'bg-gray-100 dark:bg-gray-700 text-brand-600 dark:text-white' : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white'}`}>
+            Día
+          </a>
+          <a href={`?zoneId=${zoneId}&pointId=${pointId}&filter=week`} class={`px-4 py-2 text-sm font-medium border-t border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 focus:z-10 focus:ring-2 focus:ring-brand-500 focus:text-brand-600 dark:focus:text-white ${filter === 'week' ? 'bg-gray-100 dark:bg-gray-700 text-brand-600 dark:text-white' : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white'}`}>
+            Semana
+          </a>
+          <a href={`?zoneId=${zoneId}&pointId=${pointId}&filter=month`} class={`px-4 py-2 text-sm font-medium border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 focus:z-10 focus:ring-2 focus:ring-brand-500 focus:text-brand-600 dark:focus:text-white ${filter === 'month' ? 'bg-gray-100 dark:bg-gray-700 text-brand-600 dark:text-white' : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white'}`}>
+            Mes
+          </a>
+          <a href={`?zoneId=${zoneId}&pointId=${pointId}&filter=all`} class={`px-4 py-2 text-sm font-medium border border-gray-200 dark:border-gray-700 rounded-r-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:z-10 focus:ring-2 focus:ring-brand-500 focus:text-brand-600 dark:focus:text-white ${filter === 'all' ? 'bg-gray-100 dark:bg-gray-700 text-brand-600 dark:text-white' : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white'}`}>
+            Todos
+          </a>
+        </div>
+      </div>
+
+      <div class="relative border-l-2 border-gray-200 dark:border-gray-700 ml-3 space-y-8">
+        {history.map((item) => (
+          <div class="relative pl-8">
+            <!-- Dot -->
+            <div class={`absolute -left-[9px] top-0 h-4 w-4 rounded-full border-2 border-white dark:border-gray-900 ${getConditionColor(item.condition)}`}></div>
+            
+            <!-- Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-md transition-shadow">
+              <div class="px-4 py-3 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center bg-gray-50 dark:bg-gray-700/30">
+                <div class="flex items-center gap-2">
+                  <span class="text-sm font-bold text-gray-900 dark:text-white">{item.date}</span>
+                  <span class="text-xs text-gray-500 dark:text-gray-400">{item.time}</span>
+                </div>
+                <a href={`/formatos/fo-diag/fo-diag-01/view?id=${item.id}`} class="text-xs font-medium text-brand-600 hover:text-brand-500 dark:text-brand-400">
+                  Ver Detalle &rarr;
+                </a>
+              </div>
+              <div class="p-4">
+                <div class="flex items-start justify-between mb-2">
+                  <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getConditionBorder(item.condition)}`}>
+                    {item.condition}
+                  </span>
+                  <span class="text-xs text-gray-500 dark:text-gray-400">Evaluador: {item.evaluator}</span>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300">{item.notes}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+        {history.length === 0 && (
+          <div class="pl-8 py-8 text-center">
+            <p class="text-gray-500 dark:text-gray-400">No hay registros para el periodo seleccionado.</p>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script is:inline define:vars={{ chartLabels, chartData }}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctx = document.getElementById('trendChart');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: chartLabels,
+            datasets: [{
+              label: 'Condición del Sitio',
+              data: chartData,
+              borderColor: '#0ea5e9', // brand-500 equivalent
+              backgroundColor: 'rgba(14, 165, 233, 0.1)',
+              borderWidth: 2,
+              tension: 0.3,
+              fill: true,
+              pointBackgroundColor: (context) => {
+                const value = context.raw;
+                if (value === 3) return '#22c55e'; // green
+                if (value === 2) return '#eab308'; // yellow
+                if (value === 1) return '#ef4444'; // red
+                return '#cbd5e1';
+              },
+              pointRadius: 5
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 3.5,
+                ticks: {
+                  callback: function(value) {
+                    if (value === 3) return 'Adecuada';
+                    if (value === 2) return 'Regular';
+                    if (value === 1) return 'Crítica';
+                    return '';
+                  }
+                }
+              }
+            },
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    const value = context.raw;
+                    if (value === 3) return 'Condición: Adecuada';
+                    if (value === 2) return 'Condición: Regular';
+                    if (value === 1) return 'Condición: Crítica';
+                    return '';
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+    });
+  </script>
+</Layout>

@@ -1,0 +1,190 @@
+---
+import Layout from '@layouts/LayoutFo.astro';
+import zonesData from '@data/core/zonas.json';
+import pointsData from '@data/core/puntos.json';
+import pointTypesData from '@data/core/tipos_puntos.json';
+import type { Zone, Point } from 'src/types/core';
+import type { PointType } from 'src/types/point_types';
+
+const zoneId = Astro.url.searchParams.get('zoneId');
+const pointId = Astro.url.searchParams.get('id');
+const isEditing = !!pointId;
+
+const backLink = zoneId ? `/admin/zonas/edit?id=${zoneId}` : '/admin/zonas';
+
+// Data Fetching
+const zonesList: Zone[] = zonesData as Zone[];
+const pointsList: Point[] = pointsData as Point[];
+const pointTypes: PointType[] = pointTypesData as PointType[];
+
+const foundZone = zonesList.find(z => z.id === zoneId);
+const zoneName = foundZone ? foundZone.name : "Zona no encontrada";
+
+const foundPoint = isEditing ? pointsList.find(p => p.id === pointId) : null;
+
+const pointData = foundPoint ? {
+  ...foundPoint,
+  description: 'Descripción no disponible' // Default value as it's not in core JSON yet
+} : {
+  id: '',
+  name: '',
+  type: '',
+  capacity: '',
+  description: ''
+};
+---
+
+<Layout title={`Gestión de Punto: ${isEditing ? 'Editar' : 'Nuevo'}`}>
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pb-24">
+    <!-- Header -->
+    <div class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <a href="/modulos" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Módulos</a>
+          <span>/</span>
+          <a href="/admin" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Administración</a>
+          <span>/</span>
+          <a href="/admin/zonas" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Zonas y Puntos de Acopio</a>
+          <span>/</span>
+          <a href={backLink} class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">{zoneName}</a>
+          <span>/</span>
+          <span class="text-gray-900 dark:text-white font-medium">{isEditing ? 'Editar' : 'Nuevo'} Punto</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">{isEditing ? pointData.name : 'Nuevo Punto de Acopio'}</h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Configuración del punto de recolección.</p>
+          </div>
+          <div class="flex gap-3">
+            <a href={backLink} class="px-4 py-2 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 text-sm font-medium rounded-lg shadow-sm hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors">
+              Cancelar
+            </a>
+            <button class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg shadow-sm transition-colors">
+              Guardar Punto
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Formulario -->
+        <div class="lg:col-span-2 space-y-6">
+          <section class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50">
+              <h2 class="text-lg font-bold text-gray-900 dark:text-white">Datos del Punto</h2>
+            </div>
+            <div class="p-6 space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nombre del Punto</label>
+                  <input type="text" value={pointData.name} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Ej. Contenedor Norte" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">ID / Código</label>
+                  <input type="text" value={pointData.id} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Ej. P-01" />
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tipo de Punto</label>
+                <select id="pointTypeSelect" class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">
+                  <option value="">Seleccionar Tipo...</option>
+                  {pointTypes.map(t => <option value={t.id} selected={pointData.type === t.id}>{t.label}</option>)}
+                </select>
+                <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Selecciona el tipo para ver la guía de clasificación.</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Capacidad</label>
+                  <input type="text" value={pointData.capacity} class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Ej. 1100 Litros" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Ubicación Específica</label>
+                  <input type="text" class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm" placeholder="Ej. Detrás de bodega 3" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Descripción / Notas</label>
+                <textarea rows="3" class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-700 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm">{pointData.description}</textarea>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- Panel de Referencia (Ayuda Visual) -->
+        <div class="lg:col-span-1">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden sticky top-24">
+            <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700/50">
+              <h4 class="text-sm font-bold text-gray-700 dark:text-gray-300 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Guía de Clasificación
+              </h4>
+            </div>
+            
+            <div class="p-4 space-y-3 max-h-[calc(100vh-200px)] overflow-y-auto custom-scrollbar">
+              {pointTypes.map(type => (
+                <div id={`info-${type.id}`} class={`point-info-card p-3 rounded-md border transition-all duration-200 hover:shadow-md
+                  ${pointData.type === type.id ? 'ring-2 ring-brand-500 bg-brand-50 dark:bg-brand-900/20 border-brand-200 dark:border-brand-800' : 'border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800'}
+                `}>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class={`text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide
+                      ${type.color === 'green' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                        type.color === 'blue' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' : 
+                        'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'}`}>
+                      {type.label}
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-600 dark:text-gray-300 mb-2 font-medium">{type.definition}</p>
+                  
+                  <div class="space-y-2">
+                    <div>
+                      <p class="text-[10px] uppercase text-gray-400 font-bold">Indicadores:</p>
+                      <ul class="list-disc list-inside text-xs text-gray-500 dark:text-gray-400 pl-1">
+                        {type.indicators.map(ind => <li>{ind}</li>)}
+                      </ul>
+                    </div>
+                    <div>
+                      <p class="text-[10px] uppercase text-gray-400 font-bold">Ejemplos:</p>
+                      <p class="text-xs text-gray-500 dark:text-gray-400 italic">{type.examples}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Highlight selected type info
+    const select = document.getElementById('pointTypeSelect');
+    const cards = document.querySelectorAll('.point-info-card');
+
+    function updateHighlight(selected: string) {
+      cards.forEach(card => {
+        if (selected && card.id === `info-${selected}`) {
+          card.classList.add('ring-2', 'ring-brand-500', 'bg-brand-50', 'dark:bg-brand-900/20', 'border-brand-200', 'dark:border-brand-800');
+          card.classList.remove('border-gray-200', 'dark:border-gray-600', 'bg-white', 'dark:bg-gray-800');
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          card.classList.remove('ring-2', 'ring-brand-500', 'bg-brand-50', 'dark:bg-brand-900/20', 'border-brand-200', 'dark:border-brand-800');
+          card.classList.add('border-gray-200', 'dark:border-gray-600', 'bg-white', 'dark:bg-gray-800');
+        }
+      });
+    }
+
+    select?.addEventListener('change', (e) => {
+      updateHighlight((e.target as HTMLSelectElement).value);
+    });
+  </script>
+</Layout>
