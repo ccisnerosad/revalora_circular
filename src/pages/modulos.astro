@@ -1,0 +1,46 @@
+---
+import Layout from '@layouts/Layout.astro';
+import moduloMetadata from '@data/modulos/modulos_data.json';
+
+interface FormatItem {
+  title: string;
+  description: string;
+  icon: string;
+  path: string;
+}
+
+const formats = moduloMetadata.modulos.map((m: { nombre: string; descripcion: string; icono: string; path: string; id?: string; status?: string }) => ({
+  title: m.nombre,
+  description: m.descripcion,
+  icon: m.icono,
+  path: m.path,
+  id: m.id,
+  status: m.status
+}));
+
+---
+<Layout title="Administración de Módulos" heroDescription="Accede a los diferentes módulos del sistema Revalora Circular para implementación y gestión de la economía circular.">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    
+    <!-- Grid Section -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {formats.map((format) => (
+          <a href={format.path} class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-all hover:border-brand-500 dark:hover:border-brand-500">
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 bg-brand-50 dark:bg-brand-900/20 rounded-lg group-hover:bg-brand-100 dark:group-hover:bg-brand-900/30 transition-colors">
+                <span class="text-2xl">{format.icon}</span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-brand-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{format.title}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">{format.description}</p>
+          </a>
+        ))}
+      </div>
+    </main>
+  </div>
+</Layout>
+

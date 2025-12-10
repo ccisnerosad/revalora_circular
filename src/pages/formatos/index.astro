@@ -1,0 +1,74 @@
+---
+import Layout from '@layouts/LayoutModulos.astro';
+import toolsData from '@data/formatos/herramientas.json';
+import type { Tool } from 'src/types/tools';
+
+const tools: Tool[] = toolsData as Tool[];
+
+const getColorClasses = (color: string) => {
+  switch (color) {
+    case 'green':
+      return {
+        bar: 'bg-green-500',
+        iconBg: 'bg-green-50 dark:bg-green-900/20',
+        titleHover: 'group-hover:text-green-600 dark:group-hover:text-green-400',
+        linkText: 'text-green-600 dark:text-green-400'
+      };
+    case 'blue':
+      return {
+        bar: 'bg-blue-500',
+        iconBg: 'bg-blue-50 dark:bg-blue-900/20',
+        titleHover: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
+        linkText: 'text-blue-600 dark:text-blue-400'
+      };
+    default:
+      return {
+        bar: 'bg-gray-500',
+        iconBg: 'bg-gray-50 dark:bg-gray-900/20',
+        titleHover: 'group-hover:text-gray-600 dark:group-hover:text-gray-400',
+        linkText: 'text-gray-600 dark:text-gray-400'
+      };
+  }
+};
+---
+
+<Layout title="Presentación y Navegación" heroDescription="Acceso centralizado a los documentos y herramientas del proyecto Revalora Circular.">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-12">
+      <!-- Diagnostics Section -->
+      <section>
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-l-4 border-accent-500 pl-4">Diagnósticos y Herramientas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {tools.map(tool => {
+            const colors = getColorClasses(tool.color);
+            return (
+              <a href={tool.path} class="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col h-full">
+                <div class={`absolute top-0 left-0 w-full h-1 ${colors.bar} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></div>
+                <div class="p-8 flex-1 flex flex-col">
+                  <div class="flex items-center justify-between mb-6">
+                    <span class={`text-4xl ${colors.iconBg} p-3 rounded-lg`}>{tool.icon}</span>
+                  </div>
+                  <h3 class={`text-xl font-bold text-gray-900 dark:text-white mb-3 ${colors.titleHover} transition-colors`}>
+                    {tool.title}
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400 mb-6 flex-1">
+                    {tool.description}
+                  </p>
+                  <div class={`flex items-center ${colors.linkText} font-medium`}>
+                    Acceder a formatos
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+</Layout>

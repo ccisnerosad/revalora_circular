@@ -1,0 +1,63 @@
+---
+import Layout from '@layouts/LayoutModulos.astro';
+import formatMetadata from '@data/documentos/documentos_data.json';
+
+interface DocumentItem {
+  titulo: string;
+  descripcion: string;
+  icono: string;
+  autor: string;
+  version: string;
+  fecha_creacion: string;
+  path: string;
+}
+const documents = formatMetadata.documentos.map((d: DocumentItem) => ({
+   titulo: d.titulo,
+   descripcion: d.descripcion,
+   icono: d.icono,
+   autor: d.autor,
+   version: d.version,
+   fecha_creacion: d.fecha_creacion,
+   path: d.path
+}));
+
+---
+<Layout title="Gestión de Documentos" heroDescription="Repositorio centralizado de documentos, manuales y guías del sistema.">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    
+    <!-- Grid Section -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {documents.map((doc) => (
+          <a href={doc.path} class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 hover:shadow-md transition-all hover:border-brand-500 dark:hover:border-brand-500 flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <div class="p-3 bg-brand-50 dark:bg-brand-900/20 rounded-lg group-hover:bg-brand-100 dark:group-hover:bg-brand-900/30 transition-colors">
+                <span class="text-2xl">{doc.icono}</span>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-hover:text-brand-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">{doc.titulo}</h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 grow">{doc.descripcion}</p>
+            
+            <div class="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500 pt-4 border-t border-gray-100 dark:border-gray-700 mt-auto">
+                <span class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                    </svg>
+                    v{doc.version}
+                </span>
+                <span class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    {doc.fecha_creacion}
+                </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </main>
+  </div>
+</Layout>
