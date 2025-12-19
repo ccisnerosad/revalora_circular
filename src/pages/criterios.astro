@@ -1,0 +1,660 @@
+---
+import '@styles/global.css';
+import { Image } from 'astro:assets';
+import logoSlogan from '@assets/img/logo_slogan.png';
+import bg1 from '@assets/img/original_1.png';
+import bg2 from '@assets/img/original_2.png';
+import bg3 from '@assets/img/original_3.png';
+import bg4 from '@assets/img/original_4.png';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="noindex" />
+		<title>Criterios Estratégicos - CEDA Circular®</title>
+		<script>
+			import { gsap } from "gsap";
+			import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+			gsap.registerPlugin(ScrollTrigger);
+
+			document.addEventListener('DOMContentLoaded', () => {
+				// Parallax effects for backgrounds
+				gsap.utils.toArray('.parallax-bg').forEach((bg: any) => {
+					gsap.fromTo(bg, {
+						y: "-10%"
+					}, {
+						y: "10%",
+						ease: "none",
+						scrollTrigger: {
+							trigger: bg.parentElement.parentElement,
+							start: "top bottom",
+							end: "bottom top",
+							scrub: true
+						}
+					});
+				});
+
+				// Text reveals
+				gsap.utils.toArray('.reveal-text').forEach((text: any) => {
+					gsap.fromTo(text, 
+						{ y: 30, opacity: 0 },
+						{
+							y: 0,
+							opacity: 1,
+							duration: 0.8,
+							ease: "power3.out",
+							scrollTrigger: {
+								trigger: text,
+								start: "top 90%",
+								toggleActions: "play none none reverse"
+							}
+						}
+					);
+				});
+
+				// Stagger containers
+				gsap.utils.toArray('.stagger-container').forEach((container: any) => {
+					gsap.fromTo(container.children,
+						{ y: 20, opacity: 0 },
+						{
+							y: 0,
+							opacity: 1,
+							duration: 0.6,
+							stagger: 0.1,
+							ease: "power2.out",
+							scrollTrigger: {
+								trigger: container,
+								start: "top 85%",
+							}
+						}
+					);
+				});
+			});
+		</script>
+		<style>
+			.glass-panel {
+				background: rgba(255, 255, 255, 0.05);
+				backdrop-filter: blur(10px);
+				-webkit-backdrop-filter: blur(10px);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+			.glass-panel-dark {
+				background: rgba(15, 23, 42, 0.8);
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+			}
+		</style>
+	</head>
+	<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+		
+		<!-- Header / Portada -->
+		<section class="relative min-h-[80vh] flex flex-col justify-center items-center overflow-hidden">
+			<div class="absolute inset-0 z-0 w-full h-full">
+				<Image src={bg1} alt="Fondo" class="w-full h-[140%] object-cover absolute -top-[20%] left-0 parallax-bg opacity-60" />
+				<div class="absolute inset-0 bg-linear-to-b from-slate-900/90 via-slate-900/80 to-slate-950"></div>
+			</div>
+			
+			<div class="relative z-10 text-center px-6 max-w-5xl">
+				<div class="mb-8 reveal-text">
+					<Image src={logoSlogan} alt="Revalora Circular" class="h-24 w-auto mx-auto drop-shadow-2xl" />
+				</div>
+				<h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight text-white reveal-text">
+					Criterios Estratégicos y Lineamientos<br>
+                    <span class="text-transparent bg-clip-text bg-linear-to-r from-brand-400 to-accent-400">Sistema CEDA Circular®</span>
+				</h1>
+				<p class="text-xl text-slate-300 max-w-3xl mx-auto font-light reveal-text">
+					Documento de referencia para la implementación, toma de decisiones y defensa técnica del sistema.
+				</p>
+			</div>
+		</section>
+
+        <!-- BLOQUE 1 -->
+        <section class="relative py-20 px-6 bg-slate-950">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-brand-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 1 · VISIÓN, OBJETIVO Y ALCANCE DEL PROYECTO</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q1 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">1. ¿Cuál es el objetivo real del Proyecto CEDA Circular®?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Transformar residuos orgánicos en valor económico, social y ambiental mediante un sistema productivo circular permanente.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El proyecto no persigue únicamente la reducción de residuos, sino la creación de un sistema productivo con gobernanza, trazabilidad, control normativo y mejora continua. Integra infraestructura, operación, medición y escalamiento bajo reglas claras.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> No es un programa temporal; es una infraestructura productiva de largo plazo.
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">2. ¿En qué se diferencia de otros proyectos de gestión de residuos?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> En que no opera por acciones aisladas, sino por un sistema completo.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> A diferencia de proyectos que priorizan recolección o disposición, CEDA Circular® diseña y opera ciclos completos: selección → procesamiento → valorización → medición → mejora. Cada decisión está anclada a capacidad instalada y normativa.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> Sin sistema no hay circularidad real.
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">3. ¿Por qué se define como un sistema productivo y no como un proyecto ambiental?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque genera productos, ingresos y valor medible.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El sistema produce cinco salidas con valor económico y social. Opera con indicadores, costos, ingresos y gobernanza, lo que lo sitúa en el ámbito productivo, no solo ambiental.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> La sostenibilidad se logra cuando el sistema es productivo y medible.
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">4. ¿Cuál es el alcance real del proyecto?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Desde el diagnóstico hasta la operación y mejora continua.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El alcance incluye diagnóstico técnico, selección de terreno, habilitación de planta, operación piloto, escalamiento y control permanente. No incluye improvisación ni arranques parciales.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El alcance está definido para proteger la viabilidad del sistema.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider 1 -->
+        <section class="relative h-[40vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0 w-full h-full">
+                <Image src={bg2} alt="Divider" class="w-full h-[140%] object-cover absolute -top-[20%] left-0 parallax-bg opacity-50" />
+                <div class="absolute inset-0 bg-slate-900/20"></div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 2 -->
+        <section class="relative py-20 px-6 bg-slate-900">
+            <div class="relative z-10 max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-accent-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 2 · PRUEBA PILOTO Y FASE OPERATIVA</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q5 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">5. ¿Por qué la planta piloto no es una “prueba experimental”?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque opera bajo las mismas reglas del sistema definitivo.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El piloto es la primera fase real del sistema. Produce, registra, mide y cumple normativa. No se desmonta: se amplía.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> Lo que no funcione en el piloto no escalará.
+                        </div>
+                    </div>
+
+                    <!-- Q6 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">6. ¿Qué riesgos se evitan al concebir el piloto como fase operativa?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Riesgos sanitarios, normativos y financieros.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Tratar el piloto como experimento genera datos no confiables, prácticas informales y decisiones erróneas de escalamiento.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El piloto protege al sistema del autoengaño.
+                        </div>
+                    </div>
+
+                    <!-- Q7 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">7. ¿Qué se mide realmente durante la operación piloto?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Capacidad real del sistema.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Se miden flujos, tiempos, calidad, rendimientos, costos, impactos sociales y ambientales. Estos datos validan o corrigen el diseño.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El piloto convierte supuestos en evidencia.
+                        </div>
+                    </div>
+
+                    <!-- Q8 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">8. ¿Por qué el piloto define el sistema definitivo?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque fija reglas operativas reales.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Las decisiones tomadas con datos reales del piloto determinan infraestructura, logística y escalamiento futuro.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> No se rediseña desde cero; se mejora sobre lo validado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 3 -->
+        <section class="relative py-20 px-6 bg-slate-950">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-brand-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 3 · TERRENO Y PLANTA CEDA</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q9 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">9. ¿Por qué el proyecto no puede iniciar sin un terreno viable?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque sin espacio físico no existe sistema productivo.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El terreno habilita la planta; la planta habilita la operación. Iniciar sin terreno rompe la lógica técnica y expone al proyecto a fallas graves.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El terreno no es un detalle, es una condición habilitante.
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">10. ¿Por qué no se puede “ver el terreno después”?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque todas las decisiones dependen de él.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Flujos, capacidad, logística y normativa se diseñan a partir del terreno. Postergarlo genera retrabajos y riesgos.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> Decidir tarde el terreno es decidir mal el sistema.
+                        </div>
+                    </div>
+
+                    <!-- Q11 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">11. ¿Por qué la planta piloto requiere al menos 1,000–1,200 m²?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque menos espacio impide separar flujos críticos.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La separación sanitaria, operativa y logística exige áreas diferenciadas. Reducir espacio compromete seguridad y control.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El tamaño mínimo protege la operación.
+                        </div>
+                    </div>
+
+                    <!-- Q12 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">12. ¿Por qué pensar desde el inicio en un escenario de 3,000 m²?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Para garantizar escalabilidad real.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La visión de crecimiento evita decisiones que bloqueen la expansión futura o encarezcan el sistema.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> Escalar no es improvisar, es anticipar.
+                        </div>
+                    </div>
+
+                    <!-- Q13 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300 md:col-span-2">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">13. ¿Qué riesgos implica seleccionar un terreno inadecuado?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Riesgos operativos, legales y financieros.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Un terreno mal seleccionado limita flujos, incumple normativa y encarece la operación.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El terreno correcto reduce riesgos desde el inicio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider 2 -->
+        <section class="relative h-[40vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0 w-full h-full">
+                <Image src={bg3} alt="Divider" class="w-full h-[140%] object-cover absolute -top-[20%] left-0 parallax-bg opacity-50" />
+                <div class="absolute inset-0 bg-slate-900/20"></div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 4 -->
+        <section class="relative py-20 px-6 bg-slate-900">
+            <div class="relative z-10 max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-accent-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 4 · RECOLECCIÓN, ACOPIO Y LOGÍSTICA</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q14 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">14. ¿Por qué la recolección no es el primer paso del proyecto?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque la recolección depende de la capacidad instalada del sistema.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Iniciar por recolección sin planta y sin flujos definidos genera acumulación, riesgos sanitarios y decisiones reactivas. El sistema define cuánto, dónde y cómo recolectar.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> La recolección sigue al sistema, no lo antecede.
+                        </div>
+                    </div>
+
+                    <!-- Q15 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">15. ¿Por qué no conviene recolectar el mayor volumen posible desde el inicio?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque el control es prioritario al volumen.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El piloto prioriza estabilidad operativa y trazabilidad. Incrementar volumen sin evidencia compromete calidad, seguridad y costos.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> Primero control, luego volumen.
+                        </div>
+                    </div>
+
+                    <!-- Q16 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">16. ¿Cómo se definen las áreas de acopio?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Con base en diagnóstico, capacidad y trazabilidad.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Las áreas de acopio se seleccionan considerando cercanía, segregación en origen, rutas seguras y compatibilidad con la planta.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El acopio se diseña, no se improvisa.
+                        </div>
+                    </div>
+
+                    <!-- Q17 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">17. ¿Qué pasa si se recolecta sin capacidad instalada suficiente?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Se generan cuellos de botella y riesgos.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La falta de capacidad provoca tiempos muertos, degradación del residuo y sobrecostos.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> Capacidad instalada manda sobre logística.
+                        </div>
+                    </div>
+
+                    <!-- Q18 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300 md:col-span-2">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">18. ¿Por qué el traslado debe ser controlado y trazable?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Para asegurar calidad y cumplimiento normativo.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El traslado forma parte del proceso productivo; requiere rutas, tiempos y registros definidos.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> Trasladar es operar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 6 -->
+        <section class="relative py-20 px-6 bg-slate-950">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-brand-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 6 · GOBERNANZA, CONTINUIDAD Y RIESGOS</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q19 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">19. ¿Qué garantiza que el proyecto no dependa de personas específicas?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> La gobernanza basada en sistema.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Roles, procesos y registros aseguran continuidad más allá de individuos.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El sistema sustituye a la improvisación personal.
+                        </div>
+                    </div>
+
+                    <!-- Q20 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">20. ¿Qué pasa si cambia la administración o la dirección?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El sistema permanece.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La documentación, los KPI y la gobernanza permiten continuidad institucional.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El proyecto trasciende administraciones.
+                        </div>
+                    </div>
+
+                    <!-- Q21 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">21. ¿Cómo se toman decisiones de ajuste o cambio?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Mediante órganos de gobernanza y evidencia.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Los cambios se evalúan con datos del sistema y se aprueban formalmente.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> No hay cambios sin evidencia.
+                        </div>
+                    </div>
+
+                    <!-- Q22 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">22. ¿Qué riesgos están identificados desde el inicio?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Operativos, financieros, normativos y sociales.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El sistema contempla una matriz de riesgos con planes de mitigación.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> Identificar riesgos es parte del diseño.
+                        </div>
+                    </div>
+
+                    <!-- Q23 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300 md:col-span-2">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">23. ¿Cómo se evita que el proyecto se politice?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Mediante reglas claras y transparencia.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La trazabilidad y los indicadores reducen discrecionalidad.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> La transparencia protege al proyecto.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE MIXTO -->
+        <section class="relative py-20 px-6 bg-slate-900">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-red-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE MIXTO · PREGUNTAS DURAS, CRÍTICAS Y ESCENARIOS LÍMITE</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q24 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-red-900/50 hover:border-red-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-red-400 mb-3">24. ¿Qué pasa si el volumen real de residuos es menor al estimado?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El sistema se ajusta, no colapsa.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El diseño por fases permite operar con volúmenes menores sin comprometer la viabilidad. El piloto existe precisamente para ajustar capacidad, rutas y destinos con datos reales.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-red-400 text-sm">
+                            <span class="text-red-400 font-bold">Mensaje clave:</span> El sistema está diseñado para aprender antes de crecer.
+                        </div>
+                    </div>
+
+                    <!-- Q25 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-red-900/50 hover:border-red-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-red-400 mb-3">25. ¿Qué pasa si no se autoriza el escalamiento a 3,000 m²?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El sistema sigue operando en su fase validada.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El escalamiento no es automático ni obligatorio. Se ejecuta solo con evidencia técnica, económica y de gobernanza. No escalar no invalida lo ya implementado.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-red-400 text-sm">
+                            <span class="text-red-400 font-bold">Mensaje clave:</span> Escalar es una decisión, no una obligación.
+                        </div>
+                    </div>
+
+                    <!-- Q26 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-red-900/50 hover:border-red-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-red-400 mb-3">26. ¿Qué pasa si hay resistencia de actores internos o informales?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El sistema no depende del consenso total.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La operación se diseña con actores compatibles y reglas claras. La resistencia se gestiona, pero no define el rumbo del sistema.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-red-400 text-sm">
+                            <span class="text-red-400 font-bold">Mensaje clave:</span> El sistema avanza con quienes cumplen las reglas.
+                        </div>
+                    </div>
+
+                    <!-- Q27 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-red-900/50 hover:border-red-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-red-400 mb-3">27. ¿Qué pasa si el retorno económico es más lento de lo esperado?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El proyecto prioriza estabilidad sobre rentabilidad inmediata.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La rentabilidad se consolida conforme madura la operación. Acelerar sin control genera pérdidas mayores.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-red-400 text-sm">
+                            <span class="text-red-400 font-bold">Mensaje clave:</span> La paciencia operativa protege la inversión.
+                        </div>
+                    </div>
+
+                    <!-- Q28 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-red-900/50 hover:border-red-500 transition-colors duration-300 md:col-span-2">
+                        <h3 class="text-xl font-bold text-red-400 mb-3">28. ¿Qué decisiones NO se deben tomar bajo presión?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Cambiar reglas, saltar fases o operar sin evidencia.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Las decisiones reactivas suelen romper la lógica del sistema y generan retrabajos costosos.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-red-400 text-sm">
+                            <span class="text-red-400 font-bold">Mensaje clave:</span> La presión no sustituye a la evidencia.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 7 -->
+        <section class="relative py-20 px-6 bg-slate-950">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-brand-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 7 · NORMATIVA, LEGALIDAD Y DEFENSA TÉCNICA</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q29 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">29. ¿El Proyecto CEDA Circular® es legalmente viable?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Sí, porque se diseña desde la normativa.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El sistema se alinea desde su origen a leyes ambientales, sanitarias y de residuos, así como a normas ISO que estructuran su operación.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> La legalidad es condición de diseño, no de ajuste posterior.
+                        </div>
+                    </div>
+
+                    <!-- Q30 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">30. ¿Qué normas son realmente obligatorias para la operación?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Las federales, locales y las que el propio sistema adopta.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El proyecto cumple NOM aplicables y adopta ISO 9001 como eje de control, integrando normas ambientales, de inocuidad y de biogás.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> Cumplir norma es operar con método.
+                        </div>
+                    </div>
+
+                    <!-- Q31 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">31. ¿Qué pasa si una norma cambia durante la operación?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El sistema está preparado para adaptarse.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La gestión del cambio normativo es parte del sistema de gestión y se documenta y evalúa.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> El sistema evoluciona con la norma.
+                        </div>
+                    </div>
+
+                    <!-- Q32 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">32. ¿Cómo se demuestra el cumplimiento normativo?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Con registros y evidencia.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Bitácoras, KPI y auditorías internas y externas respaldan la operación.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> Lo que no se registra, no existe.
+                        </div>
+                    </div>
+
+                    <!-- Q33 -->
+                    <div class="bg-slate-900/80 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300 md:col-span-2">
+                        <h3 class="text-xl font-bold text-brand-400 mb-3">33. ¿Por qué ISO 9001 es la norma eje del sistema?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque ordena, integra y asegura mejora continua.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> ISO 9001 permite que todas las demás normas bajen a procesos, responsabilidades y registros claros.</p>
+                        <div class="bg-slate-950 p-3 rounded border-l-2 border-accent-400 text-sm">
+                            <span class="text-accent-400 font-bold">Mensaje clave:</span> ISO 9001 convierte la intención en sistema.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider 3 -->
+        <section class="relative h-[40vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0 w-full h-full">
+                <Image src={bg4} alt="Divider" class="w-full h-[140%] object-cover absolute -top-[20%] left-0 parallax-bg opacity-50" />
+                <div class="absolute inset-0 bg-slate-900/20"></div>
+            </div>
+        </section>
+
+        <!-- BLOQUE 5 -->
+        <section class="relative py-20 px-6 bg-slate-900">
+            <div class="relative z-10 max-w-7xl mx-auto">
+                <div class="mb-12 border-l-4 border-accent-500 pl-6 reveal-text">
+                    <h2 class="text-3xl font-bold text-white">BLOQUE 5 · LOS CINCO PRODUCTOS DEL SISTEMA CEDA CIRCULAR®</h2>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 stagger-container">
+                    <!-- Q34 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">34. ¿Por qué el sistema no genera un solo producto final?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque la circularidad real requiere múltiples salidas.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Un sistema circular eficiente maximiza el valor del residuo asignándolo al destino más alto posible según su condición. Forzar un solo destino reduce valor, incrementa riesgos y rompe la lógica circular.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> La diversificación de productos protege la viabilidad del sistema.
+                        </div>
+                    </div>
+
+                    <!-- Q35 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">35. ¿Cómo se decide el destino de cada residuo?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Mediante criterios técnicos definidos en el sistema.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La asignación se basa en estado del residuo, inocuidad, tiempo, trazabilidad y normativa aplicable. La decisión no es discrecional ni comercial.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El destino del residuo es una decisión técnica, no improvisada.
+                        </div>
+                    </div>
+
+                    <!-- Q36 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">36. ¿Qué valor tiene el flujo de alimento para consumo humano?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Es el destino de mayor valor social.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Prioriza el rescate de alimentos aptos para consumo humano bajo criterios de inocuidad y trazabilidad, generando impacto social directo.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El mayor valor no siempre es económico.
+                        </div>
+                    </div>
+
+                    <!-- Q37 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">37. ¿Por qué el alimento animal es un flujo estratégico?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque recupera valor donde el consumo humano ya no es viable.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Este flujo reduce desperdicio y genera valor económico, manteniendo control sanitario y normativo.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El alimento animal extiende la vida útil del residuo.
+                        </div>
+                    </div>
+
+                    <!-- Q38 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">38. ¿Por qué el biogás es clave en el modelo?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque cierra el ciclo energético del sistema.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El biogás permite transformar residuos no aptos para alimentación en energía y biofertilizantes, reduciendo costos y emisiones.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El biogás convierte pasivos en activos energéticos.
+                        </div>
+                    </div>
+
+                    <!-- Q39 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">39. ¿Qué rol cumple el biofertilizante y la composta?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Regresar nutrientes al suelo.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Estos productos restituyen materia orgánica y cierran el ciclo biológico, alineando el sistema con la economía circular.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> Lo que vuelve al suelo sostiene el sistema.
+                        </div>
+                    </div>
+
+                    <!-- Q40 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">40. ¿Por qué el rechazo existe y no se elimina al 100 %?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Porque todo sistema real tiene límites técnicos.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> El rechazo controlado evita riesgos sanitarios y operativos. Minimizarlo es un objetivo, eliminarlo totalmente no es realista.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> El control del rechazo es señal de madurez operativa.
+                        </div>
+                    </div>
+
+                    <!-- Q41 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">41. ¿Cómo se asegura la trazabilidad de los cinco productos?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> Mediante registros integrados al sistema.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> Cada flujo cuenta con registros, indicadores y responsables que permiten seguimiento y auditoría.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> Sin trazabilidad no hay circularidad.
+                        </div>
+                    </div>
+
+                    <!-- Q42 -->
+                    <div class="bg-slate-950 p-6 rounded-xl border border-slate-800 hover:border-brand-500 transition-colors duration-300 md:col-span-2">
+                        <h3 class="text-xl font-bold text-accent-400 mb-3">42. ¿Qué pasa si uno de los cinco productos no es viable temporalmente?</h3>
+                        <p class="mb-4"><strong class="text-white">Respuesta breve:</strong> El sistema se reconfigura sin romperse.</p>
+                        <p class="text-slate-400 text-sm mb-4"><strong>Desarrollo:</strong> La flexibilidad del modelo permite priorizar otros flujos mientras se corrige la condición que afecta uno de ellos.</p>
+                        <div class="bg-slate-900 p-3 rounded border-l-2 border-brand-400 text-sm">
+                            <span class="text-brand-400 font-bold">Mensaje clave:</span> La resiliencia es parte del diseño.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 px-6 bg-slate-950 border-t border-slate-900">
+            <div class="max-w-7xl mx-auto text-center">
+
+                <div class="flex flex-col md:flex-row justify-center gap-4 text-sm text-slate-500">
+                    <span class="flex items-center justify-center"><span class="w-2 h-2 bg-brand-500 rounded-full mr-2"></span> Marco de referencia estratégico</span>
+                    <span class="flex items-center justify-center"><span class="w-2 h-2 bg-accent-500 rounded-full mr-2"></span> Herramienta de defensa técnica</span>
+                    <span class="flex items-center justify-center"><span class="w-2 h-2 bg-slate-500 rounded-full mr-2"></span> Base de alineación institucional</span>
+                </div>
+            </div>
+        </section>
+
+	</body>
+</html>

@@ -48,6 +48,26 @@
   }
 }
 
+@layer components {
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel-dark {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .text-gradient-brand {
+    @apply text-transparent bg-clip-text bg-linear-to-r from-brand-400 to-accent-400;
+  }
+}
+
 input, textarea, select {
   @apply border-gray-300 focus:border-accent-500 focus:ring-accent-500 p-2 ml-1;
 }
