@@ -3,14 +3,14 @@ import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 
 const FLOW_POINTS = [
-  // Maniobras -> Alimento Humano
-  [new THREE.Vector3(0, 0.5, 20), new THREE.Vector3(-9.5, 0.5, 15), new THREE.Vector3(-9.5, 0.5, -6)],
-  // Maniobras -> Alimento Animal
-  [new THREE.Vector3(0, 0.5, 20), new THREE.Vector3(-3.5, 0.5, 15), new THREE.Vector3(-3.5, 0.5, -6)],
-  // Alimento Humano -> Biogestión
-  [new THREE.Vector3(-9.5, 0.5, -6), new THREE.Vector3(-9.5, 0.5, -18), new THREE.Vector3(7, 0.5, -18), new THREE.Vector3(7, 0.5, 0)],
-  // Biogestión -> Tratamiento
-  [new THREE.Vector3(7, 0.5, 0), new THREE.Vector3(7, 0.5, -15)]
+  // Maniobras -> Alimento Humano (Ahora a la derecha)
+  [new THREE.Vector3(0, 0.5, 20), new THREE.Vector3(9.5, 0.5, 15), new THREE.Vector3(9.5, 0.5, -6)],
+  // Maniobras -> Alimento Animal (Ahora a la derecha)
+  [new THREE.Vector3(0, 0.5, 20), new THREE.Vector3(3.5, 0.5, 15), new THREE.Vector3(3.5, 0.5, -6)],
+  // Alimento Humano -> Biogestión (Derecha a Izquierda por atrás)
+  [new THREE.Vector3(9.5, 0.5, -6), new THREE.Vector3(9.5, 0.5, -18), new THREE.Vector3(-7, 0.5, -18), new THREE.Vector3(-7, 0.5, -2)],
+  // Biogestión -> Tratamiento (Izquierda)
+  [new THREE.Vector3(-7, 0.5, -2), new THREE.Vector3(-7, 0.5, -18)]
 ]
 
 function FlowPath({ points, color = '#00ff00', speed = 1 }) {

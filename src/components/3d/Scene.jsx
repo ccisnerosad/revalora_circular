@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Zone } from './Zone'
 import { Truck } from './Truck'
 import { FlowLines } from './FlowLines'
-import { ZONES_DATA, TRUCKS_DATA } from '../../data/data'
+import { ZONES_DATA_PB, ZONES_DATA_PA, TRUCKS_DATA } from '../../data/data'
 
 export default function Scene() {
   const [selectedZone, setSelectedZone] = useState(null)
@@ -13,7 +13,7 @@ export default function Scene() {
   const [showInfo, setShowInfo] = useState(true)
   const [showControls, setShowControls] = useState(true)
 
-  const selectedZoneData = selectedZone ? ZONES_DATA.find((z) => z.id === selectedZone) : null
+  const selectedZoneData = selectedZone ? [...ZONES_DATA_PB, ...ZONES_DATA_PA].find((z) => z.id === selectedZone) : null
 
   return (
     <div className='h-full w-full bg-gray-900 relative'>
@@ -31,9 +31,23 @@ export default function Scene() {
         {/* Suelo y Grid */}
         <Grid position={[0, -0.1, 0]} args={[100, 100]} cellSize={1} cellThickness={0.5} cellColor='#444' sectionSize={5} sectionThickness={1} sectionColor='#666' fadeDistance={50} />
 
-        {/* Zonas Arquitectónicas */}
+        {/* Zonas Arquitectónicas Planta Alta*/}
         <group>
-          {ZONES_DATA.map((zone) => (
+          {ZONES_DATA_PB.map((zone) => (
+            <Zone
+              key={zone.id}
+              data={zone}
+              isSelected={selectedZone === zone.id}
+              isAnySelected={selectedZone !== null}
+              onSelect={() => setSelectedZone(zone.id === selectedZone ? null : zone.id)}
+              onHover={(data) => setHoveredZoneData(data)}
+            />
+          ))}
+        </group>
+
+        {/* Zonas Arquitectónicas Planta Alta */}
+        <group>
+          {ZONES_DATA_PA.map((zone) => (
             <Zone
               key={zone.id}
               data={zone}

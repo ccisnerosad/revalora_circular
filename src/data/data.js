@@ -1,4 +1,4 @@
-export const ZONES_DATA = [
+export const ZONES_DATA_PB = [
   {
     'id': 'maniobras',
     'name': 'Zona de Maniobras',
@@ -19,15 +19,15 @@ export const ZONES_DATA = [
   {
     'id': 'rechazo',
     'name': 'Rechazo',
-    'desc': 'Zona de rechazo (5x8m).',
-    'medidas': ['5m', '8m', '3m'],
+    'desc': 'Zona de rechazo (8x5m).',
+    'medidas': ['8m', '5m', '3m'],
     'altura': true,
     'level': 'PB',
     'w': 8,
     'h': 3,
     'd': 5,
     'x': -8,
-    'y': 1.7,
+    'y': 1.8,
     'z': 13.5,
     'color': '#930000',
     'label': 'Rechazo'
@@ -59,7 +59,7 @@ export const ZONES_DATA = [
     'w': 14,
     'h': 0.2,
     'd': 3,
-    'x': -5,
+    'x': 5,
     'y': 0.1,
     'z': 6.5,
     'color': '#222222',
@@ -75,7 +75,7 @@ export const ZONES_DATA = [
     'w': 5,
     'h': 3.5,
     'd': 22,
-    'x': -9.5,
+    'x': 9.5,
     'y': 1.75,
     'z': -6,
     'color': '#af5e00',
@@ -92,7 +92,7 @@ export const ZONES_DATA = [
     'w': 1,
     'h': 3.5,
     'd': 22,
-    'x': -6.5,
+    'x': 6.5,
     'y': 1.75,
     'z': -6,
     'color': '#222222'
@@ -107,7 +107,7 @@ export const ZONES_DATA = [
     'w': 5,
     'h': 3.5,
     'd': 22,
-    'x': -3.5,
+    'x': 3.5,
     'y': 1.75,
     'z': -6,
     'color': '#af9500',
@@ -123,7 +123,7 @@ export const ZONES_DATA = [
     'w': 3,
     'h': 0.2,
     'd': 22,
-    'x': 0.5,
+    'x': -0.5,
     'y': 0.1,
     'z': -6,
     'color': '#222222',
@@ -139,7 +139,7 @@ export const ZONES_DATA = [
     'w': 14,
     'h': 0.2,
     'd': 8,
-    'x': -5,
+    'x': 5,
     'y': 0.1,
     'z': -21,
     'color': '#5c6bc0',
@@ -156,7 +156,7 @@ export const ZONES_DATA = [
     'w': 10,
     'h': 3,
     'd': 3,
-    'x': 7,
+    'x': -7,
     'y': 1.5,
     'z': 6.5,
     'color': '#304b7e',
@@ -165,16 +165,16 @@ export const ZONES_DATA = [
   {
     'id': 'biogestion',
     'name': 'Biogestión',
-    'desc': 'Procesamiento (10x16m).',
-    'medidas': ['10m', '16m', '4m'],
+    'desc': 'Procesamiento (10x14m).',
+    'medidas': ['10m', '14m', '4m'],
     'altura': true,
     'level': 'PB',
     'w': 10,
     'h': 4,
-    'd': 16,
-    'x': 7,
+    'd': 14,
+    'x': -7,
     'y': 2,
-    'z': -3,
+    'z': -2,
     'color': '#09977f',
     'label': 'Biogestión'
   },
@@ -188,7 +188,7 @@ export const ZONES_DATA = [
     'w': 10,
     'h': 3,
     'd': 14,
-    'x': 7,
+    'x': -7,
     'y': 1.5,
     'z': -18,
     'color': '#008b09',
@@ -196,36 +196,56 @@ export const ZONES_DATA = [
   }
 ]
 
+export const ZONES_DATA_PA = [
+  // Datos de zonas para Planta Alta (si es necesario)
+  {
+    'id': 'oficinas',
+    'name': 'Oficinas',
+    'desc': 'Área administrativa y de control (11x22m).',
+    'medidas': ['11m', '22m', '3m'],
+    'altura': true,
+    'level': 'PA',
+    'w': 11,
+    'h': 3,
+    'd': 22,
+    'x': 6.5,
+    'y': 5,
+    'z': -6,
+    'color': '#005580',
+    'label': 'Oficinas'
+  }
+]
+
 export const TRUCKS_DATA = [
   {
     'id': 't1',
     'type': 'clean',
-    'position': [-8, 0, 22],
-    'rotation': [0, Math.PI, 0]
+    'position': [-8, 0.2, 22],
+    'rotation': [0, 0, 0]
   },
   {
     'id': 't2',
     'type': 'waste',
-    'position': [-4, 0, 22],
-    'rotation': [0, Math.PI, 0]
+    'position': [-4, 0.2, 22],
+    'rotation': [0, 0, 0]
   },
   {
     'id': 't3',
     'type': 'clean',
-    'position': [0, 0, 22],
-    'rotation': [0, Math.PI, 0]
+    'position': [0, 0.2, 22],
+    'rotation': [0, 0, 0]
   },
   {
     'id': 't4',
     'type': 'waste',
-    'position': [4, 0, 22],
-    'rotation': [0, Math.PI, 0]
+    'position': [4, 0.2, 22],
+    'rotation': [0, 0, 0]
   },
   {
     'id': 't5',
     'type': 'clean',
-    'position': [8, 0, 22],
-    'rotation': [0, Math.PI, 0]
+    'position': [8, 0.2, 22],
+    'rotation': [0, 0, 0]
   }
 ]
 
