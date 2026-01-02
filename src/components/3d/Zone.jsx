@@ -1,9 +1,8 @@
 import { useRef, useState } from 'react'
-import { Tooltip } from './Tooltip'
 import { Dimensions } from './Dimensions'
 import * as THREE from 'three'
 
-export function Zone({ data, isSelected, isAnySelected, onSelect }) {
+export function Zone({ data, isSelected, isAnySelected, onSelect, onHover }) {
   const meshRef = useRef()
   const [hovered, setHover] = useState(false)
 
@@ -21,17 +20,19 @@ export function Zone({ data, isSelected, isAnySelected, onSelect }) {
     <group position={[x, y, z]} rotation={rotation ? [rotation[0], rotation[1], rotation[2]] : [0, 0, 0]}>
       <mesh
         ref={meshRef}
-        onClick={(e) => {
+        onDoubleClick={(e) => {
           e.stopPropagation()
           onSelect()
         }}
         onPointerOver={(e) => {
           e.stopPropagation()
           setHover(true)
+          onHover(data)
           document.body.style.cursor = 'pointer'
         }}
         onPointerOut={(e) => {
           setHover(false)
+          onHover(null)
           document.body.style.cursor = 'auto'
         }}>
         <boxGeometry args={[w, h, d]} />
@@ -48,9 +49,6 @@ export function Zone({ data, isSelected, isAnySelected, onSelect }) {
 
       {/* Cotas Arquitectónicas: Mostrar si está seleccionada O si hay hover (y no hay otra selección activa) */}
       {(isSelected || (hovered && !isAnySelected)) && medidas && <Dimensions w={w} h={h} d={d} medidas={medidas} showHeight={altura} />}
-
-      {/* Tooltip: Mostrar solo en hover si no es fantasma Y NO está seleccionada */}
-      {!isGhost && !isSelected && <Tooltip name={name} desc={desc} visible={hovered} />}
     </group>
   )
 }

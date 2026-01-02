@@ -8,6 +8,7 @@ import { ZONES_DATA, TRUCKS_DATA } from '../../data/data'
 
 export default function Scene() {
   const [selectedZone, setSelectedZone] = useState(null)
+  const [hoveredZoneData, setHoveredZoneData] = useState(null)
   const [showFlows, setShowFlows] = useState(false)
   const [showInfo, setShowInfo] = useState(true)
   const [showControls, setShowControls] = useState(true)
@@ -25,7 +26,7 @@ export default function Scene() {
         <Environment preset='city' />
 
         {/* Controles tipo Mapa/RTS */}
-        <MapControls enableDamping dampingFactor={0.05} minDistance={10} maxDistance={100} maxPolarAngle={Math.PI / 2.5} />
+        <MapControls enableDamping dampingFactor={0.05} minDistance={10} maxDistance={100} maxPolarAngle={Math.PI / 2.3} />
 
         {/* Suelo y Grid */}
         <Grid position={[0, -0.1, 0]} args={[100, 100]} cellSize={1} cellThickness={0.5} cellColor='#444' sectionSize={5} sectionThickness={1} sectionColor='#666' fadeDistance={50} />
@@ -33,7 +34,14 @@ export default function Scene() {
         {/* Zonas Arquitectónicas */}
         <group>
           {ZONES_DATA.map((zone) => (
-            <Zone key={zone.id} data={zone} isSelected={selectedZone === zone.id} isAnySelected={selectedZone !== null} onSelect={() => setSelectedZone(zone.id === selectedZone ? null : zone.id)} />
+            <Zone
+              key={zone.id}
+              data={zone}
+              isSelected={selectedZone === zone.id}
+              isAnySelected={selectedZone !== null}
+              onSelect={() => setSelectedZone(zone.id === selectedZone ? null : zone.id)}
+              onHover={(data) => setHoveredZoneData(data)}
+            />
           ))}
         </group>
 
@@ -84,12 +92,22 @@ export default function Scene() {
                 <span className='text-yellow-500'>Scroll:</span> Zoom in/out
               </li>
               <li>
-                <span className='text-yellow-500'>Click Zona:</span> Seleccionar
+                <span className='text-yellow-500'>Doble Click:</span> Seleccionar
               </li>
             </ul>
           </div>
         )}
       </div>
+
+      {/* Tooltip Sutil Fijo (Top Left) - Solo si no hay selección activa */}
+      {hoveredZoneData && !selectedZone && (
+        <div className='absolute top-16 left-4 pointer-events-none animate-in fade-in duration-200'>
+          <div className='bg-black/40 backdrop-blur-sm px-4 py-2 rounded border-l-2 border-yellow-500'>
+            <h3 className='text-white font-bold text-sm'>{hoveredZoneData.name}</h3>
+            <p className='text-gray-300 text-xs'>{hoveredZoneData.desc}</p>
+          </div>
+        </div>
+      )}
 
       {/* Tarjeta de Información Fija (Top Right) */}
       {selectedZoneData && showInfo && (
