@@ -1,4 +1,6 @@
 import React from 'react'
+import { DoubleSide } from 'three'
+import { MeshDistortMaterial } from '@react-three/drei'
 
 export function CompostPile({ position = [0, 0, 0], length = 8, width = 2, height = 1.5 }) {
   return (
@@ -19,10 +21,16 @@ export function CompostPile({ position = [0, 0, 0], length = 8, width = 2, heigh
         <meshStandardMaterial color='#888888' />
       </mesh>
 
-      {/* Montículo de composta (Textura rugosa simulada con color) */}
+      {/* Montículo de composta (Textura rugosa simulada con distorsión) */}
       <mesh position={[0, height / 2, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[width / 2.5, width / 2, length, 12, 1, false, 0, Math.PI]} />
-        <meshStandardMaterial color='#3e2723' roughness={1} />
+        <cylinderGeometry args={[width / 2.5, width / 2, length, 32, 8, false, 0, Math.PI]} />
+        <MeshDistortMaterial 
+          color='#3e2723' 
+          roughness={0.9} 
+          side={DoubleSide} 
+          distort={0.4} 
+          speed={0} 
+        />
       </mesh>
     </group>
   )
