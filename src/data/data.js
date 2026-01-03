@@ -80,7 +80,8 @@ export const ZONES_DATA_PB = [
     'z': -6,
     'color': '#af5e00',
     'label': 'A. Humano',
-    'rotation': [0, 0, 0]
+    'rotation': [0, 0, 0],
+    'interior': true
   },
   {
     'id': 'separacion',
@@ -176,7 +177,8 @@ export const ZONES_DATA_PB = [
     'y': 2,
     'z': -2,
     'color': '#09977f',
-    'label': 'Biogestión'
+    'label': 'Biogestión',
+    'interior': true
   },
   {
     'id': 'tratamiento',
@@ -192,13 +194,14 @@ export const ZONES_DATA_PB = [
     'y': 1.5,
     'z': -18,
     'color': '#008b09',
-    'label': 'Tratamiento'
+    'label': 'Tratamiento',
+    'interior': true
   }
 ]
 
 export const ZONES_DATA_PA = [
   // Datos de zonas para Planta Alta (si es necesario)
-  {
+  /*{
     'id': 'oficinas',
     'name': 'Oficinas',
     'desc': 'Área administrativa y de control (11x22m).',
@@ -213,7 +216,7 @@ export const ZONES_DATA_PA = [
     'z': -6,
     'color': '#005580',
     'label': 'Oficinas'
-  }
+  }*/
 ]
 
 export const TRUCKS_DATA = [

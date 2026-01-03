@@ -1,10 +1,7 @@
 import { Canvas } from '@react-three/fiber'
-import { MapControls, Environment, Grid } from '@react-three/drei'
-import { useState } from 'react'
-import { Zone } from './Zone'
-import { Truck } from './Truck'
-import { FlowLines } from './FlowLines'
-import { ZONES_DATA_PB, ZONES_DATA_PA, TRUCKS_DATA } from '../../data/data'
+import { useState, useEffect, useMemo, useCallback } from 'react'
+import World3D from './World3D'
+import { ZONES_DATA_PB, ZONES_DATA_PA } from '@data/data'
 
 export default function Scene() {
   const [selectedZone, setSelectedZone] = useState(null)
@@ -12,62 +9,81 @@ export default function Scene() {
   const [showFlows, setShowFlows] = useState(false)
   const [showInfo, setShowInfo] = useState(true)
   const [showControls, setShowControls] = useState(true)
+  const [viewMode, setViewMode] = useState('orbit')
 
   const selectedZoneData = selectedZone ? [...ZONES_DATA_PB, ...ZONES_DATA_PA].find((z) => z.id === selectedZone) : null
 
+  const targetPosition = useMemo(() => {
+    return selectedZoneData ? [selectedZoneData.x, selectedZoneData.y, selectedZoneData.z] : null
+  }, [selectedZoneData])
+
+  // Callbacks estables para evitar re-renders del World3D
+  const handleSelect = useCallback((id) => {
+    setSelectedZone((prev) => {
+      const newId = prev === id ? null : id
+      if (!newId) {
+        // Limpiar URL al deseleccionar
+        const url = new URL(window.location)
+        url.searchParams.delete('interior')
+        window.history.pushState({}, '', url)
+        setViewMode('orbit')
+      }
+      return newId
+    })
+  }, [])
+
+  const handleHover = useCallback((data) => {
+    setHoveredZoneData(data)
+  }, [])
+
+  // Manejo de URL y navegación
+  useEffect(() => {
+    // Leer parámetro al cargar
+    const params = new URLSearchParams(window.location.search)
+    const interiorId = params.get('interior')
+    if (interiorId) {
+      setSelectedZone(interiorId)
+      setViewMode('interior')
+    }
+
+    // Manejar navegación del navegador (atrás/adelante)
+    const handlePopState = () => {
+      const p = new URLSearchParams(window.location.search)
+      const id = p.get('interior')
+      if (id) {
+        setSelectedZone(id)
+        setViewMode('interior')
+      } else {
+        setSelectedZone(null)
+        setViewMode('orbit')
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const handleEnterInterior = () => {
+    setViewMode('interior')
+    // Actualizar URL
+    const url = new URL(window.location)
+    url.searchParams.set('interior', selectedZone)
+    window.history.pushState({}, '', url)
+  }
+
+  const handleClose = () => {
+    setSelectedZone(null)
+    setViewMode('orbit')
+    // Limpiar URL
+    const url = new URL(window.location)
+    url.searchParams.delete('interior')
+    window.history.pushState({}, '', url)
+  }
+
   return (
     <div className='h-full w-full bg-gray-900 relative'>
-      <Canvas shadows camera={{ position: [20, 30, 30], fov: 45 }} dpr={[1, 2]} onPointerMissed={() => setSelectedZone(null)}>
-        <color attach='background' args={['#1a1a1a']} />
-
-        {/* Iluminación */}
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 20, 10]} intensity={1} castShadow shadow-mapSize={[1024, 1024]} />
-        <Environment preset='city' />
-
-        {/* Controles tipo Mapa/RTS */}
-        <MapControls enableDamping dampingFactor={0.05} minDistance={10} maxDistance={100} maxPolarAngle={Math.PI / 2.3} />
-
-        {/* Suelo y Grid */}
-        <Grid position={[0, -0.1, 0]} args={[100, 100]} cellSize={1} cellThickness={0.5} cellColor='#444' sectionSize={5} sectionThickness={1} sectionColor='#666' fadeDistance={50} />
-
-        {/* Zonas Arquitectónicas Planta Alta*/}
-        <group>
-          {ZONES_DATA_PB.map((zone) => (
-            <Zone
-              key={zone.id}
-              data={zone}
-              isSelected={selectedZone === zone.id}
-              isAnySelected={selectedZone !== null}
-              onSelect={() => setSelectedZone(zone.id === selectedZone ? null : zone.id)}
-              onHover={(data) => setHoveredZoneData(data)}
-            />
-          ))}
-        </group>
-
-        {/* Zonas Arquitectónicas Planta Alta */}
-        <group>
-          {ZONES_DATA_PA.map((zone) => (
-            <Zone
-              key={zone.id}
-              data={zone}
-              isSelected={selectedZone === zone.id}
-              isAnySelected={selectedZone !== null}
-              onSelect={() => setSelectedZone(zone.id === selectedZone ? null : zone.id)}
-              onHover={(data) => setHoveredZoneData(data)}
-            />
-          ))}
-        </group>
-
-        {/* Flota de Camiones */}
-        <group>
-          {TRUCKS_DATA.map((truck) => (
-            <Truck key={truck.id} type={truck.type} position={truck.position} rotation={truck.rotation} />
-          ))}
-        </group>
-
-        {/* Líneas de Flujo Logístico */}
-        {showFlows && <FlowLines />}
+      <Canvas shadows camera={{ position: [20, 30, 30], fov: 45 }} dpr={[1, 2]} onPointerMissed={() => viewMode !== 'interior' && handleClose()}>
+        <World3D selectedZone={selectedZone} onSelect={handleSelect} onHover={handleHover} showFlows={showFlows} viewMode={viewMode} targetPosition={targetPosition} />
       </Canvas>
 
       {/* Panel de Control (Bottom Left) */}
@@ -131,7 +147,7 @@ export default function Scene() {
               <h2 className='text-2xl font-bold text-white leading-tight'>{selectedZoneData.name}</h2>
               <span className='text-xs font-mono text-yellow-500 uppercase tracking-widest'>Nivel {selectedZoneData.level}</span>
             </div>
-            <button onClick={() => setSelectedZone(null)} className='text-gray-400 hover:text-white transition-colors'>
+            <button onClick={handleClose} className='text-gray-400 hover:text-white transition-colors'>
               ✕
             </button>
           </div>
@@ -153,6 +169,14 @@ export default function Scene() {
                 <div className='font-mono font-bold text-yellow-400'>{selectedZoneData.medidas[2]}</div>
               </div>
             </div>
+          )}
+
+          {selectedZoneData.interior && viewMode !== 'interior' && (
+            <button
+              onClick={handleEnterInterior}
+              className='mt-4 w-full bg-yellow-500 hover:bg-yellow-400 text-black font-bold py-2 px-4 rounded flex items-center justify-center gap-2 transition-colors'>
+              <span>👁️</span> Ver Interior
+            </button>
           )}
         </div>
       )}
