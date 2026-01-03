@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function ShelvingUnit({ position = [0, 0, 0] }) {
+export function ShelvingUnit({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
   // Dimensiones: 1.2m ancho x 0.6m fondo x 2m alto
   return (
-    <group position={position}>
+    <group position={position} rotation={rotation}>
       {/* Postes verticales */}
       <mesh position={[-0.58, 1, -0.28]}>
         <boxGeometry args={[0.04, 2, 0.04]} />

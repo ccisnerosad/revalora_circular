@@ -1,8 +1,8 @@
 import React from 'react'
 
-export function HeatSealer({ position = [0, 0, 0] }) {
+export function HeatSealer({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
   return (
-    <group position={position}>
+    <group position={position} rotation={rotation}>
       {/* Base */}
       <mesh position={[0, 0.05, 0]}>
         <boxGeometry args={[0.4, 0.1, 0.3]} />

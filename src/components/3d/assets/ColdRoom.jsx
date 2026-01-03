@@ -1,10 +1,10 @@
 import React from 'react'
 
-export function ColdRoom({ position = [0, 0, 0] }) {
+export function ColdRoom({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
   // Dimensiones: 3m ancho x 3m alto x 5m fondo
   // Puerta en la cara frontal (3x3)
   return (
-    <group position={position}>
+    <group position={position} rotation={rotation}>
       {/* Estructura principal */}
       <mesh position={[0, 1.5, 0]}>
         <boxGeometry args={[3, 3, 5]} />

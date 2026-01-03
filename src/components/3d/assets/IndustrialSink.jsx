@@ -1,8 +1,8 @@
 import React from 'react'
 
-export function IndustrialSink({ position = [0, 0, 0] }) {
+export function IndustrialSink({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
   return (
-    <group position={position}>
+    <group position={position} rotation={rotation}>
       {/* Cuerpo del lavabo */}
       <mesh position={[0, 0.85, 0]}>
         <boxGeometry args={[1.2, 0.3, 0.6]} />

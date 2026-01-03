@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function OrganicBin({ position = [0, 0, 0] }) {
+export function OrganicBin({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
   // Dimensiones: 1.2m x 1.2m (Contenedor grande industrial)
   return (
-    <group position={position}>
+    <group position={position} rotation={rotation}>
       {/* Cuerpo */}
       <mesh position={[0, 0.6, 0]}>
         <boxGeometry args={[1.2, 1.2, 1.2]} />

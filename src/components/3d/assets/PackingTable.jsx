@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function PackingTable({ position = [0, 0, 0] }) {
+export function PackingTable({ position = [0, 0, 0], rotation = [0, 0, 0] }) {
   // Dimensiones: 2.4m ancho x 0.8m fondo
   return (
-    <group position={position}>
+    <group position={position} rotation={rotation}>
       {/* Superficie de la mesa */}
       <mesh position={[0, 0.9, 0]}>
         <boxGeometry args={[2.4, 0.05, 0.8]} />
