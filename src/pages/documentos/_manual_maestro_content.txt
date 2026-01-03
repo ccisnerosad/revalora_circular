@@ -1,0 +1,2688 @@
+
+MANUAL MAESTRO DEL PROYECTO
+ CEDA CIRCULAR®.
+MM-01
+DISEÑO Y DESARROLLO DE LA CONSULTORÍA PARA LA IMPLEMENTACIÓN DEL PROYECTO DE APROVECHAMIENTO INTEGRAL DE RESIDUOS CEDA – MODELO DE VALOR
+
+
+El presente Manual Maestro del Proyecto CEDA Circular® establece el marco técnico, operativo y de gestión para el diseño, implementación y mejora continua de un Sistema de Economía Circular aplicado a la Central de Abasto de la Ciudad de México.
+Este esfuerzo parte del reconocimiento de una realidad compleja y de la convicción de que los retos asociados al aprovechamiento de residuos requieren soluciones estructuradas, responsables y sostenidas en el tiempo. El sistema aquí descrito ha sido diseñado con rigor metodológico, enfoque normativo y base técnica, entendiendo que su correcta operación implica coordinación institucional, disciplina operativa y aprendizaje continuo.
+El compromiso asumido a través de este Manual es claro: hacer las cosas bien, con apego al marco legal y normativo aplicable, con transparencia en la toma de decisiones y con una visión de mejora continua que permita evolucionar el sistema conforme se generen resultados y evidencia real.
+CEDA Circular® no se concibe como una solución inmediata ni como un proyecto aislado, sino como un sistema vivo que debe operar, evaluarse y ajustarse de manera permanente. Su propósito es contribuir de forma positiva al fortalecimiento de la Central de Abasto, al desarrollo sostenible de la Ciudad de México y, en su ámbito de alcance, al país, mediante la generación de valor ambiental, social y económico bajo principios de economía circular.
+Este Manual no representa un punto de llegada, sino un punto de partida responsable, desde el cual se asume el compromiso institucional de operar con método, de medir resultados y de mejorar continuamente un sistema que aspira a consolidarse como un referente de gestión circular aplicada en contextos reales y de alta complejidad.
+
+
+
+
+
+
+MENSAJE INSTITUCIONAL
+
+Al personal de la Central de Abasto de la Ciudad de MéxicoEl Proyecto CEDA Circular® representa una transformación estructural del modelo de gestión de residuos de la Central de Abasto, orientada al fortalecimiento de la sostenibilidad ambiental, la responsabilidad social y la eficiencia operativa, en congruencia con los principios de la economía circular y las políticas públicas de desarrollo sostenible.
+Este proyecto reconoce que su viabilidad y permanencia dependen, de manera directa, del compromiso, la disciplina operativa y la participación responsable del personal que día a día hace posible el funcionamiento de este complejo estratégico para el abastecimiento alimentario del país.
+La visión institucional de la Central de Abasto, sumada a la disposición del personal para adaptarse, colaborar y fortalecer los procesos, permitirá consolidar un modelo ejemplar que proyecte a la CEDA como referente nacional e internacional en gestión integral de residuos, valorización de recursos y cuidado del entorno.
+Este esfuerzo conjunto contribuirá a la construcción de una entidad moderna, eficiente y comprometida con el bienestar social, el equilibrio ambiental y la mejora continua, generando impacto positivo para las generaciones presentes y futuras.
+El Proyecto CEDA Circular® no es únicamente una iniciativa técnica, sino una política operativa de largo plazo que fortalece el carácter institucional de la Central de Abasto y consolida su liderazgo como eje estratégico en la transición hacia modelos productivos más responsables y sostenibles.
+“Agradecemos profundamente su compromiso, su profesionalismo y su participación, pilares que consolidan a la Central de Abasto como una institución visionaria que transforma su operación con responsabilidad, conciencia ambiental y vocación social al servicio de México.”
+
+
+INTRODUCCIÓN
+
+La Central de Abasto de la Ciudad de México representa uno de los sistemas de distribución alimentaria más importantes del país y de América Latina. Su escala, dinámica operativa y volumen de residuos generan, al mismo tiempo, un desafío histórico y una oportunidad estratégica sin precedentes.
+
+El Proyecto de Aprovechamiento Integral de Residuos CEDA – Modelo de Valor no se limita a una propuesta ambiental, sino que representa una transformación estructural del modelo de gestión de residuos hacia un sistema productivo, medible y autosustentable, con impacto nacional e internacional. Este modelo posiciona a la CEDA como referente en economía circular, seguridad alimentaria y energía limpia, alineándose con los principios establecidos en la ISO 59004: Economía Circular – Marco y principios, así como con el enfoque de gestión basada en procesos, control y mejora continua definido en la ISO 9001: Sistemas de Gestión de la Calidad, e integrando adicionalmente los lineamientos de la ISO 56002: Sistema de Gestión de la Innovación, que fortalece la capacidad del proyecto para estructurar, dirigir y sostener procesos de innovación orientados a la generación de valor, sostenibilidad y competitividad a largo plazo.
+
+Asimismo, el proyecto se integra de manera directa con la Agenda 2030 y los Objetivos de Desarrollo Sostenible (ODS), particularmente los ODS 2 Hambre cero, 7 Energía asequible y no contaminante, 12 Producción y consumo responsables y 13 Acción por el clima, al promover el rescate de alimentos, la producción responsable, la reducción de emisiones y el aprovechamiento energético de los residuos. En el ámbito nacional, se articula con el Plan México, la Estrategia Nacional de Economía Circular y el marco normativo vigente, especialmente la Ley General para la Prevención y Gestión Integral de los Residuos (LGPGIR), la Ley de Residuos Sólidos de la Ciudad de México y las disposiciones aplicables en materia ambiental, sanitaria y de protección civil, garantizando un desarrollo técnicamente sólido, jurídicamente sustentado y alineado con las políticas públicas de sostenibilidad.
+Este proceso de diseño, desarrollo, implementación y mejora del sistema de gestión permitirá convertir este modelo en una realidad operativa, garantizando que cada acción esté sustentada técnica, normativa y financieramente. En este contexto, el proceso se concibe como una ruta ordenada, progresiva y participativa, orientada a:
+
+a.	Reducir la incertidumbre técnica y operativa.
+b.	Generar confianza institucional.
+c.	Minimizar riesgos.
+d.	Construir resultados visibles desde las primeras etapas.
+e.	Asegurar la viabilidad y escalabilidad del proyecto.
+
+Resistencia al cambio
+Como parte inherente del proceso de implementación, se reconoce la existencia de resistencia al cambio derivada de experiencias previas y de modelos de intervención que no han generado resultados sostenibles. Por ello, este proyecto se estructurará bajo un enfoque gradual, basado en evidencia, medición real y transparencia, permitiendo que cada actor comprenda claramente su papel, los beneficios esperados y la lógica del sistema.
+Este modelo se desarrollará bajo una premisa clave:
+No imponer una transformación, sino construirla con evidencia, resultados visibles y participación gradual.
+
+De esta manera, este proceso no representa un experimento, sino la construcción de un sistema serio, ordenado y sustentable que permitirá que la Central de Abasto se convierta en referente nacional e internacional en gestión circular de residuos.
+La resistencia al cambio se atenderá mediante:
+a. Diagnósticos transparentes.
+b. Resultados medibles desde el piloto.
+c. Beneficios sociales, ambientales y operativos visibles.
+d. Comunicación clara y permanente.
+e. Participación de los actores involucrados.
+
+El enfoque metodológico es claro y progresivo:
+1.	Medir primero
+2.	Diseñar con datos
+3.	Implementar con control
+4.	Mejorar con evidencia
+
+Flexibilidad del proyecto
+El proyecto, en sus etapas de diseño, desarrollo e implementación, se concibe como un sistema técnico adaptable, cuyo desarrollo podrá incorporar ajustes operativos y metodológicos derivados del análisis de resultados, condiciones reales de operación y mejora continua, siempre que dichos ajustes no comprometan la eficiencia, eficacia, desempeño ni los resultados establecidos, ni generen afectaciones a la viabilidad financiera, inversión proyectada o control de costos.
+Esta flexibilidad se ejercerá de manera controlada y subordinada al enfoque metodológico previamente definido, garantizando en todo momento la conformidad con los principios de gestión por procesos, enfoque basado en riesgos y mejora continua establecidos en la ISO 9001, los principios de circularidad, valorización de recursos y regeneración sistémica definidos en la ISO 59004, así como el cumplimiento del marco jurídico nacional aplicable en materia de gestión integral de residuos, protección ambiental, sanidad y protección civil.
+
+
+
+
+Estructura operativa del proceso de consultoría
+Para lograrlo, el trabajo se organizará bajo los siguientes bloques, que permitirán avanzar con claridad, control y credibilidad:
+
+A. Diagnóstico técnico-operativo de residuos	
+B. Diagnóstico de viabilidad de terrenos	
+C. Diagnóstico de viabilidad de infraestructura y edificaciones para procesos productivos
+D. Modelo de gobernanza y continuidad del sistema ceda circular®	
+E. Marco normativo y federal del proyecto ceda circular®	
+F. Lista maestra de documentos del sistema ceda circular® (lmd – versión base)
+G. Condiciones habilitantes del sistema ceda circular®	
+G.1. Infraestructura, construcción y equipamiento del sistema ceda circular®	
+G.2. Energía, transporte y seguridad industrial del sistema ceda circular®
+H. Ruta de implementación desde la prueba piloto hasta la operación permanente del sistema ceda circular®	
+
+
+
+
+
+
+
+
+
+
+
+NATURALEZA DE LA PRUEBA PILOTO COMO FASE OPERATIVA DEL SISTEMA DEFINITIVO
+
+En el marco del Proyecto CEDA Circular®, la Prueba Piloto no debe interpretarse como un ejercicio experimental, teórico o provisional, sino como la primera fase operativa real del sistema definitivo de aprovechamiento integral de residuos. Su finalidad no es “probar si el modelo funciona”, sino iniciar su operación de manera controlada, medible y técnicamente sustentada, bajo condiciones reales de la Central de Abasto.
+
+La Prueba Piloto representa el inicio formal de la implementación del sistema, conservando la misma lógica estructural, técnica y normativa que regirá a la planta ideal en su etapa de consolidación. La diferencia entre la fase piloto y la fase industrial no radica en el concepto ni en el objetivo, sino únicamente en su escala, capacidad, cobertura y nivel de automatización.
+Este enfoque se fundamenta en los principios de mejora continua y gestión progresiva establecidos en la ISO 9001 (Sistema de Gestión de Calidad), así como en el modelo evolutivo de transición hacia la circularidad definido en la ISO 59004 (Economía circular. Marco, principios y guía para su implementación), los cuales conciben la implementación como un proceso dinámico que se fortalece mediante la operación real, la medición y el análisis sistemático del desempeño.
+
+Carácter operativo de la Prueba Piloto
+La Prueba Piloto se diseña y ejecuta como una instalación funcional que:
+a.	Opera de forma continua.
+b.	Genera productos reales (alimento humano, alimento animal, biofertilizante, composta y biogás).
+c.	Produce información medible y verificable.
+d.	Permite evaluar desempeño técnico, operativo, sanitario y económico.
+e.	Sirve como base para la optimización progresiva del sistema.
+Lo que se implementa en esta etapa constituye la base del modelo que se desarrollará de manera permanente, incorporando ajustes, mejoras y correcciones durante la vida útil del proyecto, sin alterar su estructura fundamental.
+
+La Prueba Piloto no es una simulación ni una maqueta operativa.
+Es el punto de partida real del sistema definitivo, diseñado para evolucionar.
+La transición hacia la planta ideal se logra mediante un proceso continuo de:
+1.	Operación controlada.
+2.	Medición de resultados.
+3.	Identificación de brechas.
+4.	Implementación de mejoras.
+5.	Escalamiento progresivo.
+
+Diferenciación entre fase piloto y fase industrial
+ELEMENTO	PRUEBA PILOTO	PLANTA IDEAL
+Concepto del sistema	Definitivo	Definitivo
+Lógica operativa	Completa	Completa
+Cumplimiento normativo	Total	Total
+Capacidad instalada	Limitada y controlada	Ampliada
+Cobertura	Focalizada	Integral
+Automatización	Básica / Intermedia	Avanzada
+Producción	Real	Real a escala industrial
+
+a.	La Prueba Piloto no se construye para experimentar, sino para consolidar.
+-No se implementa para observar, sino para producir.
+-No se instala para intentar, sino para evolucionar.
+Cada proceso activado en esta fase responde al diseño definitivo del sistema y se ajusta únicamente para optimizar su eficiencia, eficacia y sostenibilidad, garantizando una transición ordenada hacia la planta de mayor escala.
+
+La Prueba Piloto constituye la primera expresión tangible del Proyecto CEDA Circular®, y su correcta comprensión es clave para asegurar la confianza institucional, la coherencia técnica y la viabilidad del modelo a largo plazo. Su implementación representa el inicio real de una transformación estructural, no una etapa transitoria sin impacto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A. DIAGNÓSTICO TÉCNICO-OPERATIVO DE RESIDUOS
+
+Este diagnóstico tiene como objetivo establecer una comprensión profunda, real y documentada de cómo se generan, manejan y disponen actualmente los residuos en la Central de Abasto, para que el diseño del sistema de gestión circular se fundamente en datos objetivos y no en supuestos.
+El diagnóstico busca reducir la incertidumbre, anticipar riesgos y sentar las bases para una implementación ordenada, gradual y viable, respetando la complejidad operativa y social del entorno.
+
+Objetivo general
+Desarrollar un diagnóstico técnico-operativo integral que permita identificar escenarios reales de intervención, definir estrategias de implementación progresiva y establecer los lineamientos técnicos para el diseño del modelo piloto de aprovechamiento de residuos.
+
+Objetivos específicos
+a.	Identificar el tipo y comportamiento de los residuos generados por zonas.
+b.	Determinar volúmenes reales y patrones de generación.
+c.	Analizar la logística actual de recolección y disposición.
+d.	Identificar actores involucrados formal e informalmente.
+e.	Detectar puntos críticos, zonas de conflicto y saturación.
+f.	Evaluar condiciones sanitarias y ambientales existentes.
+g.	Establecer escenarios técnicos de implementación gradual.
+h.	Generar información base para el diseño del sistema de gestión.
+
+
+
+Alcance del diagnóstico
+El diagnóstico abarcará exclusivamente la fase de análisis y levantamiento de información, sin intervención física sobre los procesos actuales, considerando:
+a.	Áreas de frutas, verduras y productos perecederos.
+b.	Zonas de alta generación de residuos.
+c.	Rutas actuales de recolección.
+d.	Horarios pico de generación.
+e.	Infraestructura existente relacionada con limpieza y manejo.
+Este bloque no modifica operaciones, su propósito es comprenderlas.
+
+Metodología de trabajo
+El diagnóstico se desarrollará bajo un enfoque técnico-participativo, integrando:
+a.	Observación directa en campo.
+b.	Recorridos técnicos programados.
+c.	Registro horario de flujos de residuos.
+d.	Mapeo de puntos de acumulación.
+e.	Identificación de actores y roles.
+f.	Entrevistas dirigidas a personal operativo.
+g.	Registro fotográfico y documental.
+La información recabada se sistematizará para su análisis y toma de decisiones.
+
+Estructura del diagnóstico
+El Diagnóstico se desarrollará en las siguientes líneas de análisis:
+1. Caracterización de residuos
+a.	Tipología predominante.
+b.	Grado de aprovechamiento potencial.
+c.	Condiciones físicas del residuo.
+2. Dinámica operativa actual
+a.	Forma de recolección.
+b.	Frecuencia y rutas.
+c.	Tiempos de retiro.
+3. Actores y relaciones
+a.	Intervención formal e informal.
+b.	Intereses económicos ligados al residuo.
+c.	Riesgos de conflicto.
+4. Infraestructura existente
+a.	Contenedores y equipos actuales.
+b.	Espacios de acopio.
+c.	Condiciones físicas.
+5. Condiciones sanitarias y ambientales
+a.	Presencia de lixiviados.
+b.	Olores.
+c.	Fauna nociva.
+d.	Riesgos sanitarios.
+
+Productos entregables
+Al finalizar este plan se obtendrán:
+1.	Diagnóstico técnico documentado del sistema actual.
+2.	Mapa de generación y flujo de residuos.
+3.	Identificación de zonas críticas.
+4.	Matriz de actores e intereses.
+5.	Evaluación de riesgos operativos.
+6.	Escenarios de intervención.
+7.	Base para el diseño del modelo piloto.
+
+
+Resultados esperados
+1.	Información real y confiable para toma de decisiones.
+2.	Reducción de incertidumbre técnica.
+3.	Visión clara del estado actual.
+4.	Prevención de inversiones improvisadas.
+5.	Base sólida para el diseño de la planta piloto.
+
+Mensaje estratégico para el personal de la CEDA
+Este diagnóstico no busca evidenciar fallas, sino comprender la complejidad real del sistema para transformarlo de manera ordenada y viable. La información obtenida permitirá diseñar un modelo que responda a la realidad operativa y no a suposiciones externas.
+
+Cierre del diagnóstico técnico-operativo de residuos
+El Diagnóstico Técnico-Operativo representa el punto de partida del modelo de gestión circular. Sin un conocimiento profundo del sistema actual, cualquier intervención sería incompleta, riesgosa o prematura.
+Este plan garantiza que las siguientes etapas del proyecto se fundamenten en datos reales, participación institucional y criterios técnicos sólidos.
+
+Diagnóstico vs Matriz de Levantamiento en Campo
+El Diagnóstico Técnico-Operativo de Residuos se encuentra directamente alineado y soportado por la Matriz de Levantamiento en Campo FO-DIAG-00, la cual constituye el instrumento operativo que traduce la metodología del diagnóstico en acciones concretas y medibles.
+Dicha matriz establece, para cada línea de análisis del A. Diagnóstico Técnico-Operativo de Residuos los aspectos a evaluar, las variables a registrar, los métodos de levantamiento, la frecuencia de aplicación, los responsables y los formatos de evidencia correspondientes, permitiendo asegurar que cada numeral del diagnóstico se ejecute bajo criterios técnicos, sistemáticos y trazables.
+
+La Matriz de Levantamiento en Campo garantiza que la recolección de información no dependa de interpretaciones subjetivas, sino de procedimientos estructurados, generando 
+evidencia documental verificable que respalda la toma de decisiones, la priorización de zonas y la definición de escenarios de intervención piloto.
+Este enfoque cumple con los principios de:
+•	ISO 9001: toma de decisiones basada en evidencia y control de procesos.
+•	ISO 59004: planificación estructurada para la circularidad y valorización de recursos.
+
+Función estratégica de esta relación
+Al integrar esta mención, el documento demuestra que:
+•	El diagnóstico no es improvisado, sino planificado.
+•	Cada dato tiene un soporte documental (FO-DIAG-01 al FO-DIAG-8).
+•	Existe coherencia entre metodología, diagnóstico y ejecución en campo.
+•	Se asegura trazabilidad técnica del proceso.
+
+
+
+
+
+
+
+
+
+
+B. DIAGNÓSTICO DE VIABILIDAD DE TERRENOS
+Proyecto CEDA Circular® – Planta Piloto (Fase Año 1)
+Criterios técnicos, normativos y operativos para la selección del terreno
+
+Propósito del Diagnóstico
+El objetivo del presente diagnóstico es establecer los requisitos técnicos, normativos, operativos, ambientales y de seguridad que debe cumplir cualquier terreno destinado a la Planta Piloto del Proyecto CEDA Circular®, independientemente de su ubicación, tamaño o características específicas.
+Este bloque define el marco universal de evaluación, asegurando que la selección del terreno se realice con base en criterios verificables y defendibles, en congruencia con:
+a.	Seguridad humana y operativa
+b.	Cumplimiento normativo
+c.	Viabilidad técnica y logística
+d.	Escalabilidad del sistema
+e.	Minimización de riesgos
+f.	Protección institucional y jurídica
+Este diagnóstico no evalúa terrenos específicos. Establece el deber ser del sitio ideal para garantizar que cualquier terreno propuesto pueda analizarse con rigor técnico mediante registros y matrices del sistema.
+
+Requerimientos Generales del Terreno
+(“Deber ser” – Criterios mínimos que debe cumplir cualquier terreno)
+
+1. Seguridad física y operativa
+El terreno debe situarse en una zona que garantice:
+a.	Ausencia de infraestructura crítica incompatible (ductos de gas, hidrocarburos, líneas subterráneas peligrosas).
+b.	Distancias de seguridad respecto a líneas eléctricas, transformadores o estructuras sensibles.
+c.	Accesos seguros para personal, vehículos y maquinaria.
+d.	Condiciones que permitan operación estable durante 12 meses continuos.
+
+Normativa de referencia:
+a.	Ley General de Protección Civil
+b.	Reglamento de Construcciones CDMX
+c.	NOM-002-STPS-2010
+
+Cumplimiento de servidumbres y derechos de vía
+El terreno debe:
+a.	Respetar servidumbres oficiales establecidas por autoridades e infraestructura.
+b.	Permitir la instalación sin invadir zonas restringidas o derechos de vía.
+c.	Contar con documentación clara de limitaciones y restricciones de uso.
+Normativa de referencia:
+a.	Ley de la Industria Eléctrica
+b.	Ley de Hidrocarburos
+c.	Reglamentos de servidumbre y derechos de vía correspondientes
+
+Compatibilidad con actividades de economía circular
+El terreno debe permitir la operación de los componentes del sistema:
+a.	Área de alimento humano
+b.	Área de alimento animal
+c.	Zona de biodigestión (biogás)
+d.	Biofertilizante y manejo de lixiviados
+e.	Compostaje
+f.	Circulación interna y servicios
+Debe evitar condiciones que incrementen riesgos sanitarios, ambientales u operativos.
+Normativa de referencia:
+•	LGPGIR
+•	NOM-083-SEMARNAT-2003
+•	ISO 20675 (seguridad para biogás)
+•	ISO 14001 (gestión ambiental)
+
+Condiciones físicas del terreno
+Se requieren características mínimas:
+a.	Superficie utilizable mínima de 1,000 m² (Fase Piloto Año 1).
+b.	Topografía regular o nivelable.
+c.	Capacidad de compactación del suelo para soportar estructuras ligeras y equipos.
+d.	Drenaje natural o adaptable para evitar estancamientos.
+e.	Posibilidad de delimitar físicamente el perímetro.
+Estas condiciones aseguran adaptación rápida y bajo costo de adecuación.
+
+Accesibilidad y logística
+El sitio debe permitir:
+a.	Entradas y salidas para transporte de residuos y productos valorizados.
+b.	Circulación de maquinaria ligera.
+c.	Rutas definidas para personal y operación interna.
+d.	Conexión razonable con rutas actuales de recolección y clasificación.
+
+
+Viabilidad normativa, autorizaciones y asegurabilidad
+Debe existir posibilidad real de:
+a.	Obtener visto bueno de Protección Civil.
+b.	Observar regulaciones ambientales y sanitarias.
+c.	Emitir dictámenes técnicos requeridos por autoridades competentes.
+d.	Asegurar el sitio mediante pólizas estándar de riesgo.
+Terrenos que no puedan ser asegurados o dictaminados positivamente quedan descartados.
+
+Escalabilidad y Evolución del Sistema (física, vertical y tecnológica)
+El terreno seleccionado debe permitir no sólo ampliación superficial, sino también escalabilidad integral del sistema, entendida en tres dimensiones complementarias:
+
+a) Escalabilidad horizontal o física
+Posibilidad de ampliar la superficie operativa del proyecto hacia 3,000–5,000 m² en fases posteriores, de forma ordenada y con continuidad de flujo.
+b) Escalabilidad vertical
+Capacidad del terreno y su normativa para permitir desarrollos en altura o estructuras elevadas que incrementen la capacidad operativa sin ampliar la huella del sitio, tales como:
+a.	Plataformas y entrepisos
+b.	Torres de pretratamiento
+c.	Sistemas verticales de separación
+d.	Almacenamiento o maduración en altura
+e.	Módulos de compostaje o secado vertical
+c) Escalabilidad tecnológica
+Potencial para incorporar tecnologías avanzadas que incrementen la capacidad del sistema sin necesidad de modificar el tamaño del terreno:
+a.	Automatización y sensores
+b.	Equipos modulares de alta eficiencia
+c.	Biodigestión avanzada
+d.	Sistemas de purificación y compresión de biogás
+e.	Infraestructura digital de trazabilidad
+f.	Separación mecanizada
+
+Conclusión:
+El terreno viable debe permitir el crecimiento del sistema por superficie, por altura o por modernización tecnológica, garantizando que el Proyecto CEDA Circular® evolucione sin depender exclusivamente de mayor ocupación física del suelo.
+
+Metodología de Evaluación de Viabilidad del Terreno
+La evaluación de cualquier terreno se realizará mediante:
+
+1. Matriz FO-TERR-00 (Evaluación integral)
+Incluye:
+a.	Seguridad
+b.	Servidumbre
+c.	Compatibilidad operativa
+d.	Cumplimiento normativo
+e.	Infraestructura y servicios
+f.	Riesgos ambientales
+g.	Asegurabilidad
+Cada criterio se clasifica como:
+•	Cumple
+•	Cumple condicionado
+•	No cumple
+
+
+2. Registro de soporte FO-TERR-01 —DIAGNÓSTICO INTEGRAL DE VIABILIDAD DEL TERRENO 
+Documentan evidencia en campo:
+•	Fotografías
+•	Coordenadas
+•	Condiciones del suelo
+•	Infraestructura colindante
+•	Líneas de riesgo
+•	Accesos
+•	Restricciones técnicas
+
+3. Validaciones técnicas requeridas
+Alineadas al tipo de infraestructura existente:
+a.	Protección Civil
+b.	Autoridades de infraestructura o servicios (si aplica)
+c.	Revisión ambiental preliminar
+
+4. Dictamen final de viabilidad
+El terreno se clasifica como:
+•	Viable
+•	Viable condicionado
+•	No viable
+Solo los terrenos “Viable” o “Viable condicionado” avanzan a la etapa de diseño de infraestructura del Bloque C.
+
+
+
+
+ 
+MATRIZ GENERAL DE REQUERIMIENTOS DEL TERRENO
+CRITERIO	REQUISITO TÉCNICO DEL TERRENO	REFERENCIA NORMATIVA	EVIDENCIA REQUERIDA
+Seguridad física	Ausencia de riesgos críticos; accesos seguros; áreas de operación sin interferencias peligrosas	Protección Civil; NOM-002-STPS; Reglamento de Construcciones CDMX	FO-TERR-01
+Servidumbres	No invadir zonas restringidas o derechos de vía; respetar distancias reglamentarias	Ley de la Industria Eléctrica; Ley de Hidrocarburos; Lineamientos técnicos	FO-TERR-01
+Compatibilidad operativa	Viabilidad para instalar áreas de alimentos, biogás, compostaje, biofertilizante y servicios	LGPGIR; NOM-083; ISO 20675	FO-TERR-01
+Condiciones físicas del terreno	Suelo estable; drenaje funcional; nivelación posible; ausencia de inundaciones	Buenas prácticas de ingeniería; Atlas de Riesgo CDMX	FO-TERR-01
+Accesibilidad	Rutas de entrada y salida adecuadas; maniobrabilidad para vehículos de carga; rutas internas seguras	Manual Operativo CEDA Circular®; Normas de movilidad CDMX	FO-TERR-01
+Viabilidad normativa	Cumplimiento con leyes, normas ambientales, urbanas y de manejo de residuos	LGPGIR; LGEEPA; NOM-083; Normatividad CDMX	FO-TERR-01
+Asegurabilidad	Terreno asegurable bajo criterios estándar; riesgos controlables	Criterios de aseguradoras; Protección Civil	FO-TERR-01
+Uso de suelo	Uso permitido o condicionable para actividades del proyecto; compatibilidad con ordenamiento territorial	SEDUVI; Alcaldía; POT CDMX	FO-TERR-01
+Escalabilidad futura	Posibilidad de crecimiento horizontal (3,000–5,000 m²), vertical o tecnológico	Planeación territorial; Modelo CEDA Circular®	FO-TERR-01
+Acondicionamiento requerido	Requerimientos técnicos mínimos para operar el Año 1; prioridad de adecuaciones	Buenas prácticas de obra civil; PC CDMX	FO-TERR-01
+Conclusión técnica	Terreno calificado como Viable / Viable Condicionado / No Viable	Informe final del diagnóstico	FO-TERR-01
+ 
+Criterios de Exclusión Automática
+El terreno quedará descartado de inmediato si presenta:
+a)	Presencia de ductos de hidrocarburos o gas.
+b)	Riesgo de explosión, incendio o fuga.
+c)	Imposibilidad de obtener dictámenes oficiales.
+d)	No asegurabilidad.
+e)	Invasión directa de servidumbres o zonas restringidas.
+f)	Riesgo ambiental inaceptable.
+
+Cierre del Diagnóstico de Viabilidad de Terrenos
+Este Bloque define:
+a.	El marco técnico para seleccionar el terreno.
+b.	Los requerimientos mínimos que deben cumplirse.
+c.	La metodología de evaluación y documentación.
+d.	Las condiciones de seguridad, normatividad, operación y escalabilidad.
+Con este enfoque, el Proyecto CEDA Circular® garantiza que la selección del sitio se realice con criterios objetivos, técnicos y defendibles, evitando decisiones improvisadas y fortaleciendo la viabilidad institucional del sistema.
+
+
+
+
+
+
+
+C. DIAGNÓSTICO DE VIABILIDAD DE INFRAESTRUCTURA Y EDIFICACIONES PARA PROCESOS PRODUCTIVOS
+
+Este Diagnóstico de Viabilidad de Infraestructura y Edificaciones establece si el terreno seleccionado para la Planta Piloto del Proyecto CEDA Circular® cuenta con las condiciones físicas, constructivas, funcionales y normativas necesarias para albergar de forma segura y escalable los cinco procesos productivos del modelo circular:
+
+1.	Alimento humano
+2.	Alimento animal
+3.	Biodigestión (biogás)
+4.	Biofertilizante
+5.	Compostaje
+
+Su propósito es garantizar que el espacio pueda evolucionar progresivamente desde un piloto inicial de 1,000 m² hasta una operación ampliada de 3,000 m² o más, ya sea mediante expansión horizontal, construcción en segundo nivel o incorporación de tecnología de mayor eficiencia.
+Este diagnóstico no constituye un proyecto ejecutivo, pero sí la base técnica que permitirá avanzar hacia la ingeniería definitiva.
+
+Objetivo general
+Determinar, mediante un análisis técnico-normativo estructurado, la viabilidad de la infraestructura y edificaciones necesarias para los procesos productivos del Proyecto CEDA Circular®, asegurando que el terreno seleccionado pueda:
+
+a.	operar la prueba piloto con seguridad y eficiencia
+b.	cumplir los requerimientos sanitarios, ambientales y de protección civil
+c.	permitir la escalabilidad progresiva de la planta
+d.	integrar plenamente el modelo de economía circular basado en los cinco productos
+
+Propósito del diagnóstico dentro del Manual Maestro
+Este bloque define qué condiciones debe cumplir la infraestructura para que la prueba piloto sea factible, y al mismo tiempo, para que la planta definitiva pueda construirse en el mismo sitio sin reubicaciones futuras.
+El diagnóstico establece:
+1.	-qué puede edificarse
+2.	-en qué condiciones
+3.	-cuánto espacio mínimo se requiere
+4.	-cómo deben disponerse los procesos
+5.	-qué riesgos deben mitigarse
+6.	-qué normas deben cumplirse
+7.	-cómo se garantizará la operación circular
+Este análisis previene decisiones que comprometan la seguridad, la inversión, la operación o la credibilidad institucional de la CEDA.
+
+ Objetivos específicos
+a.	Identificar las condiciones físicas actuales del predio para determinar su edificabilidad.
+b.	Evaluar la factibilidad técnica para instalar los cinco procesos productivos del modelo circular.
+c.	Definir la infraestructura mínima y las adecuaciones necesarias para operación segura.
+d.	Analizar la compatibilidad entre espacio disponible y flujos operativos.
+e.	Evaluar riesgos sanitarios, ambientales y operativos.
+f.	Verificar el cumplimiento normativo preliminar aplicable.
+g.	Establecer la viabilidad técnica para un piloto de 1,000 m² y su escalamiento a 3,000 m².
+h.	Determinar si el terreno puede soportar un crecimiento vertical (segundo nivel) y/o tecnológico.
+
+Alcance del diagnóstico
+El diagnóstico cubre los siguientes elementos:
+a.	Condiciones físicas del terreno para construir o adaptar infraestructura.
+b.	Disponibilidad y estado de servicios básicos (agua, drenaje, energía, ventilación).
+c.	Zonificación operativa para los cinco procesos.
+d.	Espacios para baños, caseta operativa, áreas de maniobra y circulación.
+e.	Condiciones para almacenamiento temporal y patios de compostaje.
+f.	Requerimientos de seguridad, drenajes, ventilación y control sanitario.
+g.	Identificación de áreas críticas que puedan comprometer la operación.
+h.	Evaluación de la capacidad del terreno para soportar expansión horizontal o vertical.
+Quedan excluidos los cálculos estructurales y proyectos ejecutivos de obra.
+
+Metodología de trabajo
+La evaluación se realiza bajo un enfoque técnico progresivo:
+1.	Inspección visual detallada del terreno.
+2.	Levantamiento físico preliminar de áreas operativas potenciales.
+3.	Estimación de requerimientos espaciales por proceso.
+4.	Evaluación funcional del flujo circular (humano–animal–biogás–biofertilizante–composta).
+5.	Identificación de riesgos sanitarios y operativos.
+6.	Verificación normativa preliminar (sanitaria, ambiental, civil y de construcción).
+7.	Análisis de escalabilidad horizontal, vertical y tecnológica.
+8.	Conclusión técnica de viabilidad para la Planta Piloto y para la planta ampliada.
+Estructura del diagnóstico
+Los resultados se organizan en los siguientes componentes:
+C.1. Edificabilidad General
+C.2. Infraestructura Base
+C.3. Zonificación para Procesos Circulares
+C.4. Riesgos Sanitarios y Ambientales
+C.5. Compatibilidad Circular
+C.6. Escalabilidad Horizontal
+C.7. Escalabilidad Vertical
+C.8. Escalabilidad Tecnológica
+C.9. Acondicionamiento Mínimo Requerido
+C.10. Conclusión Integral de Infraestructura
+C.11. Viabilidad de Edificación y Servicios Operativos
+C.12. Características Técnica de Infraestructura por Etapa
+C.13. Alcance y necesidad de diseño por ingeniería especializada
+Estos componentes constituyen la base metodológica para el desarrollo del proyecto.
+
+Productos entregables
+1.	Informe técnico de viabilidad de infraestructura y edificaciones.
+2.	Plano conceptual preliminar del terreno con distribución de áreas.
+3.	Matriz de requerimientos espaciales para los cinco procesos productivos.
+4.	Identificación de adecuaciones mínimas necesarias para la prueba piloto.
+5.	Registro fotográfico técnico.
+6.	Recomendaciones para el escalamiento progresivo de la planta.
+
+Resultados esperados
+1.	Confirmación de que el terreno puede edificar y operar los cinco procesos productivos.
+2.	Determinación del espacio real disponible para la Planta Piloto y su ampliación.
+3.	Identificación de riesgos y mitigaciones necesarias antes de construir.
+4.	Alineación técnica con la normatividad aplicable y con el modelo operativo circular.
+5.	Base técnica suficiente para avanzar hacia el diseño de ingeniería.
+
+Mensaje estratégico para la CEDA
+El proyecto no busca instalar infraestructura improvisada. Busca construir, desde la fase piloto, un sistema técnicamente sólido, seguro y escalable que asegure:
+1.	orden operativo
+2.	cumplimiento normativo
+3.	eficiencia económica
+4.	continuidad entre piloto y planta definitiva
+La infraestructura es un pilar crítico para la viabilidad del proyecto. Lo que se haga hoy determinará la robustez del sistema dentro de tres años.
+
+Diagnóstico vs Matriz de Viabilidad de Infraestructura
+El diagnóstico se encuentra alineado con el FO-INFRA-01 — LEVANTAMIENTO INTEGRAL DE INFRAESTRUCTURA Y ZONIFICACIÓN DEL TERRENO, que fungirá como instrumento técnico de levantamiento y evidencia.
+Cada sección del diagnóstico se traduce en indicadores verificables dentro de la matriz.
+Esto permite:
+a.	asegurar trazabilidad
+b.	documentar evidencia técnica verificable
+c.	sustentar decisiones ante autoridades y futuros auditores
+d.	alinear el levantamiento físico con el análisis normativo y operativo
+El diagnóstico establece el qué y el por qué.
+La matriz documenta el cómo y el con qué evidencia.
+
+
+
+ 
+FO-INFRA-01 — MATRIZ DE VIABILIDAD DE INFRAESTRUCTURA 
+NO. REF.	LÍNEA DE ANÁLISIS	ASPECTO POR EVALUAR	VARIABLE / INDICADOR	MÉTODO	RESPONSABLE
+C1	Edificabilidad general	Superficie utilizable; nivelación; plataformas disponibles; riesgos físicos	% área útil; desnivel (cm); existencia de plataformas; grietas / socavones	Observación directa; medición topográfica; recorrido técnico	Equipo técnico
+C2	Infraestructura base	Agua, energía, drenaje sanitario y pluvial; accesos	Conexiones disponibles; caudal; kW instalados; estado de drenaje	Inspección física + entrevista operativa	Equipo técnico
+C3	Zonificación para procesos circulares	Posibilidad de ubicar alimentos, biogás, composta, biofertilizante y flujos	Distancia mínima entre áreas; compatibilidad operacional	Revisión de planos + recorrido	Arquitecto / Ingeniero
+C4	Riesgos sanitarios y ambientales	Olores, lixiviados, humedad, vectores sanitarios	Indicadores 0–3; % humedad; presencia de vectores	Observación directa + medición	Equipo ambiental
+C5	Compatibilidad circular	Flujo integral de los 5 productos del modelo	Trazabilidad física y funcional del flujo circular	Análisis funcional + recorrido	Consultoría 
+C6	Escalabilidad horizontal	Posibilidad de ampliación 1,000 → 3,000–5,000 m²	Proyección de expansión; barreras físicas	Análisis territorial	Dirección Técnica
+C7	Escalabilidad vertical	Capacidad para módulos elevados y segundo nivel	Altura disponible; restricciones estructurales	Revisión estructural	Ingeniería estructural
+C8	Escalabilidad tecnológica	Automatización, sensores, SCADA, integración futura	Condiciones técnicas del terreno y edificaciones	Revisión técnica	Equipo de innovación
+C9	Acondicionamiento mínimo	Requerimientos de obra civil inicial (Año 1)	% de avance requerido; tipo de obra	Recorrido + medición	Dirección de obra
+C10	Conclusión de infraestructura	Dictamen integral de viabilidad	Viable / condicionado / no viable	Análisis documental + integración	Consultoría + CEDA
+ 
+Integración del modelo modular 1,000–3,000 m²
+El terreno será evaluado —y su infraestructura diseñada— bajo un enfoque modular progresivo:
+1.	Planta Piloto 1,000 m²:
+• validación de flujos operativos
+• prueba de capacidades técnicas
+• validación de rendimientos productivos
+• verificación de riesgos y eficiencia
+2.	Planta Intermedia 2,000 m² (si aplica):
+• ampliación de áreas críticas
+• crecimiento de patios y almacenamiento
+• instalación de tecnología de mayor capacidad
+3.	Planta Final 3,000 m²:
+• capacidad cercana a las 267 t/d de materiales rescatables
+• operación estable y continua
+• integración plena del modelo circular
+El diseño permitirá crecimiento vertical (segundo nivel) y escalamiento tecnológico sin necesidad de reubicar la planta.
+
+Viabilidad circular integral
+El diagnóstico debe confirmar explícitamente que el terreno permite instalar y operar el modelo circular completo:
+a.	separación sanitaria de procesos
+b.	flujos sin cruces peligrosos
+c.	espacio suficiente para patios, biodigestión y procesamiento
+d.	capacidad de escalar la línea de biogás
+e.	áreas adecuadas para biofertilizante y composta
+f.	zonas de clasificación alimentaria seguras
+Esta verificación es obligatoria, pues el proyecto no es un centro de acopio:
+es una planta de economía circular.
+
+ESQUEMAS DE REFERENCIA PARA LA ZONIFICACIÓN OPERATIVA DEL SISTEMA CEDA CIRCULAR®
+Fase Piloto (1,200 m²) y Fase de Escalamiento (3,000 m²)
+
+Las siguientes imágenes constituyen esquemas de referencia técnico-operativa para ilustrar la distribución espacial, flujos funcionales y separación de procesos del Sistema CEDA Circular® en dos etapas clave:
+– Planta Piloto (1,200 m²)
+– Planta Escalada (3,000 m²)
+Estos esquemas no corresponden a un proyecto ejecutivo, sino que sirven como herramienta de validación de viabilidad espacial, compatibilidad circular y escalabilidad progresiva del sistema.
+
+ 
+
+
+ 
+
+
+
+
+
+D. MODELO DE GOBERNANZA Y CONTINUIDAD DEL SISTEMA CEDA CIRCULAR®
+Fundamento estructural para la permanencia, escalamiento y sostenibilidad del proyecto
+
+Propósito del modelo de gobernanza
+El Modelo de Gobernanza y Continuidad del Sistema CEDA Circular® tiene como finalidad establecer la estructura organizativa, los mecanismos de toma de decisiones y las reglas de operación estratégica que garantizan que el proyecto no dependa de voluntades individuales, coyunturas políticas o periodos administrativos, sino que se consolide como un sistema institucional permanente, técnicamente sólido y sostenible en el tiempo.
+Este modelo permite asegurar que el Proyecto CEDA Circular® trascienda la etapa piloto y se mantenga operativo a lo largo de los años como un sistema vivo, evolutivo y autorregulado, alineado con los principios de gestión por procesos (ISO 9001), innovación estructurada (ISO 56002) y economía circular (ISO 59004) 
+
+Principios rectores del modelo de gobernanza
+La gobernanza del Sistema CEDA Circular® se sustenta en los siguientes principios:
+a.	Transparencia técnica y operativa
+b.	Responsabilidad compartida
+c.	Toma de decisiones basada en evidencia
+d.	Continuidad institucional
+e.	Participación gradual de actores
+f.	Rendición de cuentas
+g.	Mejora continua
+h.	Sustentabilidad financiera y operativa
+Estos principios garantizan que el sistema funcione bajo reglas claras, medibles y defendibles ante cualquier instancia pública o privada.
+
+
+Estructura de gobernanza del sistema
+Se propone una estructura de gobernanza multinivel que permita un control estratégico, operación técnica y supervisión institucional:
+
+1. Comité Estratégico de Gobernanza CEDA Circular®
+Órgano rector del sistema, responsable de:
+a.	Definir lineamientos generales del proyecto
+b.	Validar decisiones estratégicas de escalamiento
+c.	Aprobar cambios estructurales relevantes
+d.	Supervisar cumplimiento normativo
+e.	Avalar continuidad y expansión del sistema
+Integrantes sugeridos:
+1.	Representación de la CEDA
+2.	Representación técnica del Proyecto CEDA Circular®
+3.	Enlace institucional (ambiental / desarrollo urbano)
+4.	Representante de transparencia y control
+
+2. Comité Operativo del Sistema
+Responsable de la toma de decisiones técnico-operativas y seguimiento continuo.
+Funciones clave:
+a.	Supervisión de la operación diaria
+b.	Validación de indicadores
+c.	Gestión de incidencias
+d.	Evaluación de desempeño del piloto
+e.	Recomendación de mejoras
+
+
+3. Unidad Técnica de Implementación
+Área ejecutora del sistema, responsable de:
+a.	Operación directa de la planta piloto
+b.	Control de procesos
+c.	Generación de evidencias
+d.	Seguimiento de indicadores técnicos
+e.	Elaboración de reportes técnicos
+Actúa como núcleo técnico permanente del proyecto.
+
+Modelo de continuidad operativa del sistema
+La continuidad se concibe bajo un enfoque de ciclo de vida permanente, no como proyecto temporal.
+Se estructura bajo los siguientes mecanismos:
+1. Continuidad técnica
+a.	Documentación de procesos
+b.	Manuales operativos vivos
+c.	Registros técnicos sistemáticos
+d.	Protocolos normalizados de operación
+2. Continuidad institucional
+a.	Integración del sistema en la estructura formal de la CEDA
+b.	Designación de responsables permanentes
+c.	Formalización en reglamentos internos
+d.	Protocolos de transición administrativa
+3. Continuidad financiera
+a.	Modelo de sostenibilidad económica propio
+b.	Ingresos derivados de valorización
+c.	Control presupuestal
+d.	Planeación financiera multianual
+4. Continuidad normativa
+a.	Actualización periódica del marco normativo
+b.	Vigilancia regulatoria sistemática
+c.	Auditorías internas y externas
+d.	Cumplimiento progresivo de estándares
+
+Sistema de toma de decisiones
+La toma de decisiones se estructura bajo tres niveles:
+NIVEL	TIPO DE DECISIÓN	Responsable
+Estratégico	Cambios estructurales, expansión, inversión mayor	Comité Estratégico
+Táctico	Ajustes operativos, mejoras técnicas	Comité Operativo
+Operativo	Control diario, manejo de procesos	Unidad Técnica
+Este esquema garantiza agilidad operativa sin perder control institucional.
+
+Gestión del cambio y adaptación del sistema
+El modelo incorpora un mecanismo formal de gestión del cambio que permite:
+a.	Ajustar procesos sin perder coherencia
+b.	Integrar aprendizajes del piloto
+c.	Adaptar infraestructura
+d.	Evolucionar tecnológicamente
+Todo cambio relevante deberá estar sustentado en:
+a.	Evidencia técnica
+b.	Análisis de impacto
+c.	Autorización del Comité Estratégico
+d.	Registro documental
+
+Modelo de permanencia del sistema
+El Sistema CEDA Circular® se concibe como:
+a.	Infraestructura estratégica permanente
+b.	Sistema productivo de interés público
+c.	Modelo de referencia nacional
+d.	Plataforma evolutiva de economía circular
+Su permanencia se garantiza mediante:
+a.	Inclusión en planes institucionales
+b.	Vinculación normativa formal
+c.	Asignación presupuestal estructural
+d.	Reconocimiento jurídico-operativo
+
+Indicadores de gobernanza y continuidad
+El modelo contempla indicadores específicos, tales como:
+1.	Cumplimiento de metas operativas
+2.	Nivel de participación institucional
+3.	Estabilidad del sistema
+4.	Eficiencia de decisiones
+5.	Cumplimiento normativo
+6.	Evolución del sistema
+Estos indicadores formarán parte del tablero de control del proyecto.
+
+Relación con la Ruta de Implementación
+Este modelo constituye el cimiento estructural de la Ruta de Implementación, permitiendo que ésta se desarrolle:
+a.	Con visión de largo plazo
+b.	Con continuidad más allá del piloto
+c.	Con enfoque de sistema permanente
+d.	Con coherencia institucional
+La gobernanza no acompaña la ruta: la sostiene, la regula y la proyecta.
+
+Cierre del Modelo de Gobernanza y Continuidad
+El Modelo de Gobernanza y Continuidad del Sistema CEDA Circular® establece las bases para que este proyecto no sea vulnerable a improvisaciones, cambios políticos o interrupciones operativas, sino que se consolide como un sistema institucional robusto, sustentable y técnicamente defendible.
+Este modelo convierte al Proyecto CEDA Circular® en una política operativa de largo plazo, capaz de evolucionar, adaptarse y fortalecerse de manera permanente sin perder su esencia ni sus objetivos fundamentales.
+
+Matriz de Registros de Trabajo para la Gobernanza del Sistema CEDA Circular®
+Instrumento de control, evidencia y trazabilidad del modelo de continuidad
+Con el fin de garantizar que el Modelo de Gobernanza y Continuidad del Sistema CEDA Circular® no se limite a un marco conceptual, sino que se traduzca en una práctica operativa verificable, se establece la Matriz de Registros de Gobernanza FO-GOV-00, como herramienta técnica que permitirá documentar, controlar y evaluar el funcionamiento real de la estructura de gobernanza a lo largo del ciclo de vida del proyecto.
+Esta matriz constituye el mecanismo formal a través del cual se registran todas las actividades, decisiones, acuerdos, seguimientos y acciones derivadas del modelo de gobernanza, asegurando la rendición de cuentas, la trazabilidad institucional y la continuidad operativa del sistema.
+
+Función estratégica de la Matriz FO-GOV-00
+La Matriz de Registros de Gobernanza permitirá:
+1.	Documentar las decisiones del Comité Estratégico y del Comité Operativo.
+2.	Registrar acuerdos, responsables y plazos de cumplimiento.
+3.	Dar seguimiento a la ejecución de acciones estratégicas.
+4.	Evidenciar la aplicación del modelo de continuidad.
+5.	Controlar los procesos de escalamiento y cambio.
+6.	Sustentar auditorías internas y externas.
+7.	Validar la permanencia estructural del sistema.
+Este instrumento actúa como puente entre la gobernanza conceptual y la gobernanza operativa real, fortaleciendo el carácter institucional del Proyecto CEDA Circular® 
+ 
+
+ALCANCE DE LA MATRIZ DE GOBERNANZA
+Nº REF.	LÍNEA DE ANÁLISIS	ASPECTO POR EVALUAR	VARIABLE / INDICADOR	MÉTODO	FRECUENCIA	RESPONSABLE	EVIDENCIA / REGISTRO (ACTUALIZADO)
+1	Estructura de gobernanza	Existencia formal del Comité Estratégico	Acta de constitución	Revisión documental	Inicio del sistema	Coordinación CEDA	FO-GOV-01
+2	Estructura de gobernanza	Integración del Comité Operativo	Lista de integrantes y roles	Verificación documental	Inicio y actualización	Unidad Técnica	FO-GOV-02
+3	Toma de decisiones	Sesiones del Comité Estratégico	Número de sesiones realizadas	Registro de reuniones	Mensual / Trimestral	Secretaría Técnica	FO-GOV-03 (Minuta, acuerdos, seguimiento, incidencias)
+4	Toma de decisiones	Seguimiento de acuerdos	% de acuerdos cumplidos	Revisión de cumplimiento	Mensual	Comité Operativo	FO-GOV-03
+5	Continuidad institucional	Designación de responsables permanentes	Oficios de nombramiento	Revisión administrativa	Cambio de ciclo	Dirección CEDA	FO-GOV-04
+6	Continuidad operativa	Manuales actualizados y controlados	Manual vigente disponible	Auditoría interna	Semestral	Unidad Técnica	FO-GOV-05
+7	Gestión del cambio	Cambios estructurales autorizados	Registro de cambios	Control documental	Eventual	Comité Estratégico	FO-GOV-06
+8	Control institucional	Incidencias de gobernanza	Número y tipo de incidencias	Bitácora técnica	Mensual	Coordinación CEDA	FO-GOV-03
+9	Transparencia y rendición de cuentas	Emisión de informes consolidados	Número de informes emitidos	Revisión de reportes	Trimestral	Comité Estratégico	FO-GOV-07
+10	Continuidad financiera	Planeación presupuestal validada	Presupuesto asignado	Análisis financiero	Anual	Área Financiera	FO-GOV-08
+11	Evaluación de desempeño	Indicadores de gobernanza	Nivel de cumplimiento (%)	Evaluación técnica	Trimestral	Unidad Técnica	FO-GOV-09
+12	Auditoría del sistema	Auditoría interna del sistema	Informe técnico	Revisión técnica	Anual	Auditor Interno	FO-GOV-07 (incluye auditoría)
+13	Escalamiento del sistema	Autorización de expansión del sistema	Registro de decisión	Acta resolutiva	Según fase	Comité Estratégico	FO-GOV-10
+14	Evaluación institucional	Estabilidad y madurez institucional	Consistencia operativa	Análisis integral	Semestral	Secretaría Técnica	FO-GOV-07
+15	Evaluación del sistema de registros	Integridad y eficiencia de FO-GOV	Nivel de cumplimiento	Lista de verificación	Trimestral	Secretaría Técnica	FO-GOV-05
+
+ 
+E. MARCO NORMATIVO Y FEDERAL DEL PROYECTO CEDA CIRCULAR®
+Aprovechamiento Integral de Residuos CEDA – Un Modelo de Valor
+Fundamentación jurídica, técnica y estratégica del sistema
+
+El presente inciso establece el Marco Normativo y Federal que sustenta, regula y orienta el diseño, desarrollo, implementación y operación del Proyecto CEDA Circular®, garantizando que el modelo de aprovechamiento integral de residuos no sólo responda a criterios técnicos y ambientales, sino que se encuentre plenamente alineado con la legislación mexicana vigente y con los estándares internacionales que rigen los sistemas de gestión, la economía circular, la innovación, el desempeño ambiental, la seguridad alimentaria y la producción de biogás.
+Este marco constituye el eje que otorga legitimidad institucional, solidez técnica y defensa jurídica al proyecto, permitiendo su implementación como un sistema formal, estructurado y sostenible, y no como una intervención aislada o experimental.
+Desde una perspectiva estratégica, el Proyecto CEDA Circular® se concibe como un sistema integral que articula normas de gestión (ISO 9001), circularidad (ISO 59004), innovación (ISO 56002) y desempeño ambiental (ISO 14001), todas ellas operando de manera coordinada bajo un enfoque sistémico, donde la ISO 9001 funge como norma madre y estructura base del modelo.
+
+Marco normativo internacional – Eje rector del sistema
+Carácter estructurante de la matriz normativa
+La Matriz de Correlación Normativa del Sistema CEDA Circular® constituye el eje articulador de todo el sistema de gestión del proyecto, al establecer la correspondencia jerárquica, funcional y operativa entre la ISO 9001 como norma madre y las demás normas internacionales y disposiciones legales que sustentan la circularidad, la innovación, la gestión ambiental, la seguridad alimentaria y la producción de biogás.
+Esta matriz no solo cumple una función referencial, sino que opera como la base estructural para el diseño de procesos, la definición de responsabilidades, la planificación de actividades, la generación de registros y la evaluación del desempeño, sirviendo como guía transversal para todas las etapas del Proyecto CEDA Circular®, desde la fase piloto hasta su operación permanente.
+En consecuencia, toda acción, procedimiento, formato, control o evidencia generada dentro del sistema deberá interpretarse y validarse en coherencia con esta matriz normativa, la cual garantiza la integración sistémica, la trazabilidad normativa y la alineación estratégica del modelo.
+
+El Proyecto CEDA Circular® se fundamenta en una matriz de correlación normativa internacional que articula de manera jerárquica y funcional las normas ISO aplicables, siendo la ISO 9001:2015 el eje rector del sistema, sobre el cual se alinean las demás normas especializadas.
+
+Norma madre del sistema
+Consideración sobre la transición a ISO 9001:2026
+Con el fin de visualizar que la transición a la nueva versión no representa un impacto estructural significativo, se incorpora el siguiente cuadro comparativo referencial:
+
+CUADRO DE IMPACTO PRELIMINAR – TRANSICIÓN ISO 9001:2015 VS ISO 9001:2026 (PROYECTO CEDA CIRCULAR®)
+ELEMENTO DEL SISTEMA	ISO 9001:2015	ENFOQUE PREVISTO ISO 9001:2026	NIVEL DE IMPACTO EN CEDA
+Estructura general	Enfoque por procesos PHVA	Se mantiene enfoque por procesos	Bajo
+Gestión de riesgos	Pensamiento basado en riesgos	Refuerzo de resiliencia	Bajo
+Documentación	Información documentada	Mayor énfasis en digitalización	Bajo
+Liderazgo	Compromiso de la alta dirección	Mayor énfasis estratégico	Bajo
+Sostenibilidad	Referencia indirecta	Integración más explícita	Moderado controlado
+Mejora continua	PHVA + acciones correctivas	Se mantiene con ajustes	Bajo
+
+Conclusión técnica: La transición a ISO 9001:2026 se considera de ajuste evolutivo y no disruptivo, manteniendo la arquitectura principal del Sistema de Gestión del Proyecto CEDA Circular®.
+Se deja establecido que, una vez que la norma oficial sea publicada, el Proyecto CEDA Circular® realizará la alineación correspondiente de sus criterios, procesos y controles conforme a los requisitos que resulten aplicables, integrándolos de manera ordenada dentro del Sistema de Gestión.
+Conforme al análisis preliminar y a la evolución histórica de la norma, se prevé que la transición hacia ISO 9001:2026 no represente una alteración sustantiva de la estructura base definida en la ISO 9001:2015, sino una actualización orientada al fortalecimiento de enfoques ya existentes como la gestión de riesgos, la resiliencia organizacional, la sostenibilidad y la transformación digital. En este sentido, el modelo CEDA Circular® mantiene su coherencia estructural y metodológica, asegurando una adaptación progresiva sin afectar la arquitectura principal del sistema.
+Se deja establecido que, una vez que la norma ISO 9001:2026 sea publicada de manera oficial, el Proyecto CEDA Circular® realizará la alineación correspondiente de sus criterios, procesos y controles conforme a los requisitos que resulten aplicables, integrándolos de manera ordenada dentro del Sistema de Gestión.
+Conforme al análisis preliminar y a la evolución histórica de la norma, se prevé que la transición hacia ISO 9001:2026 no represente una alteración sustantiva de la estructura base definida en la ISO 9001:2015, sino una actualización orientada al fortalecimiento de enfoques ya existentes como la gestión de riesgos, la resiliencia organizacional, la sostenibilidad y la transformación digital. En este sentido, el modelo CEDA Circular® mantiene su coherencia estructural y metodológica, asegurando una adaptación progresiva sin afectar la arquitectura principal del sistema.
+•	ISO 9001:2015 – Sistemas de gestión de la calidad
+Establece el enfoque por procesos, la gestión basada en riesgos, la toma de decisiones sustentada en evidencia y la mejora continua, principios que estructuran todo el sistema de gestión del Proyecto CEDA Circular®.
+
+Normas complementarias estratégicas
+•	ISO 59004:2024 – Economía Circular. Marco, principios y guía para su implementación
+Define los principios de circularidad, regeneración de recursos, cierre de ciclos y transición desde modelos lineales a sistemas circulares.
+•	ISO 56002:2019 – Sistema de Gestión de la Innovación
+Proporciona el marco para estructurar procesos de innovación orientados a la creación de valor y evolución continua del proyecto.
+•	ISO 14001:2015 – Sistema de Gestión Ambiental
+Rige la identificación, evaluación y control de impactos ambientales asociados al manejo de residuos, biogás, emisiones y biofertilizantes.
+•	ISO 22000:2018 – Sistema de Gestión de Inocuidad Alimentaria
+Aplica al rescate y redistribución de alimentos destinados al consumo humano.
+•	ISO 20675:2018 – Producción segura de biogás
+Establece directrices técnicas para el diseño, operación y seguridad de plantas de biodigestión.
+•	ISO 23590:2020 – Requisitos del sistema de biogás
+Complementa la seguridad operativa de instalaciones de digestión anaerobia.
+•	ISO 59010, ISO 59014, ISO 59020, ISO 59040, ISO/TR 59032
+Fortalecen los componentes de medición, trazabilidad, redes de valor y declaración de circularidad del proyecto.
+Este marco permite la construcción de un sistema multisectorial donde convergen calidad, circularidad, innovación, energía, alimentos y sostenibilidad, bajo una misma arquitectura normativa coherente.
+
+Marco legal federal mexicano aplicable
+El Proyecto CEDA Circular® se fundamenta en el marco jurídico mexicano que regula la gestión de residuos, la protección ambiental, la seguridad sanitaria, la transición energética y la economía circular.
+Leyes federales aplicables
+•	Ley General para la Prevención y Gestión Integral de los Residuos (LGPGIR)
+•	Ley General del Equilibrio Ecológico y la Protección al Ambiente (LGEEPA)
+•	Ley General de Cambio Climático
+•	Ley General de Economía Circular
+•	Ley de Transición Energética
+•	Ley de Aguas Nacionales
+•	Ley General de Salud
+Estas leyes establecen el marco rector que regula el tratamiento, valorización, disposición, reutilización y aprovechamiento de residuos, así como el uso de energías limpias y la protección del entorno ambiental y sanitario.
+
+Reglamentos federales aplicables
+•	Reglamento de la LGPGIR
+•	Reglamento de la LGEEPA en materia de Evaluación de Impacto Ambiental
+•	Reglamento de la LGEEPA en materia de Prevención y Control de la Contaminación Atmosférica
+•	Reglamento de la Ley de Aguas Nacionales
+Estos reglamentos precisan las condiciones operativas, autorizaciones, evaluaciones de impacto y lineamientos técnicos que deben cumplirse durante la instalación y operación del sistema.
+
+Normas Oficiales Mexicanas aplicables
+Residuos y manejo ambiental
+•	NOM-083-SEMARNAT-2003
+•	NOM-161-SEMARNAT-2011
+•	NOM-052-SEMARNAT-2005
+Aguas residuales y biofertilizantes
+•	NOM-003-SEMARNAT-1997
+•	NOM-004-SEMARNAT-2002
+Alimentos
+•	NOM-251-SSA1-2009
+Alimentación animal
+•	NOM-060-ZOO-1999
+•	NOM-061-ZOO-1999
+Seguridad y protección laboral
+•	NOM-002-STPS-2010
+•	NOM-017-STPS-2008
+Estas normas regulan las condiciones técnicas de operación, higiene, sanidad, seguridad y manejo ambiental en cada una de las líneas productivas del proyecto.
+
+CLASIFICACIÓN NORMATIVA POR FLUJO DEL SISTEMA CEDA CIRCULAR®
+FLUJO DEL SISTEMA	NORMATIVIDAD CLAVE
+Rescate alimentario humano	NOM-251-SSA1-2009 / ISO 22000
+Alimento animal	NOM-060-ZOO-1999 / NOM-061-ZOO-1999
+Biofertilizante / Composta	NOM-004-SEMARNAT-2002 / ISO 14001
+Biogás	ISO 20675 / ISO 23590
+Residuos sólidos	LGPGIR / NOM-083 / NOM-161
+Seguridad operativa	NOM-002-STPS / Protección Civil CDMX
+
+Función estratégica del Marco Normativo en el Proyecto CEDA Circular®
+Este marco normativo cumple las siguientes funciones:
+•	Garantiza cumplimiento legal y técnico desde la fase piloto.
+•	Respalda la viabilidad institucional del proyecto.
+•	Facilita autorizaciones y dictámenes oficiales.
+•	Reduce riesgos operativos, jurídicos y reputacionales.
+•	Fortalece la transparencia y rendición de cuentas.
+•	Permite auditorías y evaluación objetiva del desempeño.
+El Marco Normativo y Federal no actúa como un elemento accesorio, sino como columna vertebral del Proyecto CEDA Circular®, dotándolo de coherencia estratégica, legitimidad técnica y proyección institucional a largo plazo.
+
+Alcance dinámico del Marco Normativo y relación con las rutas de implementación
+Es importante precisar que el presente Marco Normativo y Federal no se considera definitivo ni cerrado. Su función es establecer una visión global, estructurada y orientativa del marco jurídico y técnico que sustenta al Proyecto CEDA Circular®, sin que ello limite la incorporación futura de nuevos requerimientos normativos que puedan identificarse conforme se desplieguen las distintas etapas operativas, técnicas y administrativas del sistema.
+Durante el desarrollo de la Ruta de Implementación y la transición del modelo piloto hacia la operación permanente, podrán surgir disposiciones adicionales, criterios técnicos específicos, lineamientos complementarios o actualizaciones normativas que deberán ser integrados de manera progresiva y documentada al sistema de gestión.
+Asimismo, los registros que evidencian el cumplimiento normativo no se concentran exclusivamente en este inciso, sino que se encuentran distribuidos y articulados dentro de las etapas de la Ruta de Implementación, a través de matrices, formatos, bitácoras, actas, informes y controles generados en cada fase del proyecto, los cuales constituyen la evidencia operativa del cumplimiento real del marco normativo aquí expuesto.
+Este inciso cumple, por tanto, una función estratégica de referencia base, mientras que la verificación y demostración del cumplimiento se materializa en las secciones posteriores del Manual Maestro, particularmente en la Ruta de Implementación y sus instrumentos asociados.
+
+Cumplimiento normativo 
+El presente Marco Normativo y Federal consolida al Proyecto CEDA Circular® como un modelo de intervención técnica real, jurídicamente sustentado y estratégicamente alineado con los principios de sostenibilidad, economía circular y gestión responsable de residuos. Su correcta aplicación asegura que cada acción ejecutada se encuentre respaldada por criterios normativos claros, defendibles y medibles, posicionando al proyecto como un referente serio, replicable y escalable a nivel nacional e internacional.
+
+El cumplimiento normativo del Sistema CEDA Circular® se controla mediante la Matriz Maestra de Correlación Normativa FO-NORM-00 y el Registro Operativo de Cumplimiento FO-NORM-01, los cuales integran la totalidad de normas internacionales, leyes federales, reglamentos y NOM aplicables. Estos instrumentos aseguran trazabilidad, evidencia y control continuo durante todo el ciclo de vida del proyecto.
+
+
+
+
+
+
+
+ 
+A. MATRIZ DE CORRELACIÓN NORMATIVA EJE RECTOR DEL SISTEMA CEDA CIRCULAR® 
+Eje rector del sistema de gestión ceda circular® (ISO 9001 como Norma Madre)
+ISO 9001 (NORMA MADRE) – NUMERAL Y TEMA RECTOR	TIPO DE RELACIÓN	NORMA ASOCIADA	NUMERAL / BLOQUE PRINCIPAL DE LA OTRA NORMA	TEMA RESUMIDO DEL NUMERAL ASOCIADO	APLICACIÓN CONCRETA EN EL PROYECTO CEDA CIRCULAR®
+4.1 Contexto de la organización	Estructural	ISO 59004	4–5 (principios y marco de economía circular)	Principios y sistema circular que redefinen el contexto de operación	Define el CEDA como sistema circular de valor (residuos → alimento, energía, biofertilizante), incorporando límites planetarios y riesgos de linealidad 
+1. ISO_59004_2024
+	Estructural	ISO 56002	4 (contexto de la innovación)	Factores externos e internos para innovar	Marco para reconocer el proyecto CEDA como plataforma de innovación continua en residuos y energía 
+ISO. 56002_2019 innovación
+	Ambiental	ISO 14001	4.1–4.2 (contexto y partes interesadas)	Contexto ambiental y requisitos de stakeholders	Integra impactos ambientales, SEDEMA, LGPGIR y comunidad como parte del contexto de sistema
+	Seguridad alimentaria	ISO 22000	4 (sistema de gestión de inocuidad)	Contexto e interacción en la cadena alimentaria	Alinea el rescate alimentario de CEDA con riesgos de inocuidad en donación, clasificación y distribución
+4.2 Necesidades y expectativas de las partes interesadas	Circularidad	ISO 59010	4–5 (modelo de creación de valor y partes interesadas)	Modelos de valor circular y redes de valor	Vincula bodegueros, gobierno, pepenadores, ONGs, inversionistas y consumidores dentro de una red de valor circular 
+ISO_59010_2024
+	Indicadores	ISO 59020	4–5 (contexto y motivos para medir circularidad)	Motivaciones y alcance de indicadores	Define qué esperan las partes interesadas en términos de métricas de circularidad, emisiones evitadas, alimentos rescatados, etc. 
+ISO_59020_2024
+5.1 Liderazgo y compromiso	Estructural	ISO 56002	5 (liderazgo para la innovación)	Rol de la alta dirección en innovación	Refuerza responsabilidades de CEDA, FICEDA, ASEMH y gobierno para sostener el cambio circular 
+ISO. 56002_2019 innovación
+	Circularidad	ISO 59004	6 (implementación de la economía circular)	Liderazgo en transición circular	Liderazgo político–técnico para aprobar el modelo y asignar recursos para el piloto y su escalamiento 
+ISO_59004_2024
+5.2 Política de calidad / política integral	Ambiental	ISO 14001	5.2 (política ambiental)	Compromisos ambientales formales	Alimenta la política integrada CEDA Circular® con compromisos de prevención, mejora y cumplimiento normativo
+	Alimentaria	ISO 22000	5.2 (política de inocuidad)	Compromiso organizacional con la inocuidad	Integra compromiso explícito con alimentos de rescate seguros y trazables
+6.1 Acciones para abordar riesgos y oportunidades	Circularidad	ISO 59004	6 (transición y gestión de riesgos de linealidad)	Riesgos de modelo lineal y oportunidades circulares	Identifica riesgos de seguir enterrando residuos vs. oportunidades de biogás, alimentos y empleos verdes 
+ISO_59004_2024
+	Innovación	ISO 56002	6 (riesgos y oportunidades de innovación)	Gestión de portafolio de ideas y proyectos	Usa la cartera de pilotos CEDA (biodigestor, trazabilidad digital, rescate alimentario) como portafolio de innovación 
+ISO. 56002_2019 innovación
+	Ambiental	ISO 14001	6.1 (aspectos ambientales, riesgos y oportunidades)	Identificación y tratamiento de riesgos ambientales	Análisis de lixiviados, olores, emisiones de metano y riesgos de contaminación de suelo y agua
+	Seguridad alimentaria	ISO 22000	6 (planificación del sistema de inocuidad y análisis de peligros)	Identificación de peligros alimentarios	Integra el análisis de peligros en alimentos recuperados para consumo humano y animal
+	Biogás	ISO 20675	7–8 (riesgos operativos y seguridad)	Identificación de riesgos en plantas de biogás	Establece acciones para riesgos de presión, H₂S, temperatura, explosión, etc.
+	Sistemas de biogás	ISO 23590	6–7 (requisitos del sistema y gestión de riesgos)	Diseño seguro de sistemas de biogás	Define riesgos del sistema completo: captación, digestión, almacenamiento y uso del biogás
+6.2 Objetivos de calidad y planificación para lograrlos	Indicadores	ISO 59020	6–7 (definición y uso de indicadores de circularidad)	Objetivos y métricas de desempeño circular	Fija objetivos: % de residuos valorizados, t de CO₂e evitadas, t de alimento rescatado, m³ de biogás, etc. 
+ISO_59020_2024
+	Innovación	ISO 56002	6.2–6.4 (objetivos, indicadores de innovación)	Objetivos e indicadores de innovación	Define metas de proyectos piloto, nuevas tecnologías implementadas, mejora de procesos
+7.1 Recursos	Ambiental	ISO 14001	7.1–7.2 (recursos, competencia ambiental)	Recursos y competencias para gestión ambiental	Requisitos de personal técnico, brigadas de diagnóstico, monitoreo de emisiones, etc.
+	Alimentaria	ISO 22000	7.1–7.3 (recursos, competencia, sensibilización)	Recursos para inocuidad	Capacidades del equipo que maneja alimentos recuperados, higiene, cadena fría, etc.
+	Biogás	ISO 20675	6–7 (recursos e infraestructura de planta)	Competencias y equipos para operación del biodigestor	Define requisitos de instrumentación, sensores, almacenamiento y mantenimiento de planta de biogás
+7.2 Competencia	Innovación	ISO 56002	7 (personas y competencias para innovar)	Habilidades para impulsar innovación	Competencias clave en economía circular, biogás, analítica de datos, gobierno digital
+7.4 Comunicación	Circularidad	ISO 59014	5–7 (trazabilidad y comunicación de recuperación de materiales)	Trazabilidad y reporte de materiales secundarios	Lineamientos para comunicar resultados de recuperación, destinos y aseguramiento de trazabilidad 
+5. ISO_59014_2024(esp)
+	Indicadores	ISO/TR 59032	Secciones de casos y métricas	Casos de redes de valor e indicadores	Apoyo para comunicar resultados a stakeholders (gobierno, FAO, bancos de desarrollo) 
+4. ISO_59040_2025
+7.5 Información documentada	Estructural	ISO 59040	6–7 (Hoja de Datos de Circularidad del Producto – PCDS)	Datos normalizados para declarar circularidad de productos	Base para fichas de biofertilizante, composta, alimento animal, etc., con atributos de circularidad 
+4. ISO_59040_2025
+	Calidad / multi-sistema	ISO 14001 / ISO 22000	7.5 (info documentada)	Control de documentos ambientales y de inocuidad	Integra formatos FO-CEDA, matrices y registros al sistema integral 
+8.1 Planificación y control operacional	Circularidad	ISO 59004	6 (implementación de sistemas circulares)	Directrices para ejecutar ciclos cerrados	Estructura los flujos: recolección diferenciada → pretratamiento → biodigestor → productos
+	Modelos de negocio circulares	ISO 59010	5–7 (transición de modelos y redes de valor)	Rediseño de modelos de negocio y contratos	Apoya el rediseño de acuerdos con bodegueros, empresas de servicios, alianzas público–privadas 
+2. ISO_59010_2024
+	Biogás – operación	ISO 20675	6–8 (diseño, operación, mantenimiento de planta)	Requisitos técnicos de instalaciones y operación	Define cómo se opera el biodigestor, rutas de alimentación, purificación del biogás, seguridad
+	Sistema de biogás	ISO 23590	7–8 (requisitos del sistema)	Integración de procesos de biogás en el territorio	Vincula captación en CEDA con consumo interno o externo (calderas, generación eléctrica, etc.)
+	Ambiental	ISO 14001	8.1 (control operacional ambiental)	Control de actividades con impacto ambiental	Procedimientos para manejo de lixiviados, olores, fauna nociva, emisiones fugitivas
+	Alimentaria	ISO 22000	8 (planificación y control de la cadena alimentaria)	PCC/PRP en manejo de alimentos	Procedimientos de recepción, selección, acondicionamiento, almacenamiento y distribución de alimentos 
+recuperados
+8.2 Requisitos para los productos y servicios	Operativa	ISO 59010	5 (modelos de negocio circulares)	Definición de requisitos del servicio circular	Establece criterios formales para la prestación de servicios CEDA a locatarios, convenios, recolección y clasificación de residuos conforme a condiciones pactadas
+8.3 Diseño y desarrollo del servicio / modelo	Innovación	ISO 56002	8 (procesos de innovación)	Diseño, desarrollo y validación de soluciones	Desarrollo del modelo piloto, prototipos de contenedores inteligentes, plataforma digital, etc. 
+ISO 56002_2019 innovación
+	Circularidad – productos	ISO 59040	6–7 (PCDS y atributos de producto circular)	Especificación de atributos de circularidad	Diseño de productos CEDA (biofertilizante, composta, alimento animal) como “productos circulares” declarables 
+ISO_59040_2025
+8.4 Control de procesos externos / proveedores	Circularidad	ISO 59040	5–7 (relación compradora–proveedor y PCDS)	Información de circularidad en la relación compra–suministro	Condiciones para proveedores de equipos, transporte, gestores externos que participen en la cadena circular 
+ISO_59040_2025
+8.5 Producción y provisión del servicio	Operativa	ISO 20675	6 (operación del sistema de biogás)	Control de procesos operativos	Define el control técnico del procesamiento de residuos, biodigestión, separación, compostaje y manejo de biofertilizantes dentro del sistema CEDA
+8.6 Liberación de productos y servicios	Control	ISO 22000	8.5 (control de peligros)	Verificación previa a liberación	Define la validación técnica y sanitaria previa a la liberación de alimentos recuperados, biofertilizantes y composta para su distribución o uso
+8.7 Control de las salidas no conformes	Control	ISO 14001	8.1 (control operacional ambiental)	Prevención de impactos	Regula el aislamiento, tratamiento y disposición segura de residuos contaminados, productos rechazados o material no apto dentro del sistema CEDA
+9.1 Seguimiento, medición, análisis y evaluación	Indicadores circulares	ISO 59020	6–7 (selección, cálculo e interpretación de indicadores)	Definición y uso de KPIs de circularidad	Sistema de indicadores CEDA: rendimiento del biodigestor, % de valorización, agua ahorrada, CO₂e evitado 
+ISO_59020_2024
+	Redes de valor	ISO/TR 59032	Secciones de medición en casos	Lecciones sobre indicadores y redes	Referencias para comparar desempeño del CEDA con otros mercados mayoristas circulares 
+ISO_59040_2025
+	Ambiental	ISO 14001	9.1 (seguimiento y medición ambiental)	Indicadores de desempeño ambiental	Emisiones de GEI, calidad de efluentes, consumo energético, etc.
+	Inocuidad alimentaria	ISO 22000	9.1 (validación, verificación y mejora)	Verificación del sistema de inocuidad	Verificación de PCC, resultados de muestreo, reclamaciones de consumidores
+9.2 Auditoría interna	Multisistema	ISO 56002 / 14001 / 22000 / 59000	Cláusulas de evaluación y revisión	Auditorías a innovación, ambiente, inocuidad y circularidad	Diseñar un programa de auditorías integradas (calidad, circularidad, ambiente, inocuidad, biogás)
+9.3 Revisión por la dirección	Estructural	ISO 56002 y familia 59000	9–10 (revisión y mejora)	Revisión del desempeño de innovación y circularidad	Comité Estratégico revisa resultados CEDA, portafolio de proyectos, brechas normativas y oportunidades
+10.2 No conformidad y acción correctiva	Innovación	ISO 56002	10.2 (desviación y acción correctiva en innovación)	Tratamiento estructurado de desviaciones	Usa la lógica de innovación para aprender de fallos del piloto y ajustar el modelo 
+ISO 56002_2019 innovación
+	Circularidad	ISO 59020 / 59014	Secciones de mejora del desempeño	Mejora de desempeño circular y trazabilidad	Ajuste de procesos cuando los indicadores o la trazabilidad muestran desviaciones en recuperación de materiales
+	Ambiental	ISO 14001	10 (mejora)	Mejora continua ambiental	Cierre de no conformidades ambientales detectadas por SEDEMA o auditorías
+	Inocuidad	ISO 22000	10 (mejora)	Mejora del sistema de inocuidad	Acciones correctivas ante incidentes o casi incidentes con alimentos
+10.3 Mejora continua	Estructural	ISO 56002 + familia 59000	10 (mejora continua de innovación y circularidad)	Mejora del sistema de innovación y de la transición circular	Integra los ciclos PHVA del proyecto con la escalabilidad (piloto → 1,000 m² → 3,000 m² → modelo de ciudad)
+ 
+B. MARCO LEGAL FEDERAL MEXICANO REQUERIMIENTOS Y OPERATIVO DE SISTEMA CEDA CIRCULAR
+1. LEYES FEDERALES
+TIPO	DISPOSICIÓN	ÁMBITO DE APLICACIÓN EN PROYECTO CEDA	RELACIÓN DIRECTA CON
+Ley	Ley General para la Prevención y Gestión Integral de los Residuos (LGPGIR)	Marco rector para manejo, valorización, reciclaje, aprovechamiento y planes de manejo de residuos sólidos urbanos y de manejo especial.	Gestión integral, separación, aprovechamiento, trazabilidad y planes de manejo.
+Ley	Ley General del Equilibrio Ecológico y la Protección al Ambiente (LGEEPA)	Establece bases de política ambiental, control de contaminación, licenciamiento ambiental y mitigación de impactos.	Operación ambiental del proyecto y desempeño ecológico.
+Ley	Ley General de Cambio Climático (LGCC)	Regula acciones de mitigación de GEI y transición energética.	Producción y uso de biogás, reducción de emisiones.
+Ley	Ley General de Economía Circular	Fomenta el rediseño productivo, reutilización, reciclaje y valorización de materiales.	Sustento legal directo del modelo circular CEDA.
+Ley	Ley de Transición Energética	Promueve energías limpias y eficiencia energética.	Uso de biogás como energía renovable.
+Ley	Ley de Aguas Nacionales	Controla descargas, reuso de agua y lodos residuales.	Reuso de aguas residuales tratadas y digestato líquido.
+Ley	Ley General de Salud	Regula condiciones sanitarias y seguridad alimentaria.	Rescate y redistribución de alimentos aptos para consumo humano.
+
+
+
+
+2. REGLAMENTOS FEDERALES
+TIPO	REGLAMENTO	APLICACIÓN EN CEDA CIRCULAR
+Reglamento	Reglamento de la LGPGIR	Detalla clasificación, manejo, transporte, acopio, tratamiento y planes de manejo de residuos.
+Reglamento	Reglamento de la LGEEPA en materia de Evaluación de Impacto Ambiental	Define requisitos para autorizar instalaciones como plantas de valorización, biodigestores y centros de tratamiento.
+Reglamento	Reglamento de la LGEEPA en materia de Prevención y Control de la Contaminación de la Atmósfera	Controla emisiones por procesos de combustión o gases derivados del tratamiento.
+Reglamento	Reglamento de la LGEEPA en materia de Residuos Peligrosos	Aplica si se generan residuos peligrosos secundarios.
+Reglamento	Reglamento de la Ley de Aguas Nacionales	Condiciones para descarga, tratamiento y reuso de aguas residuales.
+
+3. NORMAS OFICIALES MEXICANAS (NOM)
+3.1. Residuos y manejo ambiental
+NOM	DESCRIPCIÓN	APLICACIÓN EN PROYECTO CEDA
+NOM-083-SEMARNAT-2003	Especificaciones para sitios de disposición final de residuos sólidos urbanos y de manejo especial.	Diseño y operación de áreas de disposición o transferencia.
+NOM-161-SEMARNAT-2011	Clasificación de residuos de manejo especial y obligatoriedad de planes de manejo.	Identificación de residuos valorizables generados en la CEDA.
+NOM-052-SEMARNAT-2005	Identificación y clasificación de residuos peligrosos.	Control de fracciones contaminantes (aceites, químicos, etc.).
+NOM-087-SEMARNAT-SSA1-2002	Manejo de residuos biológico-infecciosos (RPBI).	Aplica en áreas con carne u otros residuos sanitarios especiales.
+
+3.2. Aguas residuales, lodos y biofertilizantes
+NOM	DESCRIPCIÓN	APLICACIÓN EN PROYECTO CEDA
+NOM-003-SEMARNAT-1997	Límites máximos permisibles para reuso de aguas residuales tratadas.	Reutilización de agua en limpieza, riego y procesos internos.
+NOM-004-SEMARNAT-2002	Especificaciones para lodos y biosólidos.	Marco técnico para el uso del digestato como biofertilizante o composta.
+
+3.3. Alimentos y salud
+NOM	DESCRIPCIÓN	APLICACIÓN EN PROYECTO CEDA
+NOM-251-SSA1-2009	Prácticas de higiene en procesamiento de alimentos.	Control sanitario del módulo de rescate alimentario.
+
+3.4 Alimentación animal (fracción orgánica para forraje y aprovechamiento pecuario)
+NOM	TÍTULO / TEMA	APLICACIÓN EN PROYECTO CEDA CIRCULAR®
+NOM-060-ZOO-1999	Especificaciones sanitarias para la preparación y comercialización de alimentos para animales.	Regula la preparación, almacenamiento y manejo higiénico de subproductos orgánicos destinados a alimentación animal (ensilados, forrajes, subproductos vegetales recuperados de CEDA).
+NOM-061-ZOO-1999	Especificaciones zoosanitarias para productos destinados a la alimentación animal.	Control sanitario y prevención de riesgos zoosanitarios en alimentos procesados para animales provenientes de la fracción orgánica aprovechable.
+
+3.4. Seguridad laboral asociada al proyecto
+NOM	DESCRIPCIÓN	APLICACIÓN EN PROYECTO CEDA
+NOM-002-STPS-2010	Prevención y protección contra incendios.	Seguridad en áreas con biogás y equipos eléctricos.
+NOM-017-STPS-2008	Equipo de protección personal.	Seguridad del personal operativo.
+
+
+CLASIFICACIÓN ESTRATÉGICA PARA CEDA
+Resumen por flujo del proyecto ceda
+FLUJO CEDA	NOM CLAVE APLICABLE
+Rescate alimentario humano	NOM-251-SSA1-2009
+Alimentación animal	NOM-060-ZOO-1999 / NOM-061-ZOO-1999
+Biofertilizante y composta	NOM-004-SEMARNAT-2002
+Aguas residuales reusadas	NOM-003-SEMARNAT-1997
+Residuos generales	NOM-083, NOM-161, NOM-052
+Seguridad operativa	NOM-002-STPS, NOM-017-STPS
+
+NIVEL	ALCANCE
+Núcleo obligatorio	LGPGIR, LGEEPA, NOM-083, NOM-161, NOM-004, NOM-003, NOM-251
+Circularidad legal	Ley General de Economía Circular
+Energía y emisiones	Ley de Transición Energética, LGCC
+Complementarias	Ley de Aguas Nacionales, Ley General de Salud, NOM-STPS
+
+
+
+
+
+
+
+
+
+MATRIZ MAESTRA DE CORRELACIÓN NORMATIVA DEL SISTEMA CEDA CIRCULAR® FO-NORM-00
+La presente Matriz Maestra constituye la estructura normativa central que articula la ISO 9001 como norma madre con las normas internacionales especializadas, las leyes federales mexicanas, los reglamentos aplicables, las NOM correspondientes a cada flujo del sistema y los formatos operativos que evidencian el cumplimiento.
+Este instrumento consolida el universo regulatorio del Proyecto CEDA Circular® en un modelo único, coherente y trazable, garantizando su defensa técnica, jurídica y operativa durante todas las fases del sistema: piloto, transición y operación permanente.
+
+FO-NORM-00 MATRIZ MAESTRA DE CORRELACIÓN NORMATIVA DEL SISTEMA CEDA CIRCULAR® 
+NUMERAL ISO 9001 (NORMA MADRE)	TEMA RECTOR	NORMAS ISO ASOCIADAS	LEYES FEDERALES APLICABLES	REGLAMENTOS	NOM APLICABLES POR FLUJO (A–F)	APLICACIÓN CONCRETA EN EL PROYECTO CEDA CIRCULAR®	RIESGO NORMATIVO QUE MITIGA	FORMATOS DE EVIDENCIA (FO-DIAG / TERR / INFRA / GOV / NORM)
+4.1 Contexto	Definición del sistema circular	ISO 59004 (marco) 56002 (innovación) 59020 (indicadores) 14001 (contexto)	LGPGIR LGEEPA LGEC LGCC	R-LGPGIR R-LGEEPA Calidad del aire	NOM-083 NOM-251 + Sección F: NOM-002, 004, 017, 020, 001-SEDE	Define el sistema circular integral alimentos-energía-biofertilizante-composta-seguridad	Indefinición del modelo	FO-DIAG-00 FO-NORM-01
+4.2 Partes interesadas	Necesidades y obligaciones	ISO 59010 (redes de valor) 59014 (comunicación)	LGPGIR Ley de Salud	Reglamentos sanitarios	NOM-251, NOM-060/061, NOM-004, NOM-083	Alineación de bodegueros, pepenadores, CEDA, PC, SEMARNAT, SCT	Reclamos o incumplimiento	FO-DIAG-02 FO-GOV-00
+5.1 Liderazgo	Gobernanza del sistema	ISO 56002 ISO 59004	LGPGIR	R-LGEEPA	Transversal A–F	Establece Comité Estratégico y Operativo del Modelo CEDA	Falta de gobernanza	FO-GOV-01 FO-GOV-03
+5.2 Política	Política integrada	ISO 14001 ISO 22000 59004	LGEEPA LGPGIR Ley de Salud	R-LGS	NOM-251	Política circular, inocuidad y seguridad integral	Sanciones sanitarias o ambientales	FO-GOV-05
+6.1 Riesgos y oportunidades	Evaluación integral	ISO 59004 ISO 56002 ISO 14001 ISO 22000 ISO 20675 ISO 23590 ISO 45001	LGPGIR LGEEPA LGCC Ley de PC	Reglamentos ambientales y PC	NOM-083 NOM-004 NOM-251 + NOM-002-STPS, NOM-001-SEDE (Sección F)	Identificación de riesgos sanitarios, ambientales, energéticos y de seguridad industrial	Accidentes, incumplimientos	FO-DIAG FO-INFRA-01 FO-NORM-01
+6.2 Objetivos	Metas circulares y de seguridad	ISO 59020 56002	LGCC LGEC	R-LGPGIR	A–F	% valorización, m³ biogás, reducción GEI, seguridad	Falta de control	FO-GOV-09
+7.1 Recursos	Infraestructura, equipos, seguridad	ISO 14001 ISO 22000 ISO 20675 ISO 23590 ISO 45001	LGPGIR LGEEPA	Normatividad técnica	NOM-002, 004, 017, 020, 001-SEDE (Sección F)	Equipos críticos: digestor, antorcha, planta, rutas	Riesgos físicos y energéticos	FO-INFRA-01
+7.2 Competencia	Capacitación técnica	ISO 56002 ISO 22000 ISO 45001	LGPGIR	–	NOM-251, NOM-017, NOM-004	Competencias por flujo A–F	No conformidades	FO-GOV-05
+7.4 Comunicación	Información y trazabilidad	ISO 59014 ISO/TR 59032	LGEC	–	NOM-083 NOM-251	Trazabilidad alimentaria, energética y de seguridad	Pérdida de control	FO-GOV-07
+7.5 Información documentada	Control documental	ISO 59040 ISO 14001 ISO 20675	LGPGIR	R-LGPGIR	Todas A–F	Integración documental en ASEMHWEB y FO-NORM-01	Información no válida	FO-NORM-00 FO-NORM-01
+8.1 Control operacional	Ejecución técnica	ISO 59004 ISO 59010 ISO 20675 ISO 23590 ISO 14001	LGPGIR LGEEPA LGCC	Reglamentos residuos y energéticos	NOM-083 NOM-004 NOM-251 + NOM-020, NOM-001-SEDE (Sección F)	Operación integral: alimento, digestión, energía, biofertilizante, composta, seguridad	Incumplimientos técnicos, ambientales o de seguridad	FO-INFRA-01 FO-NORM-01
+8.2 Requisitos	Condiciones del servicio circular	ISO 59010	LGPGIR	R-LGPGIR	NOM-083	Obligaciones por bodega, convenios, aforos	Desviaciones contractuales	FO-GOV-03
+8.3 Diseño y desarrollo	Diseño de procesos y planta	ISO 56002 ISO 59040	LGEC	–	NOM-083 NOM-004 NOM-251 + seguridad	Diseño de infraestructura 1,000–3,000 m² y flujos	Fallas en diseño o seguridad	FO-INFRA-01
+8.4 Proveedores	Control de externos	ISO 59040	LGPGIR	R-LGPGIR	NOM-083 NOM transporte	Control de transporte, gestores, proveedores de equipos	Riesgos de terceros	FO-NORM-01
+8.5 Producción y operación	Operación técnica	ISO 20675 ISO 23590 ISO 22000 ISO 45001	LGCC Ley de Salud	Reglamentos energéticos y sanitarios	NOM-251 NOM-004 NOM-083 + NOM-002, 001-SEDE (Sección F)	Digestión, carga, gas, inocuidad, seguridad, PC	Riesgos energéticos o sanitarios	FO-INFRA-01 FO-NORM-01
+8.6 Liberación	Validación final	ISO 22000	Ley General de Salud	R-Sanitarios	NOM-251	Liberación de alimento humano y animal	Riesgos sanitarios	FO-NORM-01
+8.7 Control de no conformes	Aislamiento y disposición	ISO 14001	LGEEPA	R-LGEEPA	NOM-083 NOM-004	Manejo y disposición de residuos contaminados	Sanciones	FO-TERR-01
+9.1 Seguimiento y medición	Indicadores circulares y de seguridad	ISO 59020 ISO 14001 ISO/TR 59032 ISO 45001	LGEC LGCC	–	A–F	KPIs: circularidad, inocuidad, energía, PC	Pérdida de desempeño	FO-GOV-09
+9.2 Auditoría interna	Auditorías integradas	ISO 14001 ISO 45001 ISO 56002	LGPGIR	–	Todas	Auditoría de flujos A–F + seguridad	Desviaciones	FO-GOV-07
+9.3 Revisión por dirección	Evaluación estratégica	ISO 56002 ISO 59004 59020	LGEC	–	Todas	Revisión del Comité Estratégico	Fallas sistémicas	FO-GOV-03
+10.2 No conformidades	Correcciones	ISO 56002 ISO 59020 ISO 14001 22000 20675	Todas	–	Todas	Acciones correctivas integrales A–F	Reincidencia	FO-NORM-01
+10.3 Mejora continua	Mejora integral	ISO 56002 Familia 59000	LGEC	–	Todas	Escalamiento del sistema 1,000 → 3,000 m² + seguridad	Estancamiento	FO-GOV-09
+
+La Matriz Maestra de Correlación Normativa FO-NORM-00 constituye el eje de integración del sistema CEDA Circular®, garantizando que cada proceso, formato, evidencia y toma de decisión se encuentre alineado con el marco normativo nacional e internacional aplicable. Este instrumento es dinámico y será actualizado conforme evolucionen las etapas del proyecto, las disposiciones regulatorias y los resultados de la operación.
+
+ 
+F. LISTA MAESTRA DE DOCUMENTOS DEL SISTEMA CEDA CIRCULAR® (LMD – VERSIÓN BASE)
+FO-LMD-01. LISTA MAESTRA DE DOCUMENTOS DEL SISTEMA CEDA CIRCULAR®**
+
+Propósito 
+La Lista Maestra de Documentos del Sistema CEDA Circular® (LMD) es el instrumento que ordena, identifica y controla toda la información documentada que sustenta el diseño, implementación, operación y mejora continua del proyecto.
+Su propósito es asegurar que cada requisito normativo, técnico y operativo cuente con al menos un documento formal que lo respalde, evitando duplicidades, vacíos documentales o información no controlada.
+
+Alcance
+La LMD aplica a todas las etapas del proyecto, desde la prueba piloto, el escalamiento progresivo y la operación permanente, e integra documentación relacionada con:
+•	Diagnóstico técnico–operativo
+•	Viabilidad y selección de terrenos
+•	Infraestructura y diseño
+•	Marco normativo federal
+•	Procesos operativos A–F
+•	Seguridad, energía y movilidad transversal
+•	Gobernanza, indicadores y mejora continua
+La LMD abarca documentos internos (formatos, procedimientos, matrices, registros) y su relación con la normatividad externa aplicable (leyes, reglamentos, NOM e ISO).
+
+
+
+ 
+ARQUITECTURA DEL SISTEMA DE GESTIÓN CEDA CIRCULAR®
+NIVEL	BLOQUE / COMPONENTE	DESCRIPCIÓN / FUNCIÓN	CLAVE(S) ASOCIADA(S)	DEPENDENCIA JERÁRQUICA
+1	Marco Normativo	Conjunto de normas, leyes y referencias regulatorias que sustentan el sistema	FO-NORM / FO-NORM-00 / FO-NORM-01	Nivel superior
+2	Manual Maestro	Documento rector del Modelo CEDA Circular®	Manual Maestro	Deriva del Marco Normativo
+3	Infraestructura	Lineamientos técnicos y criterios de infraestructura	FO-INFRA / FO-INFRA-01	Manual Maestro
+3	Gobernanza	Modelo de gobernanza, roles, decisiones y control institucional	FO-GOV / FO-GOV-01 a FO-GOV-10	Manual Maestro
+3	Control Documental	Control, versión y trazabilidad de la documentación del sistema	FO-LMD / FO-LMD-01	Manual Maestro
+4	Operación / Piloto	Procesos operativos del piloto y de la operación base	FO-CEDA-OP / OP-01 a OP-14	Infraestructura + Gobernanza + LMD
+4	Gestión Estratégica	Planeación, indicadores, seguimiento y escalamiento	FO-CEDA-GES / GES-01 a GES-07	Infraestructura + Gobernanza + LMD
+5	Subsistema Operativo – Animal	Procesos de valorización para alimentación animal	FO-CEDA-PEC	Operación
+5	Subsistema Operativo – Biogás	Procesos de biodigestión y generación de biogás	FO-CEDA-BIOG	Operación
+5	Subsistema de Soporte – Residuos	Gestión de residuos no valorizables o especiales	FO-CEDA-RES	Gestión Estratégica
+5	Subsistema de Soporte – Rescate	Rescate alimentario para consumo humano	FO-CEDA-ALR	Gestión Estratégica
+
+
+
+
+RELACIÓN JERÁRQUICA SIMPLIFICADA 
+NIVEL	ELEMENTO	FLUJO
+1	FO-NORM	Marco normativo
+↓		
+2	Manual Maestro	Documento rector
+↓		
+3	FO-INFRA	Infraestructura
+3	FO-GOV	Gobernanza
+3	FO-LMD	Control documental
+↓		
+4	FO-CEDA-OP	Operación / Piloto
+4	FO-CEDA-GES	Gestión estratégica
+↓		
+5	FO-CEDA-PEC / BIOG	Subsistemas operativos
+5	FO-CEDA-RES / ALR	Subsistemas de soporte
+
+MAPA DE FLUJO OPERATIVO – DE RESIDUO A VALOR (CEDA CIRCULAR®)
+ETAPA	PROCESO / FLUJO	DESCRIPCIÓN OPERATIVA	CLAVE DEL PROCESO	DESTINO / SALIDA	REFERENCIA NORMATIVA PRINCIPAL
+1	Residuo en origen	Generación de residuo alimentario en la CEDA	—	Entrada al sistema	LGPGIR / Ley CDMX Economía Circular
+2	Separación / Clasificación	Separación física y clasificación técnica del residuo	FO-CEDA-OP-03	Asignación a flujo de valor	ISO 59004 / ISO 9001 (control de procesos)
+3	Rescate alimentario	Selección de alimentos aptos para consumo humano	FO-ALR	Bancos de alimentos	NOM-004 / Impacto social
+3	Alimento animal	Transformación de residuos aptos en insumo pecuario	FO-PEC	Granjas pecuarias	NOM-060 / NOM-061
+3	Biogás	Biodigestión anaerobia para generación de energía	FO-BIOG	Energía y digestato	ISO 20675 / ISO 23590
+3	Composta / Biofertilizante	Valorización orgánica para uso agrícola	(D / E)	Uso agrícola diferido	NOM-004 / NOM-083
+
+FLUJO OPERATIVO CON TRAZABILIDAD DE VALOR
+FLUJO	ENTRADA	PROCESO CLAVE	PRODUCTO / RESULTADO	VALOR GENERADO
+Rescate (ALR)	Alimento recuperable	Clasificación sanitaria	Alimento para consumo humano	Impacto social
+Animal (PEC)	Residuos orgánicos aptos	Procesamiento controlado	Alimento animal	Valor productivo
+Biogás (BIOG)	Orgánicos degradables	Digestión anaerobia	Energía + digestato	Valor energético
+Composta / Biofert.	Residuos no aptos anteriores	Estabilización biológica	Enmienda agrícola	Valor ambiental
+
+RELACIÓN FLUJO–NORMA–RESULTADO (CIRCULARIDAD REAL)
+FLUJO	NORMA / MARCO TÉCNICO	CONTROL CLAVE	RESULTADO CIRCULAR
+Rescate	NOM-004	Inocuidad y selección	Seguridad alimentaria
+Animal	NOM-060 / NOM-061	Control pecuario	Sustitución de insumos
+Biogás	ISO 20675 / ISO 23590	Control de digestión	Energía limpia
+Composta / Biofert.	NOM-083	Estabilización	Retorno al suelo
+
+
+
+
+MAPA DE GOBERNANZA Y DECISIÓN – CEDA CIRCULAR®
+NIVEL	ENTRADA / FUENTE	INSTANCIA / PROCESO	DESCRIPCIÓN FUNCIONAL	CLAVE(S)	RESULTADO / SALIDA
+1	Datos operativos	Información de operación por subsistema	Datos provenientes de OP / PEC / BIOG / RES / ALR	FO-CEDA-OP / FO-PEC / FO-BIOG / FO-RES / FO-ALR	Información estructurada
+2	Informes e indicadores	Consolidación y análisis	Integración de reportes, KPIs y tendencias	FO-GOV-07 / FO-GOV-09	Informes ejecutivos
+3	Comité estratégico	Revisión y evaluación	Análisis estratégico, validación de desempeño y riesgos	FO-GOV-01 a FO-GOV-06	Recomendaciones
+4	Resolutivo	Toma de decisión	Definición de acciones sobre el sistema	FO-GOV-10	Escalar / Ajustar / Parar
+
+FLUJO DE DECISIÓN (VISTA SECUENCIAL)
+PASO	ELEMENTO	FUNCIÓN
+1	Datos operativos	Alimentan el sistema de gobernanza
+2	Informes + indicadores	Transforman datos en información útil
+3	Comité estratégico	Evalúa, prioriza y decide
+4	Resolutivo	Ejecuta decisiones estratégicas
+
+RELACIÓN GOBERNANZA – CONTROL – ACCIÓN
+COMPONENTE	CONTROL APLICADO	FRECUENCIA TÍPICA	TIPO DE DECISIÓN
+Informes	Indicadores operativos y estratégicos	Mensual / Trimestral	Preventiva / Correctiva
+Comité	Evaluación colegiada	Trimestral / Extraordinaria	Estratégica
+Resolutivo	Acta y acuerdo formal	Según evento	Escalamiento / Ajuste / Detención
+
+El Sistema CEDA Circular® no es una planta, es una arquitectura de decisión que convierte residuos en valor mediante control normativo, gobernanza y operación por etapas. 
+Criterios de control documental
+Todos los documentos del Sistema CEDA Circular® se gestionan bajo los siguientes criterios:
+•	Codificación única, por familia documental (FO-, POE-, KPI-, AUD-, etc.).
+•	Identificación de versión, responsable y estado (vigente, en revisión, obsoleto).
+•	Trazabilidad normativa, vinculando cada documento con los requisitos legales y normativos que atiende.
+•	Actualización controlada, conforme evoluciona el proyecto y se incorporan mejoras o cambios regulatorios.
+La Lista Maestra de Documentos se considera un documento vivo, sujeto a revisión periódica y alineado al sistema de gestión del proyecto.
+
+Relación con el Sistema de Gestión y el Manual Maestro
+La LMD funciona como el vínculo estructural entre:
+•	El Marco Normativo y Federal (Capítulo E), que define qué se debe cumplir.
+•	Los Procesos Operativos A–H (Capítulo H), que definen cómo se ejecuta.
+•	La Gobernanza e Indicadores, que definen cómo se controla y mejora.
+De esta forma, el Manual Maestro describe el sistema, y la LMD garantiza que dicho sistema esté documentalmente soportado, verificable y auditado. 
+ 
+FO-LMD-01. LISTA MAESTRA DE DOCUMENTOS DEL SISTEMA CEDA CIRCULAR®**
+BLOQUE 1 – FO-NORM | MARCO NORMATIVO
+CÓDIGO	NOMBRE DEL DOCUMENTO	FAMILIA	FLUJO	TIPO	ESTADO	RESPONSABLE	UBICACIÓN	OBSERVACIONES
+FO-NORM-00	Matriz Maestra de Correlación Normativa	FO-NORM	A–F	Matriz	Existe	Dirección	Manual Maestro / Drive	Documento rector del sistema
+FO-NORM-01	Registro Operativo de Cumplimiento Normativo	FO-NORM	A–F	Registro	Existe	Operación / Calidad	Drive	Registro vivo por flujo
+POE-AH-01 a 15	Procedimientos Operativos – Alimento Humano	FO-NORM	A	Procedimientos	Existe	Operación	Drive	NOM-251, ISO 22000
+POE-AN-01 a 11	Procedimientos Operativos – Alimento Animal	FO-NORM	B	Procedimientos	Existe	Operación	Drive	NOM-060 / 061
+POE-BIO-01 a 17	Procedimientos Operativos – Biogás	FO-NORM	C	Procedimientos	Existe	Técnico	Drive	ISO 20675
+POE-BIOF-01 a 03	Procedimientos – Biofertilizante	FO-NORM	D	Procedimientos	Existe	Operación	Drive	NOM-004
+POE-COMP-01 a 03	Procedimientos – Composta	FO-NORM	E	Procedimientos	Existe	Operación	Drive	NOM-083
+POE-F-01 a 22	Seguridad, Energía y Movilidad	FO-NORM	F	Procedimientos	Existe	Seguridad	Drive	STPS / PC
+________________________________________
+BLOQUE 2 – MANUAL MAESTRO
+CÓDIGO	NOMBRE DEL DOCUMENTO	FAMILIA	FLUJO	TIPO	ESTADO	RESPONSABLE	UBICACIÓN	OBSERVACIONES
+MM-01	Manual Maestro del Proyecto CEDA Circular®	Manual Maestro	A–H	Manual	Existe	Dirección	Manual Maestro	Incluye mapa visual y criterios LMD
+________________________________________
+
+BLOQUE 3 – FO-DIAG | DIAGNÓSTICOS
+CÓDIGO	NOMBRE DEL DOCUMENTO	FAMILIA	FLUJO	TIPO	ESTADO	RESPONSABLE	UBICACIÓN	OBSERVACIONES
+FO-DIAG-00	Diagnóstico Técnico-Operativo Integral	FO-DIAG	A–F	Diagnóstico	Existe	Dirección	Drive	Base del sistema
+FO-DIAG-01	Diagnóstico de Flujos de Residuos	FO-DIAG	A–E	Diagnóstico	Existe	Operación	Drive	LGPGIR
+FO-DIAG-02	Diagnóstico de Terrenos	FO-DIAG	F	Diagnóstico	Existe	Técnico	Drive	PC / LGEEPA
+FO-DIAG-03	Diagnóstico de Infraestructura	FO-DIAG	F	Diagnóstico	Existe	Técnico	Drive	NOM técnicas
+FO-DIAG-04	Diagramas de Flujo A–F	FO-DIAG	A–F	Diagramas	Existe	Calidad	Drive	ISO 9001
+FO-DIAG-05	Matriz de Viabilidad Técnica	FO-DIAG	A–F	Matriz	Existe	Dirección	Drive	ISO 56002
+________________________________________
+BLOQUE 4 – FO-INFRA | INFRAESTRUCTURA Y DISEÑO
+CÓDIGO	NOMBRE DEL DOCUMENTO	FAMILIA	FLUJO	TIPO	ESTADO	RESPONSABLE	UBICACIÓN	OBSERVACIONES
+FO-INFRA-01	Infraestructura mínima 1,000 m²	FO-INFRA	A–F	Estudio	Existe	Técnico	Manual Maestro	Base operativa
+FO-INFRA-02	Escalamiento 1,000 → 3,000 m²	FO-INFRA	A–F	Plan	Existe	Dirección	Drive	Escalabilidad
+FO-INFRA-03	Layout general	FO-INFRA	A–F	Plano	Existe	Técnico	Drive	Zonificación
+FO-INFRA-04	Requerimientos técnicos de obra	FO-INFRA	A–F	Documento	Existe	Técnico	Drive	NOM-001
+FO-INFRA-05	Checklists de supervisión	FO-INFRA	A–F	Checklist	Existe	Calidad	Drive	ISO 9001
+FO-INFRA-06	Plano modular de expansión	FO-INFRA	A–F	Plano	Existe	Técnico	Drive	ISO 56002
+FO-INFRA-07	Diagramas energéticos	FO-INFRA	F	Diagramas	Existe	Energía	Drive	LGCC
+________________________________________
+BLOQUE 5 – FO-CEDA-OP | OPERACIÓN
+CÓDIGO	NOMBRE DEL DOCUMENTO	FAMILIA	FLUJO	TIPO	ESTADO	RESPONSABLE	UBICACIÓN	OBSERVACIONES
+FO-CEDA-OP-01 a 13	Procesos Operativos CEDA Circular®	FO-CEDA-OP	A–F	Procedimientos / Registros	Existe	Operación	Drive	Control integral de flujos
+________________________________________
+
+BLOQUE 6 – FO-GOV / KPI / AUD | GOBERNANZA
+CÓDIGO	NOMBRE DEL DOCUMENTO	FAMILIA	FLUJO	TIPO	ESTADO	RESPONSABLE	UBICACIÓN	OBSERVACIONES
+FO-GOV-00	Marco de Gobernanza	FO-GOV	A–F	Documento	Existe	Dirección	Manual Maestro	Dirección del sistema
+FO-GOV-01	Actas Comité Operativo	FO-GOV	A–F	Acta	Existe	Dirección	Drive	Decisiones
+FO-GOV-03	Roles y Responsabilidades	FO-GOV	A–F	Registro	Existe	Dirección	Drive	Control organizacional
+FO-GOV-05	Matriz de Competencias	FO-GOV	A–F	Matriz	Existe	Calidad	Drive	Capacidad del sistema
+FO-GOV-07	Auditorías internas	FO-GOV	A–F	Informe	Existe	Calidad	Drive	ISO 19011
+FO-GOV-09	Indicadores del sistema	FO-GOV	A–F	Tablero	Existe	Dirección	Drive	ISO 59020
+
+
+ 
+G. CONDICIONES HABILITANTES DEL SISTEMA CEDA CIRCULAR®
+
+El presente capítulo establece las condiciones técnicas habilitantes necesarias para que el Sistema CEDA Circular® pueda iniciar su operación real, sostenida y gobernada, previo al desarrollo de la Ruta de Implementación, la prueba piloto operativa y el escalamiento progresivo del sistema.
+Este capítulo consolida los elementos estructurales y transversales que permiten que el sistema funcione como tal, y no como una suma de instalaciones aisladas.
+
+Enfoque 
+El Proyecto CEDA Circular® se concibe como un sistema de gestión integral, en el que la operación, los procesos y los cinco productos circulares solo pueden ejecutarse de manera eficaz si existen condiciones habilitantes previas, claramente definidas y controladas.
+Por ello, este capítulo no describe la operación del sistema, sino los pilares técnicos que la hacen posible, y que deberán encontrarse instalados, disponibles y funcionales antes de iniciar la Ruta de Implementación.
+
+Relación con otros APARTADOS del Manual Maestro
+El presente capítulo se articula directamente con:
+•	Diagnóstico de Viabilidad de Infraestructura y Edificaciones, del cual retoma las conclusiones técnicas sobre edificabilidad, zonificación y escalabilidad.
+•	La Ruta de Implementación del Sistema CEDA Circular®, que se desarrolla posteriormente y parte explícitamente de que las condiciones aquí definidas ya se encuentran habilitadas.
+Este APARTADO no sustituye la Ruta de Implementación; la precede y la sustenta.
+
+
+G.1 INFRAESTRUCTURA, CONSTRUCCIÓN Y EQUIPAMIENTO DEL SISTEMA CEDA CIRCULAR®
+
+El presente apartado establece las condiciones mínimas de infraestructura, construcción y equipamiento necesarias para habilitar la operación del Sistema CEDA Circular® en su fase piloto, bajo un enfoque técnico, normativo y operativo, alineado con el diseño definitivo del sistema y con su proyección de escalabilidad futura.
+Este inciso no constituye un proyecto ejecutivo de obra ni un catálogo cerrado de ingeniería, sino que define el marco habilitante que permite asegurar que la Planta Piloto opere de manera segura, funcional, ordenada y defendible, cumpliendo con los principios de economía circular, gestión por procesos y mejora continua que rigen al Proyecto CEDA Circular®.
+La infraestructura y el equipamiento definidos en este apartado responden a la lógica operativa integral del sistema, garantizando:
+•	La separación sanitaria y funcional de los distintos flujos del modelo circular.
+•	La continuidad del proceso productivo desde la recepción hasta la valorización final.
+•	La mitigación de riesgos sanitarios, ambientales y operativos.
+•	La coherencia entre la fase piloto y la planta definitiva.
+•	La posibilidad de escalamiento horizontal, vertical y tecnológico sin reubicaciones futuras.
+El diseño de infraestructura se concibe bajo un modelo mixto, en el cual:
+•	Las áreas críticas de operación se desarrollan en espacios techados y controlados, y
+•	Las actividades que, por su naturaleza técnica, así lo permiten, se realizan en áreas descubiertas, particularmente el proceso de compostaje, sin comprometer la seguridad, la operación ni el cumplimiento normativo.
+Asimismo, se establece de manera explícita que los procesos de preparación, control y alimentación del sistema de biodigestión forman parte de la infraestructura interna de la planta, mientras que el biodigestor, como unidad principal de generación de biogás, se considera un elemento externo, con el fin de garantizar condiciones óptimas de seguridad, ventilación, escalabilidad y control de riesgos, en congruencia con las buenas prácticas internacionales y las normas aplicables.
+
+Propósito
+Definir la infraestructura física, las adecuaciones constructivas y el equipamiento mínimo necesario para habilitar la operación real del Sistema CEDA Circular®, garantizando condiciones de seguridad, control, trazabilidad y continuidad operativa durante un periodo mínimo de 12 meses de operación piloto instalada.
+Este inciso materializa físicamente el sistema de gestión y establece el punto de arranque real del proyecto.
+
+Alcance
+Este inciso comprende:
+•	Adecuación, construcción o habilitación del espacio físico.
+•	Implementación de áreas funcionales conforme al layout aprobado (≈1,200 m²).
+•	Instalación del equipamiento mínimo por proceso.
+•	Condiciones constructivas, sanitarias y operativas.
+•	Preparación para escalamiento progresivo a 3,000 m² o más.
+Quedan excluidos proyectos ejecutivos detallados, memorias de cálculo y especificaciones de marca.
+
+Infraestructura funcional mínima
+El sistema deberá contar, como mínimo, con las siguientes áreas claramente delimitadas:
+•	Zona de maniobras y recepción.
+•	Patio central operativo.
+•	Área de separación y clasificación.
+•	Línea de alimento humano.
+•	Línea de alimento animal.
+•	Área de valorización orgánica (biogás, biofertilizante y composta).
+•	Área de rechazo.
+•	Área de almacenamiento temporal y despacho.
+•	Área de servicio técnico.
+•	Pasillos operativos y rutas seguras.
+La disposición de estas áreas deberá asegurar flujos lógicos, separación sanitaria y trazabilidad física del proceso.
+
+Condiciones constructivas mínimas
+•	Superficies firmes, resistentes y lavables.
+•	Drenajes funcionales en áreas húmedas.
+•	Ventilación natural o forzada según el proceso.
+•	Iluminación suficiente para operación segura.
+•	Señalización operativa y de seguridad.
+•	Rutas de evacuación y control perimetral.
+•	Control de fauna nociva.
+Estas condiciones forman parte integral del sistema de gestión y no se consideran elementos accesorios.
+
+Equipamiento mínimo por función
+El equipamiento se define por función del proceso, conforme a los criterios técnicos del sistema:
+•	Recepción y control: básculas, contenedores, mesas de inspección, sistemas de identificación.
+•	Separación y clasificación: mesas de selección, herramientas, contenedores y sistemas de limpieza.
+•	Alimento humano: superficies grado alimentario, lavado, refrigeración, empaque y medición.
+•	Alimento animal: trituración o molienda, contenedores cerrados y almacenamiento temporal.
+•	Valorización orgánica: pretratamiento, composta, biofertilizantes y compatibilidad con biodigestión.
+•	Rechazo: contenedores cerrados y controlados.
+•	Servicio técnico: herramientas, refacciones y equipos de mantenimiento.
+
+Resultado esperado del inciso
+Al cierre de este inciso, el Sistema CEDA Circular® deberá contar con:
+•	Infraestructura instalada y operable.
+•	Equipamiento mínimo funcional.
+•	Flujos definidos y controlados.
+•	Condiciones reales para iniciar la operación del sistema.
+
+La Tabla de Infraestructura, Construcción y Equipamiento por Área, incluida en este apartado, constituye el instrumento técnico de referencia para:
+•	La elaboración del plano de planta.
+•	El diseño arquitectónico y de ingeniería.
+•	La estimación de costos de habilitación.
+•	La validación de condiciones mínimas de operación.
+•	La verificación técnica por parte de autoridades, auditores o instancias de revisión.
+Esta tabla define, para cada zona del sistema, el equipamiento base, las dimensiones referenciales, las condiciones constructivas (techado o descubierto), las conexiones requeridas y las consideraciones operativas esenciales, sirviendo como puente técnico entre el diagnóstico de viabilidad de infraestructura (Bloque C), la capacidad operativa mínima del sistema (G.3) y la Ruta de Implementación del Proyecto CEDA Circular® (Bloque H).
+En consecuencia, lo aquí establecido representa el piso técnico mínimo sobre el cual se construye la operación real del sistema, asegurando que la fase piloto no sea una instalación provisional, sino la primera expresión operativa del sistema definitivo, diseñada para evolucionar, optimizarse y escalar de manera ordenada y sustentable.
+
+Equipamiento y recursos por área – Plano de Planta
+Módulo Base 1,200 m² (Planta Baja)
+Convenciones
+•	Huella: ancho × largo (m)
+•	Altura: altura máxima del equipo
+•	Condición: Techado / Descubierto
+•	Conexiones:
+E = Eléctrica | A = Agua | D = Drenaje | G = Gas/Biogás | V = Ventilación
+
+1. ZONA DE MANIOBRAS – 24 × 9 M
+Condición: Techado
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Portón de acceso y control	1	4 × 0.3	2.5	E	Acceso principal
+Carriles de carga/descarga (marcaje)	2	3.5 × 18	—	—	Señalización en piso
+Topes y guías de rueda	4	0.3 × 1	0.2	—	Seguridad de maniobras
+Área de espera de unidades	1	6 × 6	—	—	Integrada a circulación
+
+2. PATIO CENTRAL OPERATIVO – 19 × 8 M
+Condición: Techado
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Báscula de piso	1	2 × 2	0.1	E	Recepción y control
+Área pulmón de contenedores	1	12 × 6	—	—	27 contenedores por flujo
+Montacargas (circulación)	1	1.2 × 2.5	2.2	—	Equipo móvil
+Patines hidráulicos	2	0.7 × 1.5	0.5	—	Apoyo operativo
+Estación de lavado general	1	2 × 2	1.2	A, D	Limpieza de área
+
+3. RECOLECCIÓN / PRODUCCIÓN DE PRODUCTOS – 14 × 8 M
+Condición: Techado
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Mesas de selección inox	2	0.8 × 2.4	0.9	—	Flujo humano/animal
+Banda transportadora (opcional)	1	0.8 × 6	1.2	E	Si aplica
+Básculas de mesa	2	0.4 × 0.4	0.3	E	Control de peso
+Tarja doble sanitaria	1	0.8 × 1.6	1.2	A, D	Higiene
+Estanterías sanitarias	4	0.6 × 1.2	2.0	—	Almacenamiento temporal
+Contenedores de subproducto	2	1.2 × 1.2	1.3	—	Salida a otros flujos
+
+4. ALIMENTO HUMANO – 5 × 22 M
+Condición: Techado (control sanitario)
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Cámara fría modular	1	3 × 5	2.6	E	Producto apto humano
+Mesas de empaque	2	0.8 × 2.4	0.9	—	
+Selladora / flejadora	1	0.6 × 0.6	1.2	E	Según tipo de empaque
+Lavamanos sanitario pedal	1	0.5 × 0.5	1.1	A, D	Acceso al área
+Estanterías de producto terminado	6	0.6 × 1.2	2.0	—	
+Contenedor orgánico no apto	1	1.2 × 1.2	1.3	—	Rechazo o reproceso
+
+
+5. ALIMENTO ANIMAL – 5 × 22 M
+Condición: Techado
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Mesa de separación	1	0.8 × 2.4	0.9	—	
+Molino / triturador (si aplica)	1	1.2 × 1.2	1.8	E	Pretratamiento
+Tolvas o contenedores tipo tote	4	1.2 × 1.0	1.2	—	Almacenamiento
+Tarja de limpieza	1	0.8 × 1.6	1.2	A, D	
+
+6. SEPARACIÓN – 22 × 1 M
+Condición: Techado
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Mampara/barrera sanitaria	1	22 × 0.1	2.5	—	Humano vs animal
+Puertas de acceso controlado	2	1 × 0.1	2.2	—	
+
+7. BIOGESTIÓN (PREPARACIÓN Y CONTROL) – 10 × 16 M
+Condición: Techado con ventilación reforzada
+Nota: El biodigestor es EXTERNO
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Triturador / macerador	1	1.5 × 1.0	1.8	E	Entrada de sustrato
+Tanque pulmón / mezclador	1	2.5 × 2.5	3.0	E	Alimentación a digestor
+Skid de bombeo	1	1.5 × 0.8	1.6	E	
+Tablero de control	1	1 × 0.3	2.0	E	Control operativo
+Tuberías de interconexión	1 set	—	—	G	Salida a biodigestor externo
+
+8. COMPOSTA / BIOFERTILIZANTE – 10 × 14 M
+Condición: DESCUBIERTA
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Camas o pilas de composta	2	2 × 8	1.2	—	Curado natural
+Área de volteo / manejo	1	3 × 4	—	—	Operación manual/mecánica
+Área de tarimas	1	3 × 4	0.2	—	Producto terminado
+Malla sombra (opcional)	1	10 × 14	3.5	—	No estructural
+
+9. RECHAZO – 5 × 8 M
+Condición: Techado con ventilación natural
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Contenedor roll-off o jaula	1	2.5 × 6	2.5	—	Disposición final
+Señalización de residuos	1 set	—	—	—	
+
+10. SERVICIO TÉCNICO – 10 × 3 M
+Condición: Techado
+EQUIPAMIENTO / RECURSO	CANT.	HUELLA (M)	ALTURA (M)	CONEXIONES	OBSERVACIONES DE PLANTA
+Tablero eléctrico principal	1	1 × 0.3	2.0	E	
+Compresor / bombas auxiliares	1	1.2 × 0.8	1.5	E	Si aplica
+Extractores / ventilación	2	0.6 × 0.6	0.6	E, V	
+
+
+
+
+
+
+
+
+
+G.2 ENERGÍA, TRANSPORTE Y SEGURIDAD INDUSTRIAL DEL SISTEMA CEDA CIRCULAR®
+Este inciso no sustituye proyectos ejecutivos ni estudios especializados; establece únicamente las condiciones habilitantes mínimas del sistema.
+
+Propósito 
+Establecer las condiciones técnicas mínimas relacionadas con energía, transporte interno y seguridad industrial que permiten la operación segura, continua y escalable del Sistema CEDA Circular®.
+Este inciso reconoce estos elementos como procesos transversales del sistema, no como servicios auxiliares.
+Estos criterios se desarrollarán operativamente conforme a la normatividad aplicable en materia de energía, protección civil, seguridad industrial y biogás.
+
+Energía del sistema
+El sistema deberá contar con:
+•	Capacidad eléctrica instalada suficiente para la operación continua.
+•	Infraestructura preparada para ampliación de carga.
+•	Compatibilidad física para integración de sistemas de biogás.
+•	Preparación para balance energético interno.
+•	Espacios y condiciones para instrumentación, control y monitoreo energético.
+La energía se concibe como flujo del sistema, alineado con el modelo de valorización circular.
+
+Transporte y logística interna
+El sistema deberá garantizar:
+•	Rutas internas seguras y diferenciadas.
+•	Maniobrabilidad para vehículos de carga.
+•	Circulación separada de personal y equipos.
+•	Zonas de carga y descarga definidas.
+•	Flujo logístico continuo sin cruces críticos.
+El transporte forma parte del control operativo del sistema.
+
+Seguridad industrial y operativa
+El sistema deberá integrar:
+•	Análisis de riesgos operativos.
+•	Equipos de protección personal.
+•	Señalización de seguridad.
+•	Protocolos de emergencia y evacuación.
+•	Control de incendios y explosiones (especialmente en áreas de biogás).
+•	Registros de incidencias y mantenimiento.
+La seguridad industrial es un componente estructural del sistema de gestión.
+
+Resultado esperado del inciso G.2
+Al cierre de este inciso, el Sistema CEDA Circular® contará con:
+•	Condiciones energéticas habilitadas.
+•	Logística interna controlada.
+•	Esquema de seguridad industrial implementado.
+•	Plataforma operativa lista para iniciar la Ruta de Implementación.
+
+Vinculación con la Ruta de Implementación
+La conclusión del Capítulo G constituye la condición habilitante integral para el desarrollo del siguiente bloque del Manual Maestro:
+Ruta de Implementación del Sistema CEDA Circular®, donde se desarrollará la operación del sistema, la gestión de los cinco productos, la prueba piloto, la estabilización y el escalamiento progresivo.
+
+Nota de escalabilidad energética (opcional)
+Dado que el proyecto escala a 3,000 m² y 267 t/d, podrías añadir:
+“Las condiciones energéticas deberán considerar el crecimiento progresivo del sistema sin interrupción operativa.”
+
+G.3 CAPACIDAD OPERATIVA MÍNIMA POR ZONA
+
+Módulo Base 1,200 m² – Condición de arranque del sistema
+El presente subinciso define la capacidad operativa mínima instalada necesaria para que el Sistema CEDA Circular® pueda iniciar operación controlada, continua y verificable en el Módulo Base de 1,200 m², conforme a la infraestructura y equipamiento habilitados en el apartado G.1.
+Las capacidades aquí establecidas corresponden a un escenario de arranque y no representan la capacidad máxima del sistema ni su potencial de escalamiento. No se especifican marcas, modelos ni proveedores, privilegiando criterios funcionales, operativos y de desempeño mínimo.
+
+ZONA DE MANIOBRAS – 24 × 9 M
+Función: Recepción, descarga y control de entrada
+Capacidad mínima habilitada:
+•	Recepción simultánea de 2–3 vehículos ligeros o 1 camión mediano.
+•	Capacidad de staging temporal: 10–15 t/día.
+Recursos mínimos:
+•	Sistema de pesaje (báscula de plataforma o equivalente).
+•	Contenedores diferenciados (≥10 unidades).
+•	1 equipo de movimiento interno (patín hidráulico o montacargas).
+•	Señalización operativa y control de flujo.
+
+PATIO CENTRAL OPERATIVO – 19 × 8 M
+Función: Distribución interna y desacople de flujos
+Capacidad mínima habilitada:
+•	Procesamiento continuo de ≈10 t/día, con picos controlados.
+•	Separación física de flujos: humano / animal / valorización orgánica.
+Recursos mínimos:
+•	Mesas de apoyo.
+•	Tarimas y racks.
+•	Accesos libres, delimitados y señalizados.
+
+ÁREA DE SEPARACIÓN – 22 × 1 M
+Función: Segregación primaria del residuo
+Capacidad mínima habilitada:
+•	Clasificación manual de ≈10 t/día, bajo condiciones de baja mezcla.
+Recursos mínimos:
+•	2 estaciones de separación.
+•	Contenedores por fracción.
+•	Sistema básico de limpieza y sanitización.
+
+ALIMENTO HUMANO – 5 × 22 M
+Función: Rescate y acondicionamiento para consumo humano
+Capacidad mínima habilitada:
+•	Procesamiento de 2–3 t/día de producto apto.
+•	Conservación temporal bajo condiciones de frío controlado.
+Recursos mínimos:
+•	Mesas de trabajo grado alimentario.
+•	Sistema de lavado.
+•	Refrigeración.
+•	Equipos de empaque y etiquetado.
+•	Instrumentación básica (control de temperatura).
+
+ALIMENTO ANIMAL – 5 × 22 M
+Función: Acondicionamiento para destino animal
+Capacidad mínima habilitada:
+•	Procesamiento de 3–4 t/día.
+Recursos mínimos:
+•	Equipos de trituración o molienda.
+•	Contenedores cerrados.
+•	Sistema de pesaje y control de condición.
+
+BIOGESTIÓN – 10 × 16 M
+Función: Pretratamiento y alimentación al sistema de valorización energética
+Capacidad mínima habilitada:
+•	Tratamiento inicial de 3–5 t/día de orgánico previamente seleccionado.
+Recursos mínimos:
+•	Equipos de trituración y pretratamiento.
+•	Sistema de mezcla.
+•	Instrumentación básica de control (pH, temperatura).
+
+COMPOSTA / BIOFERTILIZANTE / BIOGÁS – 10 × 14 M
+Función: Valorización final del residuo orgánico
+Capacidad mínima habilitada:
+•	Producción piloto de composta y biofertilizante.
+•	Preparación técnica para integración progresiva al sistema de biogás.
+Recursos mínimos:
+•	Área de pilas o camas de compostaje.
+•	Contenedores para líquidos (IBC o equivalentes).
+•	Sistema de control de lixiviados.
+•	Instrumentación básica de seguimiento.
+RECOLECCIÓN DE PRODUCTOS – 14 × 8 M
+Función: Consolidación, staging y despacho
+Capacidad mínima habilitada:
+•	Consolidación diaria de productos valorizados.
+•	Separación clara por destino.
+Recursos mínimos:
+•	Racks y tarimas.
+•	Báscula.
+•	Sistema de etiquetado y trazabilidad.
+
+RECHAZO – 5 × 8 M
+Función: Control de salidas no conformes
+Capacidad mínima habilitada:
+•	Manejo de rechazo ≤ 3–5 % del volumen total.
+Recursos mínimos:
+•	Contenedores cerrados.
+•	Control básico de olores.
+•	Retiro programado.
+
+SERVICIO TÉCNICO – 10 × 3 M
+Función: Continuidad operativa del sistema
+Recursos mínimos:
+•	Herramientas básicas.
+•	Refacciones críticas.
+•	Elementos de seguridad industrial.
+
+CIERRE TÉCNICO DEL INCISO G.3
+La presente definición de capacidad operativa mínima por zona establece el umbral funcional a partir del cual el Sistema CEDA Circular® puede iniciar operación controlada, generar información real, validar flujos y sustentar la toma de decisiones para su optimización y escalamiento progresivo.
+Este inciso se encuentra directamente vinculado con las condiciones habilitantes definidas en el apartado G.1 y constituye la base técnica para la Ruta de Implementación del sistema (Bloque H).
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+CAPACIDAD OPERATIVA MÍNIMA POR ZONA
+Módulo Base 1,200 m² – Condición habilitante del sistema
+Zona (según layout)	Medida (m)	Función dentro del sistema	Capacidad operativa habilitada (arranque)	Recursos y equipos mínimos requeridos
+Zona de maniobras	24 × 9	Recepción, descarga y control de entrada	10–15 t/día	Báscula de plataforma o equivalente, ≥10 contenedores diferenciados, 1 patín o montacargas, señalización y control de flujo
+Patio Central Operativo	19 × 8	Distribución interna y desacople de flujos	Flujo continuo 10 t/día	Mesas de apoyo, tarimas, racks, delimitación de flujos humano/animal/valorización
+Separación primaria	22 × 1	Clasificación inicial del residuo	Clasificación manual 10 t/día	2 estaciones de separación, contenedores por fracción, sistema básico de limpieza
+Alimento humano	5 × 22	Rescate, acondicionamiento y conservación	2–3 t/día	Mesas inox, tarja/lavado, refrigeración, empaque y etiquetado, termometría básica
+Alimento animal	5 × 22	Acondicionamiento para destino animal	3–4 t/día	Trituración/molienda, contenedores cerrados, báscula y control de humedad/condición
+Biogestión	10 × 16	Pretratamiento y alimentación a valorización energética	3–5 t/día	Trituración/pretratamiento, tanque de mezcla, instrumentación básica (pH, temperatura)
+Composta / Biofertilizante / Biogás	10 × 14	Valorización final del orgánico	Producción piloto multivía	Área de pilas, tanques IBC, control de lixiviados, termometría y control de humedad
+Recolección de productos	14 × 8	Consolidación y despacho	Salida diaria por producto	Racks FIFO, tarimas, báscula, etiquetado y trazabilidad
+Rechazo	5 × 8	Control de no conformes	≤3–5 % del volumen	Contenedores cerrados, control de olor, retiro programado
+Servicio técnico	10 × 3	Continuidad operativa	Soporte permanente	Banco de trabajo, herramientas, refacciones críticas, seguridad industrial
+Las capacidades indicadas corresponden a condiciones mínimas de arranque y podrán ajustarse conforme a la optimización operativa y el escalamiento del sistema, sin requerir modificaciones estructurales al Módulo Base. 
+H. RUTA DE IMPLEMENTACIÓN DESDE LA PRUEBA PILOTO HASTA LA OPERACIÓN PERMANENTE DEL SISTEMA CEDA CIRCULAR®
+
+1. PREPARACIÓN DEL SISTEMA
+(ANTES DEL PILOTO – CONDICIÓN HABILITANTE)
+
+Registro habilitante:
+FO-CEDA-OP-01 – Registro Maestro de Puntos de Acopio del Sistema CEDA Circular®
+Este registro debe estar completo y aprobado antes de iniciar cualquier actividad de recolección o piloto.
+
+1.1 Objetivo del punto
+Dejar operativamente habilitado el Sistema CEDA Circular® para iniciar el piloto, asegurando que:
+•	la separación ocurre desde acopio,
+•	os contenedores están asignados y trazables,
+•	el personal sabe exactamente qué hacer,
+•	y no existe mezcla de flujos al ingreso a planta.
+	Este punto no procesa residuos.
+	Este punto habilita el sistema.
+
+1.2 Qué se hace 
+El responsable de implementación debe realizar tres actividades concretas, en este orden:
+1.	Definir y habilitar puntos de acopio dentro de la CEDA.
+2.	Asignar contenedores físicos a cada flujo y punto de acopio.
+3.	Capacitar operativamente al personal involucrado en acopio y traslado.
+Si alguna de estas tres no se cumple, el piloto NO debe iniciar.
+1.3 Dónde se ejecuta
+•	Puntos de acopio CEDA
+(zonas físicas donde se colocan los contenedores por flujo)
+•	Planta CEDA Circular®
+(solo para verificación de recepción futura y coherencia con flujos)
+1.4 Registros que se activan (núcleo del punto)
+1.4.1 Registro Maestro de Puntos de Acopio
+(Registro habilitante – se llena una vez y se actualiza solo por cambio)
+Cuando se llena
+Antes de colocar un solo contenedor.
+Quién lo llena
+Responsable de implementación / operación.
+Qué se registra (campos mínimos)
+•	Ubicación exacta del punto de acopio
+•	Responsable del punto
+•	Flujos autorizados en ese punto
+(Humano / Animal / Biogás / Composta-Biofert / Rechazo / Reciclables)
+•	Horarios autorizados de depósito y recolección
+•	Capacidad diaria estimada (t/d)
+Resultado que habilita
+	El punto de acopio existe oficialmente en el sistema.
+	Solo en estos puntos se permite recibir residuos.
+
+1.4.2 Registro de Asignación de Contenedores por Flujo
+(Registro crítico – conecta acopio con trazabilidad)
+Cuando se llena
+Antes de iniciar la recolección piloto.
+Quién lo llena
+Responsable de implementación.
+Qué se registra
+•	ID único del contenedor
+•	Flujo asignado (color y nombre)
+•	Punto de acopio al que pertenece
+•	Capacidad nominal del contenedor (1100 L)
+•	Fecha de alta en el sistema
+Reglas operativas asociadas
+•	Un contenedor solo puede tener un flujo.
+•	Un contenedor solo puede pertenecer a un punto de acopio.
+•	Si cambia de punto o flujo, se debe actualizar el registro.
+Resultado que habilita
+	Cada contenedor es trazable desde origen.
+	Se evita mezcla y uso incorrecto.
+
+1.4.3 Registro de Capacitación Operativa Inicial
+(Registro de competencia mínima)
+Cuando se llena
+Antes del arranque del piloto.
+Quién lo llena
+Responsable de capacitación / implementación.
+A quién aplica
+•	Personal de acopio
+•	Personal de traslado
+•	Personal de recepción en planta (nivel básico)
+Qué se registra
+•	Nombre del personal capacitado
+•	Contenido impartido (separación por flujos, colores, prohibiciones)
+•	Fecha de capacitación
+Contenido mínimo que debe quedar claro
+•	Qué va en cada contenedor
+•	Qué no se acepta en cada flujo
+•	Qué hacer ante mezcla o duda
+•	A quién reportar incidencias
+Resultado que habilita
+	El personal puede operar sin improvisar.
+	La responsabilidad operativa queda documentada.
+
+1.5 Salvedades operativas (no negociables)
+1.	No se colocan contenedores sin punto de acopio registrado.
+2.	No se inicia piloto si hay personal sin capacitación registrada.
+3.	No se permite un contenedor “mixto” o “provisional”.
+4.	Si un punto no puede separar, no se habilita.
+Estas salvedades protegen todo el sistema posterior.
+
+1.6 Resultado final del Punto 1
+Al cerrar este punto, el sistema queda en el siguiente estado:
+•	Los puntos de acopio están definidos y autorizados.
+•	Los contenedores están asignados, identificados y trazables.
+•	El personal conoce los flujos y reglas básicas.
+•	El sistema está listo para iniciar el piloto sin contaminación cruzada.
+	Si este estado no se cumple, el Punto 2 NO debe arrancar.
+
+
+
+
+2. ARRANQUE DEL PILOTO – RECOLECCIÓN (10 t/d)
+(Inicio de operación controlada del sistema)
+Registros que habilitan y controlan esta etapa
+FO-CEDA-OP-04 – Registro Diario de Recolección por Contenedor
+Registro obligatorio para cada corrida y cada contenedor.
+FO-CEDA-OP-05 – Registro de Incidencias de Acopio
+Registro obligatorio ante cualquier desviación, mezcla o rechazo.
+	Sin estos registros activos, la recolección NO es válida dentro del sistema.
+
+2.1 Objetivo del punto
+Iniciar la operación piloto de recolección, asegurando que:
+•	los residuos se separan desde origen,
+•	cada contenedor mantiene su identidad y flujo,
+•	se conserva la trazabilidad acopio → planta,
+•	se valida el esquema operativo para 10 t/d.
+
+2.2 Qué se hace
+El operador de recolección realiza dos corridas diarias utilizando contenedores previamente asignados, respetando estrictamente el flujo autorizado de cada uno.
+La recolección no es genérica:
+cada contenedor representa un flujo específico y una unidad logística única.
+
+2.3 Flujos activos y contenedores en arranque
+Para el arranque del piloto (10 t/d), se habilitan los siguientes flujos:
+•	Alimento humano: 3 contenedores
+•	Alimento animal: 5 contenedores
+•	Biogás: 5 contenedores
+•	Composta / Biofertilizante: 10 contenedores
+•	Rechazo: 1 contenedor
+•	Reciclables secos (cartón, plástico limpio): 3 contenedores
+Total operativo inicial: 27 contenedores de 1100 L
+
+2.4 Dónde se ejecuta
+•	Origen: Puntos de acopio CEDA habilitados
+•	Traslado: Rutas definidas de recolección
+•	Destino: Planta CEDA Circular®
+
+2.5 Cómo se ejecuta (reglas operativas claras)
+1.	El contenedor solo recibe el flujo asignado.
+2.	El contenedor no se mezcla ni se vacía en otro.
+3.	Cada contenedor se registra por corrida.
+4.	Cualquier desviación se documenta, no se corrige informalmente.
+
+2.6 Registro Diario de Recolección por Contenedor
+FO-CEDA-OP-04
+Cuando se llena
+•	En cada corrida (1 y 2).
+•	Por cada contenedor recolectado.
+Quién lo llena
+•	Responsable de recolección / traslado.
+Información mínima por registrar
+•	Fecha
+•	ID del contenedor
+•	Flujo
+•	Punto de acopio
+•	Número de corrida (1 o 2)
+•	Peso estimado o real
+•	Observaciones relevantes
+Resultado que habilita
+	Entrada válida del residuo al sistema.
+	Trazabilidad completa desde origen.
+
+2.7 Registro de Incidencias de Acopio
+FO-CEDA-OP-05
+Cuando se llena
+•	Mezcla detectada
+•	Contenedor mal utilizado
+•	Flujo incorrecto
+•	Contenedor rechazado
+Quién lo llena
+•	Responsable de recolección u operación.
+Información mínima
+•	Punto de acopio
+•	ID del contenedor
+•	Tipo de incidencia
+•	Acción tomada (rechazo, reclasificación, devolución, etc.)
+Resultado que habilita
+	Control de desviaciones sin comprometer el sistema.
+	Aprendizaje operativo del piloto.
+
+2.8 Salvedades operativas (críticas)
+1.	Un contenedor con mezcla puede ser rechazado totalmente.
+2.	No se corrige la mezcla en campo sin registro.
+3.	Si un punto reincide, se revisa su habilitación.
+4.	El volumen recolectado no debe forzar la capacidad del piloto.
+Estas salvedades protegen la integridad del sistema.
+
+2.9 Resultado final del Punto 2
+Al cerrar este punto:
+•	Los residuos ingresan separados desde origen.
+•	Cada flujo es medible y trazable.
+•	Se valida la operación real de 10 t/d.
+•	El sistema está listo para recepción y pulmón en planta.
+	Solo si este resultado se cumple, se avanza al Punto 3.
+
+3. RECEPCIÓN Y PULMÓN EN PLANTA
+(Desacoplamiento operativo del sistema respecto al “tiempo real”)
+Registros que habilitan y controlan esta etapa
+FO-CEDA-OP-06 – Registro de Recepción en Planta
+Registro obligatorio para cada contenedor que ingresa a la planta.
+FO-CEDA-OP-07 – Registro de Pulmón por Flujo
+Registro obligatorio para controlar acumulación, espera y liberación por flujo.
+	Sin estos registros, el residuo no se considera formalmente recibido ni autorizado para proceso.
+
+3.1 Objetivo del punto
+Asegurar que la planta:
+•	recibe formalmente los residuos recolectados,
+•	verifica pesos reales por flujo,
+•	clasifica y asigna a pulmón sin mezclar,
+•	y rompe la dependencia del procesamiento inmediato.
+Este punto es clave: convierte la recolección en operación industrial controlada.
+
+3.2 Qué se hace (actividad ejecutable)
+El operador de planta realiza, por cada contenedor recibido, las siguientes acciones en orden:
+1.	Recepción física del contenedor en zona de maniobras.
+2.	Pesaje real del contenedor (con o sin tara, según método definido).
+3.	Validación del flujo asignado.
+4.	Asignación a pulmón interno por flujo.
+Hasta que estas acciones no se completan, el residuo no puede procesarse.
+
+3.3 Dónde se ejecuta
+•	Zona de maniobras (24 × 9 m)
+o	Descarga
+o	Pesaje
+o	Control inicial
+•	Patio Central Operativo (19 × 8 m)
+o	Distribución
+o	Asignación a áreas pulmón por flujo
+Todo el movimiento interno ocurre sin cruce de flujos.
+
+3.4 Registro de Recepción en Planta
+FO-CEDA-OP-06
+Cuando se llena
+•	Al ingreso de cada contenedor a planta.
+•	Independiente de la corrida.
+Quién lo llena
+•	Responsable de recepción en planta.
+Información mínima por registrar
+•	Fecha
+•	ID del contenedor
+•	Flujo declarado
+•	Peso real registrado
+•	Hora de llegada
+Reglas operativas asociadas
+•	Si el flujo no coincide → se detiene el proceso.
+•	Si el contenedor presenta mezcla evidente → se deriva a incidencia.
+•	El peso registrado es el peso oficial del sistema.
+Resultado que habilita
+	El residuo queda formalmente ingresado al sistema.
+	El flujo queda cuantificado con dato real.
+
+3.5 Registro de Pulmón por Flujo
+FO-CEDA-OP-07
+Cuando se llena
+•	Al asignar contenedores al pulmón interno.
+•	Cada vez que entra o sale un contenedor del pulmón.
+Quién lo llena
+•	Responsable de operación en planta.
+Información mínima
+•	Flujo
+•	Número de contenedores en espera
+•	Tiempo de permanencia estimado o real
+Función clave del pulmón
+•	Permitir que el sistema siga operando aunque el proceso se retrase.
+•	Evitar presión sobre las áreas de transformación.
+•	Proteger la calidad del flujo (especialmente humano y animal).
+3.6 Salvedad operativa crítica (no negociable)
+Pulmón mínimo obligatorio
+•	30% del volumen diario total.
+•	En arranque (10 t/d):
+≈ 10 unidades internas fijas, distribuidas por flujo.
+Distribución típica del pulmón (referencial)
+•	Humano: 2
+•	Animal: 2
+•	Biogás: 2
+•	Composta/Biofertilizante: 3
+•	Rechazo/otros: 1
+	Si el pulmón se satura, se detiene la recepción.
+	No se procesa “para liberar espacio” sin registro.
+
+3.7 Resultado final del Punto 3
+Al cerrar este punto:
+•	La planta recibe residuos de forma controlada.
+•	El sistema trabaja con pesos reales, no estimaciones.
+•	Los flujos están protegidos contra presión operativa.
+•	La operación queda desacoplada del tiempo real.
+	Solo con este estado se habilita el Punto 4: Operación por flujos productivos.
+
+4. ACTIVACIÓN DE LOS FLUJOS PRODUCTIVOS
+(Transformación controlada de residuos en productos del Sistema CEDA Circular®)
+Registros que habilitan y controlan esta etapa
+FO-CEDA-ALR-01 – Registro de Selección de Alimento Humano
+FO-CEDA-ALR-03 – Registro de Procesamiento de Alimento Animal
+FO-CEDA-BIOG-01 – Registro de Pretratamiento para Biogás
+FO-CEDA-PEC-01 – Registro de Formación de Pilas de Composta
+FO-CEDA-RES-01 – Registro de Rechazo
+	Ningún flujo puede procesarse si no existe el registro correspondiente abierto.
+	Cada flujo se activa de manera independiente, pero bajo el mismo principio de control.
+
+4.1 Objetivo del punto
+Transformar los residuos recibidos y contenidos en pulmón en productos valorizados, asegurando que:
+•	cada flujo siga su proceso específico,
+•	no exista cruce ni contaminación entre flujos,
+•	cada transformación quede documentada y trazable,
+•	el sistema produzca resultados medibles desde el piloto.
+
+4.2 Qué se hace (actividad ejecutable)
+El operador de planta activa los flujos de manera secuencial o paralela, según capacidad, siguiendo esta lógica general:
+1.	Liberar contenedor del pulmón según prioridad del flujo.
+2.	Ejecutar el proceso específico del flujo en su área designada.
+3.	Registrar el resultado obtenido (producto, subproducto o rechazo).
+4.	Asignar salida o siguiente etapa del proceso.
+
+4.3 Dónde se ejecuta
+•	Área de Alimento Humano
+•	Área de Alimento Animal
+•	Área de Biogás / Biofertilizante
+•	Área de Composta
+•	Área de Rechazo
+Cada área está físicamente delimitada y operativamente independiente.
+
+4.4 Activación del flujo de Alimento Humano
+Registro habilitante
+FO-CEDA-ALR-01 – Registro de Selección de Alimento Humano
+Qué hace el operador
+•	Abre contenedor asignado a flujo humano.
+•	Realiza selección manual conforme a criterios establecidos.
+•	Separa producto apto y no apto.
+Reglas operativas
+•	Si existe duda → el residuo no se clasifica como humano.
+•	Lo no apto regresa al flujo correspondiente (animal o biogás) con registro.
+Resultado
+•	Alimento humano rescatado y cuantificado.
+•	Rechazo documentado.
+
+4.5 Activación del flujo de Alimento Animal
+Registro habilitante
+FO-CEDA-ALR-03 – Registro de Procesamiento de Alimento Animal
+Qué hace el operador
+•	Reduce tamaño (triturado/molienda).
+•	Acondiciona según destino.
+•	Prepara para salida o almacenamiento temporal.
+Reglas operativas
+•	Solo entra material autorizado para animal.
+•	No se mezcla con humano ni biogás.
+Resultado
+•	Alimento animal procesado y valorizado.
+
+4.6 Activación del flujo de Biogás y Biofertilizante
+Registro habilitante
+FO-CEDA-BIOG-01 – Registro de Pretratamiento para Biogás
+Qué hace el operador
+•	Pretrata residuo (triturado / mezcla).
+•	Alimenta digestor.
+•	Controla variables básicas (pH, temperatura).
+Reglas operativas
+•	Solo material autorizado entra al digestor.
+•	Desviaciones se documentan.
+Resultado
+•	Producción de biogás.
+•	Generación de digestato (base de biofertilizante).
+
+4.7 Activación del flujo de Composta
+Registro habilitante
+FO-CEDA-PEC-01 – Registro de Formación de Pilas de Composta
+Qué hace el operador
+•	Forma pilas o cajones de composta.
+•	Ajusta humedad y aireación.
+•	Da seguimiento periódico.
+Reglas operativas
+•	No se mezclan residuos frescos con pilas en maduración.
+•	Cada pila es identificable.
+Resultado
+•	Proceso de composta iniciado y controlado.
+
+4.8 Gestión de Rechazo
+Registro habilitante
+FO-CEDA-RES-01 – Registro de Rechazo
+Qué hace el operador
+•	Aísla el material no conforme.
+•	Registra causa del rechazo.
+•	Define destino final.
+Resultado
+•	Rechazo contenido y documentado.
+•	Protección del sistema.
+
+4.9 Salvedades operativas críticas
+1.	Cada flujo se procesa solo en su área designada.
+2.	No se “rescata” material dudoso sin registro.
+3.	Si un flujo se satura, se detiene su alimentación.
+4.	El piloto prioriza control sobre volumen.
+
+4.10 Resultado final del Punto 4
+Al cerrar este punto:
+•	Los residuos se transforman en productos del sistema.
+•	Cada flujo es trazable de origen a resultado.
+•	Se valida la capacidad real del piloto.
+•	El sistema está listo para control, consolidación y mejora.
+	Con esto se habilita el Punto 5: Control operativo, salidas y estabilización del sistema.
+
+5. CONTROL OPERATIVO, SALIDAS Y ESTABILIZACIÓN DEL SISTEMA
+(Cierre diario, liberación de productos y preparación para escalar)
+Registros que habilitan y controlan esta etapa
+FO-CEDA-OP-08 – Registro Diario Consolidado del Sistema
+Registro obligatorio al cierre de cada jornada.
+FO-CEDA-ALR-02 – Registro de Salida de Alimento Humano
+FO-CEDA-ALR-04 – Registro de Salida de Alimento Animal
+FO-CEDA-BIOG-03 – Registro de Control de Parámetros de Biogás
+FO-CEDA-PEC-03 – Registro de Liberación de Composta
+FO-CEDA-RES-02 – Registro de Salida de Rechazo y Reciclables
+	Si no existe cierre diario documentado, el día no se considera operado.
+
+5.1 Objetivo del punto
+Asegurar que el sistema:
+•	consolida la información diaria real,
+•	libera formalmente los productos generados,
+•	identifica desviaciones operativas,
+•	y alcanza estabilidad antes de escalar.
+Este punto convierte la operación en gestión del sistema.
+
+5.2 Qué se hace 
+Al finalizar cada jornada operativa, el responsable realiza:
+1.	Consolidación de entradas, procesos y salidas.
+2.	Liberación formal de productos conforme a su flujo.
+3.	Evaluación de desviaciones respecto a lo esperado.
+4.	Ajuste operativo para el día siguiente.
+
+5.3 Registro Diario Consolidado del Sistema
+FO-CEDA-OP-08
+Cuando se llena
+•	Al cierre de cada día de operación.
+Quién lo llena
+•	Responsable operativo del sistema.
+Información mínima
+•	Toneladas recibidas por flujo
+•	Toneladas procesadas por flujo
+•	Productos generados
+•	Rechazo total (%)
+•	Incidencias relevantes
+Función clave
+•	Ver el sistema como un todo, no por áreas aisladas.
+•	Base para decisiones de estabilización.
+Resultado que habilita
+	Visión diaria real del desempeño del sistema.
+	Evidencia de control operativo.
+
+5.4 Salidas de productos del sistema
+5.4.1 Alimento humano
+Registro: FO-CEDA-ALR-02
+•	Destino autorizado
+•	Cantidad liberada
+•	Fecha y responsable
+	Producto listo para uso / entrega.
+
+5.4.2 Alimento animal
+Registro: FO-CEDA-ALR-04
+•	Destino
+•	Cantidad
+•	Condición del producto
+	Producto valorizado y controlado.
+
+5.4.3 Biogás y biofertilizante
+Registro: FO-CEDA-BIOG-03
+•	Parámetros operativos
+•	Uso del biogás (consumo interno / quema controlada)
+•	Volumen de digestato generado
+	Energía y subproductos controlados.
+
+5.4.4 Composta
+Registro: FO-CEDA-PEC-03
+•	Fecha de maduración
+•	Condición del material
+•	Liberación del lote
+	Composta lista para uso o distribución.
+
+5.4.5 Rechazo y reciclables
+Registro: FO-CEDA-RES-02
+•	Cantidad
+•	Destino final
+•	Causa de rechazo (si aplica)
+	 Rechazo contenido dentro de límites.
+
+5.5 Estabilización del sistema
+Qué se evalúa
+•	Continuidad del flujo sin saturación.
+•	Cumplimiento del pulmón mínimo.
+•	Rechazo ≤ 3–5%.
+•	Cumplimiento de 2 corridas diarias.
+Regla de estabilización
+El sistema se considera estable cuando:
+•	Opera ≥ 5–10 días consecutivos
+•	Sin mezcla de flujos
+•	Sin saturación de pulmón
+•	Con registros completos
+
+5.6 Salvedades operativas críticas
+1.	No se escala un sistema inestable.
+2.	Más volumen sin control = retroceso.
+3.	El piloto valida método, no solo capacidad.
+4.	El dato manda, no la percepción.
+
+5.7 Resultado final del Punto 5
+Al cerrar este punto:
+•	El sistema opera de forma repetible.
+•	Los productos salen formalmente liberados.
+•	La información permite decidir escalar.
+•	El piloto cumple su función.
+	Con esto se habilita el Punto 6: Escalamiento modular del sistema.
+
+6. ESCALAMIENTO MODULAR DEL SISTEMA CEDA CIRCULAR®
+(Crecimiento controlado sin perder trazabilidad ni estabilidad)
+
+Registros que habilitan y controlan esta etapa
+FO-CEDA-OP-11 – Registro de Alta de Módulo Operativo
+Registro obligatorio para autorizar cualquier incremento de capacidad.
+RM-GH-01 – Registro Maestro de Infraestructura, Equipamiento e Instrumentación
+Documento técnico que valida que la capacidad física soporta el escalamiento.
+	No existe escalamiento “de facto”.
+Sin estos registros, el volumen adicional no es parte del sistema.
+
+6.1 Objetivo del punto
+Incrementar la capacidad del sistema de manera modular y controlada, asegurando que:
+•	cada aumento de volumen esté técnicamente soportado,
+•	no se rompan los flujos ni la separación en origen,
+•	se mantenga la estabilidad operativa lograda en el piloto,
+•	el sistema pueda crecer de 10 t/d hasta 267 t/d sin rediseño.
+
+6.2 Principio rector del escalamiento
+El Sistema CEDA Circular® no escala por improvisación, escala por módulos repetibles.
+Definición de módulo
+Un módulo operativo equivale a:
+•	10 t/d adicionales,
+•	≈ 27 contenedores de 1100 L en acopio,
+•	pulmón interno proporcional,
+•	capacidad de proceso equivalente.
+Cada módulo replica la lógica ya validada.
+
+6.3 Cuándo se puede escalar (condición obligatoria)
+Antes de escalar, el sistema debe demostrar:
+•	Operación estable ≥ 5–10 días consecutivos
+•	Rechazo ≤ 5%
+•	Pulmón funcional sin saturación
+•	Registros completos y consistentes
+•	Salidas formales de producto
+	Si alguno falla, NO se escala.
+
+6.4 Registro de Alta de Módulo Operativo
+FO-CEDA-OP-11
+Cuando se llena
+Antes de iniciar cualquier incremento de volumen.
+Quién lo llena
+Responsable de gestión operativa / implementación.
+Información mínima
+•	Capacidad actual del sistema (t/d)
+•	Capacidad nueva autorizada (t/d)
+•	Número de módulos adicionales
+•	Fecha de inicio del nuevo volumen
+•	Responsable de seguimiento
+Resultado que habilita
+	El incremento de volumen queda formalmente autorizado.
+	El sistema reconoce la nueva capacidad.
+
+6.5 Ajuste técnico mediante RM-GH-01
+Cada escalamiento requiere validar que:
+•	existen contenedores suficientes en acopio,
+•	el pulmón interno crece proporcionalmente,
+•	las áreas de proceso soportan el volumen,
+•	la logística interna (pasillos, maniobras) no se satura.
+Esto se valida y documenta en:
+RM-GH-01 – Registro Maestro de Infraestructura, Equipamiento e Instrumentación
+Sin esta validación, el escalamiento se detiene.
+6.6 Escalamiento por etapas de referencia
+Etapa 1 – Piloto estabilizado
+•	10 t/d
+•	27 contenedores
+•	1 módulo
+
+Etapa 2 – Consolidación
+•	50 t/d
+•	≈ 135 contenedores
+•	5 módulos
+Ajustes típicos:
+•	Más puntos de acopio
+•	Segundo turno parcial
+•	Pulmón ampliado
+
+Etapa 3 – Operación industrial
+•	150 t/d
+•	≈ 405 contenedores
+•	15 módulos
+Ajustes típicos:
+•	Doble carril interno
+•	Líneas paralelas por flujo
+•	Especialización de personal
+
+Etapa 4 – Operación plena CEDA
+•	267 t/d
+•	≈ 720 contenedores
+•	26–27 módulos
+Ajustes típicos:
+•	Planta ampliada a 3,000 m²
+•	Logística dedicada
+•	Integración energética completa
+
+6.7 Salvedades operativas críticas
+1.	El escalamiento no corrige problemas; los amplifica.
+2.	Nunca se incrementa volumen sin pulmón proporcional.
+3.	La separación en origen manda sobre la capacidad de planta.
+4.	Cada módulo debe ser trazable como unidad operativa.
+
+6.8 Resultado final del Punto 6
+Al cerrar este punto:
+•	El sistema puede crecer sin perder control.
+•	Cada incremento está documentado y validado.
+•	La transición de piloto a operación permanente queda definida.
+•	El Sistema CEDA Circular® se consolida como sistema de gestión, no como planta aislada.
+
+
+
+
+
+
+
+
+
+
+ 
+MATRIZ DE COHERENCIA OPERATIVA
+Vinculación entre G.3 Capacidad Operativa Mínima y la Ruta de Implementación (H)
+Objetivo de la matriz
+Verificar que los hitos y fases definidos en la Ruta de Implementación del Sistema CEDA Circular® se encuentran soportados por la capacidad operativa mínima instalada por zona, conforme a lo establecido en el apartado G.3.
+Esta matriz no modifica la Ruta de Implementación ya definida; funciona como instrumento de validación técnica, control operativo y trazabilidad documental.
+
+MATRIZ H–G.3
+FASE / HITO DE IMPLEMENTACIÓN (H)	ZONA OPERATIVA (G.3)	CAPACIDAD MÍNIMA DEFINIDA EN G.3	CAPACIDAD UTILIZADA EN LA FASE	CONDICIÓN HABILITANTE VERIFICADA	EVIDENCIA OPERATIVA ESPERADA
+Fase 1 – Arranque controlado	Zona de maniobras	10–15 t/día	≤ 10 t/día	Infraestructura y flujo básico habilitado	Registro de recepción y pesaje
+Fase 1 – Arranque controlado	Patio Central Operativo	≈ 10 t/día	≤ 10 t/día	Separación física de flujos operativa	Bitácora operativa diaria
+Fase 1 – Arranque controlado	Área de separación	≈ 10 t/día	≤ 10 t/día	Estaciones activas y limpieza operativa	Registro de clasificación
+Fase 1 – Arranque controlado	Alimento humano	2–3 t/día	1–2 t/día	Cadena de frío y control sanitario	Registros de temperatura
+Fase 1 – Arranque controlado	Alimento animal	3–4 t/día	2–3 t/día	Trituración y contención cerrada	Registro de proceso
+Fase 2 – Estabilización operativa	Biogestión	3–5 t/día	3–5 t/día	Pretratamiento y mezcla controlados	Bitácora técnica (pH, temp.)
+Fase 2 – Estabilización operativa	Composta / Biofertilizante	Producción piloto	Piloto estable	Volteo, control de lixiviados	Registro de proceso
+Fase 2 – Estabilización operativa	Rechazo	≤ 3–5 %	≤ 3–5 %	Control de no conformes activo	Registro de disposición
+Fase 3 – Optimización inicial	Recolección / despacho	Consolidación diaria	Flujo estable	Trazabilidad por destino	Registros de despacho
+Fase 3 – Optimización inicial	Servicio técnico	Soporte continuo	Operativo	Herramientas y refacciones disponibles	Bitácora de mantenimiento
+
+Criterio de uso de la matriz
+•	La matriz se utiliza como lista de verificación de coherencia, no como instrumento de planeación.
+•	El avance entre fases no implica aumento automático de capacidad, sino validación de estabilidad operativa.
+•	Ninguna fase podrá considerarse consolidada si la capacidad operativa real excede la capacidad mínima definida en G.3 sin acciones correctivas documentadas.
+
+Nota técnica de cierre
+La presente matriz permite demostrar que la Ruta de Implementación del Sistema CEDA Circular® se apoya en capacidades reales, instaladas y verificables, reduciendo riesgos de sobrecarga operativa y asegurando una transición controlada entre etapas, en congruencia con los principios de gestión, trazabilidad y mejora continua del proyecto.
+
+
+TABLA MAESTRA DE IMPLEMENTACIÓN
+Sistema CEDA Circular® – Arranque 10 t/d (Escalable)
+La presente tabla detalla la secuencia operativa, los responsables y los registros requeridos para la ejecución en campo de la Ruta de Implementación del Sistema CEDA Circular®, en correspondencia con las capacidades operativas validadas en el inciso G.3 y la matriz de coherencia H–G.3.
+
+ETAPA	ACTIVIDAD OPERATIVA	DÓNDE SE EJECUTA	REGISTRO / FORMATO (CLAVE REAL)	RESPONSABLE	RESULTADO OPERATIVO
+0	Alta de puntos de acopio	CEDA – Zonas definidas	FO-CEDA-OP-01 Registro de Puntos de Acopio	Operación	Acopios autorizados
+0	Asignación de contenedores por flujo	CEDA / Planta	FO-CEDA-OP-02 Asignación de Contenedores	Operación	Contenedores trazables
+0	Capacitación operativa inicial	CEDA / Planta	FO-CEDA-OP-03 Registro de Capacitación	Operación	Personal habilitado
+1	Recolección corrida 1	CEDA → Planta	FO-CEDA-OP-04 Registro Diario de Recolección	Operación	Entrada controlada
+1	Recolección corrida 2	CEDA → Planta	FO-CEDA-OP-04 Registro Diario de Recolección	Operación	Volumen diario completo
+1	Control de incidencias de acopio	CEDA	FO-CEDA-OP-05 Incidencias de Acopio	Operación	Mezclas controladas
+2	Recepción y pesaje en planta	Zona de maniobras	FO-CEDA-OP-06 Registro de Recepción	Operación	Peso real por flujo
+2	Asignación a pulmón por flujo	Patio central	FO-CEDA-OP-07 Registro de Pulmón	Operación	Flujo desacoplado
+3	Selección alimento humano	Área alimento humano	FO-CEDA-ALR-01 Selección Humano	Operación	Alimento apto
+3	Salida alimento humano	Área despacho	FO-CEDA-ALR-02 Salida Humano	Operación	Producto liberado
+3	Procesamiento alimento animal	Área alimento animal	FO-CEDA-ALR-03 Proceso Animal	Operación	Alimento animal
+3	Salida alimento animal	Área despacho	FO-CEDA-ALR-04 Salida Animal	Operación	Producto valorizado
+3	Pretratamiento biogás	Área biogás	FO-CEDA-BIOG-01 Pretratamiento	Operación	Sustrato preparado
+3	Alimentación digestor	Área biogás	FO-CEDA-BIOG-02 Alimentación Digestor	Operación	Biogás en proceso
+3	Control parámetros biogás	Área biogás	FO-CEDA-BIOG-03 Control de Parámetros	Operación	Proceso estable
+3	Manejo digestato	Área biofertilizante	FO-CEDA-BIOG-04 Registro Digestato	Operación	Biofertilizante
+3	Formación de pilas de composta	Área composta	FO-CEDA-PEC-01 Formación de Pilas	Operación	Proceso iniciado
+3	Control de composta	Área composta	FO-CEDA-PEC-02 Control de Composta	Operación	Estabilización
+3	Liberación de composta	Área composta	FO-CEDA-PEC-03 Liberación de Composta	Operación	Composta madura
+3	Gestión de rechazo	Área rechazo	FO-CEDA-RES-01 Registro de Rechazo	Operación	Rechazo controlado
+3	Salida de reciclables	Área reciclables	FO-CEDA-RES-02 Salida Reciclables	Operación	Reciclaje separado
+4	Consolidado diario del sistema	Planta	FO-CEDA-OP-08 Consolidado Diario	Operación	Visión diaria
+4	Indicadores operativos	Gestión	FO-CEDA-OP-09 Indicadores	Gestión operativa	Estabilidad
+4	Acciones correctivas	Gestión / Planta	FO-CEDA-OP-10 Acciones Correctivas	Gestión operativa	Desviaciones corregidas
+5	Alta de nuevo módulo (10 t/d)	CEDA / Planta	FO-CEDA-OP-11 Alta de Módulo	Gestión operativa	Escalamiento
+5	Ajuste de capacidad técnica	Planta	RM-GH-01 + Anexos	Gestión técnica	Capacidad ampliada
+ 
+ 
+ANEXO. ESTRUCTURA DEL SISTEMA DE GESTIÓN DE ECONOMÍA CIRCULAR – CEDA CIRCULAR®
+La siguiente matriz establece el marco normativo rector del sistema, sobre el cual se estructura el mapa de procesos y la evidencia documental.
+MATRIZ MAESTRA DE CORRELACIÓN NORMATIVA DEL SISTEMA CEDA CIRCULAR®
+NUMERAL ISO 9001 (NORMA MADRE)	TEMA RECTOR	NORMAS ISO ASOCIADAS	LEYES FEDERALES APLICABLES	REGLAMENTOS	NOM APLICABLES POR FLUJO (A–F)	APLICACIÓN CONCRETA EN EL PROYECTO CEDA CIRCULAR®	RIESGO NORMATIVO QUE MITIGA	FORMATOS DE EVIDENCIA (FO-DIAG / TERR / INFRA / GOV / NORM)
+4.1 Contexto	Definición del sistema circular	ISO 59004 (marco) 56002 (innovación) 59020 (indicadores) 14001 (contexto)	LGPGIR LGEEPA LGEC LGCC	R-LGPGIR R-LGEEPA Calidad del aire	NOM-083 NOM-251 + Sección F: NOM-002, 004, 017, 020, 001-SEDE	Define el sistema circular integral alimentos-energía-biofertilizante-composta-seguridad	Indefinición del modelo	FO-DIAG-00 FO-NORM-01
+4.2 Partes interesadas	Necesidades y obligaciones	ISO 59010 (redes de valor) 59014 (comunicación)	LGPGIR Ley de Salud	Reglamentos sanitarios	NOM-251, NOM-060/061, NOM-004, NOM-083	Alineación de bodegueros, pepenadores, CEDA, PC, SEMARNAT, SCT	Reclamos o incumplimiento	FO-DIAG-02 FO-GOV-00
+5.1 Liderazgo	Gobernanza del sistema	ISO 56002 ISO 59004	LGPGIR	R-LGEEPA	Transversal A–F	Establece Comité Estratégico y Operativo del Modelo CEDA	Falta de gobernanza	FO-GOV-01 FO-GOV-03
+5.2 Política	Política integrada	ISO 14001 ISO 22000 59004	LGEEPA LGPGIR Ley de Salud	R-LGS	NOM-251	Política circular, inocuidad y seguridad integral	Sanciones sanitarias o ambientales	FO-GOV-05
+6.1 Riesgos y oportunidades	Evaluación integral	ISO 59004 ISO 56002 ISO 14001 ISO 22000 ISO 20675 ISO 23590 ISO 45001	LGPGIR LGEEPA LGCC Ley de PC	Reglamentos ambientales y PC	NOM-083 NOM-004 NOM-251 + NOM-002-STPS, NOM-001-SEDE (Sección F)	Identificación de riesgos sanitarios, ambientales, energéticos y de seguridad industrial	Accidentes, incumplimientos	FO-DIAG FO-INFRA-01 FO-NORM-01
+6.2 Objetivos	Metas circulares y de seguridad	ISO 59020 56002	LGCC LGEC	R-LGPGIR	A–F	% valorización, m³ biogás, reducción GEI, seguridad	Falta de control	FO-GOV-09
+7.1 Recursos	Infraestructura, equipos, seguridad	ISO 14001 ISO 22000 ISO 20675 ISO 23590 ISO 45001	LGPGIR LGEEPA	Normatividad técnica	NOM-002, 004, 017, 020, 001-SEDE (Sección F)	Equipos críticos: digestor, antorcha, planta, rutas	Riesgos físicos y energéticos	FO-INFRA-01
+7.2 Competencia	Capacitación técnica	ISO 56002 ISO 22000 ISO 45001	LGPGIR	–	NOM-251, NOM-017, NOM-004	Competencias por flujo A–F	No conformidades	FO-GOV-05
+7.4 Comunicación	Información y trazabilidad	ISO 59014 ISO/TR 59032	LGEC	–	NOM-083 NOM-251	Trazabilidad alimentaria, energética y de seguridad	Pérdida de control	FO-GOV-07
+7.5 Información documentada	Control documental	ISO 59040 ISO 14001 ISO 20675	LGPGIR	R-LGPGIR	Todas A–F	Integración documental en ASEMHWEB y FO-NORM-01	Información no válida	FO-NORM-00 FO-NORM-01
+8.1 Control operacional	Ejecución técnica	ISO 59004 ISO 59010 ISO 20675 ISO 23590 ISO 14001	LGPGIR LGEEPA LGCC	Reglamentos residuos y energéticos	NOM-083 NOM-004 NOM-251 + NOM-020, NOM-001-SEDE (Sección F)	Operación integral: alimento, digestión, energía, biofertilizante, composta, seguridad	Incumplimientos técnicos, ambientales o de seguridad	FO-INFRA-01 FO-NORM-01
+8.2 Requisitos	Condiciones del servicio circular	ISO 59010	LGPGIR	R-LGPGIR	NOM-083	Obligaciones por bodega, convenios, aforos	Desviaciones contractuales	FO-GOV-03
+8.3 Diseño y desarrollo	Diseño de procesos y planta	ISO 56002 ISO 59040	LGEC	–	NOM-083 NOM-004 NOM-251 + seguridad	Diseño de infraestructura 1,000–3,000 m² y flujos	Fallas en diseño o seguridad	FO-INFRA-01
+8.4 Proveedores	Control de externos	ISO 59040	LGPGIR	R-LGPGIR	NOM-083 NOM transporte	Control de transporte, gestores, proveedores de equipos	Riesgos de terceros	FO-NORM-01
+8.5 Producción y operación	Operación técnica	ISO 20675 ISO 23590 ISO 22000 ISO 45001	LGCC Ley de Salud	Reglamentos energéticos y sanitarios	NOM-251 NOM-004 NOM-083 + NOM-002, 001-SEDE (Sección F)	Digestión, carga, gas, inocuidad, seguridad, PC	Riesgos energéticos o sanitarios	FO-INFRA-01 FO-NORM-01
+8.6 Liberación	Validación final	ISO 22000	Ley General de Salud	R-Sanitarios	NOM-251	Liberación de alimento humano y animal	Riesgos sanitarios	FO-NORM-01
+8.7 Control de no conformes	Aislamiento y disposición	ISO 14001	LGEEPA	R-LGEEPA	NOM-083 NOM-004	Manejo y disposición de residuos contaminados	Sanciones	FO-TERR-01
+9.1 Seguimiento y medición	Indicadores circulares y de seguridad	ISO 59020 ISO 14001 ISO/TR 59032 ISO 45001	LGEC LGCC	–	A–F	KPIs: circularidad, inocuidad, energía, PC	Pérdida de desempeño	FO-GOV-09
+9.2 Auditoría interna	Auditorías integradas	ISO 14001 ISO 45001 ISO 56002	LGPGIR	–	Todas	Auditoría de flujos A–F + seguridad	Desviaciones	FO-GOV-07
+9.3 Revisión por dirección	Evaluación estratégica	ISO 56002 ISO 59004 59020	LGEC	–	Todas	Revisión del Comité Estratégico	Fallas sistémicas	FO-GOV-03
+10.2 No conformidades	Correcciones	ISO 56002 ISO 59020 ISO 14001 22000 20675	Todas	–	Todas	Acciones correctivas integrales A–F	Reincidencia	FO-NORM-01
+10.3 Mejora continua	Mejora integral	ISO 56002 Familia 59000	LGEC	–	Todas	Escalamiento del sistema 1,000 → 3,000 m² + seguridad	Estancamiento	FO-GOV-09
+
+ 
+MAPA DE PROCESOS DEL SISTEMA DE GESTIÓN DE ECONOMÍA CIRCULAR DEL PROYECTO CEDA CIRCULAR®
+
+PROCESO 4 – CONTEXTO DEL SISTEMA
+Salidas del proceso
+•	Alcance del sistema definido
+•	Modelo circular y límites operativos establecidos
+•	Marco normativo aplicable identificado
+Registros asociados
+Clave	Nombre del registro
+FO-CEDA-OP-01	Ficha del Sistema en Foco
+FO-CEDA-OP-07	Mapa de Stocks y Flujos – Línea Base
+FO-NORM-00	Matriz Maestra de Correlación Normativa
+Rol del proceso en la secuencia del proyecto
+Este proceso marca el inicio formal del Proyecto CEDA Circular®, ya que define qué es el sistema, cuál es su alcance, cuáles flujos se consideran y bajo qué marco normativo debe operar. Ningún proceso posterior puede ejecutarse válidamente si este proceso no ha sido concluido.
+Registros ancla del proceso
+•	🟢 Registro de arranque del proyecto: FO-CEDA-OP-01
+•	🔴 Registro de cierre del proceso de definición: FO-NORM-00
+________________________________________
+PROCESO 5 – LIDERAZGO Y GOBERNANZA
+Salidas del proceso
+•	Decisiones estratégicas documentadas
+•	Roles y responsabilidades definidas
+•	Seguimiento de acuerdos y resolutivos
+Registros asociados
+Clave	Nombre del registro
+FO-GOV-01	Acta de Constitución del Comité
+FO-GOV-02	Estructura del Comité Operativo
+FO-GOV-03	Minutas de Acuerdos
+FO-GOV-04	Designación de Responsables
+FO-GOV-06	Seguimiento de Acuerdos
+FO-GOV-07	Informe de Desempeño del Sistema
+FO-GOV-10	Resolutivos de Escalamiento
+Rol del proceso en la secuencia del proyecto
+Este proceso habilita institucionalmente al proyecto y se mantiene activo durante todo su ciclo de vida. Asegura que las decisiones estratégicas, los cambios estructurales y el escalamiento del sistema se realicen de manera controlada y documentada.
+Registros ancla del proceso
+•	🟢 Registro de arranque institucional: FO-GOV-01
+•	🔵 Registro operativo recurrente: FO-GOV-03
+•	🔴 Registro de cierre de ciclo / decisión estructural: FO-GOV-10
+
+PROCESO 6 – PLANIFICACIÓN
+Salidas del proceso
+•	Objetivos y metas del sistema definidos
+•	Riesgos y oportunidades priorizados
+•	Planes de acción establecidos
+Registros asociados
+Clave	Nombre del registro
+FO-CEDA-OP-02	Diagnóstico Técnico-Operativo
+FO-CEDA-OP-08	Matriz de Riesgos Operativos
+FO-CEDA-OP-10	Registro de Acciones de Mejora
+FO-CEDA-OP-11	Plan de Implementación
+Rol del proceso en la secuencia del proyecto
+Este proceso traduce la definición del sistema y la gobernanza en decisiones operativas planeadas. Actúa como puente entre la fase de definición/diagnóstico y la fase de ejecución del proyecto.
+Registros ancla del proceso
+•	🟢 Registro de arranque de la planificación: FO-CEDA-OP-02
+•	🔴 Registro de cierre de la planificación: FO-CEDA-OP-11
+
+PROCESO 7 – SOPORTE
+Salidas del proceso
+•	Infraestructura y recursos habilitados
+•	Información documentada controlada
+•	Competencias operativas soportadas
+Registros asociados
+Clave	Nombre del registro
+FO-INFRA-01	Diagnóstico de Infraestructura
+FO-CEDA-OP-13	Control de Documentos
+FO-CEDA-OP-14	Registro de Capacitación Operativa
+FO-GOV-05	Control de Recursos del Sistema
+Rol del proceso en la secuencia del proyecto
+Este proceso habilita las condiciones técnicas, documentales y humanas para que la operación circular pueda ejecutarse sin improvisación. Es condición necesaria previa al arranque operativo del sistema.
+Registros ancla del proceso
+•	🟢 Registro de arranque de habilitación: FO-INFRA-01
+•	🔵 Registro de control permanente: FO-CEDA-OP-13
+
+PROCESO 8 – OPERACIÓN CIRCULAR
+Salidas del proceso
+•	Productos valorizados conforme a la jerarquía circular
+•	Trazabilidad por flujo
+•	Control operativo del proceso
+Registros asociados
+Flujo: Alimento Humano
+Clave	Nombre del registro
+FO-CEDA-ALR-01	Registro de Recepción para Rescate Alimentario
+FO-CEDA-ALR-02	Evaluación de Aptitud para Consumo Humano
+FO-CEDA-ALR-03	Liberación de Alimento Humano
+FO-CEDA-ALR-04	Trazabilidad de Lotes – Alimento Humano
+Flujo: Alimento Animal
+Clave	Nombre del registro
+FO-CEDA-PEC-01	Registro de Preparación Pecuaria
+FO-CEDA-PEC-02	Control de Calidad Pecuaria
+FO-CEDA-PEC-03	Trazabilidad de Lotes – Alimento Animal
+Flujo: Biogás / Biofertilizante
+Clave	Nombre del registro
+FO-CEDA-BIOG-01	Registro de Alimentación del Biodigestor
+FO-CEDA-BIOG-02	Control Operativo del Biodigestor
+FO-CEDA-BIOG-03	Producción de Biogás
+FO-CEDA-BIOG-04	Trazabilidad de Biofertilizante
+Flujo: Composta / Control Transversal
+Clave	Nombre del registro
+FO-CEDA-RES-01	Clasificación de Residuos por Color
+FO-CEDA-RES-02	Reporte Mensual de Segregación
+FO-CEDA-RES-03	Registro de Riesgos Ambientales
+FO-CEDA-OP-05	Diario de Circularidad de Residuos
+Rol del proceso en la secuencia del proyecto
+Este proceso constituye el núcleo operativo del Proyecto CEDA Circular®, donde el residuo ingresa al sistema y se transforma efectivamente en valor circular. Aquí se materializa el propósito del proyecto.
+Registros ancla del proceso
+•	🟢 Registro de arranque operativo del residuo: FO-CEDA-RES-01
+•	🔵 Registro operativo continuo: FO-CEDA-OP-05
+
+PROCESO 9 – EVALUACIÓN DEL DESEMPEÑO
+Salidas del proceso
+•	Resultados de indicadores
+•	Análisis del desempeño del sistema
+•	Recomendaciones de mejora
+Registros asociados
+Clave	Nombre del registro
+FO-CEDA-OP-06	Tablero de Indicadores
+FO-GOV-07	Informe de Evaluación del Sistema
+FO-CEDA-OP-09	Análisis de Desempeño Operativo
+Rol del proceso en la secuencia del proyecto
+Este proceso permite evaluar objetivamente si el sistema está cumpliendo su propósito, proporcionando evidencia para la toma de decisiones estratégicas y operativas.
+Registros ancla del proceso
+•	🟢 Registro de arranque de la evaluación: FO-CEDA-OP-06
+•	🔴 Registro de cierre del ciclo de evaluación: FO-GOV-07
+
+PROCESO 10 – MEJORA
+Salidas del proceso
+•	Acciones correctivas y de mejora implementadas
+•	Verificación de la eficacia
+•	Ajustes al sistema documentados
+Registros asociados
+Clave	Nombre del registro
+FO-CEDA-OP-10	Registro de Acciones de Mejora
+FO-CEDA-OP-12	Seguimiento y Verificación de Eficacia
+FO-GOV-06	Seguimiento de Acuerdos de Mejora
+Rol del proceso en la secuencia del proyecto
+Este proceso cierra el ciclo del proyecto y habilita su evolución, asegurando que las lecciones aprendidas se conviertan en mejoras reales o en decisiones de ajuste o escalamiento del sistema.
+Registros ancla del proceso
+•	🟢 Registro de arranque de la mejora: FO-CEDA-OP-10
+•	🔴 Registro de cierre del ciclo de mejora: FO-GOV-06
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I. ETAPAS DE FLUJO DIRECTO (END-TO-END)
+Estas etapas sí tienen inicio y cierre, y cada una queda anclada a registros específicos del LMD.
+
+ETAPA 0 · Constitución institucional del proyecto
+Función: dar existencia formal al proyecto.
+Registro de inicio
+•	FO-GOV-01 – Acta de Constitución
+Registros de ejecución
+•	FO-GOV-00 – Marco de Gobernanza
+•	FO-GOV-02 – Comité Operativo
+•	FO-GOV-04 – Designación de Responsables
+•	FO-GOV-03 – Minutas iniciales
+Registro de cierre
+•	FO-GOV-02 + FO-GOV-04
+Salida
+•	Proyecto institucionalmente habilitado
+
+ETAPA 1 · Definición del sistema y marco rector
+Función: definir qué es y qué no es CEDA Circular®.
+Inicio
+•	FO-CEDA-OP-01 – Sistema en Foco
+Ejecución
+•	FO-CEDA-OP-07 – Mapa de Stocks y Flujos
+•	FO-CEDA-GES-06 – Modelo Canvas del Negocio
+Cierre
+•	FO-NORM-00 – Matriz Maestra de Correlación Normativa
+Salida
+•	Sistema definido y normado
+
+ETAPA 2 · Diagnóstico técnico-operativo integral
+Función: conocer la realidad del residuo y del sistema actual.
+Inicio
+•	FO-DIAG-00 – Levantamiento en Campo
+Ejecución
+•	FO-DIAG-01 a FO-DIAG-06
+•	FO-CEDA-OP-08 – Seguimiento del diagnóstico
+Cierre
+•	FO-DIAG-07 + FO-CEDA-OP-09
+Salida
+•	Diagnóstico técnico validado
+
+ETAPA 3 · Viabilidad del sitio y condiciones físicas
+Función: validar si el sistema puede existir físicamente.
+Inicio
+•	FO-TERR-00 – Evaluación del Terreno
+Ejecución
+•	FO-TERR-01 – Diagnóstico Integral del Sitio
+•	FO-INFRA-01 – Infraestructura y Zonificación
+Cierre
+•	FO-INFRA-01
+Salida
+•	Sitio viable técnicamente
+
+ETAPA 4 · Habilitación de infraestructura y recursos
+Función: preparar la base física y técnica.
+Inicio
+•	RM-GH-01 – Registro Maestro de Infraestructura
+Ejecución
+•	FO-CEDA-OP-14 – Inventario de Equipos
+•	FO-CEDA-OP-02 – Checklist de Habilitación
+Cierre
+•	FO-CEDA-OP-02
+Salida
+•	Infraestructura habilitada
+
+ETAPA 5 · Preparación operativa y reglas de operación
+Función: dejar todo listo para operar sin improvisación.
+Inicio
+•	FO-CEDA-OP-13 – Control Documental
+Ejecución
+•	FO-CEDA-OP-03 – Guía de Separación
+•	FO-CEDA-RES-03 – Riesgos Ambientales
+•	Definición de POE por flujo (AH, AN, BIOG, COMP)
+Cierre
+•	FO-CEDA-OP-03
+Salida
+•	Operación preparada
+
+ETAPA 6 · Recepción y control operativo del residuo
+Función: entrada real del residuo al sistema.
+Inicio
+•	FO-CEDA-RES-01 – Clasificación por Color
+Ejecución
+•	FO-CEDA-OP-05 – Diario de Circularidad
+•	FO-CEDA-OP-04 – Bitácora de Incidencias
+Cierre
+•	FO-CEDA-OP-05 (corte operativo)
+Salida
+•	Flujo operativo estabilizado
+
+ETAPA 7 · Transformación por flujos y generación de productos
+Función: convertir residuo en valor.
+7A · Alimento humano
+•	FO-CEDA-ALR-01 → 04
+7B · Alimento animal
+•	FO-CEDA-PEC-01 → 03
+7C · Biogás / Biofertilizante / Composta
+•	FO-CEDA-BIOG-01 → 04
+•	FO-CEDA-COMP-01 → 02
+Registro de cierre común
+•	Registros de trazabilidad por flujo
+Salida
+•	Productos circulares generados
+
+ETAPA 8 · Medición del desempeño y resultados
+Función: evaluar si el sistema funciona.
+Inicio
+•	FO-CEDA-OP-06 – Dashboard de Indicadores
+Ejecución
+•	FO-CEDA-RES-02 – Reporte de Segregación
+•	FO-CEDA-GES-02 – KPI Financiero y Social
+•	FO-CEDA-GES-07 – Reporte de Ingresos
+•	FO-GOV-09 – KPIs de Gobernanza
+Cierre
+•	FO-GOV-07 – Informe Trimestral
+Salida
+•	Desempeño evaluado con evidencia
+
+ETAPA 9 · Mejora, aprendizaje y decisión estructural
+Función: cerrar el ciclo y decidir el siguiente paso.
+Inicio
+•	FO-CEDA-OP-10 – Acciones de Mejora
+Ejecución
+•	FO-CEDA-OP-12 – Lecciones Aprendidas
+•	FO-GOV-06 – Autorización de Cambios
+Cierre FINAL del proyecto (o del ciclo)
+•	FO-GOV-10 – Resolutivo de Escalamiento
+Salida
+•	Escalamiento, ajuste mayor o cierre controlado
+
+II. CAPAS TRANSVERSALES (SIEMPRE ACTIVAS)
+Estas no se colocan en línea, porque nunca “terminan”:
+1.	Cumplimiento normativo
+o	FO-NORM-01
+2.	Gestión financiera y contractual
+o	FO-CEDA-GES-01 a 07
+3.	Gobernanza continua
+o	FO-GOV-03, FO-GOV-07
+4.	Control de incidencias y riesgos
+o	FO-CEDA-OP-04
+o	FO-CEDA-RES-03
+5.	Control documental
+o	FO-CEDA-OP-13

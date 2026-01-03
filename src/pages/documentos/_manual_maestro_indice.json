@@ -1,0 +1,18 @@
+[
+  { "title": "MENSAJE INSTITUCIONAL", "page": 5, "level": 1, "id": "mensaje-institucional" },
+  { "title": "INTRODUCCIÓN", "page": 6, "level": 1, "id": "introduccion" },
+  { "title": "NATURALEZA DE LA PRUEBA PILOTO COMO FASE OPERATIVA DEL SISTEMA DEFINITIVO", "page": 10, "level": 1, "id": "naturaleza-prueba-piloto" },
+  { "title": "A. DIAGNÓSTICO TÉCNICO-OPERATIVO DE RESIDUOS", "page": 13, "level": 1, "id": "diagnostico-tecnico" },
+  { "title": "B. DIAGNÓSTICO DE VIABILIDAD DE TERRENOS", "page": 18, "level": 1, "id": "diagnostico-terrenos" },
+  { "title": "C. DIAGNÓSTICO DE VIABILIDAD DE INFRAESTRUCTURA Y EDIFICACIONES PARA PROCESOS PRODUCTIVOS", "page": 27, "level": 1, "id": "diagnostico-infraestructura" },
+  { "title": "D. MODELO DE GOBERNANZA Y CONTINUIDAD DEL SISTEMA CEDA CIRCULAR®", "page": 37, "level": 1, "id": "modelo-gobernanza" },
+  { "title": "E. MARCO NORMATIVO Y FEDERAL DEL PROYECTO CEDA CIRCULAR®", "page": 46, "level": 1, "id": "marco-normativo" },
+  { "title": "F. LISTA MAESTRA DE DOCUMENTOS DEL SISTEMA CEDA CIRCULAR® (LMD – VERSIÓN BASE)", "page": 72, "level": 1, "id": "lista-maestra" },
+  { "title": "G. CONDICIONES HABILITANTES DEL SISTEMA CEDA CIRCULAR®", "page": 82, "level": 1, "id": "condiciones-habilitantes" },
+  { "title": "G.1 INFRAESTRUCTURA, CONSTRUCCIÓN Y EQUIPAMIENTO DEL SISTEMA CEDA CIRCULAR®", "page": 83, "level": 2, "id": "infraestructura" },
+  { "title": "G.2 ENERGÍA, TRANSPORTE Y SEGURIDAD INDUSTRIAL DEL SISTEMA CEDA CIRCULAR®", "page": 91, "level": 2, "id": "energia-transporte" },
+  { "title": "G.3 CAPACIDAD OPERATIVA MÍNIMA POR ZONA", "page": 93, "level": 2, "id": "capacidad-operativa" },
+  { "title": "H. RUTA DE IMPLEMENTACIÓN DESDE LA PRUEBA PILOTO HASTA LA OPERACIÓN PERMANENTE DEL SISTEMA CEDA CIRCULAR®", "page": 99, "level": 1, "id": "ruta-implementacion" },
+  { "title": "ANEXO. ESTRUCTURA DEL SISTEMA DE GESTIÓN DE ECONOMÍA CIRCULAR – CEDA CIRCULAR®", "page": 127, "level": 1, "id": "anexo-estructura" },
+  { "title": "I. ETAPAS DE FLUJO DIRECTO (END-TO-END)", "page": 138, "level": 1, "id": "etapas-flujo" }
+]
