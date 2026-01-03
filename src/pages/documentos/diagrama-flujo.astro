@@ -95,11 +95,15 @@ const steps = [
                     <div class="absolute inset-0 bg-black/60 z-10"></div> <!-- Overlay más oscuro para contraste -->
                     <div class="absolute inset-0 bg-linear-to-t from-black via-transparent to-black/40 z-10"></div>
                     <video 
-                        class="w-full h-full object-cover scale-105"
+                        class="w-full h-full object-cover scale-105 pointer-events-none"
                         autoplay 
                         muted 
                         loop 
                         playsinline
+                        webkit-playsinline
+                        preload="auto"
+                        disablepictureinpicture
+                        controlslist="nodownload nofullscreen noremoteplayback"
                     >
                         <source src={step.video} type="video/mp4" />
                     </video>
@@ -444,6 +448,13 @@ const steps = [
 
   // Run
   const run = () => {
+      // Force video autoplay on mobile
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => {
+          video.muted = true;
+          video.play().catch((e) => console.warn("Video autoplay blocked:", e));
+      });
+
       initImmersive();
       initSynthesis();
   };

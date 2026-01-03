@@ -195,7 +195,7 @@ const ManualViewer = ({ content, tocData }) => {
   }
 
   return (
-    <div className='min-h-screen bg-gray-50 flex flex-col w-full'>
+    <div className='min-h-screen bg-gray-50 flex flex-col w-full overflow-x-hidden'>
       {/* Top Navigation Bar */}
       <nav className='fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/60 shadow-sm transition-all duration-300'>
         <div className='max-w-[1920px] mx-auto px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4'>
@@ -304,6 +304,15 @@ const ManualViewer = ({ content, tocData }) => {
       </nav>
 
       <div className='flex flex-1 relative max-w-[1920px] mx-auto w-full pt-16'>
+        {/* Mobile Overlay */}
+        {isSidebarOpen && (
+          <div 
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 lg:hidden"
+            onClick={() => setIsSidebarOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
         {/* Sidebar Container */}
         <aside
           className={`
@@ -312,7 +321,19 @@ const ManualViewer = ({ content, tocData }) => {
             ${isSidebarOpen ? 'w-full sm:w-80 translate-x-0 opacity-100' : 'w-0 -translate-x-10 opacity-0'}
           `}>
           <div className='h-full overflow-y-auto custom-scrollbar p-4'>
-            <h3 className='px-2 py-3 text-xs font-bold text-gray-400 uppercase tracking-widest sticky top-0 bg-white/95 backdrop-blur-sm z-10 mb-2'>Tabla de Contenido</h3>
+            <div className='flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-sm z-10 mb-2 border-b border-gray-100 pb-2'>
+              <h3 className='px-2 text-xs font-bold text-gray-400 uppercase tracking-widest'>Tabla de Contenido</h3>
+              <button 
+                onClick={() => setIsSidebarOpen(false)} 
+                className='lg:hidden p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors'
+                aria-label="Cerrar índice"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
             <div className='space-y-0.5'>
               {sections.map((section) => (
                 <a
@@ -410,7 +431,7 @@ const ManualViewer = ({ content, tocData }) => {
                   )
                 default:
                   return (
-                    <p key={idx} className='mb-5 text-gray-600 leading-relaxed text-justify md:text-left'>
+                    <p key={idx} className='mb-5 text-gray-600 leading-relaxed text-left'>
                       {renderText(block.content)}
                     </p>
                   )
