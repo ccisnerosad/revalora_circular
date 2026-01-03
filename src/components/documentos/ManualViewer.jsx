@@ -305,13 +305,7 @@ const ManualViewer = ({ content, tocData }) => {
 
       <div className='flex flex-1 relative max-w-[1920px] mx-auto w-full pt-16'>
         {/* Mobile Overlay */}
-        {isSidebarOpen && (
-          <div 
-            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-30 lg:hidden"
-            onClick={() => setIsSidebarOpen(false)}
-            aria-hidden="true"
-          />
-        )}
+        {isSidebarOpen && <div className='fixed inset-0 bg-black/20 backdrop-blur-sm z-30 lg:hidden' onClick={() => setIsSidebarOpen(false)} aria-hidden='true' />}
 
         {/* Sidebar Container */}
         <aside
@@ -323,14 +317,10 @@ const ManualViewer = ({ content, tocData }) => {
           <div className='h-full overflow-y-auto custom-scrollbar p-4'>
             <div className='flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur-sm z-10 mb-2 border-b border-gray-100 pb-2'>
               <h3 className='px-2 text-xs font-bold text-gray-400 uppercase tracking-widest'>Tabla de Contenido</h3>
-              <button 
-                onClick={() => setIsSidebarOpen(false)} 
-                className='lg:hidden p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors'
-                aria-label="Cerrar índice"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
+              <button onClick={() => setIsSidebarOpen(false)} className='lg:hidden p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors' aria-label='Cerrar índice'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                  <line x1='18' y1='6' x2='6' y2='18'></line>
+                  <line x1='6' y1='6' x2='18' y2='18'></line>
                 </svg>
               </button>
             </div>
