@@ -112,7 +112,8 @@ export const ZONES_DATA_PB = [
     'y': 1.75,
     'z': -6,
     'color': '#af9500',
-    'label': 'A. Animal'
+    'label': 'A. Animal',
+    'interior': true
   },
   {
     'id': 'pasillo_central',

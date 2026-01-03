@@ -8,6 +8,7 @@ import { FlowLines } from './FlowLines'
 import { BiogestionInterior } from '@components/3d/zones/BiogestionInterior'
 import { TratamientoInterior } from '@components/3d/zones/TratamientoInterior'
 import { AlimentoHumanoInterior } from '@components/3d/zones/AlimentoHumanoInterior'
+import { AlimentoAnimalInterior } from '@components/3d/zones/AlimentoAnimalInterior'
 import { ZONES_DATA_PB, ZONES_DATA_PA, TRUCKS_DATA } from '@data/data'
 
 function CameraHandler({ viewMode, targetPosition, controlsRef }) {
@@ -70,7 +71,17 @@ const World3D = memo(function World3D({ selectedZone, onSelect, onHover, showFlo
             isAnySelected={selectedZone !== null}
             onSelect={() => onSelect(zone.id)}
             onHover={onHover}
-            interior={zone.id === 'biogestion' ? <BiogestionInterior /> : zone.id === 'tratamiento' ? <TratamientoInterior /> : zone.id === 'alimento_humano' ? <AlimentoHumanoInterior /> : null}
+            interior={
+              zone.id === 'biogestion' ? (
+                <BiogestionInterior />
+              ) : zone.id === 'tratamiento' ? (
+                <TratamientoInterior />
+              ) : zone.id === 'alimento_humano' ? (
+                <AlimentoHumanoInterior />
+              ) : zone.id === 'alimento_animal' ? (
+                <AlimentoAnimalInterior />
+              ) : null
+            }
             viewMode={viewMode}
           />
         ))}

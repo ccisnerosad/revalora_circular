@@ -1,4 +1,4 @@
-// --- Módulo A (Posterior) ---
+// --- Alimento Humano Módulo A (Posterior) ---
 export const ALIMENTO_HUMANO_MODULE_A = [
   // --- Zona 1: Almacenamiento Frío (Fondo) ---
   {
@@ -95,7 +95,7 @@ export const ALIMENTO_HUMANO_MODULE_A = [
   }
 ]
 
-// --- Módulo B (Anterior) ---
+// --- Alimento Humano Módulo B (Anterior) ---
 export const ALIMENTO_HUMANO_MODULE_B = [
   // --- Zona 1: Almacenamiento Frío (Frente - Invertido) ---
   {
@@ -190,4 +190,55 @@ export const ALIMENTO_HUMANO_MODULE_B = [
     position: [2.3, 0.9, -5.0], // Invertido Z
     rotation: [0, -Math.PI / 2, 0]
   }
+]
+
+// --- Alimento Animal
+
+// --- MÓDULO A: LÍNEA DE PROCESO 1 (0m - 11m) ---
+export const ALIMENTO_ANIMAL_MODULE_A = [
+  // --- Puerta de Entrada (Insumos) ---
+  { id: 'door_in', type: 'IndustrialDoor', position: [0.5, 0, 0], rotation: [0, Math.PI / 2, 0] },
+
+  // --- Zona de Recepción (Totes Agrupados) ---
+  { id: 'ma_tote_in_1', type: 'ToteContainer', position: [2.0, 0, -1.5], rotation: [0, 0, 0] },
+  { id: 'ma_tote_in_2', type: 'ToteContainer', position: [2.0, 0, 0], rotation: [0, 0, 0] },
+  { id: 'ma_tote_in_3', type: 'ToteContainer', position: [2.0, 0, 1.5], rotation: [0, 0, 0] },
+
+  // --- Zona de Selección (Mesas Alineadas) ---
+  { id: 'ma_table_1', type: 'SortingTable', position: [4.5, 0, -1.5], rotation: [0, 0, 0] },
+  { id: 'ma_table_2', type: 'SortingTable', position: [4.5, 0, 0], rotation: [0, 0, 0] },
+  { id: 'ma_table_3', type: 'SortingTable', position: [4.5, 0, 1.5], rotation: [0, 0, 0] },
+
+  // --- Zona de Lavado (Tarjas Agrupadas) ---
+  { id: 'ma_sink_1', type: 'CleaningSink', position: [7.0, 0, -1.5], rotation: [0, 0, 0] },
+  { id: 'ma_sink_2', type: 'CleaningSink', position: [7.0, 0, 1.5], rotation: [0, Math.PI, 0] },
+
+  // --- Zona de Molienda (Molino + Totes) ---
+  { id: 'ma_grinder', type: 'GrinderMachine', position: [9.5, 0, 0], rotation: [0, Math.PI / 2, 0] },
+  { id: 'ma_tote_out', type: 'ToteContainer', position: [9.5, 0, 1.5], rotation: [0, 0, 0] }
+]
+
+// --- MÓDULO B: LÍNEA DE PROCESO 2 (11m - 22m) ---
+// Repetición del patrón para duplicar capacidad
+export const ALIMENTO_ANIMAL_MODULE_B = [
+  // --- Zona de Recepción Intermedia (Totes Agrupados) ---
+  { id: 'mb_tote_in_1', type: 'ToteContainer', position: [13.0, 0, -1.5], rotation: [0, 0, 0] },
+  { id: 'mb_tote_in_2', type: 'ToteContainer', position: [13.0, 0, 0], rotation: [0, 0, 0] },
+  { id: 'mb_tote_in_3', type: 'ToteContainer', position: [13.0, 0, 1.5], rotation: [0, 0, 0] },
+
+  // --- Zona de Selección (Mesas Alineadas) ---
+  { id: 'mb_table_1', type: 'SortingTable', position: [15.5, 0, -1.5], rotation: [0, 0, 0] },
+  { id: 'mb_table_2', type: 'SortingTable', position: [15.5, 0, 0], rotation: [0, 0, 0] },
+  { id: 'mb_table_3', type: 'SortingTable', position: [15.5, 0, 1.5], rotation: [0, 0, 0] },
+
+  // --- Zona de Lavado (Tarjas Agrupadas) ---
+  { id: 'mb_sink_1', type: 'CleaningSink', position: [18.0, 0, -1.5], rotation: [0, 0, 0] },
+  { id: 'mb_sink_2', type: 'CleaningSink', position: [18.0, 0, 1.5], rotation: [0, Math.PI, 0] },
+
+  // --- Zona de Molienda (Molino + Totes) ---
+  { id: 'mb_grinder', type: 'GrinderMachine', position: [20.5, 0, 0], rotation: [0, Math.PI / 2, 0] },
+  { id: 'mb_tote_out', type: 'ToteContainer', position: [20.5, 0, 1.5], rotation: [0, 0, 0] },
+
+  // --- Puerta de Salida (Producto Terminado) ---
+  { id: 'door_out', type: 'IndustrialDoor', position: [22.5, 0, 0], rotation: [0, Math.PI / 2, 0] }
 ]
