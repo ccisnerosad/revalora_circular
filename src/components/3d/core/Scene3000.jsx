@@ -1,9 +1,9 @@
 import { Canvas } from '@react-three/fiber'
 import { useState, useEffect, useMemo, useCallback } from 'react'
-import World3D from './World3D'
-import { ZONES_DATA_PB, ZONES_DATA_PA } from '@data/data'
+import World3D3000 from './World3D3000'
+import { ZONES_DATA_3000 } from '@data/data3000'
 
-export default function Scene() {
+export default function Scene3000() {
   const [selectedZone, setSelectedZone] = useState(null)
   const [hoveredZoneData, setHoveredZoneData] = useState(null)
   const [showFlows, setShowFlows] = useState(false)
@@ -11,7 +11,7 @@ export default function Scene() {
   const [showControls, setShowControls] = useState(true)
   const [viewMode, setViewMode] = useState('orbit')
 
-  const selectedZoneData = selectedZone ? [...ZONES_DATA_PB, ...ZONES_DATA_PA].find((z) => z.id === selectedZone) : null
+  const selectedZoneData = selectedZone ? ZONES_DATA_3000.find((z) => z.id === selectedZone) : null
 
   const targetPosition = useMemo(() => {
     return selectedZoneData ? [selectedZoneData.x, selectedZoneData.y, selectedZoneData.z] : null
@@ -83,7 +83,7 @@ export default function Scene() {
   return (
     <div className='h-full w-full bg-gray-900 relative'>
       <Canvas shadows camera={{ position: [20, 30, 30], fov: 45 }} dpr={[1, 2]} onPointerMissed={() => viewMode !== 'interior' && handleClose()}>
-        <World3D selectedZone={selectedZone} onSelect={handleSelect} onHover={handleHover} showFlows={showFlows} viewMode={viewMode} targetPosition={targetPosition} />
+        <World3D3000 selectedZone={selectedZone} onSelect={handleSelect} onHover={handleHover} showFlows={showFlows} viewMode={viewMode} targetPosition={targetPosition} />
       </Canvas>
 
       {/* Panel de Control (Bottom Left) */}

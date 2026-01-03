@@ -62,7 +62,7 @@ export function Zone({ data, isSelected, isAnySelected, onSelect, onHover, inter
 
       {/* Cotas Arquitectónicas: Mostrar si está seleccionada O si hay hover (y no hay otra selección activa) */}
       {/* Ocultar cotas en vista interior para limpiar la vista */}
-      {(isSelected || (hovered && !isAnySelected)) && !isInteriorView && medidas && <Dimensions w={w} h={h} d={d} medidas={medidas} showHeight={altura} />}
+      {(isSelected || (hovered && !isAnySelected)) && !isInteriorView && medidas && <Dimensions w={w} h={h} d={d} medidas={medidas} showHeight={altura !== undefined ? altura : true} />}
 
       {/* Renderizar interior si corresponde - Ajustado al piso (y = -h/2) */}
       {isInteriorView && interior && <group position={[0, -h / 2, 0]}>{interior}</group>}

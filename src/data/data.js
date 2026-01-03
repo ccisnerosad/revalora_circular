@@ -182,6 +182,22 @@ export const ZONES_DATA_PB = [
     'interior': true
   },
   {
+    'id': 'pasillo_vertical',
+    'name': 'Pasillo Vertical',
+    'desc': 'Corredor logístico (10x2m).',
+    'medidas': ['10m', '2m', '0.2m'],
+    'altura': false,
+    'level': 'PB',
+    'w': 10,
+    'h': 0.2,
+    'd': 2,
+    'x': -7,
+    'y': 0.1,
+    'z': -10,
+    'color': '#222222',
+    'label': 'P. Vertical'
+  },
+  {
     'id': 'tratamiento',
     'name': 'Tratamiento Final',
     'desc': 'Composta, Biofert, Biogás (10x14m).',
