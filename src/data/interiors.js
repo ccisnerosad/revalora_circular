@@ -38,6 +38,39 @@ export const BIOGESTION_MODULE = [
 ]
 
 // --- Tratamiento Final
+export const TRATAMIENTO_FINAL_MODULE = [
+  // --- Zona de Compostaje (Fondo) ---
+  {
+    id: 'tf_compost_1',
+    type: 'CompostPile',
+    position: [-3, 0, -2.5],
+    rotation: [0, 0, 0],
+    length: 8,
+    width: 2.2
+  },
+  {
+    id: 'tf_compost_2',
+    type: 'CompostPile',
+    position: [0, 0, -2.5],
+    rotation: [0, 0, 0],
+    length: 8,
+    width: 2.2
+  },
+  {
+    id: 'tf_compost_3',
+    type: 'CompostPile',
+    position: [3, 0, -2.5],
+    rotation: [0, 0, 0],
+    length: 8,
+    width: 2.2
+  },
+
+  // --- Zona de Producto Terminado (Frente - Derecha) ---
+  { id: 'tf_pallet_1', type: 'PalletStack', position: [1.5, 0, 3], rotation: [0, 0, 0] },
+  { id: 'tf_pallet_2', type: 'PalletStack', position: [3.5, 0, 3], rotation: [0, 0, 0] },
+  { id: 'tf_pallet_3', type: 'PalletStack', position: [1.5, 0, 5], rotation: [0, 0, 0] },
+  { id: 'tf_pallet_4', type: 'PalletStack', position: [3.5, 0, 5], rotation: [0, 0, 0] }
+]
 
 // --- Alimento Animal
 // --- Alimento Humano Módulo A (Posterior) ---
