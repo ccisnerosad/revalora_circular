@@ -254,9 +254,8 @@ const steps = [
     
     if (slides.length === 0) return;
 
-    const isMobile = window.innerWidth < 1024;
-    // Increase scroll distance on mobile for more pronounced scroll
-    const scrollDuration = isMobile ? (slides.length * 150) + "%" : (slides.length * 100) + "%";
+    // Unified scroll duration for consistent experience (Same as Desktop)
+    const scrollDuration = (slides.length * 100) + "%";
 
     // Pin the section
     const st = ScrollTrigger.create({
@@ -267,9 +266,9 @@ const steps = [
         scrub: 0.5, 
         snap: {
             snapTo: 1 / (slides.length - 1),
-            duration: { min: 0.3, max: 0.8 }, // Ajustado para ser más responsivo
+            duration: { min: 0.5, max: 1.0 },
             delay: 0.0, 
-            ease: "power2.inOut"
+            ease: "power3.inOut"
         },
         onUpdate: (self) => {
             // Calculate current slide index based on scroll progress

@@ -71,7 +71,38 @@ Para mantener el orden ante un crecimiento exponencial, seguiremos esta estructu
 *   Nombres de columnas en `snake_case`.
 *   Siempre incluir campos de auditoría (`created_at`, `updated_at`) y, cuando aplique, `deleted_at` (Soft Delete).
 
-## 3. Flujo de Trabajo (Workflow)
+## 4. Arquitectura de Escenas 3D (React Three Fiber)
+
+Para garantizar la escalabilidad y facilidad de iteración en las visualizaciones 3D, seguimos un enfoque **Data-Driven** y **Modular**.
+
+### Estructura de Archivos
+*   `src/data/data.js`: Definición global de zonas (dimensiones, posición en el mundo, metadatos).
+*   `src/data/interiors.js`: Definición detallada de los objetos dentro de cada zona (layout interno).
+*   `src/components/3d/assets/`: Componentes individuales reutilizables (ej. `ColdRoom.jsx`, `PackingTable.jsx`).
+*   `src/components/3d/zones/`: Componentes contenedores que renderizan una zona específica (ej. `AlimentoHumanoInterior.jsx`).
+
+### Patrón de Diseño (Data-Driven)
+1.  **Definición de Datos (`src/data/interiors.js`):**
+    *   Los layouts se definen como arrays de objetos constantes.
+    *   Cada objeto debe tener: `id`, `type` (nombre del componente), `position` [x, y, z] y `rotation` [x, y, z].
+    *   Se pueden crear múltiples arrays para módulos repetitivos (ej. `MODULE_A`, `MODULE_B`).
+
+2.  **Componentes de Activos (`assets/`):**
+    *   Deben ser componentes funcionales puros.
+    *   **Props Obligatorias:** Deben aceptar y aplicar `position` y `rotation` al grupo contenedor (`<group>`).
+    *   **Escala:** Deben modelarse a escala real (1 unidad = 1 metro).
+
+3.  **Componentes de Zona (`zones/`):**
+    *   Actúan como "Renderers". Importan los datos de `interiors.js` y los mapean a componentes de activos.
+    *   No deben contener coordenadas "hardcoded" para objetos individuales; deben leerlas de la data.
+
+### Flujo de Trabajo para Nueva Escena
+1.  **Modelado de Activos:** Crear los componentes necesarios en `assets/` (o reutilizar existentes).
+2.  **Diseño de Layout:** Definir la distribución en `src/data/interiors.js` usando coordenadas locales relativas al centro de la zona.
+3.  **Ensamblaje:** Crear el componente de zona en `zones/` que itere sobre los datos y renderice los activos.
+4.  **Integración:** Registrar la nueva zona en `src/components/3d/core/World3D.jsx` y `src/components/3d/core/Scene.jsx`.
+
+## 5. Flujo de Trabajo (Workflow)
 
 1.  **Lectura:** Antes de escribir código, lee los archivos relacionados para entender el contexto.
 2.  **Planificación:** Si la tarea es compleja, describe brevemente tu plan (pasos) antes de generar código.
@@ -79,7 +110,7 @@ Para mantener el orden ante un crecimiento exponencial, seguiremos esta estructu
 4.  **Validación:** Verifica que no hayas roto tipos y que la sintaxis sea correcta.
 5.  **Refactorización:** Si ves código duplicado o "sucio" en el archivo que tocas, límpialo (Boy Scout Rule).
 
-## 4. Comandos Comunes
+## 6. Comandos Comunes
 
 *   `npm run dev`: Inicia el entorno de desarrollo (Docker + Apps).
 *   `npx prisma migrate dev`: Aplica cambios de esquema DB.

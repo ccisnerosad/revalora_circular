@@ -25,6 +25,12 @@
       "descripcion": "Módulo para la gestión y manejo de diagnósticos y herramientas.",
       "icono": "📝",
       "path": "/formatos"
+    },
+    {
+      "nombre": "Mapas Virtuales",
+      "descripcion": "Módulo para la visualización de mapas virtuales de las plantas CEDA.",
+      "icono": "🗺️",
+      "path": "/mapas"
     }
   ]
 }
