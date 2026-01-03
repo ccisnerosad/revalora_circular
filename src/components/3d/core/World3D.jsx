@@ -11,15 +11,13 @@ import { AlimentoHumanoInterior } from '@components/3d/zones/AlimentoHumanoInter
 import { AlimentoAnimalInterior } from '@components/3d/zones/AlimentoAnimalInterior'
 import { ZONES_DATA_PB, ZONES_DATA_PA, TRUCKS_DATA } from '@data/data'
 
-function CameraHandler({ viewMode, targetPosition, controlsRef }) {
-  const isAnimating = useRef(false)
-
+function CameraHandler({ viewMode, targetPosition, controlsRef, isAnimating }) {
   // Detectar cambio de modo para iniciar animación
   useEffect(() => {
     if (viewMode === 'interior' && targetPosition) {
       isAnimating.current = true
     }
-  }, [viewMode, targetPosition])
+  }, [viewMode, targetPosition, isAnimating])
 
   useFrame((state, delta) => {
     if (isAnimating.current && viewMode === 'interior' && targetPosition && controlsRef.current) {
@@ -44,10 +42,11 @@ function CameraHandler({ viewMode, targetPosition, controlsRef }) {
 
 const World3D = memo(function World3D({ selectedZone, onSelect, onHover, showFlows, viewMode, targetPosition }) {
   const controlsRef = useRef()
+  const isAnimating = useRef(false)
 
   return (
     <>
-      <CameraHandler viewMode={viewMode} targetPosition={targetPosition} controlsRef={controlsRef} />
+      <CameraHandler viewMode={viewMode} targetPosition={targetPosition} controlsRef={controlsRef} isAnimating={isAnimating} />
       <color attach='background' args={['#1a1a1a']} />
 
       {/* Iluminación */}
@@ -56,7 +55,17 @@ const World3D = memo(function World3D({ selectedZone, onSelect, onHover, showFlo
       <Environment preset='city' />
 
       {/* Controles tipo Mapa/RTS */}
-      <MapControls ref={controlsRef} enableDamping dampingFactor={0.05} minDistance={5} maxDistance={100} maxPolarAngle={Math.PI / 2.3} />
+      <MapControls
+        ref={controlsRef}
+        enableDamping
+        dampingFactor={0.05}
+        minDistance={5}
+        maxDistance={100}
+        maxPolarAngle={Math.PI / 2.3}
+        onStart={() => {
+          isAnimating.current = false
+        }}
+      />
 
       {/* Suelo y Grid */}
       <Grid position={[0, -0.1, 0]} args={[100, 100]} cellSize={1} cellThickness={0.5} cellColor='#444' sectionSize={5} sectionThickness={1} sectionColor='#666' fadeDistance={50} />
