@@ -195,17 +195,17 @@ const ManualViewer = ({ content, tocData }) => {
   }
 
   return (
-    <div className='min-h-screen bg-gray-50 flex flex-col'>
+    <div className='min-h-screen bg-gray-50 flex flex-col w-full'>
       {/* Top Navigation Bar */}
-      <nav className='sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/60 shadow-sm transition-all duration-300'>
-        <div className='max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4'>
+      <nav className='fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gray-200/60 shadow-sm transition-all duration-300'>
+        <div className='max-w-[1920px] mx-auto px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4'>
           {/* Left: Back to Menu */}
           <div className='flex items-center shrink-0'>
             {/* Sidebar Toggle */}
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               className={`
-                flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border
+                flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border
                 ${isSidebarOpen ? 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50' : 'bg-brand-600 border-transparent text-white hover:bg-brand-700 shadow-md shadow-brand-500/20'}
               `}>
               <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
@@ -222,45 +222,47 @@ const ManualViewer = ({ content, tocData }) => {
 
           {/* Center: Search Bar */}
           <div className='flex-1 max-w-2xl relative group'>
-            <div className='absolute inset-y-0 right-0 pr-4 flex items-center pointer-events-none'>
-              <svg className='h-4 w-4 text-gray-400 group-focus-within:text-brand-500 transition-colors' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'>
-                <path fillRule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clipRule='evenodd' />
-              </svg>
-            </div>
+            {!searchTerm && (
+              <div className='absolute inset-y-0 right-0 pr-3 hidden sm:flex items-center pointer-events-none'>
+                <svg className='h-4 w-4 text-gray-400 group-focus-within:text-brand-500 transition-colors' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'>
+                  <path fillRule='evenodd' d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z' clipRule='evenodd' />
+                </svg>
+              </div>
+            )}
             <input
               type='text'
-              className='block w-full pl-12 pr-24 py-2 bg-gray-100/50 border-transparent text-gray-900 placeholder-gray-500 focus:bg-white focus:border-brand-300 focus:ring-4 focus:ring-brand-500/10 rounded-xl text-sm transition-all duration-200'
-              placeholder='Buscar en el documento...'
+              className='block w-full pl-3 pr-20 sm:pr-24 py-2 bg-gray-100/50 border-transparent text-gray-900 placeholder-gray-500 focus:bg-white focus:border-brand-300 focus:ring-4 focus:ring-brand-500/10 rounded-xl text-sm transition-all duration-200'
+              placeholder='Buscar...'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
             {searchTerm && (
-              <div className='absolute inset-y-0 right-0 pr-2 flex items-center gap-1'>
+              <div className='absolute inset-y-0 right-0 pr-1 sm:pr-2 flex items-center gap-0.5 sm:gap-1'>
                 {totalMatches > 0 ? (
                   <>
-                    <span className='text-xs text-gray-400 mr-1 font-medium tabular-nums'>
+                    <span className='text-[10px] sm:text-xs text-gray-400 mr-0.5 sm:mr-1 font-medium tabular-nums'>
                       {currentMatch}/{totalMatches}
                     </span>
                     <button onClick={() => navigateMatches('prev')} className='p-1 hover:bg-gray-200 rounded-md text-gray-500 transition-colors' title='Anterior coincidencia'>
-                      <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                      <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
                         <path d='m18 15-6-6-6 6' />
                       </svg>
                     </button>
                     <button onClick={() => navigateMatches('next')} className='p-1 hover:bg-gray-200 rounded-md text-gray-500 transition-colors' title='Siguiente coincidencia'>
-                      <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                      <svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
                         <path d='m6 9 6 6 6-6' />
                       </svg>
                     </button>
                   </>
                 ) : (
-                  <span className='text-xs text-gray-400 mr-2'>Sin resultados</span>
+                  <span className='text-[10px] sm:text-xs text-gray-400 mr-2'>0/0</span>
                 )}
               </div>
             )}
           </div>
 
           {/* Right: Controls */}
-          <div className='flex items-center gap-2 shrink-0'>
+          <div className='flex items-center gap-1 sm:gap-2 shrink-0'>
             {/* Font Size */}
             <div className='hidden sm:flex items-center bg-gray-100/50 rounded-lg p-1 mr-2'>
               <button
@@ -301,7 +303,7 @@ const ManualViewer = ({ content, tocData }) => {
         </div>
       </nav>
 
-      <div className='flex flex-1 relative max-w-[1920px] mx-auto w-full'>
+      <div className='flex flex-1 relative max-w-[1920px] mx-auto w-full pt-16'>
         {/* Sidebar Container */}
         <aside
           className={`
@@ -338,15 +340,15 @@ const ManualViewer = ({ content, tocData }) => {
 
         {/* Main Content Area */}
         <main className={`flex-1 min-w-0 transition-all duration-500 ${isSidebarOpen ? 'lg:pl-0' : ''}`}>
-          <div className='max-w-4xl mx-auto p-6 md:p-12 lg:p-16' style={{ fontSize: `${fontSize}rem` }}>
+          <div className='max-w-4xl mx-auto p-4 sm:p-6 md:p-12 lg:p-16' style={{ fontSize: `${fontSize}rem` }}>
             {/* Document Header Decoration */}
-            <div className='mb-12 pb-6 border-b border-gray-100'>
+            <div className='mb-8 sm:mb-12 pb-6 border-b border-gray-100'>
               <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-wider mb-4'>
                 <span className='w-2 h-2 rounded-full bg-brand-500 animate-pulse'></span>
                 Documento Oficial
               </div>
-              <h1 className='text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4'>Manual Maestro de Operaciones</h1>
-              <p className='text-xl text-gray-500 font-light'>Sistema de Gestión Integral de Residuos Sólidos Urbanos</p>
+              <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight mb-4'>Manual Maestro de Operaciones</h1>
+              <p className='text-lg sm:text-xl text-gray-500 font-light'>Sistema de Gestión Integral de Residuos Sólidos Urbanos</p>
             </div>
 
             {parsedBlocks.map((block, idx) => {
