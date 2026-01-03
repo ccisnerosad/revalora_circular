@@ -8,6 +8,24 @@ const ManualViewer = ({ content, tocData }) => {
   const [currentMatch, setCurrentMatch] = useState(0)
   const [totalMatches, setTotalMatches] = useState(0)
 
+  // Initialize sidebar state based on screen width
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1024) {
+        setIsSidebarOpen(false)
+      } else {
+        setIsSidebarOpen(true)
+      }
+    }
+
+    // Set initial state
+    handleResize()
+
+    // Add event listener
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   // Parsing logic (Memoized)
   const { sections, parsedBlocks } = useMemo(() => {
     // 1. Clean the content
@@ -287,9 +305,9 @@ const ManualViewer = ({ content, tocData }) => {
         {/* Sidebar Container */}
         <aside
           className={`
-            fixed lg:sticky top-16 h-[calc(100vh-4rem)] z-40 bg-white/50 backdrop-blur-sm border-r border-gray-200/50
-            transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] overflow-hidden
-            ${isSidebarOpen ? 'w-80 translate-x-0 opacity-100' : 'w-0 -translate-x-10 opacity-0'}
+            fixed lg:sticky top-16 h-[calc(100vh-4rem)] z-40 bg-white/95 backdrop-blur-xl border-r border-gray-200/50
+            transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] overflow-hidden shadow-2xl lg:shadow-none
+            ${isSidebarOpen ? 'w-full sm:w-80 translate-x-0 opacity-100' : 'w-0 -translate-x-10 opacity-0'}
           `}>
           <div className='h-full overflow-y-auto custom-scrollbar p-4'>
             <h3 className='px-2 py-3 text-xs font-bold text-gray-400 uppercase tracking-widest sticky top-0 bg-white/95 backdrop-blur-sm z-10 mb-2'>Tabla de Contenido</h3>

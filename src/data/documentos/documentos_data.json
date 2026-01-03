@@ -6,7 +6,7 @@
       "icono": "📘",
       "autor": "Equipo de Gestión",
       "version": "1.0",
-      "fecha_creacion": "2023-01-15",
+      "fecha_creacion": "2026-01-02",
       "path": "/documentos/manual_maestro"
     },
     {
@@ -15,8 +15,17 @@
       "icono": "📊",
       "autor": "Equipo de Análisis",
       "version": "1.0",
-      "fecha_creacion": "2023-02-10",
+      "fecha_creacion": "2025-11-15",
       "path": "/documentos/benchmarking_ceda"
+    },
+    {
+      "titulo": "Diagrama de Flujo",
+      "descripcion": "Representación visual de los procesos operativos del sistema.",
+      "icono": "📈",
+      "autor": "Equipo de Procesos",
+      "version": "1.0",
+      "fecha_creacion": "2026-01-02",
+      "path": "/documentos/diagrama-flujo"
     }
   ]
 }

@@ -3,9 +3,10 @@ import '@styles/global.css';
 
 interface Props {
 	title: string;
+    scrollable?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, scrollable = false } = Astro.props;
 
 const navItems = [
   { label: 'Modelo 1200m²', href: '/mapas/1200' },
@@ -29,22 +30,22 @@ const currentPath = Astro.url.pathname;
 		<meta name="robots" content="noindex" />
 		<title>{title}</title>
 	</head>
-	<body class="bg-gray-900 text-white font-sans antialiased overflow-hidden h-screen w-screen">
+	<body class={`bg-gray-900 text-white font-sans antialiased ${scrollable ? 'min-h-screen overflow-x-hidden overflow-y-auto' : 'overflow-hidden h-screen w-screen'}`}>
         
         <slot />
 
         {/* Navegación Sutil Flotante */}
-        <nav class="absolute top-6 left-1/2 transform -translate-x-1/2 z-50">
-            <div class="bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-6 py-2 flex items-center gap-6 shadow-lg transition-all hover:bg-black/60">
-                <a href="/modulos" class="text-white/70 hover:text-white transition-colors text-sm font-medium flex items-center gap-2">
+        <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-max max-w-[90vw]">
+            <div class="bg-black/40 backdrop-blur-md border border-white/10 rounded-full px-4 sm:px-6 py-2 flex items-center gap-4 sm:gap-6 shadow-lg transition-all hover:bg-black/60 overflow-x-auto max-w-full">
+                <a href="/modulos" class="text-white/70 hover:text-white transition-colors text-sm font-medium flex items-center gap-2 shrink-0">
                     <span class="text-lg">🏠</span>
                     <span class="hidden sm:inline">Inicio</span>
                 </a>
-                <div class="w-px h-4 bg-white/20"></div>
+                <div class="w-px h-4 bg-white/20 shrink-0"></div>
                 {navItems.map(item => (
                     <a 
                         href={item.href} 
-                        class={`text-sm font-medium transition-colors ${currentPath === item.href ? 'text-yellow-400' : 'text-white/70 hover:text-white'}`}
+                        class={`text-sm font-medium transition-colors shrink-0 ${currentPath === item.href ? 'text-yellow-400' : 'text-white/70 hover:text-white'}`}
                     >
                         {item.label}
                     </a>
