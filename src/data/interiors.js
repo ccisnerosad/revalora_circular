@@ -1,3 +1,45 @@
+// --- Biogestión
+export const BIOGESTION_MODULE = [
+  // --- LÍNEA 1 (Fondo - Izquierda) ---
+  { id: 'bg_pump_1_1', type: 'PumpSkid', position: [-3, 0, -1.5], rotation: [0, 0, 0], scale: 0.8 },
+  { id: 'bg_panel_1_1', type: 'ControlPanel', position: [-2.4, 1, -1.3], rotation: [0, -Math.PI / 2, 0] },
+  { id: 'bg_shredder_1_1', type: 'Shredder', position: [-3, 0, -3.0], rotation: [0, 0, 0], scale: 0.9 },
+  { id: 'bg_tank_1_1', type: 'Tank', position: [-3, 0, -5.0], rotation: [0, 0, 0], scale: 0.9, color: '#cc3333' },
+
+  // --- LÍNEA 2 (Fondo - Centro) ---
+  { id: 'bg_pump_1_2', type: 'PumpSkid', position: [0, 0, -1.5], rotation: [0, 0, 0], scale: 0.8 },
+  { id: 'bg_panel_1_2', type: 'ControlPanel', position: [0.6, 1, -1.3], rotation: [0, -Math.PI / 2, 0] },
+  { id: 'bg_shredder_1_2', type: 'Shredder', position: [0, 0, -3.0], rotation: [0, 0, 0], scale: 0.9 },
+  { id: 'bg_tank_1_2', type: 'Tank', position: [0, 0, -5.0], rotation: [0, 0, 0], scale: 0.9, color: '#cc3333' },
+
+  // --- LÍNEA 3 (Fondo - Derecha) ---
+  { id: 'bg_pump_1_3', type: 'PumpSkid', position: [3, 0, -1.5], rotation: [0, 0, 0], scale: 0.8 },
+  { id: 'bg_panel_1_3', type: 'ControlPanel', position: [3.6, 1, -1.3], rotation: [0, -Math.PI / 2, 0] },
+  { id: 'bg_shredder_1_3', type: 'Shredder', position: [3, 0, -3.0], rotation: [0, 0, 0], scale: 0.9 },
+  { id: 'bg_tank_1_3', type: 'Tank', position: [3, 0, -5.0], rotation: [0, 0, 0], scale: 0.9, color: '#cc3333' },
+
+  // --- LÍNEA 4 (Frente - Izquierda) ---
+  { id: 'bg_pump_2_1', type: 'PumpSkid', position: [-3, 0, 5.5], rotation: [0, 0, 0], scale: 0.8 },
+  { id: 'bg_panel_2_1', type: 'ControlPanel', position: [-2.4, 1, 5.7], rotation: [0, -Math.PI / 2, 0] },
+  { id: 'bg_shredder_2_1', type: 'Shredder', position: [-3, 0, 4.0], rotation: [0, 0, 0], scale: 0.9 },
+  { id: 'bg_tank_2_1', type: 'Tank', position: [-3, 0, 2.0], rotation: [0, 0, 0], scale: 0.9, color: '#cc3333' },
+
+  // --- LÍNEA 5 (Frente - Centro) ---
+  { id: 'bg_pump_2_2', type: 'PumpSkid', position: [0, 0, 5.5], rotation: [0, 0, 0], scale: 0.8 },
+  { id: 'bg_panel_2_2', type: 'ControlPanel', position: [0.6, 1, 5.7], rotation: [0, -Math.PI / 2, 0] },
+  { id: 'bg_shredder_2_2', type: 'Shredder', position: [0, 0, 4.0], rotation: [0, 0, 0], scale: 0.9 },
+  { id: 'bg_tank_2_2', type: 'Tank', position: [0, 0, 2.0], rotation: [0, 0, 0], scale: 0.9, color: '#cc3333' },
+
+  // --- LÍNEA 6 (Frente - Derecha) ---
+  { id: 'bg_pump_2_3', type: 'PumpSkid', position: [3, 0, 5.5], rotation: [0, 0, 0], scale: 0.8 },
+  { id: 'bg_panel_2_3', type: 'ControlPanel', position: [3.6, 1, 5.7], rotation: [0, -Math.PI / 2, 0] },
+  { id: 'bg_shredder_2_3', type: 'Shredder', position: [3, 0, 4.0], rotation: [0, 0, 0], scale: 0.9 },
+  { id: 'bg_tank_2_3', type: 'Tank', position: [3, 0, 2.0], rotation: [0, 0, 0], scale: 0.9, color: '#cc3333' }
+]
+
+// --- Tratamiento Final
+
+// --- Alimento Animal
 // --- Alimento Humano Módulo A (Posterior) ---
 export const ALIMENTO_HUMANO_MODULE_A = [
   // --- Zona 1: Almacenamiento Frío (Fondo) ---
@@ -193,7 +235,6 @@ export const ALIMENTO_HUMANO_MODULE_B = [
 ]
 
 // --- Alimento Animal
-
 // --- MÓDULO A: LÍNEA DE PROCESO 1 (0m - 11m) ---
 export const ALIMENTO_ANIMAL_MODULE_A = [
   // --- Puerta de Entrada (Insumos) ---
