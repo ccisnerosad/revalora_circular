@@ -22,15 +22,9 @@ export function CompostPile({ position = [0, 0, 0], length = 8, width = 2, heigh
       </mesh>
 
       {/* Montículo de composta (Textura rugosa simulada con distorsión) */}
-      <mesh position={[0, height / 2, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[width / 2.5, width / 2, length, 32, 8, false, 0, Math.PI]} />
-        <MeshDistortMaterial 
-          color='#3e2723' 
-          roughness={0.9} 
-          side={DoubleSide} 
-          distort={0.4} 
-          speed={0} 
-        />
+      <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[width / 3, width / 2, length, 32, 8, false, Math.PI / 2, Math.PI]} />
+        <MeshDistortMaterial color='#3e2723' roughness={0.9} side={DoubleSide} distort={0.4} speed={0} />
       </mesh>
     </group>
   )
