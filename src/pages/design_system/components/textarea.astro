@@ -1,0 +1,222 @@
+---
+import LayoutDS from '@layouts/LayoutDS.astro';
+import { TextArea } from '@ds/atoms/TextArea';
+import { DemoContainerTextArea } from '@ds/demo/DemoContainerTextArea';
+---
+
+<LayoutDS title="TextArea Component">
+  <header class="mb-10 border-b border-gray-200 pb-6">
+    <h1 class="text-3xl font-bold text-gray-900">TextArea</h1>
+    <p class="text-lg text-gray-600 mt-2">
+      Componente para entrada de texto multilínea. Comparte la misma arquitectura multimodal que el Input.
+    </p>
+  </header>
+
+  <div class="space-y-12">
+    
+    <!-- Preview Mode -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        Modo Preview
+      </h2>
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <p class="text-sm text-gray-500 mb-4">
+              Muestra el contenido como texto estático, respetando los saltos de línea pero sin permitir edición.
+            </p>
+            <pre class="bg-slate-900 text-slate-300 p-3 rounded text-xs overflow-x-auto"><code>{`<TextArea 
+  mode="preview" 
+  label="Observaciones" 
+  value="Primera línea\nSegunda línea" 
+  rows={3}
+/>`}</code></pre>
+          </div>
+          <div class="bg-gray-50 p-4 rounded border border-gray-100 flex items-center">
+            <TextArea 
+              client:visible 
+              mode="preview" 
+              label="Observaciones" 
+              value={"Primera línea de observación.\nSegunda línea con más detalles."}
+              rows={3}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Batch Mode -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+        Modo Batch (Formulario)
+      </h2>
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <p class="text-sm text-gray-500 mb-4">
+          Ideal para descripciones largas, comentarios o notas que se envían junto con un formulario mayor.
+        </p>
+        <DemoContainerTextArea client:visible mode="batch" />
+      </div>
+    </section>
+
+    <!-- Live Mode -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+        Modo Live (Auto-guardado)
+      </h2>
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <p class="text-sm text-gray-500 mb-4">
+          Permite la edición de contenido extenso con guardado automático. Útil para editores de contenido o bitácoras.
+        </p>
+        <DemoContainerTextArea client:visible mode="live" />
+      </div>
+    </section>
+
+    <!-- Props API -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4">API Reference</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-lg font-medium text-gray-800 mb-3">Universal Props (Base)</h3>
+        <p class="text-sm text-gray-500 mb-4">Propiedades comunes disponibles en todos los modos.</p>
+        <div class="overflow-x-auto border border-gray-200 rounded-lg">
+          <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+              <tr>
+                <th class="px-6 py-3">Prop</th>
+                <th class="px-6 py-3">Type</th>
+                <th class="px-6 py-3">Default</th>
+                <th class="px-6 py-3">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">mode</td>
+                <td class="px-6 py-4 font-mono text-xs">FieldMode</td>
+                <td class="px-6 py-4 text-gray-400">Required</td>
+                <td class="px-6 py-4">Define el comportamiento: <code>'preview'</code>, <code>'batch'</code>, o <code>'live'</code>.</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">label</td>
+                <td class="px-6 py-4 font-mono text-xs">string</td>
+                <td class="px-6 py-4">-</td>
+                <td class="px-6 py-4">Etiqueta visible sobre el componente.</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">disabled</td>
+                <td class="px-6 py-4 font-mono text-xs">boolean</td>
+                <td class="px-6 py-4">false</td>
+                <td class="px-6 py-4">Deshabilita la interacción con el campo.</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">className</td>
+                <td class="px-6 py-4 font-mono text-xs">string</td>
+                <td class="px-6 py-4">-</td>
+                <td class="px-6 py-4">Clases CSS adicionales para el contenedor principal.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mb-8">
+        <div>
+            <h3 class="text-lg font-medium text-gray-800 mb-3">Batch Mode Props</h3>
+            <div class="overflow-x-auto border border-gray-200 rounded-lg">
+            <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+                <tr>
+                    <th class="px-4 py-2">Prop</th>
+                    <th class="px-4 py-2">Type</th>
+                    <th class="px-4 py-2">Description</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                <tr class="bg-white">
+                    <td class="px-4 py-3 font-mono text-xs text-purple-600">name</td>
+                    <td class="px-4 py-3 font-mono text-xs">string</td>
+                    <td class="px-4 py-3">Nombre del campo en el formulario.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-4 py-3 font-mono text-xs text-purple-600">register</td>
+                    <td class="px-4 py-3 font-mono text-xs">UseFormRegister</td>
+                    <td class="px-4 py-3">Función register de react-hook-form.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-4 py-3 font-mono text-xs text-purple-600">error</td>
+                    <td class="px-4 py-3 font-mono text-xs">FieldError</td>
+                    <td class="px-4 py-3">Objeto de error para mostrar mensajes de validación.</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        
+        <div>
+            <h3 class="text-lg font-medium text-gray-800 mb-3">Live Mode Props</h3>
+            <div class="overflow-x-auto border border-gray-200 rounded-lg">
+            <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+                <tr>
+                    <th class="px-4 py-2">Prop</th>
+                    <th class="px-4 py-2">Type</th>
+                    <th class="px-4 py-2">Description</th>
+                </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                <tr class="bg-white">
+                    <td class="px-4 py-3 font-mono text-xs text-green-600">onSave</td>
+                    <td class="px-4 py-3 font-mono text-xs">Promise&lt;void&gt;</td>
+                    <td class="px-4 py-3">Función asíncrona llamada tras el debounce.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-4 py-3 font-mono text-xs text-green-600">initialValue</td>
+                    <td class="px-4 py-3 font-mono text-xs">string | number</td>
+                    <td class="px-4 py-3">Valor inicial para el estado local.</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="px-4 py-3 font-mono text-xs text-green-600">debounceTime</td>
+                    <td class="px-4 py-3 font-mono text-xs">number</td>
+                    <td class="px-4 py-3">Tiempo de espera en ms (default: 1000).</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-medium text-gray-800 mb-3">Component Specific Props (TextArea)</h3>
+        <div class="overflow-x-auto border border-gray-200 rounded-lg">
+          <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+              <tr>
+                <th class="px-6 py-3">Prop</th>
+                <th class="px-6 py-3">Type</th>
+                <th class="px-6 py-3">Default</th>
+                <th class="px-6 py-3">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">rows</td>
+                <td class="px-6 py-4 font-mono text-xs">number</td>
+                <td class="px-6 py-4">3</td>
+                <td class="px-6 py-4">Número de líneas visibles inicialmente.</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">placeholder</td>
+                <td class="px-6 py-4 font-mono text-xs">string</td>
+                <td class="px-6 py-4">-</td>
+                <td class="px-6 py-4">Texto de ayuda (ghost text).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</LayoutDS>

@@ -1,0 +1,116 @@
+---
+import LayoutDS from '@layouts/LayoutDS.astro';
+
+// Renderizamos el botón de demo envuelto en el Provider para el demo
+import { ToastDemoWrapper } from '@components/design_system/demo/ToastDemoWrapper';
+---
+
+<LayoutDS title="Toast Notifications">
+  <header class="mb-10 border-b border-gray-200 pb-6">
+    <h1 class="text-3xl font-bold text-gray-900">Toast Notifications</h1>
+    <p class="text-lg text-gray-600 mt-2">
+      Sistema de notificaciones no intrusivas para feedback de operaciones. 
+      Utiliza el contexto de React para ser invocado desde cualquier parte de la aplicación.
+    </p>
+  </header>
+
+  <div class="space-y-12">
+    
+    <!-- Usage Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        Implementación
+      </h2>
+      <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+        <div class="prose text-gray-600">
+            <p>
+                Para usar los toasts, debes envolver tu aplicación (o la sección relevante) con el <code>ToastProvider</code>.
+                Luego, puedes usar el hook <code>useToast</code> en cualquier componente hijo.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-sm font-semibold text-gray-800 mb-2">1. Setup Provider</h3>
+                <pre class="bg-slate-900 text-slate-300 p-3 rounded text-xs overflow-x-auto"><code>{`import { ToastProvider } from '@components/design_system/molecules/Toast';
+
+export const App = () => (
+  <ToastProvider>
+    <MainContent />
+  </ToastProvider>
+);`}</code></pre>
+            </div>
+            <div>
+                <h3 class="text-sm font-semibold text-gray-800 mb-2">2. Use Hook</h3>
+                <pre class="bg-slate-900 text-slate-300 p-3 rounded text-xs overflow-x-auto"><code>{`import { useToast } from '@components/design_system/molecules/Toast';
+
+const MyComponent = () => {
+  const { addToast } = useToast();
+  
+  const handleClick = () => {
+    addToast('success', 'Guardado', 'Operación exitosa');
+  };
+  // ...
+}`}</code></pre>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+        Tipos de Notificaciones
+      </h2>
+      <div class="bg-white border border-gray-200 rounded-lg p-6">
+        <p class="text-sm text-gray-500 mb-6">
+          Haz clic en los botones para ver las variantes disponibles. Los toasts aparecen en la esquina superior derecha y desaparecen automáticamente tras 5 segundos.
+        </p>
+        
+        <div class="p-8 bg-gray-50 rounded border border-gray-100 flex justify-center">
+            <ToastDemoWrapper client:visible />
+        </div>
+      </div>
+    </section>
+
+    <!-- Props API -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4">API Reference</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-lg font-medium text-gray-800 mb-3">addToast(type, title, message?)</h3>
+        <div class="overflow-x-auto border border-gray-200 rounded-lg">
+          <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
+              <tr>
+                <th class="px-6 py-3">Argument</th>
+                <th class="px-6 py-3">Type</th>
+                <th class="px-6 py-3">Description</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">type</td>
+                <td class="px-6 py-4 font-mono text-xs">'success' | 'error' | 'warning' | 'info'</td>
+                <td class="px-6 py-4">Define el color e ícono de la notificación.</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">title</td>
+                <td class="px-6 py-4 font-mono text-xs">string</td>
+                <td class="px-6 py-4">Título principal (en negrita).</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-6 py-4 font-mono text-xs text-blue-600">message</td>
+                <td class="px-6 py-4 font-mono text-xs">string (opcional)</td>
+                <td class="px-6 py-4">Texto descriptivo adicional.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</LayoutDS>
